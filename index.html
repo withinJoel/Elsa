@@ -91,9 +91,6 @@
 				args.shift();
 
 				switch (commandName) {
-					case "(":
-						toFile = true;
-						break;
 					case "cls":
 						log.innerHTML = "";
 						break;
@@ -101,78 +98,16 @@
 						window.open(document.URL, "about:blank", "width=977 height=455");
 						window.close();
 						break;
-					case "prompt":
-						if (args.length) {
-							var string = "";
-							args.forEach((arg, i) => {
-								string += arg;
-								if (i + 1 < args.length) string += " ";
-							});
-							prompt = string;
-							promptState = "custom";
-						} else {
-							prompt = pathToString() + "";
-							promptState = "default";
-						}
-						resetPrompt();
-						break;
 					case "echo":
 						echo(toSpaces(args));
 						break;
 					case "echo.":
 						echo("\n");
 						break;
-					case "cd":
-						if (args.length) {
-							var nextDir = args[0];
-							if (args.length > 1) {
-								nextDir = toSpaces(args);
-							}
-							switch (nextDir) {
-								case "..":
-									if (path.length > 1) {
-										path.pop();
-									}
-									break;
-								case ".":
-									break;
-								case "\\":
-									path = [path[0]];
-									break;
-								default:
-									nextDir.split("\\").forEach((dir) => {
-										if (dir.split(":").length > 1) path = [];
-										path.push(dir);
-									});
-							}
-							resetPrompt();
-						}
-						break;
 					case "ver":
 						echo("Web Shell v1.0");
 						echo("Made with ❤️ by Joel Jolly.");
 						break;
-					case "cmd":
-						cmd();
-						break;
-
-					case "cur":
-						if (args.length) {
-							switch (args[0]) {
-								case "no":
-								case "off":
-									document.body.style.cursor = "none";
-									break;
-								case "yes":
-								case "on":
-									document.body.style.cursor = "";
-									break;
-								default:
-									document.body.style.cursor = args[0];
-							}
-						} else {
-							document.body.style.cursor = "";
-						}
 				}
 			} else {
 				if (command != ")") {
