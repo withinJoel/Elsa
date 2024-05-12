@@ -52,8 +52,6 @@ function runCmd(command, inMemory, fromInput) {
                 getScreenResolution();
             } else if (commandName === "useragent") {
                 getUserAgent();
-            } else if (commandName === "day") {
-                getCurrentDay();
             } else if (commandName.includes("open:")) {
                 openLink(commandName);
             } else if (commandName === "developer" || commandName === "dev") {

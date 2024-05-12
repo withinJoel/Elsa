@@ -19,7 +19,7 @@ function getOS() {
 
 //Open Sites
 function openLink(input) {
-    const url = input.trim().replace(/^open\b\s*/i, ''); // Trim spaces and replace "open"
+    const url = input.trim().replace(/^open:\b\s*/i, ''); // Trim spaces and replace "open"
     if ((url === "developer") || (url === "dev")) {
         const website = 'https://joeljolly.pages.dev';
         window.open(website, '_blank');
