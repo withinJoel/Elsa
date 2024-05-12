@@ -18,6 +18,7 @@
 # Social Network
 * `instagram:` - To open their profile example: `instagram:withinjoel`
 * `twitter:` or `x: - To open their profile example: `twitter:withinjoel` or `x:withinjoel`
+* `onlyfans:` - To open their profile example: `onlyfans:withinjoel`
 
 # Display
 * `screenwidth` - To get the screen width.

@@ -40,8 +40,23 @@ function openInstagram(input) {
 
 //Open Twitter ID
 function openTwitter(input) {
-    const username = input.trim().replace(/^twitter:\b\s*/i, ''); // Trim spaces and replace "open"
+    let username = input.trim().replace(/^x:\b\s*/i, '');
+    username = input.trim().replace(/^twitter:\b\s*/i, ''); // Trim spaces and replace "open"
     const instagramurl = 'https://www.twitter.com/'+username;
+    window.open(instagramurl, '_blank');
+}
+
+//Open X ID
+function openX(input) {
+    const username = input.trim().replace(/^x:\b\s*/i, ''); // Trim spaces and replace "open"
+    const xurl = 'https://www.x.com/'+username;
+    window.open(xurl, '_blank');
+}
+
+//Open Twitter ID
+function openOnlyfans(input) {
+    const username = input.trim().replace(/^onlyfans:\b\s*/i, ''); // Trim spaces and replace "open"
+    const instagramurl = 'https://www.onlyfans.com/'+username;
     window.open(instagramurl, '_blank');
 }
 

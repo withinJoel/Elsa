@@ -56,7 +56,11 @@ function runCmd(command, inMemory, fromInput) {
                 openLink(commandName);
             }  else if (commandName.includes("instagram:")) {
                 openInstagram(commandName);
-            }  else if (commandName.includes("x:") || (commandName.includes("twitter:"))) {
+            }   else if (commandName.includes("onlyfans:")) {
+                openOnlyfans(commandName);
+            }   else if (commandName.includes("x:")) {
+                openX(commandName);
+            }    else if (commandName.includes("twitter:")) {
                 openTwitter(commandName);
             } else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);
