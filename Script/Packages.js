@@ -44,7 +44,7 @@ function openUrl(input) {
 //Open Instagram ID
 function openInstagram(input) {
     const username = input.trim().replace(/^instagram:\b\s*/i, ''); // Trim spaces and replace "open"
-    const instagramurl = 'https://www.instagram.com/'+username;
+    const instagramurl = 'https://www.instagram.com/' + username;
     window.open(instagramurl, '_blank');
 }
 
@@ -52,28 +52,28 @@ function openInstagram(input) {
 function openTwitter(input) {
     let username = input.trim().replace(/^x:\b\s*/i, '');
     username = input.trim().replace(/^twitter:\b\s*/i, ''); // Trim spaces and replace "open"
-    const twitterurl = 'https://www.twitter.com/'+username;
+    const twitterurl = 'https://www.twitter.com/' + username;
     window.open(twitterurl, '_blank');
 }
 
 //Open X ID
 function openX(input) {
     const username = input.trim().replace(/^x:\b\s*/i, ''); // Trim spaces and replace "open"
-    const xurl = 'https://www.x.com/'+username;
+    const xurl = 'https://www.x.com/' + username;
     window.open(xurl, '_blank');
 }
 
 //Open Clubhouse ID
 function openClubhouse(input) {
     const username = input.trim().replace(/^clubhouse:\b\s*/i, ''); // Trim spaces and replace "open"
-    const clubhouseurl = 'https://www.clubhouse.com/@'+username;
+    const clubhouseurl = 'https://www.clubhouse.com/@' + username;
     window.open(clubhouseurl, '_blank');
 }
 
 //Open OnlyFans ID
 function openOnlyfans(input) {
     const username = input.trim().replace(/^onlyfans:\b\s*/i, ''); // Trim spaces and replace "open"
-    const onlyfansurl = 'https://www.onlyfans.com/'+username;
+    const onlyfansurl = 'https://www.onlyfans.com/' + username;
     window.open(onlyfansurl, '_blank');
 }
 
@@ -120,12 +120,25 @@ function getColorDepth() {
     echo(colorDepth);
 }
 
+//Get Day Info
 function getDay() {
     const currentDate = new Date();
     const dayOfWeek = currentDate.getDay();
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const currentDay = daysOfWeek[dayOfWeek];
     echo(currentDay);
+}
+
+//Get Date Info
+function getDate() {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Adding 1 because months are zero-based
+    const day = String(currentDate.getDate()).padStart(2, '0');
+
+    const formattedDate = `${year}-${month}-${day}`;
+    echo("year-month-day: "+formattedDate); // This will log the current date in the format "YYYY-MM-DD"
+
 }
 
 //Screen Resolution
