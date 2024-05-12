@@ -18,34 +18,22 @@ function runCmd(command, inMemory, fromInput) {
                 args = command.split(" ");
             args.shift();
 
-            switch (commandName) {
-                //Clear screen
-                case "cls":
-                    log.innerHTML = "";
-                    break;
-                case "clearscreen":
-                    log.innerHTML = "";
-                    break;
-                //Exit
-                case "exit":
-                    window.open(document.URL, "about:blank", "width=977 height=455");
-                    window.close();
-                    break;
-                //Echo
-                case "echo":
-                    echo(toSpaces(args));
-                    break;
-                case "echo.":
-                    echo("\n");
-                    break;
-                //Version
-                case "ver":
-                    echo("Web Shell v1.0");
-                    echo("Made with love by Joel Jolly.");
-                    break;
-                case 'time':
-                    showTime();
-                    break;
+            if (commandName === "cls" || commandName === "clearscreen") {
+                log.innerHTML = "";
+            } else if (commandName === "exit") {
+                window.open(document.URL, "about:blank", "width=977 height=455");
+                window.close();
+            } else if (commandName === "echo") {
+                echo(toSpaces(args));
+            } else if (commandName === "echo.") {
+                echo("\n");
+            } else if (commandName === "ver") {
+                echo("Web Shell v1.0");
+                echo("Made with love by Joel Jolly.");
+            } else if (commandName === "time") {
+                showTime();
+            } else if (commandName.includes("open:")) {
+                openLink(commandName);
             }
         } else {
             if (command != ")") {

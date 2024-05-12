@@ -58,16 +58,9 @@
 </body>
 <script src="Variables.js"></script>
 <script src="Commands.js"></script>
+<script src="Packages.js"></script>
 <script>
-	function pathToString() {
-		var string = "";
-		path.forEach((dir, i) => {
-			string += dir;
-			if (i + 1 < path.length) string += "";
-		});
-		if (path.length == 1) string += "";
-		return string;
-	}
+	
 	function echo(text) {
 		if (text && removeIndent(text)) {
 			switch (removeIndent(text)) {
