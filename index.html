@@ -57,6 +57,19 @@
 	</form>
 </body>
 <script>
+	var input = document.getElementById("input"),
+		log = document.getElementById("log"),
+		promptElement = document.getElementById("prompt"),
+		path = ["$"],
+		vars = [],
+		memory = [],
+		memoryPos = 0,
+		navigatingInMemory = false,
+		promptState = "default",
+		echoState = "on",
+		toFile = false,
+		toExec = [],
+		prompt = pathToString() + ">";
 	function runCmd(command, inMemory, fromInput) {
 		if (command != undefined) {
 			if (fromInput) {
@@ -123,6 +136,56 @@
 			}
 		}
 	}
+	function pathToString() {
+		var string = "";
+		path.forEach((dir, i) => {
+			string += dir;
+			if (i + 1 < path.length) string += "";
+		});
+		if (path.length == 1) string += "";
+		return string;
+	}
+	function echo(text) {
+		if (text && removeIndent(text)) {
+			switch (removeIndent(text)) {
+				case "on":
+				case "off":
+					echoState = text;
+					echo();
+					break;
+				default:
+					var div = document.createElement("div");
+					div.innerText = text || "\n";
+					log.appendChild(div);
+			}
+		} else {
+			echo(`ECHO command is ${echoState}.`);
+		}
+	}
+	function resetPrompt() {
+		if (promptState == "default") prompt = pathToString() + "";
+		promptElement.innerText = prompt;
+		document.body.style.setProperty("--prompt-offset", promptElement.clientWidth + "px");
+	}
+
+	function toSpaces(array) {
+		if (array) {
+			var string = "";
+			array.forEach((el, i) => {
+				string += el;
+				if (i + 1 < array.length) string += " ";
+			});
+			return string;
+		}
+	}
+	function removeIndent(string) {
+		var text = string;
+		if (text) {
+			while (text[0] == " " || text[0] == "	") text = text.slice(1, text.length);
+			while (text[text.length - 1] == " " || text[text.length - 1] == "	") text.pop();
+		}
+		return text;
+	}
 
 	input.onkeydown = function (key) {
 		switch (key.keyCode) {
@@ -163,5 +226,3 @@
 	}, 1);
 
 </script>
-<script src="Variables.js"></script>
-<script src="Packages.js"></script>
