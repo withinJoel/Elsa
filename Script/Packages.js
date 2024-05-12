@@ -104,6 +104,19 @@ function getNetworkStatus() {
     echo(onlineStatus);
 }
 
+//Battery Info
+function getBatteryInfo() {
+    const isCharging = navigator.getBattery().then(function (battery) {
+        return battery.charging;
+    });
+
+    isCharging.then(function (result) {
+        echo(result ? 'Device is Charging' : 'Device is Not Charging');
+    }).catch(function (error) {
+        echo('Battery information not available:', error);
+    });
+}
+
 //Connection Type
 function getConnectionType() {
     const connectionType = navigator.connection.effectiveType; // Effective network connection type (e.g., "4g", "3g")

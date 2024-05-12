@@ -58,6 +58,8 @@ function runCmd(command, inMemory, fromInput) {
                 getScreenResolution();
             } else if (commandName === "useragent") {
                 getUserAgent();
+            } else if (commandName === "batteryinfo") {
+                getBatteryInfo();
             } else if (commandName.includes("open:")) {
                 openLink(commandName);
             } else if (commandName.includes("url:")) {

@@ -35,6 +35,7 @@
 
 # Hardware
 * `raminfo` - To get ram information.
+* `batteryinfo` - To get the battery info.
 
 # Operating System
 * `os` - To get the operating system details.
