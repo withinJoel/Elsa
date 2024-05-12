@@ -42,8 +42,8 @@ function openInstagram(input) {
 function openTwitter(input) {
     let username = input.trim().replace(/^x:\b\s*/i, '');
     username = input.trim().replace(/^twitter:\b\s*/i, ''); // Trim spaces and replace "open"
-    const instagramurl = 'https://www.twitter.com/'+username;
-    window.open(instagramurl, '_blank');
+    const twitterurl = 'https://www.twitter.com/'+username;
+    window.open(twitterurl, '_blank');
 }
 
 //Open X ID
@@ -53,11 +53,11 @@ function openX(input) {
     window.open(xurl, '_blank');
 }
 
-//Open Twitter ID
+//Open OnlyFans ID
 function openOnlyfans(input) {
     const username = input.trim().replace(/^onlyfans:\b\s*/i, ''); // Trim spaces and replace "open"
-    const instagramurl = 'https://www.onlyfans.com/'+username;
-    window.open(instagramurl, '_blank');
+    const onlyfansurl = 'https://www.onlyfans.com/'+username;
+    window.open(onlyfansurl, '_blank');
 }
 
 //Network Speed
