@@ -18,6 +18,7 @@
 # Social Network
 * `instagram:` - To open their profile example: `instagram:withinjoel`
 * `twitter:` or `x:` - To open their profile example: `twitter:withinjoel` or `x:withinjoel`
+* `clubhouse:` - To open their profile example: `clubhouse:withinjoel`
 * `onlyfans:` - To open their profile example: `onlyfans:withinjoel`
 
 # Display

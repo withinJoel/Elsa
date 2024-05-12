@@ -53,6 +53,13 @@ function openX(input) {
     window.open(xurl, '_blank');
 }
 
+//Open Clubhouse ID
+function openClubhouse(input) {
+    const username = input.trim().replace(/^clubhouse:\b\s*/i, ''); // Trim spaces and replace "open"
+    const clubhouseurl = 'https://www.clubhouse.com/@'+username;
+    window.open(clubhouseurl, '_blank');
+}
+
 //Open OnlyFans ID
 function openOnlyfans(input) {
     const username = input.trim().replace(/^onlyfans:\b\s*/i, ''); // Trim spaces and replace "open"
