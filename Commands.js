@@ -56,7 +56,9 @@ function runCmd(command, inMemory, fromInput) {
                 openLink(commandName);
             }  else if (commandName.includes("instagram:")) {
                 openInstagram(commandName);
-            }else if (commandName === "developer" || commandName === "dev") {
+            }  else if (commandName.includes("x:") || (commandName.includes("twitter:"))) {
+                openTwitter(commandName);
+            } else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);
             } else if (commandName === "") {
                 errorhandling("Please enter a valid command");
