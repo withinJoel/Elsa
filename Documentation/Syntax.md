@@ -9,6 +9,7 @@
 * `time` - To display the current time.
 * `open:` or `url` - to open a site example `open:https://fb.com` or `open:fb` or `url:fb` or `url:https://www.facebook.com/`
 * `day` - To get the day info.
+* `date` - To get the date info.
 * `timezone` - To get the time zone.
 
 # Network
