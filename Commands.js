@@ -32,14 +32,16 @@ function runCmd(command, inMemory, fromInput) {
                 echo("Made with love by Joel Jolly.");
             } else if (commandName === "time") {
                 getTime();
-            } else if (commandName === "date") {
-                getCurrentDate();
+            } else if (commandName === "networkstatus") {
+                getNetworkStatus();
             } else if (commandName === "day") {
                 getCurrentDay();
             }else if (commandName.includes("open:")) {
                 openLink(commandName);
             } else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);
+            } else if (commandName === "") {
+                errorhandling("Please enter a valid command");
             }
         } else {
             if (command != ")") {

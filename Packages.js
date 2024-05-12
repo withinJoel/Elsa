@@ -18,3 +18,24 @@ function openLink(input) {
         window.open(website, '_blank');
     }
 }
+
+//Network Speed
+function getNetworkStatus() {
+    const userAgent = navigator.userAgent; // User agent string
+  const language = navigator.language; // Browser language
+  const cookiesEnabled = navigator.cookieEnabled; // Cookies enabled or not
+  const onlineStatus = navigator.onLine ? 'Online' : 'Offline'; // Online status
+
+  // Return an object with all the details
+  return {
+    userAgent,
+    language,
+    cookiesEnabled,
+    onlineStatus
+  };
+}
+
+//error
+function errorhandling (error){
+    log.innerHTML = `${error}`;
+}
