@@ -60,12 +60,16 @@ function runCmd(command, inMemory, fromInput) {
                 getUserAgent();
             } else if (commandName === "batteryinfo") {
                 getBatteryInfo();
+            } else if (commandName === "ipaddress") {
+                getIPAddress(commandName);
+            } else if (commandName === "developer" || commandName === "dev") {
+                openLink(commandName);
+            } else if (commandName === "") {
+                errorhandling("Please enter a valid command");
             } else if (commandName.includes("open:")) {
                 openLink(commandName);
             } else if (commandName.includes("url:")) {
                 openUrl(commandName);
-            } else if (commandName.includes("ipaddress")) {
-                getIPAddress(commandName);
             } else if (commandName.includes("instagram:")) {
                 openInstagram(commandName);
             } else if (commandName.includes("onlyfans:")) {
@@ -82,10 +86,6 @@ function runCmd(command, inMemory, fromInput) {
                 openTwitter(commandName);
             } else if (commandName.includes("github:")) {
                 openGithub(commandName);
-            } else if (commandName === "developer" || commandName === "dev") {
-                openLink(commandName);
-            } else if (commandName === "") {
-                errorhandling("Please enter a valid command");
             }
         } else {
             if (command != ")") {
