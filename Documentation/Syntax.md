@@ -14,6 +14,7 @@
 * `networkstatus` - To get the status of the network. (online of offline).
 * `useragent` - To get the browser information.
 * `connectiontype` - To get the connection type example: 4g, 3g.. etc.
+* `connectionspeed` - To get the connection speed.
 
 # Social Network
 * `instagram:` - To open their profile example: `instagram:withinjoel`
