@@ -40,7 +40,9 @@ function runCmd(command, inMemory, fromInput) {
                 getNetworkStatus();
             } else if (commandName === "connectiontype") {
                 getConnectionType();
-            } else if (commandName === "screenwidth") {
+            }  else if (commandName === "raminfo") {
+                getRamInfo();
+            }else if (commandName === "screenwidth") {
                 getScreenWidth();
             } else if (commandName === "screenheight") {
                 getScreenHeight();

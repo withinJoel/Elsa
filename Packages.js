@@ -43,6 +43,12 @@ function getConnectionType() {
     echo(connectionType);
 }
 
+//Connection Type
+function getRamInfo() {
+    const memory = navigator.deviceMemory; 
+    echo(memory);
+}
+
 //Screen Width
 function getScreenWidth() {
     const screenWidth = screen.width; // Screen width in pixels

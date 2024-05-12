@@ -21,5 +21,8 @@
 * `screenresolution` - To get the screen resolution.
 * `colordepth` or `colourdepth` - To get the color depth of the screen.
 
+# Hardware
+* `raminfo` - To get ram information.
+
 # Operating System
 * `os` - To get the operating system details.
