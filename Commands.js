@@ -27,7 +27,7 @@ function runCmd(command, inMemory, fromInput) {
                 echo(toSpaces(args));
             } else if (commandName === "echo.") {
                 echo("\n");
-            } else if (commandName === "ver") {
+            } else if ((commandName === "ver")|| (commandName === "version")) {
                 echo("Web Shell v1.0");
                 echo("Made with love by Joel Jolly.");
             } else if (commandName === "time") {
