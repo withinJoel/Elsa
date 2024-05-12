@@ -1,44 +1,52 @@
 <style>
-    html, body {
-        background: #000;
-        font-family: consolas, monospace;
-        color: white;
-        margin: 0px;
-        width: 100%;
-        height: 100%;
-        cursor: default;
-        overflow-x: auto; /* Enable horizontal scrolling */
-        word-wrap: break-word; /* Break words to the next line */
-    }
-    body {
-        overflow: hidden scroll;
-    }
-#log div {
-	width: 100%;
-}
-#prompt {
-	position: absolute;
-	box-sizing: content-box;
-	z-index: 2;
-}
-#input {
-	position: absolute;
-	box-sizing: border-box;
-	background: transparent;
-	border: 0px;
-	padding: 0px 0px 0px var(--prompt-offset);
-	color: inherit;
-	font: inherit;
-	outline: none;
-	width: 100%;
-	cursor: inherit;
-	z-index: 1;
-}
-::selection {
-	background: #aaa;
-}
+	html,
+	body {
+		background: #000;
+		font-family: consolas, monospace;
+		color: white;
+		margin: 0px;
+		width: 100%;
+		height: 100%;
+		cursor: default;
+		overflow-x: auto;
+		/* Enable horizontal scrolling */
+		word-wrap: break-word;
+		/* Break words to the next line */
+	}
 
+	body {
+		overflow: hidden scroll;
+	}
+
+	#log div {
+		width: 100%;
+	}
+
+	#prompt {
+		position: absolute;
+		box-sizing: content-box;
+		z-index: 2;
+	}
+
+	#input {
+		position: absolute;
+		box-sizing: border-box;
+		background: transparent;
+		border: 0px;
+		padding: 0px 0px 0px var(--prompt-offset);
+		color: inherit;
+		font: inherit;
+		outline: none;
+		width: 100%;
+		cursor: inherit;
+		z-index: 1;
+	}
+
+	::selection {
+		background: #aaa;
+	}
 </style>
+
 <body onclick="input.focus()">
 	<div id="log"></div>
 	<form spellcheck="false" autocomplete="off" action="javascript:runCmd(input.value,true,true)">
@@ -49,227 +57,227 @@
 	</form>
 </body>
 <script>
-    var input=document.getElementById("input"),
-log=document.getElementById("log"),
-promptElement=document.getElementById("prompt"),
-path=["$"],
-vars=[],
-memory=[],
-memoryPos=0,
-navigatingInMemory=false,
-promptState="default",
-echoState="on",
-toFile=false,
-toExec=[],
-prompt=pathToString()+">";
-function runCmd(command,inMemory,fromInput) {
-	if(command!=undefined) {
-		if(fromInput) {
-			input.value="";
-			echo(prompt+command);
-		}
-		if(inMemory && command!="") {
-			if(command!=memory[memory.length-1]) {
-				memory.push(command);
+	var input = document.getElementById("input"),
+		log = document.getElementById("log"),
+		promptElement = document.getElementById("prompt"),
+		path = ["$"],
+		vars = [],
+		memory = [],
+		memoryPos = 0,
+		navigatingInMemory = false,
+		promptState = "default",
+		echoState = "on",
+		toFile = false,
+		toExec = [],
+		prompt = pathToString() + ">";
+	function runCmd(command, inMemory, fromInput) {
+		if (command != undefined) {
+			if (fromInput) {
+				input.value = "";
+				echo(prompt + command);
 			}
-			if(!navigatingInMemory || command!=memory[memoryPos]) {
-				memoryPos=memory.length-1;
-			}
-			navigatingInMemory=false;
-		}
-		if(!toFile) {
-			var commandName=command.split(" ")[0],
-			args=command.split(" ");
-			args.shift();
-
-			switch(commandName) {
-				case "(":
-				toFile=true;
-				break;
-				case "cls":
-				log.innerHTML="";
-				break;
-				case "exit":
-				window.open(document.URL,"about:blank","width=977 height=455");
-				window.close();
-				break;
-				case "prompt":
-				if(args.length) {
-					var string="";
-					args.forEach((arg,i) => {
-						string+=arg;
-						if(i+1<args.length) string+=" ";
-					});
-					prompt=string;
-					promptState="custom";
-				} else {
-					prompt=pathToString()+">";
-					promptState="default";
+			if (inMemory && command != "") {
+				if (command != memory[memory.length - 1]) {
+					memory.push(command);
 				}
-				resetPrompt();
-				break;
-				case "echo":
-				echo(toSpaces(args));
-				break;
-				case "echo.":
-				echo("\n");
-				break;
-				case "cd":
-				if(args.length) {
-					var nextDir=args[0];
-					if(args.length>1) {
-						nextDir=toSpaces(args);
-					}
-					switch(nextDir) {
-						case "..":
-						if(path.length>1) {
-							path.pop();
+				if (!navigatingInMemory || command != memory[memoryPos]) {
+					memoryPos = memory.length - 1;
+				}
+				navigatingInMemory = false;
+			}
+			if (!toFile) {
+				var commandName = command.split(" ")[0],
+					args = command.split(" ");
+				args.shift();
+
+				switch (commandName) {
+					case "(":
+						toFile = true;
+						break;
+					case "cls":
+						log.innerHTML = "";
+						break;
+					case "exit":
+						window.open(document.URL, "about:blank", "width=977 height=455");
+						window.close();
+						break;
+					case "prompt":
+						if (args.length) {
+							var string = "";
+							args.forEach((arg, i) => {
+								string += arg;
+								if (i + 1 < args.length) string += " ";
+							});
+							prompt = string;
+							promptState = "custom";
+						} else {
+							prompt = pathToString() + ">";
+							promptState = "default";
+						}
+						resetPrompt();
+						break;
+					case "echo":
+						echo(toSpaces(args));
+						break;
+					case "echo.":
+						echo("\n");
+						break;
+					case "cd":
+						if (args.length) {
+							var nextDir = args[0];
+							if (args.length > 1) {
+								nextDir = toSpaces(args);
+							}
+							switch (nextDir) {
+								case "..":
+									if (path.length > 1) {
+										path.pop();
+									}
+									break;
+								case ".":
+									break;
+								case "\\":
+									path = [path[0]];
+									break;
+								default:
+									nextDir.split("\\").forEach((dir) => {
+										if (dir.split(":").length > 1) path = [];
+										path.push(dir);
+									});
+							}
+							resetPrompt();
 						}
 						break;
-						case ".":
+					case "ver":
+						echo("Web Shell v1.0");
+						echo("Made with ❤️ by Joel Jolly.");
 						break;
-						case "\\":
-						path=[path[0]];
+					case "cmd":
+						cmd();
 						break;
-						default:
-						nextDir.split("\\").forEach((dir) => {
-							if(dir.split(":").length>1) path=[];
-							path.push(dir);
-						});
-					}
-					resetPrompt();
-				}
-				break;
-				case "ver":
-				echo("Web Shell v1.0");
-                echo("Made with ❤️ by Joel Jolly.");
-				break;
-				case "cmd":
-				cmd();
-				break;
 
-				case "cur":
-				if(args.length) {
-					switch(args[0]) {
-						case "no":
-						case "off":
-						document.body.style.cursor="none";
-						break;
-						case "yes":
-						case "on":
-						document.body.style.cursor="";
-						break;
-						default:
-						document.body.style.cursor=args[0];
-					}
-				} else {
-					document.body.style.cursor="";
+					case "cur":
+						if (args.length) {
+							switch (args[0]) {
+								case "no":
+								case "off":
+									document.body.style.cursor = "none";
+									break;
+								case "yes":
+								case "on":
+									document.body.style.cursor = "";
+									break;
+								default:
+									document.body.style.cursor = args[0];
+							}
+						} else {
+							document.body.style.cursor = "";
+						}
 				}
-			}
-		} else {
-			if(command!=")") {
-				toExec.push(command);
 			} else {
-				toFile=false;
-				toExec.forEach((command) => {
-					runCmd(command);
-				});
-				toExec=[];
+				if (command != ")") {
+					toExec.push(command);
+				} else {
+					toFile = false;
+					toExec.forEach((command) => {
+						runCmd(command);
+					});
+					toExec = [];
+				}
+			}
+
+			if (fromInput) {
+				resetPrompt();
 			}
 		}
-
-		if(fromInput) {
-			resetPrompt();
-		}
 	}
-}
-function pathToString() {
-	var string="";
-	path.forEach((dir,i) => {
-		string+=dir;
-		if(i+1<path.length) string+="\\";
-	});
-	if(path.length==1) string+="\\";
-	return string;
-}
-function echo(text) {
-	if(text && removeIndent(text)) {
-		switch(removeIndent(text)) {
-			case "on":
-			case "off":
-			echoState=text;
-			echo();
-			break;
-			default:
-			var div=document.createElement("div");
-			div.innerText=text || "\n";
-			log.appendChild(div);
-		}
-	} else {
-		echo(`ECHO command is ${echoState}.`);
-	}
-}
-function resetPrompt() {
-	if(promptState=="default") prompt=pathToString()+">";
-	promptElement.innerText=prompt;
-	document.body.style.setProperty("--prompt-offset",promptElement.clientWidth+"px");
-}
-
-function toSpaces(array) {
-	if(array) {
-		var string="";
-		array.forEach((el,i) => {
-			string+=el;
-			if(i+1<array.length) string+=" ";
+	function pathToString() {
+		var string = "";
+		path.forEach((dir, i) => {
+			string += dir;
+			if (i + 1 < path.length) string += "\\";
 		});
+		if (path.length == 1) string += "\\";
 		return string;
 	}
-}
-function removeIndent(string) {
-	var text=string;
-	if(text) {
-		while(text[0]==" " || text[0]=="	") text=text.slice(1,text.length);
-		while(text[text.length-1]==" " || text[text.length-1]=="	") text.pop();
-	}
-	return text;
-}
-
-input.onkeydown=function(key) {
-	switch(key.keyCode) {
-		case 38:
-		if(memory.length) {
-			if(memoryPos>0 && navigatingInMemory) memoryPos--;
-			input.value=memory[memoryPos];
-			input.selectionStart=memory[memoryPos].length;
-			input.selectionEnd=memory[memoryPos].length;
-			navigatingInMemory=true;
-		}
-		break;
-		case 40:
-		if(memory.length) {
-			if(memoryPos<memory.length && navigatingInMemory) memoryPos++;
-			if(memoryPos>=memory.length) memoryPos=memory.length-1;
-			input.value=memory[memoryPos];
-			input.selectionStart=memory[memoryPos].length;
-			input.selectionEnd=memory[memoryPos].length;
-			navigatingInMemory=true;
+	function echo(text) {
+		if (text && removeIndent(text)) {
+			switch (removeIndent(text)) {
+				case "on":
+				case "off":
+					echoState = text;
+					echo();
+					break;
+				default:
+					var div = document.createElement("div");
+					div.innerText = text || "\n";
+					log.appendChild(div);
+			}
+		} else {
+			echo(`ECHO command is ${echoState}.`);
 		}
 	}
-}
+	function resetPrompt() {
+		if (promptState == "default") prompt = pathToString() + ">";
+		promptElement.innerText = prompt;
+		document.body.style.setProperty("--prompt-offset", promptElement.clientWidth + "px");
+	}
 
-function cmd() {
-	runCmd("ver");
-	echo("\n");
-	resetPrompt();
-}
+	function toSpaces(array) {
+		if (array) {
+			var string = "";
+			array.forEach((el, i) => {
+				string += el;
+				if (i + 1 < array.length) string += " ";
+			});
+			return string;
+		}
+	}
+	function removeIndent(string) {
+		var text = string;
+		if (text) {
+			while (text[0] == " " || text[0] == "	") text = text.slice(1, text.length);
+			while (text[text.length - 1] == " " || text[text.length - 1] == "	") text.pop();
+		}
+		return text;
+	}
 
-cmd();
+	input.onkeydown = function (key) {
+		switch (key.keyCode) {
+			case 38:
+				if (memory.length) {
+					if (memoryPos > 0 && navigatingInMemory) memoryPos--;
+					input.value = memory[memoryPos];
+					input.selectionStart = memory[memoryPos].length;
+					input.selectionEnd = memory[memoryPos].length;
+					navigatingInMemory = true;
+				}
+				break;
+			case 40:
+				if (memory.length) {
+					if (memoryPos < memory.length && navigatingInMemory) memoryPos++;
+					if (memoryPos >= memory.length) memoryPos = memory.length - 1;
+					input.value = memory[memoryPos];
+					input.selectionStart = memory[memoryPos].length;
+					input.selectionEnd = memory[memoryPos].length;
+					navigatingInMemory = true;
+				}
+		}
+	}
 
-function loop() {
-	//
-}
-setInterval(() => {
-	loop();
-},1);
+	function cmd() {
+		runCmd("ver");
+		echo("\n");
+		resetPrompt();
+	}
+
+	cmd();
+
+	function loop() {
+		//
+	}
+	setInterval(() => {
+		loop();
+	}, 1);
 
 </script>
