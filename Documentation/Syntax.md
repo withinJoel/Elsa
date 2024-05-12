@@ -11,6 +11,7 @@
 * `day` - To get the day info.
 * `date` - To get the date info.
 * `timezone` - To get the time zone.
+* `webrtc` - To get the WebRTC info.
 
 # Network
 * `networkstatus` - To get the status of the network. (online or offline).

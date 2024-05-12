@@ -197,6 +197,12 @@ function getUserAgent() {
     echo(userAgent);
 }
 
+//WebRTC
+function getWebRTCInfo() {
+    const isWebRTCSupported = typeof RTCPeerConnection === 'function';
+    echo(`WebRTC Supported: ${isWebRTCSupported}`);
+}
+
 //error
 function errorhandling(error) {
     echo(`${error}`);
