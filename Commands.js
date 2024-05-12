@@ -27,26 +27,26 @@ function runCmd(command, inMemory, fromInput) {
                 echo(toSpaces(args));
             } else if (commandName === "echo.") {
                 echo("\n");
-            } else if ((commandName === "ver")|| (commandName === "version")) {
+            } else if ((commandName === "ver") || (commandName === "version")) {
                 echo("Web Shell v1.0");
                 echo("Made with love by Joel Jolly.");
             } else if (commandName === "timezone") {
                 getTimeZone();
-            }  else if (commandName === "time") {
+            } else if (commandName === "time") {
                 getTime();
-            }   else if (commandName === "os") {
+            } else if (commandName === "os") {
                 getOS();
-            }else if (commandName === "networkstatus") {
+            } else if (commandName === "networkstatus") {
                 getNetworkStatus();
             } else if (commandName === "connectiontype") {
                 getConnectionType();
-            }  else if (commandName === "raminfo") {
+            } else if (commandName === "raminfo") {
                 getRamInfo();
-            }else if (commandName === "screenwidth") {
+            } else if (commandName === "screenwidth") {
                 getScreenWidth();
             } else if (commandName === "screenheight") {
                 getScreenHeight();
-            } else if ((commandName === "colordepth")|| (commandName === "colourdepth")) {
+            } else if ((commandName === "colordepth") || (commandName === "colourdepth")) {
                 getColorDepth();
             } else if (commandName === "screenresolution") {
                 getScreenResolution();
@@ -54,7 +54,7 @@ function runCmd(command, inMemory, fromInput) {
                 getUserAgent();
             } else if (commandName === "day") {
                 getCurrentDay();
-            }else if (commandName.includes("open:")) {
+            } else if (commandName.includes("open:")) {
                 openLink(commandName);
             } else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);

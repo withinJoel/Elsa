@@ -2,19 +2,19 @@
 function getTime() {
     const now = new Date();
     const timeString = now.toLocaleTimeString();
-    echo (`Current time is ${timeString}`);
+    echo(`Current time is ${timeString}`);
 }
 
 //To get the timezone
 function getTimeZone() {
     const timezoneOffset = new Date().getTimezoneOffset();
-    echo (timezoneOffset);
+    echo(timezoneOffset);
 }
 
 //To get the Operating system
 function getOS() {
     const platform = navigator.platform;
-    echo (platform);
+    echo(platform);
 }
 
 //Open Sites
@@ -45,7 +45,7 @@ function getConnectionType() {
 
 //Connection Type
 function getRamInfo() {
-    const memory = navigator.deviceMemory; 
+    const memory = navigator.deviceMemory;
     echo(memory);
 }
 
@@ -71,7 +71,7 @@ function getColorDepth() {
 function getScreenResolution() {
     const screenWidth = screen.width; // Screen width in pixels
     const screenHeight = screen.height; // Screen height in pixels
-    const screenresolution = ("Screen width: "+screenWidth+ " and screen height: "+screenHeight);
+    const screenresolution = ("Screen width: " + screenWidth + " and screen height: " + screenHeight);
     echo(screenresolution);
 }
 
