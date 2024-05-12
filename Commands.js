@@ -34,6 +34,8 @@ function runCmd(command, inMemory, fromInput) {
                 showTime();
             } else if (commandName.includes("open:")) {
                 openLink(commandName);
+            } else if (commandName === "developer" || commandName === "dev") {
+                openLink(commandName);
             }
         } else {
             if (command != ")") {

@@ -5,10 +5,13 @@ function showTime() {
     log.innerHTML = `Current time is ${timeString}`;
 }
 
+//Open Sites
 function openLink(input) {
-    const test = input;
-    const url = input.trim().replace(/^open:\b\s*/i, ''); // Trim spaces and replace "open"
-    if (url.includes("https://") || url.includes('www.')) {
+    const url = input.trim().replace(/^open\b\s*/i, ''); // Trim spaces and replace "open"
+    if ((url === "developer") || (url === "dev")){
+        const website = 'https://joeljolly.pages.dev';
+        window.open(website, '_blank');
+    } else if (url.includes("https://") || url.includes('www.')) {
         window.open(url, '_blank');
     } else {
         const website = 'https://www.' + url + ".com";
