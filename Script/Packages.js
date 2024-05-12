@@ -204,6 +204,6 @@ function getWebRTCInfo() {
 }
 
 //error
-function errorhandling(error) {
-    echo(`${error}`);
+function errorhandling() {
+    echo(`Not a valid command.`);
 }

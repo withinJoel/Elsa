@@ -89,7 +89,7 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("github:")) {
                 openGithub(commandName);
             } else {
-                errorhandling("Not a valid command.");
+                errorhandling();
             }
         } else {
             if (command != ")") {
