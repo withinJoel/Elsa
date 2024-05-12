@@ -91,19 +91,26 @@
 				args.shift();
 
 				switch (commandName) {
+					//Clear screen
 					case "cls":
 						log.innerHTML = "";
 						break;
+					case "clearscreen":
+						log.innerHTML = "";
+						break;
+					//Exit
 					case "exit":
 						window.open(document.URL, "about:blank", "width=977 height=455");
 						window.close();
 						break;
+					//Echo
 					case "echo":
 						echo(toSpaces(args));
 						break;
 					case "echo.":
 						echo("\n");
 						break;
+					//Version
 					case "ver":
 						echo("Web Shell v1.0");
 						echo("Made with ❤️ by Joel Jolly.");
