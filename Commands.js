@@ -30,9 +30,13 @@ function runCmd(command, inMemory, fromInput) {
             } else if ((commandName === "ver")|| (commandName === "version")) {
                 echo("Web Shell v1.0");
                 echo("Made with love by Joel Jolly.");
-            } else if (commandName === "time") {
+            } else if (commandName === "timezone") {
+                getTimeZone();
+            }  else if (commandName === "time") {
                 getTime();
-            } else if (commandName === "networkstatus") {
+            }   else if (commandName === "os") {
+                getOS();
+            }else if (commandName === "networkstatus") {
                 getNetworkStatus();
             } else if (commandName === "screenwidth") {
                 getScreenWidth();

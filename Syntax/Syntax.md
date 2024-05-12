@@ -8,6 +8,7 @@
 # Features
 * `time` - To display the current time.
 * `open:` - to open a site example `open:https://fb.com` or `open:fb`
+* `timezone` - To get the time zone.
 
 # Network
 * `networkstatus` - To get the status of the network. (online of offline).
@@ -18,3 +19,6 @@
 * `screenheight` - To get the screen height.
 * `screenresolution` - To get the screen resolution.
 * `colordepth` or `colourdepth` - To get the color depth of the screen.
+
+# Operating System
+* `os` - To get the operating system details.

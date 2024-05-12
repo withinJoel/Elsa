@@ -5,6 +5,18 @@ function getTime() {
     echo (`Current time is ${timeString}`);
 }
 
+//To get the timezone
+function getTimeZone() {
+    const timezoneOffset = new Date().getTimezoneOffset();
+    echo (timezoneOffset);
+}
+
+//To get the Operating system
+function getOS() {
+    const platform = navigator.platform;
+    echo (platform);
+}
+
 //Open Sites
 function openLink(input) {
     const url = input.trim().replace(/^open\b\s*/i, ''); // Trim spaces and replace "open"
