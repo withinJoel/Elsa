@@ -31,8 +31,12 @@ function runCmd(command, inMemory, fromInput) {
                 echo("Web Shell v1.0");
                 echo("Made with love by Joel Jolly.");
             } else if (commandName === "time") {
-                showTime();
-            } else if (commandName.includes("open:")) {
+                getTime();
+            } else if (commandName === "date") {
+                getCurrentDate();
+            } else if (commandName === "day") {
+                getCurrentDay();
+            }else if (commandName.includes("open:")) {
                 openLink(commandName);
             } else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);

@@ -1,25 +1,8 @@
 //To get the time
-function showTime() {
+function getTime() {
     const now = new Date();
     const timeString = now.toLocaleTimeString();
     log.innerHTML = `Current time is ${timeString}`;
-}
-
-//To get the date
-function getCurrentDate() {
-    const currentDate = new Date();
-    const date = currentDate.getDate();
-    const month = currentDate.getMonth() + 1; // Adding 1 because months are zero-based
-    const year = currentDate.getFullYear();
-    return `${date}/${month}/${year}`;
-}
-
-//To get the day
-function getCurrentDay() {
-    const currentDate = new Date();
-    const dayOfWeek = currentDate.getDay();
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    return days[dayOfWeek];
 }
 
 //Open Sites

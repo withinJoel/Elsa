@@ -1,5 +1,5 @@
 # Basic Commands
-* `cls` - To clear screen
+* `cls` or `clearscreen` - To clear screen
 * `exit` - To exit the terminal
 * `echo` - To display something on the terminal
 * `ver` or `version` - To display the version of the Web shell
