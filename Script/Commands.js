@@ -64,6 +64,8 @@ function runCmd(command, inMemory, fromInput) {
                 openLink(commandName);
             } else if (commandName.includes("url:")) {
                 openUrl(commandName);
+            } else if (commandName.includes("ipaddress")) {
+                getIPAddress(commandName);
             } else if (commandName.includes("instagram:")) {
                 openInstagram(commandName);
             } else if (commandName.includes("onlyfans:")) {

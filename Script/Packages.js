@@ -104,6 +104,14 @@ function getNetworkStatus() {
     echo(onlineStatus);
 }
 
+//IP Address
+function getIPAddress() {
+    fetch('https://api.ipify.org?format=json')
+  .then(response => response.json())
+  .then(data => echo(`Your IP address is: ${data.ip}`))
+  .catch(error => echo('Error fetching IP address:', error));
+}
+
 //Battery Info
 function getBatteryInfo() {
     const isCharging = navigator.getBattery().then(function (battery) {

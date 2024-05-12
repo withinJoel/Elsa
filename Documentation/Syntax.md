@@ -17,6 +17,7 @@
 * `useragent` - To get the browser information.
 * `connectiontype` - To get the connection type example: 4g, 3g.. etc.
 * `connectionspeed` - To get the connection speed.
+* `ipaddress` - To get the ip address.
 
 # Social Network
 * `instagram:` - To open their instagram profile example: `instagram:withinjoel`
