@@ -31,6 +31,13 @@ function openLink(input) {
     }
 }
 
+//Open Instagram ID
+function openInstagram(input) {
+    const username = input.trim().replace(/^instagram:\b\s*/i, ''); // Trim spaces and replace "open"
+    const instagramurl = 'https://www.instagram.com/'+username;
+    window.open(instagramurl, '_blank');
+}
+
 //Network Speed
 function getNetworkStatus() {
     const onlineStatus = navigator.onLine ? 'Online' : 'Offline'; // Online status

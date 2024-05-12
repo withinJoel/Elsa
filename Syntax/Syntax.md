@@ -15,6 +15,9 @@
 * `useragent` - To get the browser information.
 * `connectiontype` - To get the connection type example: 4g, 3g.. etc.
 
+# Social Network
+* `instagram:` - To open their profile example: `instagram:withinjoel`
+
 # Display
 * `screenwidth` - To get the screen width.
 * `screenheight` - To get the screen height.
