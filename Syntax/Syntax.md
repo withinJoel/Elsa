@@ -12,3 +12,8 @@
 # Network
 * `networkstatus` - To get the status of the network. (online of offline).
 * `useragent` - To get the browser information.
+
+# Display
+* `screenwidth` - To get the screen width.
+* `screenheight` - To get the screen height.
+* `screenresolution` - To get the screen resolution.

@@ -34,6 +34,12 @@ function runCmd(command, inMemory, fromInput) {
                 getTime();
             } else if (commandName === "networkstatus") {
                 getNetworkStatus();
+            } else if (commandName === "screenwidth") {
+                getScreenWidth();
+            } else if (commandName === "screenheight") {
+                getScreenHeight();
+            } else if (commandName === "screenresolution") {
+                getScreenResolution();
             } else if (commandName === "useragent") {
                 getUserAgent();
             } else if (commandName === "day") {

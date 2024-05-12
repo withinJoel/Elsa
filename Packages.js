@@ -21,17 +21,37 @@ function openLink(input) {
 
 //Network Speed
 function getNetworkStatus() {
-  const onlineStatus = navigator.onLine ? 'Online' : 'Offline'; // Online status
-  echo (onlineStatus)
+    const onlineStatus = navigator.onLine ? 'Online' : 'Offline'; // Online status
+    echo(onlineStatus);
+}
+
+//Screen Width
+function getScreenWidth() {
+    const screenWidth = screen.width; // Screen width in pixels
+    echo(screenWidth);
+}
+
+//Screen Height
+function getScreenHeight() {
+    const screenHeight = screen.height; // Screen height in pixels
+    echo(screenHeight);
+}
+
+//Screen Resolution
+function getScreenResolution() {
+    const screenWidth = screen.width; // Screen width in pixels
+    const screenHeight = screen.height; // Screen height in pixels
+    const screenresolution = ("Screen width: "+screenWidth+ " and screen height: "+screenHeight);
+    echo(screenresolution);
 }
 
 //user Agent
 function getUserAgent() {
     const userAgent = navigator.userAgent; // User agent string
-    echo (userAgent)
-  }
+    echo(userAgent);
+}
 
 //error
-function errorhandling (error){
+function errorhandling(error) {
     log.innerHTML = `${error}`;
 }
