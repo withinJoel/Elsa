@@ -38,6 +38,8 @@ function runCmd(command, inMemory, fromInput) {
                 getScreenWidth();
             } else if (commandName === "screenheight") {
                 getScreenHeight();
+            } else if ((commandName === "colordepth")|| (commandName === "colourdepth")) {
+                getColorDepth();
             } else if (commandName === "screenresolution") {
                 getScreenResolution();
             } else if (commandName === "useragent") {

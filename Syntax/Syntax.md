@@ -17,3 +17,4 @@
 * `screenwidth` - To get the screen width.
 * `screenheight` - To get the screen height.
 * `screenresolution` - To get the screen resolution.
+* `colordepth` or `colourdepth` - To get the color depth of the screen.

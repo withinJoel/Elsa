@@ -37,6 +37,12 @@ function getScreenHeight() {
     echo(screenHeight);
 }
 
+//Color Depth
+function getColorDepth() {
+    const colorDepth = screen.colorDepth; // Color depth
+    echo(colorDepth);
+}
+
 //Screen Resolution
 function getScreenResolution() {
     const screenWidth = screen.width; // Screen width in pixels
