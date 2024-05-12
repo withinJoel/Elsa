@@ -70,10 +70,17 @@ function openX(input) {
     window.open(xurl, '_blank');
 }
 
+//Open Snapchat ID
+function openSnapchat(input) {
+    const username = input.trim().replace(/^snapchat:\b\s*/i, ''); // Trim spaces and replace "open"
+    const snapchaturl = 'https://www.snapchat.com/add/' + username;
+    window.open(snapchaturl, '_blank');
+}
+
 //Open Linkedin ID
 function openLinkedin(input) {
     const username = input.trim().replace(/^linkedin:\b\s*/i, ''); // Trim spaces and replace "open"
-    const linkedinurl = 'https://www.linkedin.com/' + username;
+    const linkedinurl = 'https://www.linkedin.com/in/' + username;
     window.open(linkedinurl, '_blank');
 }
 
@@ -151,7 +158,7 @@ function getDate() {
     const day = String(currentDate.getDate()).padStart(2, '0');
 
     const formattedDate = `${year}-${month}-${day}`;
-    echo("year-month-day: "+formattedDate); // This will log the current date in the format "YYYY-MM-DD"
+    echo("year-month-day: " + formattedDate); // This will log the current date in the format "YYYY-MM-DD"
 
 }
 

@@ -19,12 +19,13 @@
 * `connectionspeed` - To get the connection speed.
 
 # Social Network
-* `instagram:` - To open their profile example: `instagram:withinjoel`
-* `twitter:` or `x:` - To open their profile example: `twitter:withinjoel` or `x:withinjoel`
+* `instagram:` - To open their instagram profile example: `instagram:withinjoel`
+* `twitter:` or `x:` - To open their x profile example: `twitter:withinjoel` or `x:withinjoel`
 * `linkedin:` - To open their linkedin profile example: `linkedin:withinjoel`
-* `github:` - To open their profile example: `github:withinjoel`
-* `clubhouse:` - To open their profile example: `clubhouse:withinjoel`
-* `onlyfans:` - To open their profile example: `onlyfans:withinjoel`
+* `snapchat:` - To open their snapchat profile example: `snapchat:withinjoel`
+* `github:` - To open their github profile example: `github:withinjoel`
+* `clubhouse:` - To open their clubhouse profile example: `clubhouse:withinjoel`
+* `onlyfans:` - To open their onlyfans profile example: `onlyfans:withinjoel`
 
 # Display
 * `screenwidth` - To get the screen width.

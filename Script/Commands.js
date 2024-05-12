@@ -34,9 +34,9 @@ function runCmd(command, inMemory, fromInput) {
                 getTimeZone();
             } else if (commandName === "time") {
                 getTime();
-            }  else if (commandName === "day") {
+            } else if (commandName === "day") {
                 getDay();
-            }  else if (commandName === "date") {
+            } else if (commandName === "date") {
                 getDate();
             } else if (commandName === "os") {
                 getOS();
@@ -68,13 +68,15 @@ function runCmd(command, inMemory, fromInput) {
                 openOnlyfans(commandName);
             } else if (commandName.includes("x:")) {
                 openX(commandName);
-            }  else if (commandName.includes("linkedin:")) {
+            } else if (commandName.includes("linkedin:")) {
                 openLinkedin(commandName);
+            } else if (commandName.includes("snapchat:")) {
+                openSnapchat(commandName);
             } else if (commandName.includes("clubhouse:")) {
                 openClubhouse(commandName);
             } else if (commandName.includes("twitter:")) {
                 openTwitter(commandName);
-            }  else if (commandName.includes("github:")) {
+            } else if (commandName.includes("github:")) {
                 openGithub(commandName);
             } else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);
