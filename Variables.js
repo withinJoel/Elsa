@@ -1,0 +1,13 @@
+var input = document.getElementById("input"),
+		log = document.getElementById("log"),
+		promptElement = document.getElementById("prompt"),
+		path = ["$"],
+		vars = [],
+		memory = [],
+		memoryPos = 0,
+		navigatingInMemory = false,
+		promptState = "default",
+		echoState = "on",
+		toFile = false,
+		toExec = [],
+		prompt = pathToString() + ">";
