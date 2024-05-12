@@ -13,7 +13,7 @@
 * `timezone` - To get the time zone.
 
 # Network
-* `networkstatus` - To get the status of the network. (online of offline).
+* `networkstatus` - To get the status of the network. (online or offline).
 * `useragent` - To get the browser information.
 * `connectiontype` - To get the connection type example: 4g, 3g.. etc.
 * `connectionspeed` - To get the connection speed.
