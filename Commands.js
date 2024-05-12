@@ -54,13 +54,13 @@ function runCmd(command, inMemory, fromInput) {
                 getUserAgent();
             } else if (commandName.includes("open:")) {
                 openLink(commandName);
-            }  else if (commandName.includes("instagram:")) {
+            } else if (commandName.includes("instagram:")) {
                 openInstagram(commandName);
-            }   else if (commandName.includes("onlyfans:")) {
+            } else if (commandName.includes("onlyfans:")) {
                 openOnlyfans(commandName);
-            }   else if (commandName.includes("x:")) {
+            } else if (commandName.includes("x:")) {
                 openX(commandName);
-            }    else if (commandName.includes("twitter:")) {
+            } else if (commandName.includes("twitter:")) {
                 openTwitter(commandName);
             } else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);
