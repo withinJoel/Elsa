@@ -8,3 +8,7 @@
 # Features
 * `time` - To display the current time.
 * `open:` - to open a site example `open:https://fb.com` or `open:fb`
+
+# Network
+* `networkstatus` - To get the status of the network. (online of offline).
+* `useragent` - To get the browser information.

@@ -21,19 +21,15 @@ function openLink(input) {
 
 //Network Speed
 function getNetworkStatus() {
-    const userAgent = navigator.userAgent; // User agent string
-  const language = navigator.language; // Browser language
-  const cookiesEnabled = navigator.cookieEnabled; // Cookies enabled or not
   const onlineStatus = navigator.onLine ? 'Online' : 'Offline'; // Online status
-
-  // Return an object with all the details
-  return {
-    userAgent,
-    language,
-    cookiesEnabled,
-    onlineStatus
-  };
+  echo (onlineStatus)
 }
+
+//user Agent
+function getUserAgent() {
+    const userAgent = navigator.userAgent; // User agent string
+    echo (userAgent)
+  }
 
 //error
 function errorhandling (error){

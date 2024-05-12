@@ -34,6 +34,8 @@ function runCmd(command, inMemory, fromInput) {
                 getTime();
             } else if (commandName === "networkstatus") {
                 getNetworkStatus();
+            } else if (commandName === "useragent") {
+                getUserAgent();
             } else if (commandName === "day") {
                 getCurrentDay();
             }else if (commandName.includes("open:")) {
