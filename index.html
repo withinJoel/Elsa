@@ -111,7 +111,7 @@
 							prompt = string;
 							promptState = "custom";
 						} else {
-							prompt = pathToString() + ">";
+							prompt = pathToString() + "";
 							promptState = "default";
 						}
 						resetPrompt();
@@ -218,7 +218,7 @@
 		}
 	}
 	function resetPrompt() {
-		if (promptState == "default") prompt = pathToString() + ">";
+		if (promptState == "default") prompt = pathToString() + "";
 		promptElement.innerText = prompt;
 		document.body.style.setProperty("--prompt-offset", promptElement.clientWidth + "px");
 	}
