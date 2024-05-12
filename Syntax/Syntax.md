@@ -7,4 +7,4 @@
 
 # Features
 * `time` - To display the current time.
-* `open:` - to open a site example: `open:https://fb.com` or `open:fb`
+* `open:` - to open a site example `open:https://fb.com` or `open:fb`
