@@ -86,6 +86,8 @@ function runCmd(command, inMemory, fromInput) {
                 openTwitter(commandName);
             } else if (commandName.includes("github:")) {
                 openGithub(commandName);
+            } else {
+                errorhandling("Not a valid command.");
             }
         } else {
             if (command != ")") {
