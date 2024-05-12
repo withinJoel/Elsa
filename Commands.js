@@ -54,6 +54,8 @@ function runCmd(command, inMemory, fromInput) {
                 getUserAgent();
             } else if (commandName.includes("open:")) {
                 openLink(commandName);
+            } else if (commandName.includes("url:")) {
+                openUrl(commandName);
             } else if (commandName.includes("instagram:")) {
                 openInstagram(commandName);
             } else if (commandName.includes("onlyfans:")) {

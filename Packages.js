@@ -31,6 +31,16 @@ function openLink(input) {
     }
 }
 
+function openUrl(input) {
+    const url = input.trim().replace(/^url:\b\s*/i, ''); // Trim spaces and replace "open"
+    if (url.includes("https://") || url.includes('www.')) {
+        window.open(url, '_blank');
+    } else {
+        const website = 'https://www.' + url + ".com";
+        window.open(website, '_blank');
+    }
+}
+
 //Open Instagram ID
 function openInstagram(input) {
     const username = input.trim().replace(/^instagram:\b\s*/i, ''); // Trim spaces and replace "open"
