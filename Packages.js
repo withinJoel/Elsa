@@ -37,6 +37,12 @@ function getNetworkStatus() {
     echo(onlineStatus);
 }
 
+//Connection Type
+function getConnectionType() {
+    const connectionType = navigator.connection.effectiveType; // Effective network connection type (e.g., "4g", "3g")
+    echo(connectionType);
+}
+
 //Screen Width
 function getScreenWidth() {
     const screenWidth = screen.width; // Screen width in pixels

@@ -13,6 +13,7 @@
 # Network
 * `networkstatus` - To get the status of the network. (online of offline).
 * `useragent` - To get the browser information.
+* `connectiontype` - To get the connection type example: 4g, 3g.. etc.
 
 # Display
 * `screenwidth` - To get the screen width.
