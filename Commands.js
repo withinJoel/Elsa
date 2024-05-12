@@ -34,6 +34,8 @@ function runCmd(command, inMemory, fromInput) {
                 getTimeZone();
             } else if (commandName === "time") {
                 getTime();
+            }  else if (commandName === "day") {
+                getDay();
             } else if (commandName === "os") {
                 getOS();
             } else if (commandName === "networkstatus") {

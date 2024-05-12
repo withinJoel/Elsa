@@ -120,6 +120,14 @@ function getColorDepth() {
     echo(colorDepth);
 }
 
+function getDay() {
+    const currentDate = new Date();
+    const dayOfWeek = currentDate.getDay();
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const currentDay = daysOfWeek[dayOfWeek];
+    echo(currentDay);
+}
+
 //Screen Resolution
 function getScreenResolution() {
     const screenWidth = screen.width; // Screen width in pixels
@@ -136,5 +144,5 @@ function getUserAgent() {
 
 //error
 function errorhandling(error) {
-    log.innerHTML = `${error}`;
+    echo(`${error}`);
 }
