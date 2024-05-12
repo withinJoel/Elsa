@@ -89,7 +89,14 @@ function getConnectionType() {
     echo(connectionType);
 }
 
-//Connection Type
+//Connection Speed
+function getConnectionSpeed() {
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const downlinkSpeed = connection.downlink + " Mbps"; // Downlink speed in Mbps
+    echo(downlinkSpeed);
+}
+
+//Ram Type
 function getRamInfo() {
     const memory = navigator.deviceMemory;
     echo(memory);

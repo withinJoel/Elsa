@@ -38,6 +38,8 @@ function runCmd(command, inMemory, fromInput) {
                 getOS();
             } else if (commandName === "networkstatus") {
                 getNetworkStatus();
+            } else if (commandName === "connectionspeed") {
+                getConnectionSpeed();
             } else if (commandName === "connectiontype") {
                 getConnectionType();
             } else if (commandName === "raminfo") {
