@@ -68,10 +68,14 @@ function runCmd(command, inMemory, fromInput) {
                 openOnlyfans(commandName);
             } else if (commandName.includes("x:")) {
                 openX(commandName);
-            }  else if (commandName.includes("clubhouse:")) {
+            }  else if (commandName.includes("linkedin:")) {
+                openLinkedin(commandName);
+            } else if (commandName.includes("clubhouse:")) {
                 openClubhouse(commandName);
             } else if (commandName.includes("twitter:")) {
                 openTwitter(commandName);
+            }  else if (commandName.includes("github:")) {
+                openGithub(commandName);
             } else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);
             } else if (commandName === "") {

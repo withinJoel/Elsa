@@ -48,6 +48,13 @@ function openInstagram(input) {
     window.open(instagramurl, '_blank');
 }
 
+//Open Github ID
+function openGithub(input) {
+    const username = input.trim().replace(/^github:\b\s*/i, ''); // Trim spaces and replace "open"
+    const githuburl = 'https://www.github.com/' + username;
+    window.open(githuburl, '_blank');
+}
+
 //Open Twitter ID
 function openTwitter(input) {
     let username = input.trim().replace(/^x:\b\s*/i, '');
@@ -61,6 +68,13 @@ function openX(input) {
     const username = input.trim().replace(/^x:\b\s*/i, ''); // Trim spaces and replace "open"
     const xurl = 'https://www.x.com/' + username;
     window.open(xurl, '_blank');
+}
+
+//Open Linkedin ID
+function openLinkedin(input) {
+    const username = input.trim().replace(/^linkedin:\b\s*/i, ''); // Trim spaces and replace "open"
+    const linkedinurl = 'https://www.linkedin.com/' + username;
+    window.open(linkedinurl, '_blank');
 }
 
 //Open Clubhouse ID
