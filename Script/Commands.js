@@ -98,6 +98,8 @@ function runCmd(command, inMemory, fromInput) {
                 openTube8(commandName);
             }else if (commandName.includes("milfporn:")) {
                 openMilfporn(commandName);
+            }else if (commandName.includes("pussyspace:")) {
+                openPussyspace(commandName);
             }else if (commandName.includes("hdtube:")) {
                 openHdtube(commandName);
             }else if (commandName.includes("xnxx:")) {

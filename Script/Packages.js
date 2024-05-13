@@ -105,6 +105,13 @@ function openHdtube(input) {
     window.open(xnxxurl, '_blank');
 }
 
+//Search Pussyspace
+function openPussyspace(input) {
+    const query = input.trim().replace(/^pussyspace:\b\s*/i, ''); // Trim spaces and replace "open"
+    const xnxxurl = 'https://www.pussyspace.com/' + query+ '/';
+    window.open(xnxxurl, '_blank');
+}
+
 //Search Goodporn
 function openGoodPorn(input) {
     const query = input.trim().replace(/^goodporn:\b\s*/i, ''); // Trim spaces and replace "open"
