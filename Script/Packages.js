@@ -98,6 +98,13 @@ function openXNXX(input) {
     window.open(xnxxurl, '_blank');
 }
 
+//Search Hdtube
+function openHdtube(input) {
+    const query = input.trim().replace(/^hdtube:\b\s*/i, ''); // Trim spaces and replace "open"
+    const xnxxurl = 'https://www.hdtube.porn/tags/' + query+ '/';
+    window.open(xnxxurl, '_blank');
+}
+
 //Search Goodporn
 function openGoodPorn(input) {
     const query = input.trim().replace(/^goodporn:\b\s*/i, ''); // Trim spaces and replace "open"
