@@ -60,6 +60,8 @@ function runCmd(command, inMemory, fromInput) {
                 getUserAgent();
             } else if (commandName === "batteryinfo") {
                 getBatteryInfo();
+            } else if (commandName === "mouseposition") {
+                getMousePosition();
             } else if (commandName === "webrtc") {
                 getWebRTCInfo();
             } else if (commandName === "ipaddress") {

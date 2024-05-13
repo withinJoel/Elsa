@@ -13,6 +13,7 @@
 * `timezone` - To get the time zone.
 * `webrtc` - To get the WebRTC info.
 * `randomcolor` or `randomcolour` - To get a random color.
+* `mouseposition` - To get the mouse position.
 
 # Network
 * `networkstatus` - To get the status of the network. (online or offline).

@@ -226,6 +226,15 @@ function getRandomColor() {
     echo(`Random Color: ${randomColor}`);
   }  
 
+  //Mouse Position
+  function getMousePosition() {
+    document.addEventListener('mousemove', event => {
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
+      echo(`Mouse Position: (${mouseX}, ${mouseY})`);
+    });
+  }
+  
 //error
 function errorhandling() {
     echo(`Not a valid command.`);
