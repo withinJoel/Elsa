@@ -147,6 +147,27 @@ function openXNXX(input) {
     window.open(xnxxurl, '_blank');
 }
 
+//Search Porn gifs
+function searchPorngifs(input) {
+    const query = input.trim().replace(/^porngifs:\b\s*/i, ''); // Trim spaces and replace "open"
+    const porngifsurl = 'https://porngifs.xxx/?s=' + query;
+    window.open(porngifsurl, '_blank');
+}
+
+//Search Red gifs
+function searchRedgifs(input) {
+    const query = input.trim().replace(/^redgifs:\b\s*/i, ''); // Trim spaces and replace "open"
+    const redgifsurl = 'https://www.redgifs.com/gifs/' + query;
+    window.open(redgifsurl, '_blank');
+}
+
+//Search itsex
+function searchItsex(input) {
+    const query = input.trim().replace(/^itsex:\b\s*/i, ''); // Trim spaces and replace "open"
+    const itsexurl = 'https://it.sex.com/search/gifs?query=' + query;
+    window.open(itsexurl, '_blank');
+}
+
 //Search Hdtube
 function openHdtube(input) {
     const query = input.trim().replace(/^hdtube:\b\s*/i, ''); // Trim spaces and replace "open"

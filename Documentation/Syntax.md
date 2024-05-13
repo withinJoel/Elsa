@@ -75,3 +75,4 @@
 * `xhamster:` - To search the xhamster website with the keyword. example: `xhamster:wife`
 * `redtube:` - To search the redtube website with the keyword. example: `redtube:wife`
 * `goodporn:` - To search the goodporn website with the keyword. example: `goodporn:wife`
+* `porngifs:` - To search the porngifs website with the keyword. example: `porngifs:wife`
