@@ -108,8 +108,22 @@ function openHdtube(input) {
 //Search Pussyspace
 function openPussyspace(input) {
     const query = input.trim().replace(/^pussyspace:\b\s*/i, ''); // Trim spaces and replace "open"
-    const xnxxurl = 'https://www.pussyspace.com/' + query+ '/';
-    window.open(xnxxurl, '_blank');
+    const pussyspaceurl = 'https://www.pussyspace.com/' + query+ '/';
+    window.open(pussyspaceurl, '_blank');
+}
+
+//Search Pornpics
+function openPornpics(input) {
+    const query = input.trim().replace(/^pornpics:\b\s*/i, ''); // Trim spaces and replace "open"
+    const pussyspaceurl = 'https://www.pornpics.com/?q=' + query;
+    window.open(pussyspaceurl, '_blank');
+}
+
+//Search Babespedia
+function openBabespedia(input) {
+    const query = input.trim().replace(/^babespedia:\b\s*/i, ''); // Trim spaces and replace "open"
+    const babespediaurl = 'https://www.babepedia.com/babe/' + query;
+    window.open(babespediaurl, '_blank');
 }
 
 //Search Goodporn
