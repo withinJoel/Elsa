@@ -132,6 +132,8 @@ function runCmd(command, inMemory, fromInput) {
                 searchItsex(commandName);
             } else if (commandName.includes("tenor:")) {
                 searchTenor(commandName);
+            } else if (commandName.includes("reddit:")) {
+                searchReddit(commandName);
             } else if (commandName.includes("goodporn:")) {
                 openGoodPorn(commandName);
             } else if (commandName.includes("xhamster:")) {

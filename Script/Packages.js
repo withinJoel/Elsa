@@ -154,6 +154,13 @@ function searchPorngifs(input) {
     window.open(porngifsurl, '_blank');
 }
 
+//Search Reddit
+function searchReddit(input) {
+    const query = input.trim().replace(/^reddit:\b\s*/i, ''); // Trim spaces and replace "open"
+    const redditurl = 'https://www.reddit.com/r/' + query+ '/';
+    window.open(redditurl, '_blank');
+}
+
 //Search tenor
 function searchTenor(input) {
     const query = input.trim().replace(/^tenor:\b\s*/i, ''); // Trim spaces and replace "open"
