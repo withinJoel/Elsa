@@ -228,12 +228,16 @@ function getRandomColor() {
 
   //Mouse Position
   function getMousePosition() {
-    document.addEventListener('mousemove', event => {
-      const mouseX = event.clientX;
-      const mouseY = event.clientY;
-      echo(`Mouse Position: (${mouseX}, ${mouseY})`);
-    });
-  }
+    const handleMouseMove = event => {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+        echo(`Mouse Position: (${mouseX}, ${mouseY})`);
+        document.removeEventListener('mousemove', handleMouseMove);
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+}
+
  
   //Generate QR Code
   function createQrCode(input) {
