@@ -140,6 +140,11 @@ function openOnlyfans(input) {
     window.open(onlyfansurl, '_blank');
 }
 
+//Reload or Refresh the page
+function refreshPage() {
+    location.reload();
+}
+
 //Network Speed
 function getNetworkStatus() {
     const onlineStatus = navigator.onLine ? 'Online' : 'Offline'; // Online status

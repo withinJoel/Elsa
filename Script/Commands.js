@@ -70,8 +70,10 @@ function runCmd(command, inMemory, fromInput) {
                 getWebRTCInfo();
             } else if (commandName === "ipaddress") {
                 getIPAddress();
-            } else if (commandName === "devicetype") {
-                getDeviceType();
+            } else if (commandName === "ipaddress") {
+                getIPAddress();
+            }else if (commandName === "refresh") {
+                refreshPage();
             } else if ((commandName === "randomcolor") || (commandName === "randomcolour")) {
                 getRandomColor();
             } else if (commandName === "developer" || commandName === "dev") {

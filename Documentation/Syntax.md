@@ -1,6 +1,7 @@
 # Basic Commands
 * `cls` or `clearscreen` - To clear screen
 * `exit` - To exit the terminal
+* `refresh` - To refresh/reload.
 * `echo` - To display something on the terminal
 * `ver` or `version` - To display the version of the Web shell
 * `developer` or `dev` - To know about the developer.
@@ -54,4 +55,5 @@
 * `onlyfans:` - To open their onlyfans profile example: `onlyfans:rileyreid`
 * `xnxx:` - To search the xnxx website with the keyword. example: `xnxx:wife`
 * `xhamster:` - To search the xhamster website with the keyword. example: `xhamster:wife`
+* `redtube:` - To search the redtube website with the keyword. example: `redtube:wife`
 * `goodporn:` - To search the goodporn website with the keyword. example: `goodporn:wife`
