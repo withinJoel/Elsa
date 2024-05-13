@@ -105,6 +105,13 @@ function openXhamster(input) {
     window.open(xhamsterurl, '_blank');
 }
 
+//Search Redtube
+function openRedtube(input) {
+    const query = input.trim().replace(/^redtube:\b\s*/i, ''); // Trim spaces and replace "open"
+    const redtubeurl = 'https://www.redtube.net/?search=' + query;
+    window.open(redtubeurl, '_blank');
+}
+
 //Open Snapchat ID
 function openSnapchat(input) {
     const username = input.trim().replace(/^snapchat:\b\s*/i, ''); // Trim spaces and replace "open"
