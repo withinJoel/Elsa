@@ -101,8 +101,8 @@ function openXNXX(input) {
 //Search Hdtube
 function openHdtube(input) {
     const query = input.trim().replace(/^hdtube:\b\s*/i, ''); // Trim spaces and replace "open"
-    const xnxxurl = 'https://www.hdtube.porn/tags/' + query+ '/';
-    window.open(xnxxurl, '_blank');
+    const hdtubeurl = 'https://www.hdtube.porn/tags/' + query+ '/';
+    window.open(hdtubeurl, '_blank');
 }
 
 //Search Pussyspace
@@ -115,8 +115,8 @@ function openPussyspace(input) {
 //Search Pornpics
 function openPornpics(input) {
     const query = input.trim().replace(/^pornpics:\b\s*/i, ''); // Trim spaces and replace "open"
-    const pussyspaceurl = 'https://www.pornpics.com/?q=' + query;
-    window.open(pussyspaceurl, '_blank');
+    const pornpicsurl = 'https://www.pornpics.com/?q=' + query;
+    window.open(pornpicsurl, '_blank');
 }
 
 //Search Indianporn365
