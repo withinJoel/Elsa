@@ -1,46 +1,45 @@
 html,
-	body {
-		background: #000;
-		font-family: consolas, monospace;
-		color: white;
-		margin: 0px;
-		width: 100%;
-		height: 100%;
-		cursor: default;
-		overflow-x: auto;
-		/* Enable horizontal scrolling */
-		word-wrap: break-word;
-		/* Break words to the next line */
-	}
+body {
+  background: #000;
+  font-family: consolas, monospace;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Prevent vertical scrolling */
+}
 
-	body {
-		overflow: hidden scroll;
-	}
+#terminal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-	#log div {
-		width: 100%;
-	}
+#log {
+  flex: 1;
+  overflow-y: auto; /* Enable vertical scrolling for log area */
+  padding: 10px;
+}
 
-	#prompt {
-		position: absolute;
-		box-sizing: content-box;
-		z-index: 2;
-	}
+#prompt {
+  display: inline-block; /* Display prompt inline with input */
+}
 
-	#input {
-		position: absolute;
-		box-sizing: border-box;
-		background: transparent;
-		border: 0px;
-		padding: 0px 0px 0px var(--prompt-offset);
-		color: inherit;
-		font: inherit;
-		outline: none;
-		width: 100%;
-		cursor: inherit;
-		z-index: 1;
-	}
+#input {
+  display: inline-block; /* Display input inline */
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
 
-	::selection {
-		background: #aaa;
-	}
+#input:focus {
+  outline: none;
+}
+
+::selection {
+  background: #555; /* Change selection color */
+}
