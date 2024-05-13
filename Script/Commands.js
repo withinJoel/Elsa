@@ -90,6 +90,8 @@ function runCmd(command, inMemory, fromInput) {
                 searchViaDuckDuckGo(commandName);
             } else if (commandName.includes("instagram:")) {
                 openInstagram(commandName);
+            } else if (commandName.includes("youporn:")) {
+                openYouporn(commandName);
             } else if (commandName.includes("xnxx:")) {
                 openXNXX(commandName);
             } else if (commandName.includes("goodporn:")) {

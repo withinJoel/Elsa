@@ -112,6 +112,13 @@ function openRedtube(input) {
     window.open(redtubeurl, '_blank');
 }
 
+//Search YouPorn
+function openYouporn(input) {
+    const query = input.trim().replace(/^youporn:\b\s*/i, ''); // Trim spaces and replace "open"
+    const youpornurl = 'https://www.you-porn.com/search/?search-btn=&query=' + query;
+    window.open(youpornurl, '_blank');
+}
+
 //Open Snapchat ID
 function openSnapchat(input) {
     const username = input.trim().replace(/^snapchat:\b\s*/i, ''); // Trim spaces and replace "open"
