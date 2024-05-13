@@ -5,6 +5,7 @@
 * `echo` - To display something on the terminal
 * `ver` or `version` - To display the version of the Web shell
 * `developer` or `dev` - To know about the developer.
+* `help` - To get a list of all the supported commands.
 
 # Features
 * `createqr:` - To create a qr code using the link. example `createqr:https://www.fb.com`

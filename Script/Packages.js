@@ -451,3 +451,5 @@ function createPassword(length = 16) {
 function errorhandling() {
     echo(`Not a valid command.`);
 }
+
+//Made with 💖 by Joel Jolly
