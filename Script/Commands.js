@@ -88,6 +88,10 @@ function runCmd(command, inMemory, fromInput) {
                 searchViaDuckDuckGo(commandName);
             } else if (commandName.includes("instagram:")) {
                 openInstagram(commandName);
+            }  else if (commandName.includes("xnxx:")) {
+                openXNXX(commandName);
+            }  else if (commandName.includes("goodporn:")) {
+                openGoodPorn(commandName);
             } else if (commandName.includes("onlyfans:")) {
                 openOnlyfans(commandName);
             } else if (commandName.includes("x:")) {

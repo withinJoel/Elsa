@@ -35,7 +35,6 @@
 * `snapchat:` - To open their snapchat profile example: `snapchat:withinjoel`
 * `github:` - To open their github profile example: `github:withinjoel`
 * `clubhouse:` - To open their clubhouse profile example: `clubhouse:withinjoel`
-* `onlyfans:` - To open their onlyfans profile example: `onlyfans:withinjoel`
 
 # Display
 * `screenwidth` - To get the screen width.
@@ -50,3 +49,8 @@
 
 # Operating System
 * `os` - To get the operating system details.
+
+# Adult
+* `onlyfans:` - To open their onlyfans profile example: `onlyfans:withinjoel`
+* `xnxx:` - To search the xnxx website with the keyword. example: `xnxx:wife`
+* `goodporn:` - To search the goodporn website with the keyword. example: `goodporn:wife`

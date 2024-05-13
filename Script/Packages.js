@@ -84,6 +84,20 @@ function openX(input) {
     window.open(xurl, '_blank');
 }
 
+//Search XNXX ID
+function openXNXX(input) {
+    const query = input.trim().replace(/^xnxx:\b\s*/i, ''); // Trim spaces and replace "open"
+    const xnxxurl = 'https://xnxx.health/search/' + query;
+    window.open(xnxxurl, '_blank');
+}
+
+//Search Goodporn
+function openGoodPorn(input) {
+    const query = input.trim().replace(/^goodporn:\b\s*/i, ''); // Trim spaces and replace "open"
+    const xnxxurl = 'https://goodporn.to/search/' + query+ '/';
+    window.open(xnxxurl, '_blank');
+}
+
 //Open Snapchat ID
 function openSnapchat(input) {
     const username = input.trim().replace(/^snapchat:\b\s*/i, ''); // Trim spaces and replace "open"
