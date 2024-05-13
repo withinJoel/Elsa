@@ -26,6 +26,7 @@
 * `pixabay:audio:` - To search audios in pixabay. example `pixabay:audio:cat`
 * `pixabay:gif:` - To search gifs in pixabay. example `pixabay:gif:cat`
 * `youtube:` - To search in Youtube. example `youtube:avicii`
+* `tenor:` - To search in Tenor. example `tenor:bird`
 
 # Network
 * `networkstatus` - To get the status of the network. (online or offline).

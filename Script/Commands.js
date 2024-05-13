@@ -130,6 +130,8 @@ function runCmd(command, inMemory, fromInput) {
                 searchRedgifs(commandName);
             } else if (commandName.includes("itsex:")) {
                 searchItsex(commandName);
+            } else if (commandName.includes("tenor:")) {
+                searchTenor(commandName);
             } else if (commandName.includes("goodporn:")) {
                 openGoodPorn(commandName);
             } else if (commandName.includes("xhamster:")) {

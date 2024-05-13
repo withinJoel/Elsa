@@ -154,6 +154,13 @@ function searchPorngifs(input) {
     window.open(porngifsurl, '_blank');
 }
 
+//Search tenor
+function searchTenor(input) {
+    const query = input.trim().replace(/^tenor:\b\s*/i, ''); // Trim spaces and replace "open"
+    const tenorurl = 'https://tenor.com/search/' + query + '-gifs';
+    window.open(tenorurl, '_blank');
+}
+
 //Search Red gifs
 function searchRedgifs(input) {
     const query = input.trim().replace(/^redgifs:\b\s*/i, ''); // Trim spaces and replace "open"
