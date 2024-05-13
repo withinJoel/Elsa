@@ -24,8 +24,10 @@ body {
 }
 
 #prompt {
-  display: inline-block; /* Display prompt inline with input */
-}
+    display: inline-block; /* Display prompt inline with input */
+    padding: 5px 10px;
+    margin-right: -20px; /* Add margin between prompt and input */
+  }
 
 #input {
   display: inline-block; /* Display input inline */

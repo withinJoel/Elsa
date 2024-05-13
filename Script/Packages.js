@@ -256,7 +256,7 @@ function getRandomColor() {
       const randomIndex = Math.floor(Math.random() * charset.length);
       password += charset[randomIndex];
     }
-    echo(`Random Password: ${password}`);
+    echo(`Password: ${password}`);
   }
   
 //error
