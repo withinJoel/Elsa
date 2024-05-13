@@ -4,6 +4,8 @@ Made with 💖 by Joel Jolly.
 # About
 * Browse the web using the terminal.
 
+# Documentation
+* <a href="https://github.com/withinJoel/webshell/blob/main/Documentation/Syntax.md">Learn More</a>
 # Website
 https://webshell-elx.pages.dev/
 
