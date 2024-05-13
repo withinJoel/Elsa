@@ -92,7 +92,9 @@ function runCmd(command, inMemory, fromInput) {
                 openInstagram(commandName);
             } else if (commandName.includes("youporn:")) {
                 openYouporn(commandName);
-            } else if (commandName.includes("xnxx:")) {
+            } else if (commandName.includes("tube8:")) {
+                openTube8(commandName);
+            }else if (commandName.includes("xnxx:")) {
                 openXNXX(commandName);
             } else if (commandName.includes("goodporn:")) {
                 openGoodPorn(commandName);

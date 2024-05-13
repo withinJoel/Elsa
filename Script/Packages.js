@@ -119,6 +119,13 @@ function openYouporn(input) {
     window.open(youpornurl, '_blank');
 }
 
+//Search Tube8
+function openTube8(input) {
+    const query = input.trim().replace(/^tube8:\b\s*/i, ''); // Trim spaces and replace "open"
+    const tube8url = 'https://www.tube8.es/searches.html?q=' + query;
+    window.open(tube8url, '_blank');
+}
+
 //Open Snapchat ID
 function openSnapchat(input) {
     const username = input.trim().replace(/^snapchat:\b\s*/i, ''); // Trim spaces and replace "open"
