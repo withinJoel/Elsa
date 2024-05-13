@@ -51,6 +51,7 @@
 * `os` - To get the operating system details.
 
 # Adult
-* `onlyfans:` - To open their onlyfans profile example: `onlyfans:withinjoel`
+* `onlyfans:` - To open their onlyfans profile example: `onlyfans:rileyreid`
 * `xnxx:` - To search the xnxx website with the keyword. example: `xnxx:wife`
+* `xhamster:` - To search the xhamster website with the keyword. example: `xhamster:wife`
 * `goodporn:` - To search the goodporn website with the keyword. example: `goodporn:wife`

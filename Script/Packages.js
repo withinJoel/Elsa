@@ -94,8 +94,15 @@ function openXNXX(input) {
 //Search Goodporn
 function openGoodPorn(input) {
     const query = input.trim().replace(/^goodporn:\b\s*/i, ''); // Trim spaces and replace "open"
-    const xnxxurl = 'https://goodporn.to/search/' + query+ '/';
-    window.open(xnxxurl, '_blank');
+    const goodpornurl = 'https://goodporn.to/search/' + query+ '/';
+    window.open(goodpornurl, '_blank');
+}
+
+//Search Xhamster
+function openXhamster(input) {
+    const query = input.trim().replace(/^xhamster:\b\s*/i, ''); // Trim spaces and replace "open"
+    const xhamsterurl = 'https://xhamster.desi/search/' + query;
+    window.open(xhamsterurl, '_blank');
 }
 
 //Open Snapchat ID
