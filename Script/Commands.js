@@ -62,6 +62,10 @@ function runCmd(command, inMemory, fromInput) {
                 getBatteryInfo();
             } else if (commandName === "mouseposition") {
                 getMousePosition();
+            } else if (commandName === "createpassword") {
+                createPassword();
+            } else if (commandName.includes("createqr:")) {
+                createQrCode(commandName);
             } else if (commandName === "webrtc") {
                 getWebRTCInfo();
             } else if (commandName === "ipaddress") {

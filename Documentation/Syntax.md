@@ -6,6 +6,7 @@
 * `developer` or `dev` - To know about the developer.
 
 # Features
+* `createqr:` - To create a qr code using the link. example `createqr:https://www.fb.com`
 * `time` - To display the current time.
 * `open:` or `url` - to open a site example `open:https://fb.com` or `open:fb` or `url:fb` or `url:https://www.facebook.com/`
 * `day` - To get the day info.
