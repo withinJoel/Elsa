@@ -30,7 +30,7 @@ body {
   }
 
 #input {
-  display: inline-block; /* Display input inline */
+  display:inline-flex; /* Display input inline */
   background: transparent;
   border: 0;
   width:1200px;
