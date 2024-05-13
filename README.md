@@ -6,6 +6,7 @@ Made with 💖 by Joel Jolly.
 
 # Documentation
 * <a href="https://github.com/withinJoel/webshell/blob/main/Documentation/Syntax.md">Learn More</a>
+
 # Website
 https://webshell-elx.pages.dev/
 
