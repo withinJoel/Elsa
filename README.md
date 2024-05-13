@@ -1,4 +1,4 @@
-# webshell
+# Webshell
 Made with 💖 by Joel Jolly.
 
 # About
