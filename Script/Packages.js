@@ -83,6 +83,34 @@ function searchPexelsImg(input) {
     window.open(pexelsimgurl, '_blank');
 }
 
+//Search Pixabay Image
+function searchPixabayImg(input) {
+    const query = input.trim().replace(/^pixabay:image:\b\s*/i, ''); // Trim spaces and replace "open"
+    const pixabayimgurl = 'https://pixabay.com/images/search/' + query + '/';
+    window.open(pixabayimgurl, '_blank');
+}
+
+//Search Pixabay Video
+function searchPixabayVid(input) {
+    const query = input.trim().replace(/^pixabay:video:\b\s*/i, ''); // Trim spaces and replace "open"
+    const pixabayvidurl = 'https://pixabay.com/videos/search/' + query + '/';
+    window.open(pixabayvidurl, '_blank');
+}
+
+//Search Pixabay Audio
+function searchPixabayAud(input) {
+    const query = input.trim().replace(/^pixabay:audio:\b\s*/i, ''); // Trim spaces and replace "open"
+    const pixabayaudurl = 'https://pixabay.com/music/search/' + query + '/';
+    window.open(pixabayaudurl, '_blank');
+}
+
+//Search Pixabay Gifs
+function searchPixabayGif(input) {
+    const query = input.trim().replace(/^pixabay:gif:\b\s*/i, ''); // Trim spaces and replace "open"
+    const pixabaygifurl = 'https://pixabay.com/gifs/search/' + query + '/';
+    window.open(pixabaygifurl, '_blank');
+}
+
 //Search Youtube
 function searchYoutube(input) {
     const query = input.trim().replace(/^youtube:\b\s*/i, ''); // Trim spaces and replace "open"

@@ -72,6 +72,14 @@ function runCmd(command, inMemory, fromInput) {
                 searchPexelsVid(commandName);
             } else if (commandName.includes("pexels:image:")) {
                 searchPexelsImg(commandName);
+            } else if (commandName.includes("pixabay:image:")) {
+                searchPixabayImg(commandName);
+            } else if (commandName.includes("pixabay:video:")) {
+                searchPixabayVid(commandName);
+            } else if (commandName.includes("pixabay:audio:")) {
+                searchPixabayAud(commandName);
+            } else if (commandName.includes("pixabay:gif:")) {
+                searchPixabayGif(commandName);
             } else if (commandName === "webrtc") {
                 getWebRTCInfo();
             } else if (commandName === "ipaddress") {

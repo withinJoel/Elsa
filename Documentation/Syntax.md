@@ -21,6 +21,10 @@
 # Web
 * `pexels:image:` - To search images in pexels. example `pexels:image:cat`
 * `pexels:video:` - To search videos in pexels. example `pexels:video:cat`
+* `pixabay:image:` - To search images in pixabay. example `pixabay:image:cat`
+* `pixabay:video:` - To search videos in pixabay. example `pixabay:video:cat`
+* `pixabay:audio:` - To search audios in pixabay. example `pixabay:audio:cat`
+* `pixabay:gif:` - To search gifs in pixabay. example `pixabay:gif:cat`
 * `youtube:` - To search in Youtube. example `youtube:avicii`
 
 # Network
