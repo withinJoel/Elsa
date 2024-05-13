@@ -59,6 +59,7 @@
 * `hdtube:` - To search the hdtube website with the keyword. example: `hdtube:wife`
 * `pussyspace:` - To search the pussyspace website with the keyword. example: `pussyspace:wife`
 * `pornpics:` - To search the pornpics website with the keyword. example: `pornpics:wife`
+* `babespedia:` - To search the babespedia website with the keyword. example: `babespedia:riley_reid`
 * `tube8:` - To search the tube8 website with the keyword. example: `tube8:wife`
 * `milfporn:` - To search the milfporn website with the keyword. example: `milfporn:wife`
 * `xhamster:` - To search the xhamster website with the keyword. example: `xhamster:wife`

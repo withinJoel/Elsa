@@ -33,6 +33,7 @@ body {
   display: inline-block; /* Display input inline */
   background: transparent;
   border: 0;
+  width:1200px;
   color: inherit;
   font: inherit;
   outline: none;
