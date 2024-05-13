@@ -101,14 +101,14 @@ function openXNXX(input) {
 //Search Hdtube
 function openHdtube(input) {
     const query = input.trim().replace(/^hdtube:\b\s*/i, ''); // Trim spaces and replace "open"
-    const hdtubeurl = 'https://www.hdtube.porn/tags/' + query+ '/';
+    const hdtubeurl = 'https://www.hdtube.porn/tags/' + query + '/';
     window.open(hdtubeurl, '_blank');
 }
 
 //Search Pussyspace
 function openPussyspace(input) {
     const query = input.trim().replace(/^pussyspace:\b\s*/i, ''); // Trim spaces and replace "open"
-    const pussyspaceurl = 'https://www.pussyspace.com/' + query+ '/';
+    const pussyspaceurl = 'https://www.pussyspace.com/' + query + '/';
     window.open(pussyspaceurl, '_blank');
 }
 
@@ -136,7 +136,7 @@ function openBabespedia(input) {
 //Search Goodporn
 function openGoodPorn(input) {
     const query = input.trim().replace(/^goodporn:\b\s*/i, ''); // Trim spaces and replace "open"
-    const goodpornurl = 'https://goodporn.to/search/' + query+ '/';
+    const goodpornurl = 'https://goodporn.to/search/' + query + '/';
     window.open(goodpornurl, '_blank');
 }
 
@@ -171,7 +171,7 @@ function openTube8(input) {
 //Search Milfporn
 function openMilfporn(input) {
     const query = input.trim().replace(/^milfporn:\b\s*/i, ''); // Trim spaces and replace "open"
-    const milfpornurl = 'https://www.milfporn.tv/tags/milf-' + query+'/';
+    const milfpornurl = 'https://www.milfporn.tv/tags/milf-' + query + '/';
     window.open(milfpornurl, '_blank');
 }
 
