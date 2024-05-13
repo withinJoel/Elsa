@@ -11,6 +11,12 @@ function getTimeZone() {
     echo(timezoneOffset);
 }
 
+//Help
+function Help() {
+    var url = 'Documentation/Syntax.md';
+    window.open(url, '_blank');
+}
+
 //To get the Operating system
 function getOS() {
     const platform = navigator.platform;
@@ -157,7 +163,7 @@ function searchPorngifs(input) {
 //Search Reddit
 function searchReddit(input) {
     const query = input.trim().replace(/^reddit:\b\s*/i, ''); // Trim spaces and replace "open"
-    const redditurl = 'https://www.reddit.com/r/' + query+ '/';
+    const redditurl = 'https://www.reddit.com/r/' + query + '/';
     window.open(redditurl, '_blank');
 }
 

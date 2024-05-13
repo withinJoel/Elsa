@@ -38,6 +38,8 @@ function runCmd(command, inMemory, fromInput) {
                 getDay();
             } else if (commandName === "date") {
                 getDate();
+            } else if (commandName === "help") {
+                Help();
             } else if (commandName === "os") {
                 getOS();
             } else if (commandName === "networkstatus") {
@@ -86,7 +88,7 @@ function runCmd(command, inMemory, fromInput) {
                 getIPAddress();
             } else if (commandName === "ipaddress") {
                 getIPAddress();
-            }else if (commandName === "refresh") {
+            } else if (commandName === "refresh") {
                 refreshPage();
             } else if ((commandName === "randomcolor") || (commandName === "randomcolour")) {
                 getRandomColor();
@@ -110,19 +112,19 @@ function runCmd(command, inMemory, fromInput) {
                 openYouporn(commandName);
             } else if (commandName.includes("tube8:")) {
                 openTube8(commandName);
-            }else if (commandName.includes("milfporn:")) {
+            } else if (commandName.includes("milfporn:")) {
                 openMilfporn(commandName);
-            }else if (commandName.includes("babespedia:")) {
+            } else if (commandName.includes("babespedia:")) {
                 openBabespedia(commandName);
-            }else if (commandName.includes("indianporn365:")) {
+            } else if (commandName.includes("indianporn365:")) {
                 openIndianporn365(commandName);
-            }else if (commandName.includes("pornpics:")) {
+            } else if (commandName.includes("pornpics:")) {
                 openPornpics(commandName);
-            }else if (commandName.includes("pussyspace:")) {
+            } else if (commandName.includes("pussyspace:")) {
                 openPussyspace(commandName);
-            }else if (commandName.includes("hdtube:")) {
+            } else if (commandName.includes("hdtube:")) {
                 openHdtube(commandName);
-            }else if (commandName.includes("xnxx:")) {
+            } else if (commandName.includes("xnxx:")) {
                 openXNXX(commandName);
             } else if (commandName.includes("porngifs:")) {
                 searchPorngifs(commandName);
