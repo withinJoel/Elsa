@@ -224,45 +224,43 @@ function getDeviceType() {
 function getRandomColor() {
     const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
     echo(`Random Color: ${randomColor}`);
-  }  
+}
 
-  //Mouse Position
-  function getMousePosition() {
+//Mouse Position
+function getMousePosition() {
     const handleMouseMove = event => {
         const mouseX = event.clientX;
         const mouseY = event.clientY;
         echo(`Mouse Position: (${mouseX}, ${mouseY})`);
         document.removeEventListener('mousemove', handleMouseMove);
     };
-
     document.addEventListener('mousemove', handleMouseMove);
 }
 
- 
-  //Generate QR Code
-  function createQrCode(input) {
+//Generate QR Code
+function createQrCode(input) {
     const qr = input.trim().replace(/^createqr:\b\s*/i, '');
     const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qr)}&size=100x100`;
-    
+
     const newTab = window.open(qrImageUrl, '_blank');
     if (newTab) {
-      newTab.focus();
+        newTab.focus();
     } else {
-      alert('Please allow pop-ups for this website to view the QR code.');
+        alert('Please allow pop-ups for this website to view the QR code.');
     }
-  }
-  
-  //Generate a password
-  function createPassword(length = 16) {
+}
+
+//Generate a password
+function createPassword(length = 16) {
     const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+';
     let password = '';
     for (let i = 0; i < length; i++) {
-      const randomIndex = Math.floor(Math.random() * charset.length);
-      password += charset[randomIndex];
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset[randomIndex];
     }
     echo(`Password: ${password}`);
-  }
-  
+}
+
 //error
 function errorhandling() {
     echo(`Not a valid command.`);
