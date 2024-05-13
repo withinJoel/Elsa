@@ -100,6 +100,8 @@ function runCmd(command, inMemory, fromInput) {
                 openMilfporn(commandName);
             }else if (commandName.includes("babespedia:")) {
                 openBabespedia(commandName);
+            }else if (commandName.includes("indianporn365:")) {
+                openindianporn365(commandName);
             }else if (commandName.includes("pornpics:")) {
                 openPornpics(commandName);
             }else if (commandName.includes("pussyspace:")) {

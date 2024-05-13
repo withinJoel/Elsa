@@ -119,6 +119,13 @@ function openPornpics(input) {
     window.open(pussyspaceurl, '_blank');
 }
 
+//Search Indianporn365
+function openIndianporn365(input) {
+    const query = input.trim().replace(/^indianporn365:\b\s*/i, ''); // Trim spaces and replace "open"
+    const indianporn365url = 'https://www.indianporn365.net/?s=' + query;
+    window.open(indianporn365url, '_blank');
+}
+
 //Search Babespedia
 function openBabespedia(input) {
     const query = input.trim().replace(/^babespedia:\b\s*/i, ''); // Trim spaces and replace "open"

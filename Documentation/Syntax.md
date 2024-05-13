@@ -62,6 +62,7 @@
 * `babespedia:` - To search the babespedia website with the keyword. example: `babespedia:riley_reid`
 * `tube8:` - To search the tube8 website with the keyword. example: `tube8:wife`
 * `milfporn:` - To search the milfporn website with the keyword. example: `milfporn:wife`
+* `indianporn365:` - To search the indianporn365 website with the keyword. example: `indianporn365:wife`
 * `xhamster:` - To search the xhamster website with the keyword. example: `xhamster:wife`
 * `redtube:` - To search the redtube website with the keyword. example: `redtube:wife`
 * `goodporn:` - To search the goodporn website with the keyword. example: `goodporn:wife`
