@@ -79,7 +79,7 @@ function openPexelsVid(input) {
 //Open Github ID
 function openPexelsImg(input) {
     const query = input.trim().replace(/^pexels:image:\b\s*/i, ''); // Trim spaces and replace "open"
-    const pexelsimgurl = 'https://www.pexels.com/search/images/' + query + '/';
+    const pexelsimgurl = 'https://www.pexels.com/search/' + query + '/';
     window.open(pexelsimgurl, '_blank');
 }
 
