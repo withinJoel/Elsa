@@ -47,6 +47,7 @@
 * `snapchat:` - To open their snapchat profile example: `snapchat:withinjoel`
 * `github:` - To open their github profile example: `github:withinjoel`
 * `clubhouse:` - To open their clubhouse profile example: `clubhouse:withinjoel`
+* `reddit:` - To search in reddit. example `reddit:car`
 
 # Display
 * `screenwidth` - To get the screen width.
