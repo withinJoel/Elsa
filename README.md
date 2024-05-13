@@ -5,7 +5,7 @@ Made with 💖 by Joel Jolly.
 * Browse the web using the terminal.
 
 # Documentation
-* <a href="https://github.com/withinJoel/webshell/blob/main/Documentation/Syntax.md">Learn More</a>
+* <a href="https://github.com/withinJoel/webshell/blob/main/Documentation/Syntax.md">Syntax</a>
 
 # Website
 https://webshell-elx.pages.dev/
