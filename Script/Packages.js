@@ -69,17 +69,24 @@ function openGithub(input) {
     window.open(githuburl, '_blank');
 }
 
-//Open Pexels Video
-function openPexelsVid(input) {
+//Search Pexels Video
+function searchPexelsVid(input) {
     const query = input.trim().replace(/^pexels:video:\b\s*/i, ''); // Trim spaces and replace "open"
     const pexelsvidurl = 'https://www.pexels.com/search/videos/' + query + '/';
     window.open(pexelsvidurl, '_blank');
 }
 
-//Open Github ID
-function openPexelsImg(input) {
+//Search Pexels Image
+function searchPexelsImg(input) {
     const query = input.trim().replace(/^pexels:image:\b\s*/i, ''); // Trim spaces and replace "open"
     const pexelsimgurl = 'https://www.pexels.com/search/' + query + '/';
+    window.open(pexelsimgurl, '_blank');
+}
+
+//Search Youtube
+function searchYoutube(input) {
+    const query = input.trim().replace(/^youtube:\b\s*/i, ''); // Trim spaces and replace "open"
+    const pexelsimgurl = 'https://www.youtube.com/results?search_query=' + query + '/';
     window.open(pexelsimgurl, '_blank');
 }
 

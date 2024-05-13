@@ -67,9 +67,9 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("createqr:")) {
                 createQrCode(commandName);
             } else if (commandName.includes("pexels:video:")) {
-                openPexelsVid(commandName);
+                searchPexelsVid(commandName);
             } else if (commandName.includes("pexels:image:")) {
-                openPexelsImg(commandName);
+                searchPexelsImg(commandName);
             } else if (commandName === "webrtc") {
                 getWebRTCInfo();
             } else if (commandName === "ipaddress") {

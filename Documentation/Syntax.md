@@ -18,6 +18,11 @@
 * `randomcolor` or `randomcolour` - To get a random color.
 * `mouseposition` - To get the mouse position.
 
+# Web
+* `pexels:image:` - To search images in pexels. example `pexels:image:cat`
+* `pexels:video:` - To search videos in pexels. example `pexels:video:cat`
+* `youtube:` - To search in Youtube. example `youtube:avicii`
+
 # Network
 * `networkstatus` - To get the status of the network. (online or offline).
 * `useragent` - To get the browser information.
@@ -26,7 +31,7 @@
 * `ipaddress` - To get the ip address.
 
 # Search Engine
-* `google:` - To search using Google search engine. example `google: youtubestudio`
+* `google:` - To search using Google search engine. example `google:youtubestudio`
 * `duckduckgo` - To search using DuckDuckGo search engine. example `duckduckgo:github`
 * `wikipedia:` - To search the wikipedia. example `wikipedia:twitter`
 
