@@ -12,6 +12,7 @@
 * `date` - To get the date info.
 * `timezone` - To get the time zone.
 * `webrtc` - To get the WebRTC info.
+* `randomcolor` or `randomcolour` - To get a random color.
 
 # Network
 * `networkstatus` - To get the status of the network. (online or offline).
@@ -42,6 +43,7 @@
 # Hardware
 * `raminfo` - To get ram information.
 * `batteryinfo` - To get the battery info.
+* `devicetype` - To get the devicie type.
 
 # Operating System
 * `os` - To get the operating system details.

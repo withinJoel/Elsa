@@ -63,8 +63,12 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName === "webrtc") {
                 getWebRTCInfo();
             } else if (commandName === "ipaddress") {
-                getIPAddress(commandName);
-            } else if (commandName === "developer" || commandName === "dev") {
+                getIPAddress();
+            } else if (commandName === "devicetype") {
+                getDeviceType();
+            } else if ((commandName === "randomcolor") || (commandName === "randomcolour")) {
+                getRandomColor();
+            }else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);
             } else if (commandName === "") {
                 errorhandling("Please enter a valid command");

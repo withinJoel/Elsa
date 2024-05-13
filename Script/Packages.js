@@ -121,22 +121,19 @@ function getNetworkStatus() {
 //IP Address
 function getIPAddress() {
     fetch('https://api.ipify.org?format=json')
-  .then(response => response.json())
-  .then(data => echo(`Your IP address is: ${data.ip}`))
-  .catch(error => echo('Error fetching IP address:', error));
+        .then(response => response.json())
+        .then(data => echo(`Your IP address is: ${data.ip}`))
+        .catch(error => echo('Error fetching IP address:', error));
 }
 
 //Battery Info
 function getBatteryInfo() {
-    const isCharging = navigator.getBattery().then(function (battery) {
-        return battery.charging;
-    });
-
-    isCharging.then(function (result) {
-        echo(result ? 'Device is Charging' : 'Device is Not Charging');
-    }).catch(function (error) {
-        echo('Battery information not available:', error);
-    });
+    navigator.getBattery().then(battery => {
+        const level = battery.level * 100;
+        const charging = battery.charging ? 'Charging' : 'Discharging';
+        echo(`Battery Level: ${level}%`);
+        echo(`Battery Status: ${charging}`);
+    }).catch(error => echo('Error getting battery status:', error));
 }
 
 //Connection Type
@@ -216,6 +213,18 @@ function getWebRTCInfo() {
     const isWebRTCSupported = typeof RTCPeerConnection === 'function';
     echo(`WebRTC Supported: ${isWebRTCSupported}`);
 }
+
+//Device type
+function getDeviceType() {
+    const isMobile = /Mobi/i.test(navigator.userAgent);
+    echo(`Device Type: ${isMobile ? 'Mobile' : 'Desktop'}`);
+}
+
+//Random Color
+function getRandomColor() {
+    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    echo(`Random Color: ${randomColor}`);
+  }  
 
 //error
 function errorhandling() {
