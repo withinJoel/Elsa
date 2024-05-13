@@ -48,10 +48,17 @@ function openInstagram(input) {
     window.open(instagramurl, '_blank');
 }
 
-//Search using google
+//Search using Google
 function searchViaGoogle(input) {
     const query = input.trim().replace(/^google:\b\s*/i, ''); // Trim spaces and replace "open"
     const queryurl = 'http://www.google.com/search?q=' + query;
+    window.open(queryurl, '_blank');
+}
+
+//Search using DuckDuckGo
+function searchViaDuckDuckGo(input) {
+    const query = input.trim().replace(/^duckduckgo:\b\s*/i, ''); // Trim spaces and replace "open"
+    const queryurl = 'http://www.duckduckgo.com/?q=' + query;
     window.open(queryurl, '_blank');
 }
 

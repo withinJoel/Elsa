@@ -74,6 +74,8 @@ function runCmd(command, inMemory, fromInput) {
                 openUrl(commandName);
             } else if (commandName.includes("google:")) {
                 searchViaGoogle(commandName);
+            } else if (commandName.includes("duckduckgo:")) {
+                searchViaDuckDuckGo(commandName);
             } else if (commandName.includes("instagram:")) {
                 openInstagram(commandName);
             } else if (commandName.includes("onlyfans:")) {

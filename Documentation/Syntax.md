@@ -22,6 +22,8 @@
 
 # Search Engine
 * `google:` - To search using Google search engine. example `google: youtubestudio`
+* `duckduckgo` - To search using DuckDuckGo search engine. example `duckduckgo:github`
+
 # Social Network
 * `instagram:` - To open their instagram profile example: `instagram:withinjoel`
 * `twitter:` or `x:` - To open their x profile example: `twitter:withinjoel` or `x:withinjoel`
