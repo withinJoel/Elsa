@@ -86,6 +86,8 @@ function runCmd(command, inMemory, fromInput) {
                 openUrl(commandName);
             } else if (commandName.includes("google:")) {
                 searchViaGoogle(commandName);
+            } else if (commandName.includes("wikipedia:")) {
+                searchWiki(commandName);
             } else if (commandName.includes("duckduckgo:")) {
                 searchViaDuckDuckGo(commandName);
             } else if (commandName.includes("instagram:")) {
@@ -94,6 +96,8 @@ function runCmd(command, inMemory, fromInput) {
                 openYouporn(commandName);
             } else if (commandName.includes("tube8:")) {
                 openTube8(commandName);
+            }else if (commandName.includes("milfporn:")) {
+                openMilfporn(commandName);
             }else if (commandName.includes("xnxx:")) {
                 openXNXX(commandName);
             } else if (commandName.includes("goodporn:")) {

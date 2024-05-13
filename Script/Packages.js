@@ -84,7 +84,14 @@ function openX(input) {
     window.open(xurl, '_blank');
 }
 
-//Search XNXX ID
+//Search Wikipedia
+function searchWiki(input) {
+    const query = input.trim().replace(/^wikipedia:\b\s*/i, ''); // Trim spaces and replace "open"
+    const wikiurl = 'https://en.wikipedia.org/wiki/' + query;
+    window.open(wikiurl, '_blank');
+}
+
+//Search XNXX
 function openXNXX(input) {
     const query = input.trim().replace(/^xnxx:\b\s*/i, ''); // Trim spaces and replace "open"
     const xnxxurl = 'https://xnxx.health/search/' + query;
@@ -124,6 +131,13 @@ function openTube8(input) {
     const query = input.trim().replace(/^tube8:\b\s*/i, ''); // Trim spaces and replace "open"
     const tube8url = 'https://www.tube8.es/searches.html?q=' + query;
     window.open(tube8url, '_blank');
+}
+
+//Search Milfporn
+function openMilfporn(input) {
+    const query = input.trim().replace(/^milfporn:\b\s*/i, ''); // Trim spaces and replace "open"
+    const milfpornurl = 'https://www.milfporn.tv/tags/milf-' + query+'/';
+    window.open(milfpornurl, '_blank');
 }
 
 //Open Snapchat ID

@@ -28,6 +28,7 @@
 # Search Engine
 * `google:` - To search using Google search engine. example `google: youtubestudio`
 * `duckduckgo` - To search using DuckDuckGo search engine. example `duckduckgo:github`
+* `wikipedia:` - To search the wikipedia. example `wikipedia:twitter`
 
 # Social Network
 * `instagram:` - To open their instagram profile example: `instagram:withinjoel`
@@ -56,6 +57,7 @@
 * `xnxx:` - To search the xnxx website with the keyword. example: `xnxx:wife`
 * `youporn:` - To search the youporn website with the keyword. example: `youporn:wife`
 * `tube8:` - To search the tube8 website with the keyword. example: `tube8:wife`
+* `milfporn:` - To search the milfporn website with the keyword. example: `milfporn:wife`
 * `xhamster:` - To search the xhamster website with the keyword. example: `xhamster:wife`
 * `redtube:` - To search the redtube website with the keyword. example: `redtube:wife`
 * `goodporn:` - To search the goodporn website with the keyword. example: `goodporn:wife`
