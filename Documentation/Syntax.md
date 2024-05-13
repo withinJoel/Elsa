@@ -20,6 +20,8 @@
 * `connectionspeed` - To get the connection speed.
 * `ipaddress` - To get the ip address.
 
+# Search Engine
+* `google:` - To search using Google search engine. example `google: youtubestudio`
 # Social Network
 * `instagram:` - To open their instagram profile example: `instagram:withinjoel`
 * `twitter:` or `x:` - To open their x profile example: `twitter:withinjoel` or `x:withinjoel`

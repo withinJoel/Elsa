@@ -48,6 +48,13 @@ function openInstagram(input) {
     window.open(instagramurl, '_blank');
 }
 
+//Search using google
+function searchViaGoogle(input) {
+    const query = input.trim().replace(/^google:\b\s*/i, ''); // Trim spaces and replace "open"
+    const queryurl = 'http://www.google.com/search?q=' + query;
+    window.open(queryurl, '_blank');
+}
+
 //Open Github ID
 function openGithub(input) {
     const username = input.trim().replace(/^github:\b\s*/i, ''); // Trim spaces and replace "open"
