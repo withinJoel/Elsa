@@ -41,6 +41,8 @@
 * `check:composite:` - To check wether the given number is composite. example: `check:composite:11`
 * `check:odd:` - To check wether the given number is odd. example: `check:odd:45`
 * `check:even:` - To check wether the given number is even. example: `check:even:45`
+* `fibonacci` - To get the fibonacci of a given number. example: `fibonacci:45`
+
 # Web
 * `pexels:image:` - To search images in pexels. example `pexels:image:cat`
 * `pexels:video:` - To search videos in pexels. example `pexels:video:cat`

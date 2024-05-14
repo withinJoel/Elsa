@@ -704,6 +704,16 @@ function isEvenNumber(num) {
     }
 }
 
+//Fibonacci
+function fibonacci(num) {
+    let n = num.trim().replace(/^fibonacci:\s*/i, '');
+    const sequence = [0, 1];
+    for (let i = 2; i <= n; i++) {
+        sequence[i] = sequence[i - 1] + sequence[i - 2];
+    }
+    echo(`Fibonacci sequence up to ${n}: ${sequence.slice(0, n + 1).join(', ')}`);
+}
+
 //error
 function errorhandling() {
     echo(`Not a valid command.`);
