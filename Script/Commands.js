@@ -66,6 +66,8 @@ function runCmd(command, inMemory, fromInput) {
                 getMousePosition();
             } else if (commandName === "devicetype") {
                 getDeviceType();
+            } else if (commandName === "randomnumber") {
+                getRandomNumber();
             } else if (commandName.includes("youtube:")) {
                 searchYoutube(commandName);
             } else if (commandName === "createpassword") {

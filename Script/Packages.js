@@ -412,6 +412,13 @@ function getRandomColor() {
     echo(`Random Color: ${randomColor}`);
 }
 
+//Random Number
+function getRandomNumber() {
+    min = 0;
+    max = 9999999999999999999999999999999999999999999999999999999999;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
 //Mouse Position
 function getMousePosition() {
     const handleMouseMove = event => {
