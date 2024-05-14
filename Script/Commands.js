@@ -43,6 +43,8 @@ function runCmd(command, inMemory, fromInput) {
                 multiplicationTable(commandName);
             } else if (commandName.includes("fibonacci:")) {
                 fibonacci(commandName);
+            } else if (commandName.includes("squareroot:")) {
+                squareRoot(commandName);
             } else if (commandName.includes("check:prime:")) {
                 isPrimeNumber(commandName);
             } else if (commandName.includes("factorial:")) {

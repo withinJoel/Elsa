@@ -728,6 +728,13 @@ function multiplicationTable(num) {
     }
 }
 
+//Square Root
+function squareRoot(num) {
+    let n = num.trim().replace(/^squareroot:\s*/i, '');
+    const result = Math.sqrt(n);
+    echo(`Square root of ${n} is ${result}`);
+}
+
 //error
 function errorhandling() {
     echo(`Not a valid command.`);
