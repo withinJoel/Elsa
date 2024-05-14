@@ -61,6 +61,7 @@
 * `connectiontype` - To get the connection type example: 4g, 3g.. etc.
 * `connectionspeed` - To get the connection speed.
 * `ipaddress` - To get the ip address.
+* `latency:` - To get the latency for a particular website. example: `latency:https://github.com/`
 
 # Search Engine
 * `google:` - To search using Google search engine. example `google:youtubestudio`

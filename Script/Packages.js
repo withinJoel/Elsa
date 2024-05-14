@@ -604,6 +604,22 @@ function decode(input) {
     }
 }
 
+//Latency
+function measureLatency(url) {
+    const startTime = performance.now(); // Get the current time before sending the request
+
+    return fetch(url)
+        .then(response => {
+            const endTime = performance.now(); // Get the current time after receiving the response
+            const latency = endTime - startTime; // Calculate the latency by subtracting start time from end time
+            return Promise.resolve(latency); // Resolve the promise with the calculated latency
+        })
+        .catch(error => {
+            console.error('Error measuring latency:', error);
+            return Promise.reject(error); // Reject the promise if there's an error
+        });
+}
+
 //Encode
 function encode(input) {
     const data = input.trim().replace(/^encode:\s*/i, '');

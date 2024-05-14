@@ -141,6 +141,15 @@ function runCmd(command, inMemory, fromInput) {
                 getIPAddress();
             } else if (commandName === "dns") {
                 getDNSInfo();
+            } else if (commandName.includes("latency:")) {
+                const data = commandName.trim().replace(/^latency:\s*/i, '');
+                measureLatency(data)
+                    .then(latency => {
+                        echo(`Latency for ${data}: ${latency} milliseconds`);
+                    })
+                    .catch(error => {
+                        echo('Error measuring latency:', error);
+                    });
             } else if (commandName === "refresh") {
                 refreshPage();
             } else if ((commandName === "randomcolor") || (commandName === "randomcolour")) {
