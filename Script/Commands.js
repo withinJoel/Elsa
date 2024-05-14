@@ -82,6 +82,8 @@ function runCmd(command, inMemory, fromInput) {
                 octalToBinary(commandName);
             } else if (commandName.includes("convert:octaltodecimal:")) {
                 octalToDecimal(commandName);
+            } else if (commandName.includes("convert:octaltohexadecimal:")) {
+                octalToHexadecimal(commandName);
             } else if (commandName.includes("convert:hexadecimaltobinary:")) {
                 hexadecimalToBinary(commandName);
             } else if (commandName.includes("convert:hexadecimaltodecimal:")) {

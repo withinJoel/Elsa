@@ -490,6 +490,18 @@ function octalToDecimal(number) {
     echo(octal);
 }
 
+//Convert Octal to Hexadecimal
+function octalToHexadecimal(number) {
+    const octal = parseInt(number.trim().replace(/^convert:octaltohexadecimal:\b\s*/i, ''), 8);
+    if (isNaN(octal)) {
+        echo('Invalid octal number');
+        return;
+    }
+
+    const hexadecimal = octal.toString(16).toUpperCase();
+    echo(hexadecimal);
+}
+
 //Convert Hexadecimal to Binary
 function hexadecimalToBinary(number) {
     const hexadecimal = number.trim().replace(/^convert:hexadecimaltobinary:\b\s*/i, '');
