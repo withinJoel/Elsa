@@ -40,6 +40,16 @@ function runCmd(command, inMemory, fromInput) {
                 getDate();
             } else if (commandName.includes("check:palindrome:")) {
                 isPalindrome(commandName);
+            } else if (commandName.includes("check:prime:")) {
+                isPrimeNumber(commandName);
+            } else if (commandName.includes("factorial:")) {
+                calculateFactorial(commandName);
+            } else if (commandName.includes("check:composite:")) {
+                isCompositeNumber(commandName);
+            } else if (commandName.includes("check:odd:")) {
+                isOddNumber(commandName);
+            } else if (commandName.includes("check:even:")) {
+                isEvenNumber(commandName);
             } else if (commandName.includes("encode:")) {
                 encode(commandName);
             } else if (commandName.includes("decode:")) {

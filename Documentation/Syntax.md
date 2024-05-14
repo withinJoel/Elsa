@@ -37,7 +37,10 @@
 * `convert:hexadecimaltobinary:` - To convert hexadecimal to binary. example: `convert:hexadecimaltobinary:145abc`
 * `convert:hexadecimaltodecimal:` - To convert hexadecimal to decimal. example: `convert:hexadecimaltodecimal:464ad`
 * `convert:hexadecimaltooctal:` - To convert hexadecimal to octal. example: `convert:hexadecimaltooctal:abc56cb`
-
+* `check:prime:` - To check wether the given number is prime. example: `check:prime:45`
+* `check:composite:` - To check wether the given number is composite. example: `check:composite:11`
+* `check:odd:` - To check wether the given number is odd. example: `check:odd:45`
+* `check:even:` - To check wether the given number is even. example: `check:even:45`
 # Web
 * `pexels:image:` - To search images in pexels. example `pexels:image:cat`
 * `pexels:video:` - To search videos in pexels. example `pexels:video:cat`
