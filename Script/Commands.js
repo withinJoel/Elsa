@@ -68,6 +68,8 @@ function runCmd(command, inMemory, fromInput) {
                 getDeviceType();
             } else if (commandName === "randomnumber") {
                 getRandomNumber();
+            } else if (commandName === "randomalphabet") {
+                getRandomAlphabet();
             } else if (commandName.includes("youtube:")) {
                 searchYoutube(commandName);
             } else if (commandName === "createpassword") {

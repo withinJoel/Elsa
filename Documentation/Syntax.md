@@ -18,6 +18,7 @@
 * `webrtc` - To get the WebRTC info.
 * `randomcolor` or `randomcolour` - To get a random color.
 * `randomnumber` - To get a random number.
+* `randomalphabet` - To get a random alphabet.
 * `mouseposition` - To get the mouse position.
 
 # Web

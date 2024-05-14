@@ -415,10 +415,15 @@ function getRandomColor() {
 //Random Number
 function getRandomNumber() {
     min = 0;
-    max = 9999999999999999;
+    max = 999999999999999;
     echo ( Math.floor(Math.random() * (max - min + 1)) + min);
   }
-
+  //Random Alphabet
+  function getRandomAlphabet() {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    const randomIndex = Math.floor(Math.random() * alphabet.length);
+    echo (alphabet[randomIndex]);
+  }
 //Mouse Position
 function getMousePosition() {
     const handleMouseMove = event => {
