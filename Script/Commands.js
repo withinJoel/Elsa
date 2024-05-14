@@ -42,6 +42,12 @@ function runCmd(command, inMemory, fromInput) {
                 encode(commandName);
             } else if (commandName.includes("decode:")) {
                 decode(commandName);
+            } else if (commandName.includes("string:reverse:")) {
+                reverseString(commandName);
+            } else if (commandName.includes("string:count:characters:")) {
+                countCharacters(commandName);
+            } else if (commandName.includes("string:count:words:")) {
+                countWords(commandName);
             } else if (commandName === "help") {
                 Help();
             } else if (commandName === "os") {

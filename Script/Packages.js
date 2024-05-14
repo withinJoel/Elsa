@@ -610,6 +610,36 @@ function encode(input) {
     }
 }
 
+//String Reverse
+function reverseString(input) {
+    const data = input.trim().replace(/^string:reverse:\s*/i, '');
+    const reversed = data.split('').reverse().join('');
+    echo(`Reversed string: ${reversed}`);
+}
+
+//String Count Characters
+function countCharacters(input) {
+    const data = input.trim().replace(/^string:count:characters:\s*/i, '');
+    const count = data.length;
+    echo(`Number of characters: ${count}`);
+}
+
+//String Count Words
+function countWords(input) {
+    const words = input.trim().split(/\s+/).filter(word => word !== '').length;
+    echo(`Number of words: ${words}`);
+}
+
+
+//Check Palindrome
+function isPalindrome(input) {
+    let cleanedInput = input.trim().replace(/^check:palindrome:\s*/i, '');
+    cleanedInput = input.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const reversed = cleanedInput.split('').reverse().join('');
+    const palindrome = cleanedInput === reversed;
+    echo(`Is palindrome: ${palindrome}`);
+}
+
 //error
 function errorhandling() {
     echo(`Not a valid command.`);
