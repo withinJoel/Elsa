@@ -17,9 +17,18 @@
 * `timezone` - To get the time zone.
 * `webrtc` - To get the WebRTC info.
 * `randomcolor` or `randomcolour` - To get a random color.
-* `randomnumber` - To get a random number.
 * `randomalphabet` - To get a random alphabet.
 * `mouseposition` - To get the mouse position.
+
+# Math
+* `randomnumber` - To get a random number.
+* `convert:binarytodecimal:` - To convert binary to decimal. example: `convert:binarytodecimal:101010010`
+* `convert:binarytohexadecimal:` - To convert binary to hexadecimal. example: `convert:binarytohexadecimal:101010010`
+* `convert:binarytooctal:` - To convert binary to octal. example: `convert:binarytooctal:101010010`
+* `convert:octaltobinary:` - To convert octal to binary. example: `convert:octaltobinary:1232345`
+* `convert:hexadecimaltobinary:` - To convert hexadecimal to binary. example: `convert:hexadecimaltobinary:145abc`
+* `convert:hexadecimaltodecimal:` - To convert hexadecimal to decimal. example: `convert:hexadecimaltodecimal:464ad`
+* `convert:hexadecimaltooctal:` - To convert hexadecimal to octal. example: `convert:hexadecimaltooctal:abc56cb`
 
 # Web
 * `pexels:image:` - To search images in pexels. example `pexels:image:cat`

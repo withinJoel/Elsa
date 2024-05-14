@@ -70,6 +70,22 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomNumber();
             } else if (commandName === "randomalphabet") {
                 getRandomAlphabet();
+            } else if (commandName.includes("convert:binarytodecimal:")) {
+                binaryToDecimal(commandName);
+            } else if (commandName.includes("convert:binarytodecimal:")) {
+                binaryToDecimal(commandName);
+            } else if (commandName.includes("convert:binarytohexadecimal:")) {
+                binaryToHexadecimal(commandName);
+            } else if (commandName.includes("convert:binarytooctal:")) {
+                binaryToOctal(commandName);
+            } else if (commandName.includes("convert:octaltobinary:")) {
+                octalToBinary(commandName);
+            } else if (commandName.includes("convert:hexadecimaltobinary:")) {
+                hexadecimalToBinary(commandName);
+            } else if (commandName.includes("convert:hexadecimaltodecimal:")) {
+                hexadecimalToDecimal(commandName);
+            } else if (commandName.includes("convert:hexadecimaltooctal:")) {
+                hexadecimalToOctal(commandName);
             } else if (commandName.includes("youtube:")) {
                 searchYoutube(commandName);
             } else if (commandName === "createpassword") {

@@ -416,14 +416,120 @@ function getRandomColor() {
 function getRandomNumber() {
     min = 0;
     max = 999999999999999;
-    echo ( Math.floor(Math.random() * (max - min + 1)) + min);
-  }
-  //Random Alphabet
-  function getRandomAlphabet() {
+    echo(Math.floor(Math.random() * (max - min + 1)) + min);
+}
+
+//Random Alphabet
+function getRandomAlphabet() {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     const randomIndex = Math.floor(Math.random() * alphabet.length);
-    echo (alphabet[randomIndex]);
-  }
+    echo(alphabet[randomIndex]);
+}
+
+//Convert Binary to Decimal
+function binaryToDecimal(number) {
+    const binary = number.trim().replace(/^convert:binarytodecimal:\b\s*/i, '');
+    // Check if the input is a valid binary number
+    if (!/^[01]+$/.test(binary)) {
+        echo('Invalid binary number');
+    }
+
+    let decimal = 0;
+    for (let i = binary.length - 1, j = 0; i >= 0; i--, j++) {
+        decimal += parseInt(binary[i]) * Math.pow(2, j);
+    }
+
+    echo(decimal);
+}
+
+//Convert Decimal to binary
+function decimalToBinary(number) {
+    const decimal = parseInt(number.trim().replace(/^convert:decimaltobinary:\b\s*/i, ''), 10);
+    if (isNaN(decimal)) {
+        echo('Invalid decimal number');
+        return;
+    }
+
+    const binary = decimal.toString(2);
+    echo(binary);
+}
+
+//Convert Binary to Octal
+function binaryToOctal(number) {
+    const binary = number.trim().replace(/^convert:binarytooctal:\b\s*/i, '');
+    if (!/^[01]+$/.test(binary)) {
+        echo('Invalid binary number');
+        return;
+    }
+
+    const decimal = parseInt(binary, 2);
+    const octal = decimal.toString(8);
+    echo(octal);
+}
+
+//Convert Octal to Binary
+function octalToBinary(number) {
+    const octal = parseInt(number.trim().replace(/^convert:octaltobinary:\b\s*/i, ''), 8);
+    if (isNaN(octal)) {
+        echo('Invalid octal number');
+        return;
+    }
+
+    const binary = octal.toString(2);
+    echo(binary);
+}
+
+//Convert Hexadecimal to Binary
+function hexadecimalToBinary(number) {
+    const hexadecimal = number.trim().replace(/^convert:hexadecimaltobinary:\b\s*/i, '');
+    if (!/^[0-9A-Fa-f]+$/.test(hexadecimal)) {
+        echo('Invalid hexadecimal number');
+        return;
+    }
+
+    const decimal = parseInt(hexadecimal, 16);
+    const binary = decimal.toString(2);
+    echo(binary);
+}
+
+//Convert Hexadecimal to Decimal
+function hexadecimalToDecimal(number) {
+    const hexadecimal = number.trim().replace(/^convert:hexadecimaltodecimal:\b\s*/i, '');
+    if (!/^[0-9A-Fa-f]+$/.test(hexadecimal)) {
+        echo('Invalid hexadecimal number');
+        return;
+    }
+
+    const decimal = parseInt(hexadecimal, 16);
+    echo(decimal);
+}
+
+//Convert Hexadecimal to Octal
+function hexadecimalToOctal(number) {
+    const hexadecimal = number.trim().replace(/^convert:hexadecimaltooctal:\b\s*/i, '');
+    if (!/^[0-9A-Fa-f]+$/.test(hexadecimal)) {
+        echo('Invalid hexadecimal number');
+        return;
+    }
+
+    const decimal = parseInt(hexadecimal, 16);
+    const octal = decimal.toString(8);
+    echo(octal);
+}
+
+//Convert Binary to Hexadecimal
+function binaryToHexadecimal(number) {
+    const binary = number.trim().replace(/^convert:binarytohexadecimal:\b\s*/i, '');
+    if (!/^[01]+$/.test(binary)) {
+        echo('Invalid binary number');
+        return;
+    }
+
+    const decimal = parseInt(binary, 2);
+    const hexadecimal = decimal.toString(16).toUpperCase();
+    echo(hexadecimal);
+}
+
 //Mouse Position
 function getMousePosition() {
     const handleMouseMove = event => {
