@@ -64,6 +64,8 @@ function runCmd(command, inMemory, fromInput) {
                 getBatteryInfo();
             } else if (commandName === "mouseposition") {
                 getMousePosition();
+            } else if (commandName === "devicetype") {
+                getDeviceType();
             } else if (commandName.includes("youtube:")) {
                 searchYoutube(commandName);
             } else if (commandName === "createpassword") {
