@@ -38,6 +38,10 @@ function runCmd(command, inMemory, fromInput) {
                 getDay();
             } else if (commandName === "date") {
                 getDate();
+            } else if (commandName.includes("encode:")) {
+                encode(commandName);
+            } else if (commandName.includes("decode:")) {
+                decode(commandName);
             } else if (commandName === "help") {
                 Help();
             } else if (commandName === "os") {

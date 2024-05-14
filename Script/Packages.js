@@ -588,6 +588,17 @@ function createPassword(length = 16) {
     echo(`Password: ${password}`);
 }
 
+// Encode
+function encode(input) {
+    const data = input.trim().replace(/^encode:\b\s*/i, ''); // Use input instead of number
+    try {
+        const encoded = btoa(data);
+        echo(`Base64 encoded: ${encoded}`);
+    } catch (error) {
+        echo(`Error encoding: ${error.message}`);
+    }
+}
+
 //error
 function errorhandling() {
     echo(`Not a valid command.`);

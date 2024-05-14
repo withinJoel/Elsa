@@ -9,6 +9,7 @@
 
 # Features
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
+* `encode:` - To encode data. example: `encode:joel`
 * `createpassword` - To create a password.
 * `time` - To display the current time.
 * `open:` or `url` - to open a site example `open:https://fb.com` or `open:fb` or `url:fb` or `url:https://www.facebook.com/`
