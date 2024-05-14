@@ -479,6 +479,17 @@ function octalToBinary(number) {
     echo(binary);
 }
 
+//Convert Octal to Decimal
+function octalToDecimal(number) {
+    const octal = parseInt(number.trim().replace(/^convert:octaltodecimal:\b\s*/i, ''), 8);
+    if (isNaN(octal)) {
+        echo('Invalid octal number');
+        return;
+    }
+
+    echo(octal);
+}
+
 //Convert Hexadecimal to Binary
 function hexadecimalToBinary(number) {
     const hexadecimal = number.trim().replace(/^convert:hexadecimaltobinary:\b\s*/i, '');
