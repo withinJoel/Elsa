@@ -139,8 +139,8 @@ function runCmd(command, inMemory, fromInput) {
                 getWebRTCInfo();
             } else if (commandName === "ipaddress") {
                 getIPAddress();
-            } else if (commandName === "ipaddress") {
-                getIPAddress();
+            } else if (commandName === "dns") {
+                getDNSInfo();
             } else if (commandName === "refresh") {
                 refreshPage();
             } else if ((commandName === "randomcolor") || (commandName === "randomcolour")) {
