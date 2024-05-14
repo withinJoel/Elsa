@@ -8,7 +8,7 @@
 * `help` - To get a list of all the supported commands.
 
 # Features
-* `createqr:` - To create a qr code using the link. example `createqr:https://www.fb.com`
+* `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
 * `createpassword` - To create a password.
 * `time` - To display the current time.
 * `open:` or `url` - to open a site example `open:https://fb.com` or `open:fb` or `url:fb` or `url:https://www.facebook.com/`
