@@ -17,6 +17,7 @@
 * `timezone` - To get the time zone.
 * `webrtc` - To get the WebRTC info.
 * `randomcolor` or `randomcolour` - To get a random color.
+* `randomnumber` - To get a random number.
 * `mouseposition` - To get the mouse position.
 
 # Web
