@@ -1,3 +1,8 @@
+//Version
+function Version () {
+    echo ("Elsa v1.1");
+    echo ('Made with love by Joel Jessie Jolly.');
+}
 //To get the time
 function getTime() {
     const now = new Date();
