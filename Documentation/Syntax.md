@@ -26,6 +26,8 @@
 * `convert:binarytohexadecimal:` - To convert binary to hexadecimal. example: `convert:binarytohexadecimal:101010010`
 * `convert:binarytooctal:` - To convert binary to octal. example: `convert:binarytooctal:101010010`
 * `convert:octaltobinary:` - To convert octal to binary. example: `convert:octaltobinary:1232345`
+* `convert:octaltodecimal:` - To convert octal to decimal. example: `convert:octaltodecimal:5632345`
+* `convert:octaltohexadecimal:` - To convert octal to hexadecimal. example: `convert:octaltohexadecimal:52323565`
 * `convert:hexadecimaltobinary:` - To convert hexadecimal to binary. example: `convert:hexadecimaltobinary:145abc`
 * `convert:hexadecimaltodecimal:` - To convert hexadecimal to decimal. example: `convert:hexadecimaltodecimal:464ad`
 * `convert:hexadecimaltooctal:` - To convert hexadecimal to octal. example: `convert:hexadecimaltooctal:abc56cb`
