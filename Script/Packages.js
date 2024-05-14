@@ -630,14 +630,12 @@ function countWords(input) {
     echo(`Number of words: ${words}`);
 }
 
-
 //Check Palindrome
 function isPalindrome(input) {
     let cleanedInput = input.trim().replace(/^check:palindrome:\s*/i, '');
-    cleanedInput = input.toLowerCase().replace(/[^a-z0-9]/g, '');
     const reversed = cleanedInput.split('').reverse().join('');
     const palindrome = cleanedInput === reversed;
-    echo(`Is palindrome: ${palindrome}`);
+    echo(palindrome);
 }
 
 //error

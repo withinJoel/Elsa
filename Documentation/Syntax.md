@@ -14,6 +14,7 @@
 * `string:reverse:` - To reverse a string. example `string:reverse:hola`
 * `string:count:characters:` - To count the number of characters. example: `string:count:characters:hola`
 * `string:count:words` - To count the number of words. example: `string:count:words:hola`
+* `check:palindrome:` - To check wether it is palindrome or not. example: `check:palindrome:hola`.
 * `createpassword` - To create a password.
 * `time` - To display the current time.
 * `open:` or `url` - to open a site example `open:https://fb.com` or `open:fb` or `url:fb` or `url:https://www.facebook.com/`
