@@ -42,6 +42,7 @@
 * `check:odd:` - To check wether the given number is odd. example: `check:odd:45`
 * `check:even:` - To check wether the given number is even. example: `check:even:45`
 * `fibonacci` - To get the fibonacci of a given number. example: `fibonacci:45`
+* `multiplicationtable:` - To get the multiplication table for the given number. example: `multiplicationtable:40`
 
 # Web
 * `pexels:image:` - To search images in pexels. example `pexels:image:cat`

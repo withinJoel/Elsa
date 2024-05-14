@@ -714,6 +714,15 @@ function fibonacci(num) {
     echo(`Fibonacci sequence up to ${n}: ${sequence.slice(0, n + 1).join(', ')}`);
 }
 
+//Multiplication Table
+function multiplicationTable(num) {
+    let n = num.trim().replace(/^multiplicationtable:\s*/i, '');
+    echo(`Multiplication table for ${n}:`);
+    for (let i = 1; i <= 10; i++) {
+        echo(`${n} x ${i} = ${n * i}`);
+    }
+}
+
 //error
 function errorhandling() {
     echo(`Not a valid command.`);

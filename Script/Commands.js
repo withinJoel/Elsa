@@ -40,6 +40,8 @@ function runCmd(command, inMemory, fromInput) {
                 getDate();
             } else if (commandName.includes("check:palindrome:")) {
                 isPalindrome(commandName);
+            } else if (commandName.includes("multiplicationtable:")) {
+                multiplicationTable(commandName);
             } else if (commandName.includes("fibonacci:")) {
                 fibonacci(commandName);
             } else if (commandName.includes("check:prime:")) {
