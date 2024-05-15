@@ -13,6 +13,7 @@ Made with 💖 by Joel Jolly.
 * Helps you to search the web faster.
 * Protects your online privacy.
 * Fast and secure way to browse the web.
+* This project can work in your browser or you can download our official app for your operating system.
 
 # Documentation
 * <a href="https://github.com/withinJoel/webshell/blob/main/Documentation/Syntax.md">Syntax</a>
