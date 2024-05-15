@@ -111,6 +111,8 @@ function runCmd(command, inMemory, fromInput) {
                 searchFlipkart(commandName);
             } else if (commandName.includes("string:reverse:")) {
                 reverseString(commandName);
+            } else if (commandName.includes("string:convert:spacetounderscore:")) {
+                convertSpacesToUnderscores(commandName);
             } else if (commandName.includes("string:remove:space:")) {
                 removeSpaces(commandName);
             } else if (commandName.includes("string:explode:")) {

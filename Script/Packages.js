@@ -797,6 +797,17 @@ function removeSpaces(data) {
     echo(input.replace(/\s/g, ''));
 }
 
+//String convert spaces to underscore
+function convertSpacesToUnderscores(data) {
+    const input = data.trim().replace(/^string:convert:spacetounderscore:\s*/i, '');
+    if (typeof input !== 'string') {
+        echo('Input must be a string.');
+    }
+
+    // Use replace method with a regular expression to replace spaces with underscores
+    echo (input.replace(/\s/g, '_'));
+}
+
 //String Count Characters
 function countCharacters(input) {
     const data = input.trim().replace(/^string:count:characters:\s*/i, '');
