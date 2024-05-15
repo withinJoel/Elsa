@@ -7,7 +7,7 @@ function Version() {
 //Echo function
 function echoFunction(input) {
     const data = input.trim().replace(/^echo:\b\s*/i, ''); // Trim spaces and replace "open"
-    echo (data);
+    echo(data);
 }
 
 //Change Background Color
@@ -204,7 +204,7 @@ function searchThreads(input) {
     const query = input.trim().replace(/^threads:\b\s*/i, ''); // Trim spaces and replace "open"
     const youtubeurl = 'https://www.threads.net/@' + query + '/';
     window.open(youtubeurl, '_blank');
-} 
+}
 
 //Search Pinterest
 function searchPinterest(input) {
@@ -268,28 +268,28 @@ function searchSiliconwives(input) {
     const query = input.trim().replace(/^siliconwives:\b\s*/i, ''); // Trim spaces and replace "open"
     const siliconwivesurl = 'https://www.siliconwives.com/search?q=' + query;
     window.open(siliconwivesurl, '_blank');
-} 
+}
 
 //Search Bellesa
 function searchBellesa(input) {
     const query = input.trim().replace(/^bellesa:\b\s*/i, ''); // Trim spaces and replace "open"
     const bellesaurl = 'https://www.bellesa.co/search?q=' + query;
     window.open(bellesaurl, '_blank');
-} 
+}
 
 //Search Yourdoll
 function searchYourdoll(input) {
     const query = input.trim().replace(/^yourdoll:\b\s*/i, ''); // Trim spaces and replace "open"
     const yourdollurl = 'https://www.yourdoll.com/?s=' + query + '&post_type=product';
     window.open(yourdollurl, '_blank');
-} 
+}
 
 //Search Clips4sale
 function searchClips4sale(input) {
     const query = input.trim().replace(/^clips4sale:\b\s*/i, ''); // Trim spaces and replace "open"
     const clips4saleurl = 'https://www.clips4sale.com/clips/search/' + query + '/category/0/storesPage/1/clipsPage/1';
     window.open(clips4saleurl, '_blank');
-} 
+}
 
 //Search Czechvr
 function openCzechvr(input) {
@@ -922,7 +922,7 @@ function squareRoot(num) {
 function calculate(num) {
     const parts = num.split('calculate:');
     if (parts.length !== 2) {
-        echo ('Invalid input format');
+        echo('Invalid input format');
     }
 
     expression = parts[1].trim();
@@ -930,10 +930,10 @@ function calculate(num) {
         // Replace 'x' with '*' for multiplication to work correctly
         const formattedExpression = expression.replace(/x/g, '*');
         // Using eval to evaluate the expression
-        echo ('The answer is ' + eval(formattedExpression));
+        echo('The answer is ' + eval(formattedExpression));
     } catch (error) {
         // Handle any errors in the expression
-        echo ('Error: Invalid expression');
+        echo('Error: Invalid expression');
     }
 }
 
@@ -945,9 +945,9 @@ function processLogCommand(input) {
 
     if (command.toLowerCase() === 'log' && !isNaN(value)) {
         const result = Math.log10(value);
-        echo (`The logarithm base 10 of ${value} is ${result}`);
+        echo(`The logarithm base 10 of ${value} is ${result}`);
     } else {
-        echo ('Invalid log command or value');
+        echo('Invalid log command or value');
     }
 }
 
@@ -977,10 +977,83 @@ function ceil(x) {
 function processFloatAbsolute(num) {
     let x = parseFloat(num.trim().replace(/^floatabsolute:\s*/i, ''));
     if (!isNaN(x)) {
-        echo('The float absolute for ' +x+ ' is ' + Math.abs(x));
+        echo('The float absolute for ' + x + ' is ' + Math.abs(x));
     } else {
         echo('Invalid value'); // Return NaN for unsupported types or invalid input
     }
+}
+
+//Float
+function processFloat(num) {
+    let x = parseFloat(num.trim().replace(/^float:\s*/i, ''));
+    if (!isNaN(x)) {
+        echo('The float value is ' + x);
+    } else {
+        echo('Invalid value'); // Return NaN for unsupported types or invalid input
+    }
+}
+
+// Function to calculate the Greatest Common Divisor (GCD) of two numbers
+function processGcd(input) {
+    // Extract numbers from the input string
+    const numbers = input.split(':')[1].split(',').map(Number);
+
+    // Ensure there are two numbers in the input
+    if (numbers.length !== 2 || isNaN(numbers[0]) || isNaN(numbers[1])) {
+        echo('Invalid input format. Please use "gcd:a,b" where a and b are numbers.');
+        return;
+    }
+
+    // Euclidean algorithm to find GCD
+    let a = Math.abs(numbers[0]);
+    let b = Math.abs(numbers[1]);
+    while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    echo('GCD of ' + numbers[0] + ' and ' + numbers[1] + ' is ' + a);
+}
+
+// This is different from processGcd
+function processGcdForLcm(input) {
+    // Extract numbers from the input string
+    const numbers = input.split(':')[1].split(',').map(Number);
+
+    // Ensure there are two numbers in the input
+    if (numbers.length !== 2 || isNaN(numbers[0]) || isNaN(numbers[1])) {
+        echo('Invalid input format. Please use "gcd:a,b" where a and b are numbers.');
+        return;
+    }
+
+    // Euclidean algorithm to find GCD
+    let a = Math.abs(numbers[0]);
+    let b = Math.abs(numbers[1]);
+    while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return(a);
+}
+
+// Function to calculate the Least Common Multiple (LCM) of two numbers
+function processLcm(input) {
+    // Extract numbers from the input string
+    const numbers = input.split(':')[1].split(',').map(Number);
+
+    // Ensure there are two numbers in the input
+    if (numbers.length !== 2 || isNaN(numbers[0]) || isNaN(numbers[1])) {
+        echo('Invalid input format. Please use "lcm:a,b" where a and b are numbers.');
+        return;
+    }
+
+    // LCM is calculated using the formula: LCM(a, b) = (a * b) / GCD(a, b)
+    const a = Math.abs(numbers[0]);
+    const b = Math.abs(numbers[1]);
+    const gcdValue = processGcdForLcm(input.split(':')[0] + ':' + numbers[0] + ',' + numbers[1]); // Calculate GCD first
+    const lcmValue = (a * b) / gcdValue;
+    echo('LCM of ' + numbers[0] + ' and ' + numbers[1] + ' is ' + lcmValue);
 }
 
 //error

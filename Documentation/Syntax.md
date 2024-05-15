@@ -55,6 +55,10 @@
 * `calculate:` - To calculate. example `calculate:56-6+2*6%2`
 * `log:` - To calculate the log of a given number. example `log:56`
 * `ceil:` - To calculate the ceil of a given number. example `ceil:11.9`
+* `floatabsolute:` - To get the float absolute of the given nummber. example `floatabsolute:-10`
+* `float:` - To get the float of the given number. example `float:10`
+* `lcm:` - To get the lcm of two numbers. example `lcm:10,2`
+* `gcd:` - To get the gcd of two numbers. example `gcd:10,2`
 
 # Torrent 
 `yts:` - To search for movies in the yts.mx website. example: `yts:fast`

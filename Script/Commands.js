@@ -76,8 +76,14 @@ function runCmd(command, inMemory, fromInput) {
                 processLogCommand(commandName);
             } else if (commandName.includes("ceil:")) {
                 processCeilCommand(commandName);
+            } else if (commandName.includes("gcd:")) {
+                processGcd(commandName);
+            } else if (commandName.includes("lcm:")) {
+                processLcm(commandName);
             } else if (commandName.includes("floatabsolute:")) {
                 processFloatAbsolute(commandName);
+            } else if (commandName.includes("float:")) {
+                processFloat(commandName);
             } else if (commandName.includes("add:")) {
                 let num = commandName.trim().replace(/^add:\s*/i, 'calculate:');
                 calculate(num);
