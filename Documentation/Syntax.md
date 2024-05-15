@@ -10,8 +10,8 @@
 # Features
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
 * `encode:` - To encode data. example: `encode:hola`
-* `open:camera` - To get the live video feed from the camera.
 * `decode:` - To decode data. example: `decode:aG9sYQ==`
+* `open:camera` - To get the live video feed from the camera.
 * `string:reverse:` - To reverse a string. example `string:reverse:hola`
 * `string:count:characters:` - To count the number of characters. example: `string:count:characters:hola`
 * `string:count:words` - To count the number of words. example: `string:count:words:hola`
