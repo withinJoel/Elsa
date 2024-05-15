@@ -937,6 +937,20 @@ function calculate(num) {
     }
 }
 
+//Calculate Log
+function processLogCommand(input) {
+    const parts = input.split(':');
+    const command = parts[0].trim();
+    const value = parseFloat(parts[1]);
+
+    if (command.toLowerCase() === 'log' && !isNaN(value)) {
+        const result = Math.log10(value);
+        echo (`The logarithm base 10 of ${value} is ${result}`);
+    } else {
+        echo ('Invalid log command or value');
+    }
+}
+
 //error
 function errorhandling() {
     echo(`Not a valid command.`);

@@ -52,7 +52,8 @@
 `add:` - To perform addition. example `add:45+5`
 `subtract:` - To perform subtraction. example `subtract:23-3`
 `multiply:` - To perform multiplication. example `multiply:5x5` or `multiply:5*5`
-`calculate:` - To calculate. example `calculate:56-6+2*6`
+`calculate:` - To calculate. example `calculate:56-6+2*6%2`
+`log:` - To calculate the log of a given number. example `log:56`
 
 # Torrent 
 `yts:` - To search for movies in the yts.mx website. example: `yts:fast`

@@ -72,6 +72,8 @@ function runCmd(command, inMemory, fromInput) {
                 isOddNumber(commandName);
             } else if (commandName.includes("calculate:")) {
                 calculate(commandName);
+            } else if (commandName.includes("log:")) {
+                processLogCommand(commandName);
             } else if (commandName.includes("add:")) {
                 let num = commandName.trim().replace(/^add:\s*/i, 'calculate:');
                 calculate(num);
