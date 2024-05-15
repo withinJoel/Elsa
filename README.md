@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/withinJoel/Elsa/assets/128782382/1fa0cca9-7c72-4327-a7e7-3c15a2cc3406" alt="Evelina" width="200" height="200">
+  <img src="https://github.com/withinJoel/Elsa/assets/128782382/1fa0cca9-7c72-4327-a7e7-3c15a2cc3406" alt="Elsa" width="200" height="200">
 </p>
 
 # Elsa
