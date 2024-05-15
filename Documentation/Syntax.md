@@ -51,6 +51,7 @@
 * `squareroot:` - To find the square root of a number. example: `squareroot:23`
 
 # Web
+* `godaddy:` - To get the domain info. example `godaddy:fb`
 * `pexels:image:` - To search images in pexels. example `pexels:image:cat`
 * `pexels:video:` - To search videos in pexels. example `pexels:video:cat`
 * `pixabay:image:` - To search images in pixabay. example `pixabay:image:cat`

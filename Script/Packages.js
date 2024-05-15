@@ -1,7 +1,7 @@
 //Version
-function Version () {
-    echo ("Elsa v1.1");
-    echo ('Made with love by Joel Jessie Jolly.');
+function Version() {
+    echo("Elsa v1.1");
+    echo('Made with love by Joel Jessie Jolly.');
 }
 
 //Change Background Color
@@ -155,6 +155,13 @@ function searchPixabayGif(input) {
 function searchYoutube(input) {
     const query = input.trim().replace(/^youtube:\b\s*/i, ''); // Trim spaces and replace "open"
     const pexelsimgurl = 'https://www.youtube.com/results?search_query=' + query + '/';
+    window.open(pexelsimgurl, '_blank');
+}
+
+//Search Godaddy
+function searchGodaddy(input) {
+    const query = input.trim().replace(/^godaddy:\b\s*/i, ''); // Trim spaces and replace "open"
+    const pexelsimgurl = 'https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=' + query;
     window.open(pexelsimgurl, '_blank');
 }
 
@@ -681,7 +688,7 @@ function countWords(input) {
 }
 
 //Camera
-function openCamera () {
+function openCamera() {
     // Check if the browser supports mediaDevices and getUserMedia
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         // Request access to the webcam
@@ -700,18 +707,19 @@ function openCamera () {
                 }
             })
             .catch(function (error) {
-                echo ('Error accessing the webcam:', error);
+                echo('Error accessing the webcam:', error);
             });
     } else {
-        echo ('getUserMedia is not supported on this browser.');
+        echo('getUserMedia is not supported on this browser.');
     }
 }
+
 //Check Palindrome
 function isPalindrome(input) {
     let cleanedInput = input.trim().replace(/^check:palindrome:\s*/i, '');
     const reversed = cleanedInput.split('').reverse().join('');
     const palindrome = cleanedInput === reversed;
-    echo('palindrome: '+ palindrome);
+    echo('palindrome: ' + palindrome);
 }
 
 //Check Prime
