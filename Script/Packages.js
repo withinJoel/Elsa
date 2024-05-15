@@ -154,8 +154,15 @@ function searchPixabayGif(input) {
 //Search Spotify
 function searchSpotify(input) {
     const query = input.trim().replace(/^spotify:\b\s*/i, ''); // Trim spaces and replace "open"
-    const youtubeurl = 'https://open.spotify.com/search/' + query + '';
-    window.open(youtubeurl, '_blank');
+    const spotifyurl = 'https://open.spotify.com/search/' + query + '';
+    window.open(spotifyurl, '_blank');
+}
+
+//Search Yts
+function searchYts(input) {
+    const query = input.trim().replace(/^yts:\b\s*/i, ''); // Trim spaces and replace "open"
+    const ytsurl = 'https://yts.mx/browse-movies/' + query + '/all/all/0/latest/0/all';
+    window.open(ytsurl, '_blank');
 }
 
 //Search Youtube

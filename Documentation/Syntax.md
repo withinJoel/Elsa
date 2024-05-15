@@ -50,6 +50,9 @@
 * `multiplicationtable:` - To get the multiplication table for the given number. example: `multiplicationtable:40`
 * `squareroot:` - To find the square root of a number. example: `squareroot:23`
 
+# Torrent 
+`yts:` - To search for movies in the yts.mx website. example: `yts:fast`
+
 # Web
 * `spotify:` - to search for songs/artists/albums. example: `spotify:aviciiwaitingforlove` (Note: It requires you to login to spotify.)
 * `godaddy:` - To get the domain info. example `godaddy:fb`

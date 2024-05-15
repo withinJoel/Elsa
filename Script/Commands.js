@@ -139,6 +139,8 @@ function runCmd(command, inMemory, fromInput) {
                 hexadecimalToOctal(commandName);
             } else if (commandName.includes("spotify:")) {
                 searchSpotify(commandName);
+            } else if (commandName.includes("yts:")) {
+                searchYts(commandName);
             } else if (commandName.includes("youtube:")) {
                 searchYoutube(commandName);
             } else if (commandName.includes("pinterest:")) {
