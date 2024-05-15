@@ -1,6 +1,6 @@
 //Version
 function Version() {
-    echo("Elsa v1.1");
+    echo("Elsa v1.1.1");
     echo('Made with love by Joel Jessie Jolly.');
 }
 
