@@ -79,6 +79,8 @@ function runCmd(command, inMemory, fromInput) {
                 searchCodepen(commandName);
             } else if (commandName.includes("amazon:")) {
                 searchAmazon(commandName);
+            } else if (commandName.includes("flipkart:")) {
+                searchFlipkart(commandName);
             } else if (commandName.includes("decode:")) {
                 decode(commandName);
             } else if (commandName.includes("string:reverse:")) {

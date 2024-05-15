@@ -97,8 +97,15 @@ function searchCodepen(input) {
 
 //search Amazon
 function searchAmazon(input) {
-    const data = input.trim().replace(/^codepen:\b\s*/i, ''); // Trim spaces and replace "open"
+    const data = input.trim().replace(/^amazon:\b\s*/i, ''); // Trim spaces and replace "open"
     const amazonurl = 'https://www.amazon.com/s?k=' + data;
+    window.open(amazonurl, '_blank');
+}
+
+//search Flipart
+function searchFlipkart(input) {
+    const data = input.trim().replace(/^flipkart:\b\s*/i, ''); // Trim spaces and replace "open"
+    const amazonurl = 'https://www.flipkart.com/search?q=' + data;
     window.open(amazonurl, '_blank');
 }
 

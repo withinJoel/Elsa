@@ -55,6 +55,7 @@
 
 # Shopping
 `amazon:` - To shop in amazon. example: `amazon:toy car`
+`flipkart:` - To shop in flipkart. example: `flipkart:toy car`
 
 # Web
 * `codepen:` - To search codepen. example: `codepen:nav bar`
