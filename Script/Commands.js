@@ -31,6 +31,8 @@ function runCmd(command, inMemory, fromInput) {
                 Version();
             } else if (commandName === "timezone") {
                 getTimeZone();
+            } else if (commandName === "open:camera") {
+                openCamera();
             } else if (commandName === "time") {
                 getTime();
             } else if (commandName === "day") {

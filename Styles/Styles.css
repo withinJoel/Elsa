@@ -43,6 +43,16 @@ body {
   outline: none;
 }
 
+#video-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  left:0px;
+  border: 1px solid black;
+}
+
 ::selection {
   background: #555; /* Change selection color */
 }

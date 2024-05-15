@@ -680,12 +680,38 @@ function countWords(input) {
     echo(`Number of words: ${words}`);
 }
 
+//Camera
+function openCamera () {
+    // Check if the browser supports mediaDevices and getUserMedia
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        // Request access to the webcam
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                // Create a new window with video stream
+                const newWindow = window.open('', '_blank', 'width=670,height=560');
+                if (newWindow) {
+                    // Create a video element in the new window
+                    const video = document.createElement('video');
+                    video.autoplay = true;
+                    video.srcObject = stream;
+                    newWindow.document.body.appendChild(video);
+                } else {
+                    echo('Failed to open new window.');
+                }
+            })
+            .catch(function (error) {
+                echo ('Error accessing the webcam:', error);
+            });
+    } else {
+        echo ('getUserMedia is not supported on this browser.');
+    }
+}
 //Check Palindrome
 function isPalindrome(input) {
     let cleanedInput = input.trim().replace(/^check:palindrome:\s*/i, '');
     const reversed = cleanedInput.split('').reverse().join('');
     const palindrome = cleanedInput === reversed;
-    echo(palindrome);
+    echo('palindrome: '+ palindrome);
 }
 
 //Check Prime
