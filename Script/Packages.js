@@ -250,6 +250,13 @@ function openXvideos(input) {
     window.open(xvideosurl, '_blank');
 }
 
+//Search Siliconwives
+function searchSiliconwives(input) {
+    const query = input.trim().replace(/^siliconwives:\b\s*/i, ''); // Trim spaces and replace "open"
+    const siliconwivesurl = 'https://www.siliconwives.com/search?q=' + query;
+    window.open(siliconwivesurl, '_blank');
+} 
+
 //Search Czechvr
 function openCzechvr(input) {
     const query = input.trim().replace(/^czechvr:\b\s*/i, ''); // Trim spaces and replace "open"

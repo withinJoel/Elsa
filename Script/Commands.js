@@ -232,6 +232,8 @@ function runCmd(command, inMemory, fromInput) {
                 searchRedgifs(commandName);
             } else if (commandName.includes("itsex:")) {
                 searchItsex(commandName);
+            } else if (commandName.includes("siliconwives:")) {
+                searchSiliconwives(commandName);
             } else if (commandName.includes("tenor:")) {
                 searchTenor(commandName);
             } else if (commandName.includes("reddit:")) {
