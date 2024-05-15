@@ -110,6 +110,9 @@
 # Adult
 * `onlyfans:` - To open their onlyfans profile example: `onlyfans:rileyreid`
 * `xnxx:` - To search the xnxx website with the keyword. example: `xnxx:wife`
+* `porn:` - To search the porn website with the keyword. example: `porn:wife`
+* `xvideos:` - To search the xvideos website with the keyword. example: `xvideos:wife`
+* `czechvr:` - To search the czechvr website with the keyword. example: `czechvr:wife`
 * `youporn:` - To search the youporn website with the keyword. example: `youporn:wife`
 * `hdtube:` - To search the hdtube website with the keyword. example: `hdtube:wife`
 * `pussyspace:` - To search the pussyspace website with the keyword. example: `pussyspace:wife`

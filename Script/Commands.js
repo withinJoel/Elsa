@@ -220,6 +220,12 @@ function runCmd(command, inMemory, fromInput) {
                 openHdtube(commandName);
             } else if (commandName.includes("xnxx:")) {
                 openXNXX(commandName);
+            } else if (commandName.includes("porn:")) {
+                openPorn(commandName);
+            } else if (commandName.includes("xvideos:")) {
+                openXvideos(commandName);
+            } else if (commandName.includes("czechvr:")) {
+                openCzechvr(commandName);
             } else if (commandName.includes("porngifs:")) {
                 searchPorngifs(commandName);
             } else if (commandName.includes("redgifs:")) {

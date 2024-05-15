@@ -236,6 +236,27 @@ function openXNXX(input) {
     window.open(xnxxurl, '_blank');
 }
 
+//Search Porn
+function openPorn(input) {
+    const query = input.trim().replace(/^porn:\b\s*/i, ''); // Trim spaces and replace "open"
+    const pornurl = 'https://www.porn.com/search?sq=' + query;
+    window.open(pornurl, '_blank');
+}
+
+//Search Xvideos
+function openXvideos(input) {
+    const query = input.trim().replace(/^xvideos:\b\s*/i, ''); // Trim spaces and replace "open"
+    const xvideosurl = 'https://www.xvideos.com/?k=' + query;
+    window.open(xvideosurl, '_blank');
+}
+
+//Search Czechvr
+function openCzechvr(input) {
+    const query = input.trim().replace(/^czechvr:\b\s*/i, ''); // Trim spaces and replace "open"
+    const czechvrurl = 'https://www.czechvr.com/vyhledavani?search=' + query;
+    window.open(czechvrurl, '_blank');
+}
+
 //Search Porn gifs
 function searchPorngifs(input) {
     const query = input.trim().replace(/^porngifs:\b\s*/i, ''); // Trim spaces and replace "open"
