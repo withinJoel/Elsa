@@ -41,6 +41,24 @@ function runCmd(command, inMemory, fromInput) {
                 isPalindrome(commandName);
             } else if (commandName.includes("multiplicationtable:")) {
                 multiplicationTable(commandName);
+            } else if (commandName.includes("bgcolor:")) {
+                let userColor= commandName.trim().replace(/^bgcolor:\s*/i, '');
+                changeBodyColor(userColor);
+            } else if (commandName.includes("bgcolour:")) {
+                let userColor= commandName.trim().replace(/^bgcolour:\s*/i, '');
+                changeBodyColor(userColor);
+            } else if (commandName.includes("backgroundcolor:")) {
+                let userColor= commandName.trim().replace(/^backgroundcolor:\s*/i, '');
+                changeBodyColor(userColor);
+            } else if (commandName.includes("backgroundcolour:")) {
+                let userColor= commandName.trim().replace(/^backgroundcolour:\s*/i, '');
+                changeBodyColor(userColor);
+            } else if (commandName.includes("color:")) {
+                let userColor= commandName.trim().replace(/^color:\s*/i, '');
+                changeColor(userColor);
+            } else if (commandName.includes("colour:")) {
+                let userColor= commandName.trim().replace(/^colour:\s*/i, '');
+                changeColor(userColor);
             } else if (commandName.includes("fibonacci:")) {
                 fibonacci(commandName);
             } else if (commandName.includes("squareroot:")) {

@@ -3,6 +3,35 @@ function Version () {
     echo ("Elsa v1.1");
     echo ('Made with love by Joel Jessie Jolly.');
 }
+
+//Change Background Color
+function changeBodyColor(userColor) {
+
+    // Check if the input is a valid color
+    var isValidColor = /^#[0-9A-F]{6}$/i.test(userColor) || /^[a-z]+$/i.test(userColor);
+
+    if (isValidColor) {
+        // Set the body background color
+        document.body.style.backgroundColor = userColor;
+    } else {
+        echo("Invalid color!");
+    }
+}
+
+//Change Color
+function changeColor(userColor) {
+
+    // Check if the input is a valid color
+    var isValidColor = /^#[0-9A-F]{6}$/i.test(userColor) || /^[a-z]+$/i.test(userColor);
+
+    if (isValidColor) {
+        // Set the body background color
+        document.body.style.color = userColor;
+    } else {
+        echo("Invalid color!");
+    }
+}
+
 //To get the time
 function getTime() {
     const now = new Date();

@@ -26,6 +26,10 @@
 * `randomalphabet` - To get a random alphabet.
 * `mouseposition` - To get the mouse position.
 
+# Customization
+* `color:` or `colour:` - To change the terminal text color. example: `color:blue` or `colour:white`
+* `bgcolor:` or `bgcolour:` or `backgroundcolor:` or `backgroundcolour` - To change the background color of the terminal. example `bgcolor:purple`
+
 # Math
 * `randomnumber` - To get a random number.
 * `convert:binarytodecimal:` - To convert binary to decimal. example: `convert:binarytodecimal:101010010`
