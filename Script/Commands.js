@@ -123,6 +123,10 @@ function runCmd(command, inMemory, fromInput) {
                 removeSingleQuotes(commandName);
             } else if (commandName.includes("remove:doublequotes:")) {
                 removeDoubleQuotes(commandName);
+            } else if (commandName.includes("remove:numbers:")) {
+                let str = commandName.trim().replace(/^remove:numbers:\s*/i, '');
+                let data = str + '.';
+                removeNumbers(data);
             } else if (commandName.includes("explode:")) {
                 let delimiter = ' ';
                 let sentence = commandName.trim().replace(/^explode:\s*/i, '');

@@ -44,6 +44,7 @@
 
 # Math
 * `randomnumber` - To get a random number.
+* `remove:numbers:` - To remove numbers from the input. example `remove:numbers:hello, 007`
 * `convert:binarytodecimal:` - To convert binary to decimal. example: `convert:binarytodecimal:101010010`
 * `convert:binarytohexadecimal:` - To convert binary to hexadecimal. example: `convert:binarytohexadecimal:101010010`
 * `convert:binarytooctal:` - To convert binary to octal. example: `convert:binarytooctal:101010010`

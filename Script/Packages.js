@@ -797,6 +797,25 @@ function removeSpaces(data) {
     echo(input.replace(/\s/g, ''));
 }
 
+//Math remove numbers
+function removeNumbers(str) {
+    let result = '';
+    let start = 0;
+    let end = 0;
+    for (let i = 0; i <= str.length; i++) {
+        if (/\d/.test(str[i]) || i === str.length) {
+            if (start !== end) {
+                result += str.slice(start, end);
+            }
+            start = i + 1;
+            end = i + 1;
+        } else {
+            end++;
+        }
+    }
+    echo (result);
+}
+
 //String remove single quotes
 function removeSingleQuotes(data) {
     const inputString = data.trim().replace(/^remove:singlequotes:\s*/i, '');
