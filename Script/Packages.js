@@ -918,6 +918,25 @@ function squareRoot(num) {
     echo(`Square root of ${n} is ${result}`);
 }
 
+//Calculate
+function calculate(num) {
+    const parts = num.split('calculate:');
+    if (parts.length !== 2) {
+        echo ('Invalid input format');
+    }
+
+    expression = parts[1].trim();
+    try {
+        // Replace 'x' with '*' for multiplication to work correctly
+        const formattedExpression = expression.replace(/x/g, '*');
+        // Using eval to evaluate the expression
+        echo (eval(formattedExpression));
+    } catch (error) {
+        // Handle any errors in the expression
+        echo ('Error: Invalid expression');
+    }
+}
+
 //error
 function errorhandling() {
     echo(`Not a valid command.`);

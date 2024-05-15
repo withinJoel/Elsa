@@ -70,6 +70,17 @@ function runCmd(command, inMemory, fromInput) {
                 isCompositeNumber(commandName);
             } else if (commandName.includes("check:odd:")) {
                 isOddNumber(commandName);
+            } else if (commandName.includes("calculate:")) {
+                calculate(commandName);
+            } else if (commandName.includes("add:")) {
+                let num = commandName.trim().replace(/^add:\s*/i, 'calculate:');
+                calculate(num);
+            } else if (commandName.includes("subtract:")) {
+                let num = commandName.trim().replace(/^subtract:\s*/i, 'calculate:');
+                calculate(num);
+            } else if (commandName.includes("multiply:")) {
+                let num = commandName.trim().replace(/^multiply:\s*/i, 'calculate:');
+                calculate(num);
             } else if (commandName.includes("check:even:")) {
                 isEvenNumber(commandName);
             } else if (commandName.includes("encode:")) {
