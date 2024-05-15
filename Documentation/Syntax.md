@@ -53,6 +53,9 @@
 # Torrent 
 `yts:` - To search for movies in the yts.mx website. example: `yts:fast`
 
+# Shopping
+`amazon:` - To shop in amazon. example: `amazon:toy car`
+
 # Web
 * `codepen:` - To search codepen. example: `codepen:nav bar`
 * `spotify:` - to search for songs/artists/albums. example: `spotify:aviciiwaitingforlove` (Note: It requires you to login to spotify.)

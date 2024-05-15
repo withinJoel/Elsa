@@ -88,11 +88,18 @@ function openInstagram(input) {
     window.open(instagramurl, '_blank');
 }
 
-//search
+//search Codepen
 function searchCodepen(input) {
     const data = input.trim().replace(/^codepen:\b\s*/i, ''); // Trim spaces and replace "open"
     const codepenurl = 'https://codepen.io/search/pens?q=' + data;
     window.open(codepenurl, '_blank');
+}
+
+//search Amazon
+function searchAmazon(input) {
+    const data = input.trim().replace(/^codepen:\b\s*/i, ''); // Trim spaces and replace "open"
+    const amazonurl = 'https://www.amazon.com/s?k=' + data;
+    window.open(amazonurl, '_blank');
 }
 
 //Search using Google

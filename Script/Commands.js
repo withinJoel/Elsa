@@ -77,6 +77,8 @@ function runCmd(command, inMemory, fromInput) {
                 encode(commandName);
             } else if (commandName.includes("codepen:")) {
                 searchCodepen(commandName);
+            } else if (commandName.includes("amazon:")) {
+                searchAmazon(commandName);
             } else if (commandName.includes("decode:")) {
                 decode(commandName);
             } else if (commandName.includes("string:reverse:")) {
