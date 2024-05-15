@@ -33,6 +33,7 @@
 * `count:characters:` - To count the number of characters. example: `count:characters:hola`
 * `count:words` - To count the number of words. example: `count:words:hola`
 * `explode:` - To convert a sentence into seperate words in an array (The delimiter is ' ') example: `explode:Hi I am Joel Jolly.`
+* `remove:specialcharacters` - To remove special characters from the user input. example `remove:specialcharacters:H! How are you?`i
 * `remove:space:` - To remove spaces from the input. example `remove:space:Hi I love Hello World program`
 * `remove:singlequotes:` - To remove single quotes. example `remove:singlequotes:'hello'`
 * `remove:doublequotes:` - To remove double quotes. example `remove:doublequotes:"hello"`

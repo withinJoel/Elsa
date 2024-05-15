@@ -119,6 +119,8 @@ function runCmd(command, inMemory, fromInput) {
                 convertDoubleToSingleQuotes(commandName);
             } else if (commandName.includes("remove:space:")) {
                 removeSpaces(commandName);
+            } else if (commandName.includes("remove:specialcharacters:")) {
+                removeSpecialCharacters(commandName);
             } else if (commandName.includes("remove:singlequotes:")) {
                 removeSingleQuotes(commandName);
             } else if (commandName.includes("remove:doublequotes:")) {

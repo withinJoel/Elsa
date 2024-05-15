@@ -834,6 +834,16 @@ function removeDoubleQuotes(data) {
     echo (inputString.replace(/"/g, ''));
 }
 
+//String remove special characters
+function removeSpecialCharacters(data) {
+    const inputString = data.trim().replace(/^remove:specialcharacters:\s*/i, '');
+    // Define the pattern for special characters using a regular expression
+    var pattern = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/g;
+    // Replace special characters with an empty string
+    var result = inputString.replace(pattern, '');
+    echo ("Output:" + result);
+}
+
 //String convert single quotes to double quotes
 function convertSingleToDoubleQuotes(data) {
     const inputString = data.trim().replace(/^convert:singlequotestodoublequotes:\s*/i, '');
