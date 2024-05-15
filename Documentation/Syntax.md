@@ -129,3 +129,4 @@
 
 # Adult Shopping
 * `siliconwives:` - To shop in siliconwives. example: `siliconwives:toy`
+* `yourdoll:` - To shop in siliconwives. example: `yourdoll:toy`

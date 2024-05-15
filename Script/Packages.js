@@ -257,6 +257,13 @@ function searchSiliconwives(input) {
     window.open(siliconwivesurl, '_blank');
 } 
 
+//Search Yourdoll
+function searchYourdoll(input) {
+    const query = input.trim().replace(/^yourdoll:\b\s*/i, ''); // Trim spaces and replace "open"
+    const yourdollurl = 'https://www.yourdoll.com/?s=' + query + '&post_type=product';
+    window.open(yourdollurl, '_blank');
+} 
+
 //Search Czechvr
 function openCzechvr(input) {
     const query = input.trim().replace(/^czechvr:\b\s*/i, ''); // Trim spaces and replace "open"
