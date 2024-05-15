@@ -54,6 +54,7 @@
 * `multiply:` - To perform multiplication. example `multiply:5x5` or `multiply:5*5`
 * `calculate:` - To calculate. example `calculate:56-6+2*6%2`
 * `log:` - To calculate the log of a given number. example `log:56`
+* `ceil:` - To calculate the ceil of a given number. example `ceil:11.9`
 
 # Torrent 
 `yts:` - To search for movies in the yts.mx website. example: `yts:fast`

@@ -951,6 +951,38 @@ function processLogCommand(input) {
     }
 }
 
+// Ceil
+function processCeilCommand(input) {
+    const parts = input.split(':');
+    const command = parts[0].trim();
+    const value = parseFloat(parts[1]);
+
+    if (command.toLowerCase() === 'ceil' && !isNaN(value)) {
+        const result = ceil(value);
+        echo(`The ceiling value of ${value} is ${result}`);
+    } else {
+        echo('Invalid ceil command or value');
+    }
+}
+
+function ceil(x) {
+    if (Number.isInteger(x)) {
+        return x;
+    } else {
+        return Math.ceil(x);
+    }
+}
+
+//Float Absolute
+function processFloatAbsolute(num) {
+    let x = parseFloat(num.trim().replace(/^floatabsolute:\s*/i, ''));
+    if (!isNaN(x)) {
+        echo('The float absolute for ' +x+ ' is ' + Math.abs(x));
+    } else {
+        echo('Invalid value'); // Return NaN for unsupported types or invalid input
+    }
+}
+
 //error
 function errorhandling() {
     echo(`Not a valid command.`);
