@@ -127,6 +127,7 @@
 * `porngifs:` - To search the porngifs website with the keyword. example: `porngifs:wife`
 * `itsex:` - To search the it.sex website with the keyword. example: `itsex:wife`
 * `clips4sale:` - To search the clips4sale website with the keyword. example: `clips4sale:wife`
+* `bellesa:` - To search the bellesa website with the keyword. example: `bellesa:wife`
 
 # Adult Shopping
 * `siliconwives:` - To shop in siliconwives. example: `siliconwives:toy`

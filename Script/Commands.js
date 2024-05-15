@@ -238,6 +238,8 @@ function runCmd(command, inMemory, fromInput) {
                 searchYourdoll(commandName);
             } else if (commandName.includes("clips4sale:")) {
                 searchClips4sale(commandName);
+            } else if (commandName.includes("bellesa:")) {
+                searchBellesa(commandName);
             } else if (commandName.includes("tenor:")) {
                 searchTenor(commandName);
             } else if (commandName.includes("reddit:")) {

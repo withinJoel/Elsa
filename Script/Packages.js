@@ -257,6 +257,13 @@ function searchSiliconwives(input) {
     window.open(siliconwivesurl, '_blank');
 } 
 
+//Search Bellesa
+function searchBellesa(input) {
+    const query = input.trim().replace(/^bellesa:\b\s*/i, ''); // Trim spaces and replace "open"
+    const bellesaurl = 'https://www.bellesa.co/search?q=' + query;
+    window.open(bellesaurl, '_blank');
+} 
+
 //Search Yourdoll
 function searchYourdoll(input) {
     const query = input.trim().replace(/^yourdoll:\b\s*/i, ''); // Trim spaces and replace "open"
