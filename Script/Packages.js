@@ -786,6 +786,17 @@ function stringExplode(sentence, delimiter) {
     echo ('['+sentence.split(delimiter)+']');
 }
 
+// String remove space
+function removeSpaces(data) {
+    const input = data.trim().replace(/^string:remove:space:\s*/i, '');
+    if (typeof input !== 'string') {
+        echo ('Input must be a string.');
+    }
+
+    // Use a regular expression to replace spaces globally
+    echo(input.replace(/\s/g, ''));
+}
+
 //String Count Characters
 function countCharacters(input) {
     const data = input.trim().replace(/^string:count:characters:\s*/i, '');
