@@ -778,6 +778,14 @@ function reverseString(input) {
     echo(`Reversed string: ${reversed}`);
 }
 
+// String Explode
+function stringExplode(sentence, delimiter) {
+    if (typeof sentence !== 'string' || typeof delimiter !== 'string') {
+        echo ('Both sentence and delimiter must be strings.');
+    }
+    echo ('['+sentence.split(delimiter)+']');
+}
+
 //String Count Characters
 function countCharacters(input) {
     const data = input.trim().replace(/^string:count:characters:\s*/i, '');

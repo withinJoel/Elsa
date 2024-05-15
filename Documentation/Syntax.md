@@ -34,7 +34,7 @@
 * `string:reverse:` - To reverse a string. example `string:reverse:hola`
 * `string:count:characters:` - To count the number of characters. example: `string:count:characters:hola`
 * `string:count:words` - To count the number of words. example: `string:count:words:hola`
-
+* `string:explode:` - To convert a sentence into seperate words in an array (The delimiter is ' ') example: `string:explode:Hi I am Joel Jolly.`
 # Math
 * `randomnumber` - To get a random number.
 * `convert:binarytodecimal:` - To convert binary to decimal. example: `convert:binarytodecimal:101010010`

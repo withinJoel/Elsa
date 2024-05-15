@@ -111,6 +111,10 @@ function runCmd(command, inMemory, fromInput) {
                 searchFlipkart(commandName);
             } else if (commandName.includes("string:reverse:")) {
                 reverseString(commandName);
+            } else if (commandName.includes("string:explode:")) {
+                let delimiter = ' ';
+                let sentence = commandName.trim().replace(/^string:explode:\s*/i, '');
+                stringExplode(sentence, delimiter);
             } else if (commandName.includes("string:count:characters:")) {
                 countCharacters(commandName);
             } else if (commandName.includes("string:count:words:")) {
