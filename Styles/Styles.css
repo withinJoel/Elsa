@@ -35,8 +35,7 @@ body {
     word-wrap: break-word; /* Break words to next line if they don't fit */
     background: transparent;
     border: 0;
-    width: 100px;
-    max-width: 1200px;
+    width: 1200px;
     color: inherit;
     font: inherit;
     outline: none;

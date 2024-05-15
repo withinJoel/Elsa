@@ -137,6 +137,8 @@ function runCmd(command, inMemory, fromInput) {
                 hexadecimalToDecimal(commandName);
             } else if (commandName.includes("convert:hexadecimaltooctal:")) {
                 hexadecimalToOctal(commandName);
+            } else if (commandName.includes("spotify:")) {
+                searchSpotify(commandName);
             } else if (commandName.includes("youtube:")) {
                 searchYoutube(commandName);
             } else if (commandName.includes("pinterest:")) {

@@ -51,6 +51,7 @@
 * `squareroot:` - To find the square root of a number. example: `squareroot:23`
 
 # Web
+* `spotify:` - to search for songs/artists/albums. example: `spotify:aviciiwaitingforlove` (Note: It requires you to login to spotify.)
 * `godaddy:` - To get the domain info. example `godaddy:fb`
 * `pinterest:image:` - To search images in pinterest. example `pinterest:cat`
 * `pexels:image:` - To search images in pexels. example `pexels:image:cat`

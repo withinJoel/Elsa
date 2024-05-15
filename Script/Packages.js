@@ -151,6 +151,13 @@ function searchPixabayGif(input) {
     window.open(pixabaygifurl, '_blank');
 }
 
+//Search Spotify
+function searchSpotify(input) {
+    const query = input.trim().replace(/^spotify:\b\s*/i, ''); // Trim spaces and replace "open"
+    const youtubeurl = 'https://open.spotify.com/search/' + query + '';
+    window.open(youtubeurl, '_blank');
+}
+
 //Search Youtube
 function searchYoutube(input) {
     const query = input.trim().replace(/^youtube:\b\s*/i, ''); // Trim spaces and replace "open"
