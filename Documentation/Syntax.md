@@ -86,6 +86,7 @@
 
 # Social Network
 * `instagram:` - To open their instagram profile example: `instagram:withinjoel`
+* `threads:` - To open their threads profile example: `threads:withinjoel`
 * `twitter:` or `x:` - To open their x profile example: `twitter:withinjoel` or `x:withinjoel`
 * `linkedin:` - To open their linkedin profile example: `linkedin:withinjoel`
 * `snapchat:` - To open their snapchat profile example: `snapchat:withinjoel`

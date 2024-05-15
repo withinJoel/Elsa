@@ -262,6 +262,8 @@ function runCmd(command, inMemory, fromInput) {
                 openClubhouse(commandName);
             } else if (commandName.includes("twitter:")) {
                 openTwitter(commandName);
+            } else if (commandName.includes("threads:")) {
+                searchThreads(commandName);
             } else if (commandName.includes("github:")) {
                 openGithub(commandName);
             } else {

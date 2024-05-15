@@ -193,6 +193,13 @@ function searchYoutube(input) {
     window.open(youtubeurl, '_blank');
 }
 
+//Search Threads
+function searchThreads(input) {
+    const query = input.trim().replace(/^threads:\b\s*/i, ''); // Trim spaces and replace "open"
+    const youtubeurl = 'https://www.threads.net/@' + query + '/';
+    window.open(youtubeurl, '_blank');
+} 
+
 //Search Pinterest
 function searchPinterest(input) {
     const query = input.trim().replace(/^pinterest:\b\s*/i, ''); // Trim spaces and replace "open"
