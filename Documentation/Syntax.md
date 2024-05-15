@@ -12,9 +12,6 @@
 * `encode:` - To encode data. example: `encode:hola`
 * `decode:` - To decode data. example: `decode:aG9sYQ==`
 * `open:camera` - To get the live video feed from the camera.
-* `string:reverse:` - To reverse a string. example `string:reverse:hola`
-* `string:count:characters:` - To count the number of characters. example: `string:count:characters:hola`
-* `string:count:words` - To count the number of words. example: `string:count:words:hola`
 * `check:palindrome:` - To check wether it is palindrome or not. example: `check:palindrome:hola`.
 * `createpassword` - To create a password.
 * `time` - To display the current time.
@@ -34,6 +31,9 @@
 * `randomalphabet` - To get a random alphabet.
 * `convert:tolowercase:` - To convert to lowercase. example `convert:tolowercase:Hola`
 * `convert:touppercase` - To convert to uppercase. example `convert:touppercase:hola`
+* `string:reverse:` - To reverse a string. example `string:reverse:hola`
+* `string:count:characters:` - To count the number of characters. example: `string:count:characters:hola`
+* `string:count:words` - To count the number of words. example: `string:count:words:hola`
 
 # Math
 * `randomnumber` - To get a random number.
