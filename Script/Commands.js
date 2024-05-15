@@ -21,10 +21,9 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName === "exit") {
                 window.open(document.URL, "about:blank", "width=977 height=455");
                 window.close();
-            } else if (commandName === "echo") {
-                echo(toSpaces(args));
-            } else if (commandName === "echo.") {
-                echo("\n");
+            } if (commandName.startsWith("echo:")) {
+                const data = commandName.replace(/^echo:\s*/, ''); // Removes only the space after "echo:"
+                echoFunction(data.trim()); // Trims any leading or trailing spaces after removing the echo command
             } else if ((commandName === "ver") || (commandName === "version")) {
                 Version();
             } else if (commandName === "timezone") {
@@ -42,22 +41,22 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("multiplicationtable:")) {
                 multiplicationTable(commandName);
             } else if (commandName.includes("bgcolor:")) {
-                let userColor= commandName.trim().replace(/^bgcolor:\s*/i, '');
+                let userColor = commandName.trim().replace(/^bgcolor:\s*/i, '');
                 changeBodyColor(userColor);
             } else if (commandName.includes("bgcolour:")) {
-                let userColor= commandName.trim().replace(/^bgcolour:\s*/i, '');
+                let userColor = commandName.trim().replace(/^bgcolour:\s*/i, '');
                 changeBodyColor(userColor);
             } else if (commandName.includes("backgroundcolor:")) {
-                let userColor= commandName.trim().replace(/^backgroundcolor:\s*/i, '');
+                let userColor = commandName.trim().replace(/^backgroundcolor:\s*/i, '');
                 changeBodyColor(userColor);
             } else if (commandName.includes("backgroundcolour:")) {
-                let userColor= commandName.trim().replace(/^backgroundcolour:\s*/i, '');
+                let userColor = commandName.trim().replace(/^backgroundcolour:\s*/i, '');
                 changeBodyColor(userColor);
             } else if (commandName.includes("color:")) {
-                let userColor= commandName.trim().replace(/^color:\s*/i, '');
+                let userColor = commandName.trim().replace(/^color:\s*/i, '');
                 changeColor(userColor);
             } else if (commandName.includes("colour:")) {
-                let userColor= commandName.trim().replace(/^colour:\s*/i, '');
+                let userColor = commandName.trim().replace(/^colour:\s*/i, '');
                 changeColor(userColor);
             } else if (commandName.includes("fibonacci:")) {
                 fibonacci(commandName);

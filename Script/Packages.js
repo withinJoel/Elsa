@@ -4,6 +4,12 @@ function Version() {
     echo('Made with love by Joel Jessie Jolly.');
 }
 
+//Echo function
+function echoFunction(input) {
+    const data = input.trim().replace(/^echo:\b\s*/i, ''); // Trim spaces and replace "open"
+    echo (data);
+}
+
 //Change Background Color
 function changeBodyColor(userColor) {
 
