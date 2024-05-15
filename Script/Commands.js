@@ -14,9 +14,7 @@ function runCmd(command, inMemory, fromInput) {
             navigatingInMemory = false;
         }
         if (!toFile) {
-            var commandName = command.split(" ")[0],
-                args = command.split(" ");
-            args.shift();
+            var commandName = command;
 
             if (commandName === "cls" || commandName === "clearscreen") {
                 log.innerHTML = "";
