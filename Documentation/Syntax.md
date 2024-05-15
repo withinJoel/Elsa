@@ -49,11 +49,11 @@
 * `fibonacci:` - To get the fibonacci of a given number. example: `fibonacci:45`
 * `multiplicationtable:` - To get the multiplication table for the given number. example: `multiplicationtable:40`
 * `squareroot:` - To find the square root of a number. example: `squareroot:23`
-`add:` - To perform addition. example `add:45+5`
-`subtract:` - To perform subtraction. example `subtract:23-3`
-`multiply:` - To perform multiplication. example `multiply:5x5` or `multiply:5*5`
-`calculate:` - To calculate. example `calculate:56-6+2*6%2`
-`log:` - To calculate the log of a given number. example `log:56`
+* `add:` - To perform addition. example `add:45+5`
+* `subtract:` - To perform subtraction. example `subtract:23-3`
+* `multiply:` - To perform multiplication. example `multiply:5x5` or `multiply:5*5`
+* `calculate:` - To calculate. example `calculate:56-6+2*6%2`
+* `log:` - To calculate the log of a given number. example `log:56`
 
 # Torrent 
 `yts:` - To search for movies in the yts.mx website. example: `yts:fast`
