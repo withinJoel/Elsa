@@ -34,6 +34,8 @@
 * `count:words` - To count the number of words. example: `count:words:hola`
 * `explode:` - To convert a sentence into seperate words in an array (The delimiter is ' ') example: `explode:Hi I am Joel Jolly.`
 * `remove:space:` - To remove spaces from the input. example `remove:space:Hi I love Hello World program`
+* `remove:singlequotes:` - To remove single quotes. example `remove:singlequotes:'hello'`
+* `remove:doublequotes:` - To remove double quotes. example `remove:doublequotes:"hello"`
 * `convert:tolowercase:` - To convert to lowercase. example `convert:tolowercase:Hola`
 * `convert:touppercase` - To convert to uppercase. example `convert:touppercase:hola`
 * `convert:spacetounderscore:` - To convert spaces to underscore. example: `convert:spacetounderscore:hello world`
