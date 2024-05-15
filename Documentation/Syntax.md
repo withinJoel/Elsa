@@ -46,7 +46,7 @@
 * `check:composite:` - To check wether the given number is composite. example: `check:composite:11`
 * `check:odd:` - To check wether the given number is odd. example: `check:odd:45`
 * `check:even:` - To check wether the given number is even. example: `check:even:45`
-* `fibonacci` - To get the fibonacci of a given number. example: `fibonacci:45`
+* `fibonacci:` - To get the fibonacci of a given number. example: `fibonacci:45`
 * `multiplicationtable:` - To get the multiplication table for the given number. example: `multiplicationtable:40`
 * `squareroot:` - To find the square root of a number. example: `squareroot:23`
 
@@ -70,7 +70,7 @@
 
 # Search Engine
 * `google:` - To search using Google search engine. example `google:youtubestudio`
-* `duckduckgo` - To search using DuckDuckGo search engine. example `duckduckgo:github`
+* `duckduckgo:` - To search using DuckDuckGo search engine. example `duckduckgo:github`
 * `wikipedia:` - To search the wikipedia. example `wikipedia:twitter`
 
 # Social Network
