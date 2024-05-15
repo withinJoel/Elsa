@@ -24,12 +24,16 @@
 * `timezone` - To get the time zone.
 * `webrtc` - To get the WebRTC info.
 * `randomcolor` or `randomcolour` - To get a random color.
-* `randomalphabet` - To get a random alphabet.
 * `mouseposition` - To get the mouse position.
 
 # Customization
 * `color:` or `colour:` - To change the terminal text color. example: `color:blue` or `colour:white`
 * `bgcolor:` or `bgcolour:` or `backgroundcolor:` or `backgroundcolour` - To change the background color of the terminal. example `bgcolor:purple`
+
+# Text
+* `randomalphabet` - To get a random alphabet.
+* `convert:tolowercase:` - To convert to lowercase. example `convert:tolowercase:Hola`
+* `convert:touppercase` - To convert to uppercase. example `convert:touppercase:hola`
 
 # Math
 * `randomnumber` - To get a random number.

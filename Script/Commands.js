@@ -93,18 +93,22 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("multiply:")) {
                 let num = commandName.trim().replace(/^multiply:\s*/i, 'calculate:');
                 calculate(num);
+            } else if (commandName.includes("convert:tolowercase:")) {
+                convertToLowerCase(commandName);
+            } else if (commandName.includes("convert:touppercase:")) {
+                convertToUpperCase(commandName);
             } else if (commandName.includes("check:even:")) {
                 isEvenNumber(commandName);
             } else if (commandName.includes("encode:")) {
                 encode(commandName);
+            } else if (commandName.includes("decode:")) {
+                decode(commandName);
             } else if (commandName.includes("codepen:")) {
                 searchCodepen(commandName);
             } else if (commandName.includes("amazon:")) {
                 searchAmazon(commandName);
             } else if (commandName.includes("flipkart:")) {
                 searchFlipkart(commandName);
-            } else if (commandName.includes("decode:")) {
-                decode(commandName);
             } else if (commandName.includes("string:reverse:")) {
                 reverseString(commandName);
             } else if (commandName.includes("string:count:characters:")) {

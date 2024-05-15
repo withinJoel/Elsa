@@ -1056,6 +1056,26 @@ function processLcm(input) {
     echo('LCM of ' + numbers[0] + ' and ' + numbers[1] + ' is ' + lcmValue);
 }
 
+// Convert to lowercase
+function convertToLowerCase(data) {
+    let input = data.trim().replace(/^convert:tolowercase:\s*/i, '');
+    if (typeof input === 'string') {
+        echo (input.toLowerCase());
+    } else {
+        echo ('Input must be a string.');
+    }
+}
+
+// Convert to uppercase
+function convertToUpperCase(data) {
+    let input = data.trim().replace(/^convert:touppercase:\s*/i, '');
+    if (typeof input === 'string') {
+        echo (input.toUpperCase());
+    } else {
+        echo ('Input must be a string.');
+    }
+}
+
 //error
 function errorhandling() {
     echo(`Not a valid command.`);
