@@ -75,6 +75,8 @@ function runCmd(command, inMemory, fromInput) {
                 isEvenNumber(commandName);
             } else if (commandName.includes("encode:")) {
                 encode(commandName);
+            } else if (commandName.includes("codepen:")) {
+                searchCodepen(commandName);
             } else if (commandName.includes("decode:")) {
                 decode(commandName);
             } else if (commandName.includes("string:reverse:")) {

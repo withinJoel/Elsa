@@ -88,6 +88,13 @@ function openInstagram(input) {
     window.open(instagramurl, '_blank');
 }
 
+//search
+function searchCodepen(input) {
+    const data = input.trim().replace(/^codepen:\b\s*/i, ''); // Trim spaces and replace "open"
+    const codepenurl = 'https://codepen.io/search/pens?q=' + data;
+    window.open(codepenurl, '_blank');
+}
+
 //Search using Google
 function searchViaGoogle(input) {
     const query = input.trim().replace(/^google:\b\s*/i, ''); // Trim spaces and replace "open"

@@ -54,6 +54,7 @@
 `yts:` - To search for movies in the yts.mx website. example: `yts:fast`
 
 # Web
+* `codepen:` - To search codepen. example: `codepen:nav bar`
 * `spotify:` - to search for songs/artists/albums. example: `spotify:aviciiwaitingforlove` (Note: It requires you to login to spotify.)
 * `godaddy:` - To get the domain info. example `godaddy:fb`
 * `pinterest:image:` - To search images in pinterest. example `pinterest:cat`
