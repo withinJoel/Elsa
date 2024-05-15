@@ -154,15 +154,22 @@ function searchPixabayGif(input) {
 //Search Youtube
 function searchYoutube(input) {
     const query = input.trim().replace(/^youtube:\b\s*/i, ''); // Trim spaces and replace "open"
-    const pexelsimgurl = 'https://www.youtube.com/results?search_query=' + query + '/';
-    window.open(pexelsimgurl, '_blank');
+    const youtubeurl = 'https://www.youtube.com/results?search_query=' + query + '/';
+    window.open(youtubeurl, '_blank');
+}
+
+//Search Pinterest
+function searchPinterest(input) {
+    const query = input.trim().replace(/^pinterest:\b\s*/i, ''); // Trim spaces and replace "open"
+    const pinteresturl = 'https://pinterest.com/search/pins/?q=' + query + '&rs=typed';
+    window.open(pinteresturl, '_blank');
 }
 
 //Search Godaddy
 function searchGodaddy(input) {
     const query = input.trim().replace(/^godaddy:\b\s*/i, ''); // Trim spaces and replace "open"
-    const pexelsimgurl = 'https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=' + query;
-    window.open(pexelsimgurl, '_blank');
+    const godaddyurl = 'https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=' + query;
+    window.open(godaddyurl, '_blank');
 }
 
 //Open Twitter ID

@@ -52,6 +52,7 @@
 
 # Web
 * `godaddy:` - To get the domain info. example `godaddy:fb`
+* `pinterest:image:` - To search images in pinterest. example `pinterest:cat`
 * `pexels:image:` - To search images in pexels. example `pexels:image:cat`
 * `pexels:video:` - To search videos in pexels. example `pexels:video:cat`
 * `pixabay:image:` - To search images in pixabay. example `pixabay:image:cat`
