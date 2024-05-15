@@ -54,8 +54,8 @@
 `yts:` - To search for movies in the yts.mx website. example: `yts:fast`
 
 # Shopping
-`amazon:` - To shop in amazon. example: `amazon:toy car`
-`flipkart:` - To shop in flipkart. example: `flipkart:toy car`
+* `amazon:` - To shop in amazon. example: `amazon:toy car`
+* `flipkart:` - To shop in flipkart. example: `flipkart:toy car`
 
 # Web
 * `codepen:` - To search codepen. example: `codepen:nav bar`
