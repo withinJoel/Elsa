@@ -37,6 +37,8 @@
 * `string:explode:` - To convert a sentence into seperate words in an array (The delimiter is ' ') example: `string:explode:Hi I am Joel Jolly.`
 * `string:remove:space:` - To remove spaces from the input. example `string:remove:space:Hi I love Hello World program`
 * `string:convert:spacetounderscore:` - To convert spaces to underscore. example: `string:convert:spacetounderscore:hello world`
+* `string:convert:singlequotestodoublequotes:` - To convert single quotes to double quotes from the user's input. example `string:convert:singlequotestodoublequotes:Tom said 'hello'`
+* `string:convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `string:convert:doublequotestosinglequotes:Tom said "hello"`
 
 # Math
 * `randomnumber` - To get a random number.

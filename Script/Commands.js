@@ -113,6 +113,10 @@ function runCmd(command, inMemory, fromInput) {
                 reverseString(commandName);
             } else if (commandName.includes("string:convert:spacetounderscore:")) {
                 convertSpacesToUnderscores(commandName);
+            } else if (commandName.includes("string:convert:singlequotestodoublequotes:")) {
+                convertSingleToDoubleQuotes(commandName);
+            } else if (commandName.includes("string:convert:doublequotestosinglequotes:")) {
+                convertDoubleToSingleQuotes(commandName);
             } else if (commandName.includes("string:remove:space:")) {
                 removeSpaces(commandName);
             } else if (commandName.includes("string:explode:")) {

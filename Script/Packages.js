@@ -797,6 +797,24 @@ function removeSpaces(data) {
     echo(input.replace(/\s/g, ''));
 }
 
+//String convert single quotes to double quotes
+function convertSingleToDoubleQuotes(data) {
+    const inputString = data.trim().replace(/^string:convert:singlequotestodoublequotes:\s*/i, '');
+    if (typeof inputString !== 'string') {
+        echo('Input must be a string');
+    }
+    echo (inputString.replace(/'/g, '"'));
+}
+
+//String convert double quotes to single quotes
+function convertDoubleToSingleQuotes(data) {
+    const inputString = data.trim().replace(/^string:convert:doublequotestosinglequotes:\s*/i, '');
+    if (typeof inputString !== 'string') {
+        echo('Input must be a string');
+    }
+    echo (inputString.replace(/"/g, `'`));
+}
+
 //String convert spaces to underscore
 function convertSpacesToUnderscores(data) {
     const input = data.trim().replace(/^string:convert:spacetounderscore:\s*/i, '');
