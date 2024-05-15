@@ -236,6 +236,8 @@ function runCmd(command, inMemory, fromInput) {
                 searchSiliconwives(commandName);
             } else if (commandName.includes("yourdoll:")) {
                 searchYourdoll(commandName);
+            } else if (commandName.includes("clips4sale:")) {
+                searchClips4sale(commandName);
             } else if (commandName.includes("tenor:")) {
                 searchTenor(commandName);
             } else if (commandName.includes("reddit:")) {

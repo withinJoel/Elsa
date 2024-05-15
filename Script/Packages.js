@@ -264,6 +264,13 @@ function searchYourdoll(input) {
     window.open(yourdollurl, '_blank');
 } 
 
+//Search Clips4sale
+function searchClips4sale(input) {
+    const query = input.trim().replace(/^clips4sale:\b\s*/i, ''); // Trim spaces and replace "open"
+    const clips4saleurl = 'https://www.clips4sale.com/clips/search/' + query + '/category/0/storesPage/1/clipsPage/1';
+    window.open(clips4saleurl, '_blank');
+} 
+
 //Search Czechvr
 function openCzechvr(input) {
     const query = input.trim().replace(/^czechvr:\b\s*/i, ''); // Trim spaces and replace "open"
