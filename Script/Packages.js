@@ -930,7 +930,7 @@ function calculate(num) {
         // Replace 'x' with '*' for multiplication to work correctly
         const formattedExpression = expression.replace(/x/g, '*');
         // Using eval to evaluate the expression
-        echo (eval(formattedExpression));
+        echo ('The answer is ' + eval(formattedExpression));
     } catch (error) {
         // Handle any errors in the expression
         echo ('Error: Invalid expression');

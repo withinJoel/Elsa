@@ -15,6 +15,7 @@ function echo(text) {
         echo(`ECHO command is ${echoState}.`);
     }
 }
+
 function resetPrompt() {
     if (promptState == "default") prompt = pathToString() + "";
     promptElement.innerText = prompt;
@@ -31,6 +32,7 @@ function toSpaces(array) {
         return string;
     }
 }
+
 function removeIndent(string) {
     var text = string;
     if (text) {
@@ -74,6 +76,7 @@ cmd();
 function loop() {
     //
 }
+
 setInterval(() => {
     loop();
 }, 1);
