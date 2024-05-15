@@ -109,23 +109,27 @@ function runCmd(command, inMemory, fromInput) {
                 searchAmazon(commandName);
             } else if (commandName.includes("flipkart:")) {
                 searchFlipkart(commandName);
-            } else if (commandName.includes("string:reverse:")) {
+            } else if (commandName.includes("reverse:")) {
                 reverseString(commandName);
-            } else if (commandName.includes("string:convert:spacetounderscore:")) {
+            } else if (commandName.includes("convert:spacetounderscore:")) {
                 convertSpacesToUnderscores(commandName);
-            } else if (commandName.includes("string:convert:singlequotestodoublequotes:")) {
+            } else if (commandName.includes("convert:singlequotestodoublequotes:")) {
                 convertSingleToDoubleQuotes(commandName);
-            } else if (commandName.includes("string:convert:doublequotestosinglequotes:")) {
+            } else if (commandName.includes("convert:doublequotestosinglequotes:")) {
                 convertDoubleToSingleQuotes(commandName);
-            } else if (commandName.includes("string:remove:space:")) {
+            } else if (commandName.includes("remove:space:")) {
                 removeSpaces(commandName);
-            } else if (commandName.includes("string:explode:")) {
+            } else if (commandName.includes("remove:singlequotes:")) {
+                removeSingleQuotes(commandName);
+            } else if (commandName.includes("remove:doublequotes:")) {
+                removeDoubleQuotes(commandName);
+            } else if (commandName.includes("explode:")) {
                 let delimiter = ' ';
-                let sentence = commandName.trim().replace(/^string:explode:\s*/i, '');
+                let sentence = commandName.trim().replace(/^explode:\s*/i, '');
                 stringExplode(sentence, delimiter);
-            } else if (commandName.includes("string:count:characters:")) {
+            } else if (commandName.includes("count:characters:")) {
                 countCharacters(commandName);
-            } else if (commandName.includes("string:count:words:")) {
+            } else if (commandName.includes("count:words:")) {
                 countWords(commandName);
             } else if (commandName === "help") {
                 Help();

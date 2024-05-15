@@ -31,14 +31,14 @@
 * `randomalphabet` - To get a random alphabet.
 * `convert:tolowercase:` - To convert to lowercase. example `convert:tolowercase:Hola`
 * `convert:touppercase` - To convert to uppercase. example `convert:touppercase:hola`
-* `string:reverse:` - To reverse a string. example `string:reverse:hola`
-* `string:count:characters:` - To count the number of characters. example: `string:count:characters:hola`
-* `string:count:words` - To count the number of words. example: `string:count:words:hola`
-* `string:explode:` - To convert a sentence into seperate words in an array (The delimiter is ' ') example: `string:explode:Hi I am Joel Jolly.`
-* `string:remove:space:` - To remove spaces from the input. example `string:remove:space:Hi I love Hello World program`
-* `string:convert:spacetounderscore:` - To convert spaces to underscore. example: `string:convert:spacetounderscore:hello world`
-* `string:convert:singlequotestodoublequotes:` - To convert single quotes to double quotes from the user's input. example `string:convert:singlequotestodoublequotes:Tom said 'hello'`
-* `string:convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `string:convert:doublequotestosinglequotes:Tom said "hello"`
+* `reverse:` - To reverse a string. example `reverse:hola`
+* `count:characters:` - To count the number of characters. example: `count:characters:hola`
+* `count:words` - To count the number of words. example: `count:words:hola`
+* `explode:` - To convert a sentence into seperate words in an array (The delimiter is ' ') example: `explode:Hi I am Joel Jolly.`
+* `remove:space:` - To remove spaces from the input. example `remove:space:Hi I love Hello World program`
+* `convert:spacetounderscore:` - To convert spaces to underscore. example: `convert:spacetounderscore:hello world`
+* `convert:singlequotestodoublequotes:` - To convert single quotes to double quotes from the user's input. example `convert:singlequotestodoublequotes:Tom said 'hello'`
+* `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`
 
 # Math
 * `randomnumber` - To get a random number.

@@ -773,7 +773,7 @@ function encode(input) {
 
 //String Reverse
 function reverseString(input) {
-    const data = input.trim().replace(/^string:reverse:\s*/i, '');
+    const data = input.trim().replace(/^reverse:\s*/i, '');
     const reversed = data.split('').reverse().join('');
     echo(`Reversed string: ${reversed}`);
 }
@@ -788,7 +788,7 @@ function stringExplode(sentence, delimiter) {
 
 // String remove space
 function removeSpaces(data) {
-    const input = data.trim().replace(/^string:remove:space:\s*/i, '');
+    const input = data.trim().replace(/^remove:space:\s*/i, '');
     if (typeof input !== 'string') {
         echo ('Input must be a string.');
     }
@@ -797,9 +797,27 @@ function removeSpaces(data) {
     echo(input.replace(/\s/g, ''));
 }
 
+//String remove single quotes
+function removeSingleQuotes(data) {
+    const inputString = data.trim().replace(/^remove:singlequotes:\s*/i, '');
+    if (typeof inputString !== 'string') {
+        echo('Input must be a string');
+    }
+    echo (inputString.replace(/'/g, ''));
+}
+
+//String remove double quotes
+function removeDoubleQuotes(data) {
+    const inputString = data.trim().replace(/^remove:doublequotes:\s*/i, '');
+    if (typeof inputString !== 'string') {
+        echo('Input must be a string');
+    }
+    echo (inputString.replace(/"/g, ''));
+}
+
 //String convert single quotes to double quotes
 function convertSingleToDoubleQuotes(data) {
-    const inputString = data.trim().replace(/^string:convert:singlequotestodoublequotes:\s*/i, '');
+    const inputString = data.trim().replace(/^convert:singlequotestodoublequotes:\s*/i, '');
     if (typeof inputString !== 'string') {
         echo('Input must be a string');
     }
@@ -808,7 +826,7 @@ function convertSingleToDoubleQuotes(data) {
 
 //String convert double quotes to single quotes
 function convertDoubleToSingleQuotes(data) {
-    const inputString = data.trim().replace(/^string:convert:doublequotestosinglequotes:\s*/i, '');
+    const inputString = data.trim().replace(/^convert:doublequotestosinglequotes:\s*/i, '');
     if (typeof inputString !== 'string') {
         echo('Input must be a string');
     }
@@ -817,7 +835,7 @@ function convertDoubleToSingleQuotes(data) {
 
 //String convert spaces to underscore
 function convertSpacesToUnderscores(data) {
-    const input = data.trim().replace(/^string:convert:spacetounderscore:\s*/i, '');
+    const input = data.trim().replace(/^convert:spacetounderscore:\s*/i, '');
     if (typeof input !== 'string') {
         echo('Input must be a string.');
     }
@@ -828,7 +846,7 @@ function convertSpacesToUnderscores(data) {
 
 //String Count Characters
 function countCharacters(input) {
-    const data = input.trim().replace(/^string:count:characters:\s*/i, '');
+    const data = input.trim().replace(/^count:characters:\s*/i, '');
     const count = data.length;
     echo(`Number of characters: ${count}`);
 }
