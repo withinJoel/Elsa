@@ -2,7 +2,7 @@
 * `cls` or `clearscreen` - To clear screen
 * `exit` - To exit the terminal
 * `refresh` - To refresh/reload.
-* `echo` - To display something on the terminal
+* `echo:` - To display something on the terminal. example `echo:I am Joel.`
 * `ver` or `version` - To display the version of the Web shell
 * `developer` or `dev` - To know about the developer.
 * `help` - To get a list of all the supported commands.
