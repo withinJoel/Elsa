@@ -29,15 +29,19 @@ body {
     margin-right: -20px; /* Add margin between prompt and input */
   }
 
-#input {
-  display:inline-flex; /* Display input inline */
-  background: transparent;
-  border: 0;
-  width:1200px;
-  color: inherit;
-  font: inherit;
-  outline: none;
-}
+  #input {
+    display: inline-flex; /* Display input inline */
+    flex-wrap: wrap; /* Wrap input to next line if width is crossed */
+    word-wrap: break-word; /* Break words to next line if they don't fit */
+    background: transparent;
+    border: 0;
+    width: 100px;
+    max-width: 1200px;
+    color: inherit;
+    font: inherit;
+    outline: none;
+  }  
+   
 
 #input:focus {
   outline: none;
