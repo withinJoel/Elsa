@@ -20,11 +20,14 @@ function getInternetData(ip) {
         return res.json()
     }).then(data => {
         echo('Country: ' + data.country);
-        echo('City: ' + data.city);
+        echo('Country code: '+data.countryCode);
         echo('Region: ' + data.regionName);
+        echo('City: ' + data.city);
         echo('Timezone: ' + data.timezone);
-        echo('Internet Organization: ' + data.org);
+        echo('Internet organization: ' + data.org);
+        echo('AS: '+data.as);
         echo('Zip code: ' + data.zip);
+        echo('ISP: '+data.isp);
     }).catch(err => {
         echo(`There was an error: ${err}`);
     })

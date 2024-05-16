@@ -2,7 +2,7 @@ function runCmd(command, inMemory, fromInput) {
     if (command != undefined) {
         if (fromInput) {
             input.value = "";
-            echo(prompt + command);
+            echo('\n'+prompt + command);
         }
         if (inMemory && command != "") {
             if (command != memory[memory.length - 1]) {

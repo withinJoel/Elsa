@@ -67,7 +67,6 @@ input.onkeydown = function (key) {
 
 function cmd() {
     runCmd("ver");
-    echo("\n");
     resetPrompt();
 }
 
