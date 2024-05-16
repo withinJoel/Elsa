@@ -566,9 +566,8 @@ function getRandomNumber() {
 
 // Random Alphabet
 function getRandomAlphabet() {
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    const randomIndex = Math.floor(Math.random() * alphabet.length);
-    echo (alphabet[randomIndex]);
+    const randomIndex = Math.floor(Math.random() * englishalphabets.length);
+    echo (englishalphabets[randomIndex]);
 }
 
 // Random Weekday
@@ -585,12 +584,40 @@ function getRandomWeekend() {
     echo (capitalizedWeekend);
 }
 
-// Random Video Games
+// Random Video Game
 function getRandomVideoGame() {
     const randomIndex = Math.floor(Math.random() * videogames.length);
     const capitalizedVideoGame = videogames[randomIndex].charAt(0).toUpperCase() + videogames[randomIndex].slice(1);
     echo (capitalizedVideoGame);
 } 
+
+// Random Song
+function getRandomSong() {
+    const randomIndex = Math.floor(Math.random() * popularsongs.length);
+    const capitalizedSong = popularsongs[randomIndex].charAt(0).toUpperCase() + popularsongs[randomIndex].slice(1);
+    echo (capitalizedSong);
+} 
+
+// Random Song Genre
+function getRandomSongGenre() {
+    const randomIndex = Math.floor(Math.random() * musicgenres.length);
+    const capitalizedMusicGenre = musicgenres[randomIndex].charAt(0).toUpperCase() + musicgenres[randomIndex].slice(1);
+    echo (capitalizedMusicGenre);
+}  
+
+// Random Movie
+function getRandomMovie() {
+    const randomIndex = Math.floor(Math.random() * popularmovies.length);
+    const capitalizedMovie = popularmovies[randomIndex].charAt(0).toUpperCase() + popularmovies[randomIndex].slice(1);
+    echo (capitalizedMovie);
+} 
+
+// Random Movie Genre
+function getRandomMovieGenre() {
+    const randomIndex = Math.floor(Math.random() * moviegenres.length);
+    const capitalizedMovieGenre = moviegenres[randomIndex].charAt(0).toUpperCase() + moviegenres[randomIndex].slice(1);
+    echo (capitalizedMovieGenre);
+}  
 
 // Random OS
 function getRandomOperatingSystem() {
@@ -804,6 +831,54 @@ function getRandomFemaleClothing() {
     const randomFeminineClothing = feminineclothing[randomIndex];
     const capitalizedFeminineclothing = randomFeminineClothing.charAt(0).toUpperCase() + randomFeminineClothing.slice(1);
     echo (capitalizedFeminineclothing);
+}
+
+// Random Fruit
+function getRandomFruit() {
+    const randomIndex = Math.floor(Math.random() * fruits.length);
+    const randomFruit = fruits[randomIndex];
+    const capitalizedFruit = randomFruit.charAt(0).toUpperCase() + randomFruit.slice(1);
+    echo (capitalizedFruit);
+} 
+
+// Random Vegetable
+function getRandomVegetable() {
+    const randomIndex = Math.floor(Math.random() * vegetables.length);
+    const randomVegetable = vegetables[randomIndex];
+    const capitalizedVegetable = randomVegetable.charAt(0).toUpperCase() + randomVegetable.slice(1);
+    echo (capitalizedVegetable);
+} 
+
+// Random Animal
+function getRandomAnimal() {
+    const randomIndex = Math.floor(Math.random() * animals.length);
+    const randomAnimal = animals[randomIndex];
+    const capitalizedAnimal = randomAnimal.charAt(0).toUpperCase() + randomAnimal.slice(1);
+    echo (capitalizedAnimal);
+} 
+
+// Random Bird
+function getRandomBird() {
+    const randomIndex = Math.floor(Math.random() * birds.length);
+    const randomBird = birds[randomIndex];
+    const capitalizedBird = randomBird.charAt(0).toUpperCase() + randomBird.slice(1);
+    echo (capitalizedBird);
+} 
+
+// Random Flower
+function getRandomFlower() {
+    const randomIndex = Math.floor(Math.random() * flowers.length);
+    const randomFlower = flowers[randomIndex];
+    const capitalizedFlower = randomFlower.charAt(0).toUpperCase() + randomFlower.slice(1);
+    echo (capitalizedFlower);
+}
+
+// Short Adult Story
+function getAdultStory() {
+    const randomIndex = Math.floor(Math.random() * eroticstories.length);
+    const randomEroticStory = eroticstories[randomIndex];
+    const capitalizedEroticStory = randomEroticStory.charAt(0).toUpperCase() + randomEroticStory.slice(1);
+    echo (capitalizedEroticStory);
 }
 
 // Short Story

@@ -169,6 +169,14 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomReligion();
             } else if (commandName === "random:number") {
                 getRandomNumber();
+            } else if ((commandName === "random:musicgenre") || (commandName === "random:songgenre")) {
+                getRandomSongGenre();
+            } else if ((commandName === "random:moviegenre") || (commandName === "random:filmgenre")) {
+                getRandomMovieGenre();
+            } else if ((commandName === "random:movie") || (commandName === "random:film")) {
+                getRandomMovie();
+            } else if ((commandName === "random:song") || (commandName === "random:music")) {
+                getRandomSong();
             } else if (commandName === "random:videogame") {
                 getRandomVideoGame();
             } else if (commandName === "random:alphabet") {
@@ -215,6 +223,16 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomLanguage();
             } else if (commandName === "random:planet") {
                 getRandomPlanet();
+            } else if (commandName === "random:vegetable") {
+                getRandomVegetable();
+            } else if (commandName === "random:fruit") {
+                getRandomFruit();
+            } else if (commandName === "random:animal") {
+                getRandomAnimal();
+            } else if (commandName === "random:bird") {
+                getRandomBird();
+            } else if (commandName === "random:flower") {
+                getRandomFlower();
             } else if (commandName === "random:country") {
                 getRandomCountry();
             } else if (commandName === "random:africancountry") {
@@ -231,6 +249,8 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomZodiacSign();
             } else if (commandName === "fortunecookie") {
                 getFortuneCookie();
+            } else if ((commandName === "adultstory") || (commandName === "eroticstory")) {
+                getAdultStory();
             } else if (commandName === "shortstory") {
                 getShortStory();
             } else if (commandName.includes("convert:binarytodecimal:")) {

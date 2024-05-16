@@ -15,7 +15,18 @@
 * `random:religion` - To get a random religion.
 * `random:programminglanguage` - To get a random programming language.
 * `random:os` or `random:operatingsystem` - To get a random operating system.
+* `random:alphabet` - To get a random alphabet.
+* `random:number` - To get a random number.
+* `random:flower` - To get a random flower.
+* `random:bird` - To get a random bird.
+* `random:animal` - To get a random animal.
+* `random:vegetable` - To get a random vegetable.
+* `random:fruit` - To get a random fruit.
 * `random:videogame` - To get a random video game.
+* `random:movie` or `random:film` - To get a random movie.
+* `random:moviegenre` or `random:filmgenre` - To get a random movie genre.
+* `random:song` or `random:music` - To get a random song.
+* `random:songgenre` or `random:musicgenre` - To get a random music genre.
 * `random:weekday` or `random:day` - To get a random weekday.
 * `random:weekend` - To get a random weekend.
 * `random:joke` - To get a random joke.
@@ -64,7 +75,6 @@
 * `bgcolor:` or `bgcolour:` or `backgroundcolor:` or `backgroundcolour:` - To change the background color of the terminal. example `bgcolor:purple`
 
 # Text
-* `random:alphabet` - To get a random alphabet.
 * `reverse:` - To reverse a string. example `reverse:hola`
 * `count:characters:` - To count the number of characters. example: `count:characters:hola`
 * `count:words:` - To count the number of words. example: `count:words:hola`
@@ -80,7 +90,6 @@
 * `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`
 
 # Math
-* `random:number` - To get a random number.
 * `remove:numbers:` - To remove numbers from the input. example `remove:numbers:hello, 007`
 * `convert:binarytodecimal:` - To convert binary to decimal. example: `convert:binarytodecimal:101010010`
 * `convert:binarytohexadecimal:` - To convert binary to hexadecimal. example: `convert:binarytohexadecimal:101010010`
@@ -188,6 +197,9 @@
 * `itsex:` - To search the it.sex website with the keyword. example: `itsex:wife`
 * `clips4sale:` - To search the clips4sale website with the keyword. example: `clips4sale:wife`
 * `bellesa:` - To search the bellesa website with the keyword. example: `bellesa:wife`
+
+# Adult Stories
+* `adultstory` or `eroticstory` - To get an adult story.
 
 # Adult Shopping
 * `siliconwives:` - To shop in siliconwives. example: `siliconwives:toy`
