@@ -693,6 +693,14 @@ function getRandomHumanOrgan() {
     echo (capitalizedHumanOrgan);
 }
 
+//Random Culture
+function getRandomCulture() {
+    const randomIndex = Math.floor(Math.random() * cultures.length);
+    const randomCulture = cultures[randomIndex];
+    const capitalizedCulture = randomCulture.charAt(0).toUpperCase() + randomCulture.slice(1);
+    echo (capitalizedCulture);
+}
+
 // Short Story
 function getShortStory() {
     const randomIndex = Math.floor(Math.random() * shortstories.length);
