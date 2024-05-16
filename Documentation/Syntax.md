@@ -8,6 +8,7 @@
 * `help` - To get a list of all the supported commands.
 
 # Features
+* `random:weekday` - To get a random weekday.
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
 * `encode:` - To encode data. example: `encode:hola`
 * `decode:` - To decode data. example: `decode:aG9sYQ==`
@@ -28,7 +29,7 @@
 * `bgcolor:` or `bgcolour:` or `backgroundcolor:` or `backgroundcolour` - To change the background color of the terminal. example `bgcolor:purple`
 
 # Text
-* `randomalphabet` - To get a random alphabet.
+* `random:alphabet` - To get a random alphabet.
 * `reverse:` - To reverse a string. example `reverse:hola`
 * `count:characters:` - To count the number of characters. example: `count:characters:hola`
 * `count:words` - To count the number of words. example: `count:words:hola`
@@ -44,7 +45,7 @@
 * `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`
 
 # Math
-* `randomnumber` - To get a random number.
+* `random:number` - To get a random number.
 * `remove:numbers:` - To remove numbers from the input. example `remove:numbers:hello, 007`
 * `convert:binarytodecimal:` - To convert binary to decimal. example: `convert:binarytodecimal:101010010`
 * `convert:binarytohexadecimal:` - To convert binary to hexadecimal. example: `convert:binarytohexadecimal:101010010`
