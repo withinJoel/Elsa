@@ -19,6 +19,7 @@ Made with 💖 by Joel Jolly.
 * Helps you to search the web faster.
 * Protects your online privacy.
 * Fast and secure way to browse the web.
+* Customize the way you wanted it to be.
 * Shortcuts for all your favourite websites.
 * This project can work in your browser or you can download our official app for your operating system.
 
