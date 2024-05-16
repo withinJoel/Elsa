@@ -77,6 +77,10 @@
 * `theme:valentine` - To have a romantic theme.
 * `theme:pinky` - To have a pink based theme.
 * `theme:hacker` - To have a hacker like theme.
+* `theme:sunrise` - To have a sunrise based theme.
+* `theme:energy` - To have an energetic theme.
+* `theme:loversparadise` - To have paradise like theme.
+* `theme:soft` - To have soft touch like theme.
 
 # Text
 * `reverse:` - To reverse a string. example `reverse:hola`

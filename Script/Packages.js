@@ -101,6 +101,38 @@ function themeValentine() {
     document.body.style.backgroundColor = userBgColor;
 }
 
+//Theme Sunrise
+function themeSunrise() {
+    userBgColor = '#ff9a00';
+    userColor = 'black';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Energy
+function themeEnergy() {
+    userBgColor = '#101820';
+    userColor = '#FEE715';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Vibrant
+function themeLoversParadise() {
+    userBgColor = '#F96167';
+    userColor = '#F9E795';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Soft
+function themeSoft() {
+    userBgColor = '#F98866';
+    userColor = '#FFF2D7';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
 //Echo function
 function echoFunction(input) {
     const data = input.trim().replace(/^echo:\b\s*/i, ''); // Trim spaces and replace "open"

@@ -32,10 +32,18 @@ function runCmd(command, inMemory, fromInput) {
                 openCamera();
             } else if (commandName === "theme:pinky") {
                 themePinky();
+            } else if (commandName === "theme:sunrise") {
+                themeSunrise();
             } else if (commandName === "theme:valentine") {
                 themeValentine();
             } else if (commandName === "theme:hacker") {
                 themeHacker();
+            } else if (commandName === "theme:energy") {
+                themeEnergy();
+            } else if (commandName === "theme:loversparadise") {
+                themeLoversParadise();
+            } else if (commandName === "theme:soft") {
+                themeSoft();
             } else if (commandName === "time") {
                 getTime();
             } else if (commandName === "day") {
