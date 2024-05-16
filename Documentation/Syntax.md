@@ -11,7 +11,7 @@
 * `fortunecookie` - To know the future.
 * `shortstory` - To get a short story.
 
-# Features
+# Random Keywords
 * `random:weekday` - To get a random weekday.
 * `random:weekend` - To get a random weekend.
 * `random:joke` - To get a random joke.
@@ -20,15 +20,22 @@
 * `random:fact` - To get a random fact.
 * `random:quote` - To get a random quote.
 * `random:country` - To get a random country.
+* `random:europeancountry` - To get a random European country.
+* `random:northamericancountry` - To get a random North American country.
+* `random:southamericancountry` - To get a random South American country.
+* `random:asiancountry` - To get a random Asian country.
+* `random:africancountry` - To get a random African country.
 * `random:pickupline` - To get a random pickup line.
+
+# Features
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
 * `encode:` - To encode data. example: `encode:hola`
 * `decode:` - To decode data. example: `decode:aG9sYQ==`
 * `open:camera` - To get the live video feed from the camera.
 * `check:palindrome:` - To check wether it is palindrome or not. example: `check:palindrome:hola`.
-* `createpassword` - To create a password.
+* `create:password` - To create a password.
 * `time` - To display the current time.
-* `open:` or `url` - to open a site example `open:https://fb.com` or `open:fb` or `url:fb` or `url:https://www.facebook.com/`
+* `open:` or `url:` - to open a site example `open:https://fb.com` or `open:fb` or `url:fb` or `url:https://www.facebook.com/`
 * `day` - To get the day info.
 * `date` - To get the date info.
 * `timezone` - To get the time zone.
@@ -38,20 +45,20 @@
 
 # Customization
 * `color:` or `colour:` - To change the terminal text color. example: `color:blue` or `colour:white`
-* `bgcolor:` or `bgcolour:` or `backgroundcolor:` or `backgroundcolour` - To change the background color of the terminal. example `bgcolor:purple`
+* `bgcolor:` or `bgcolour:` or `backgroundcolor:` or `backgroundcolour:` - To change the background color of the terminal. example `bgcolor:purple`
 
 # Text
 * `random:alphabet` - To get a random alphabet.
 * `reverse:` - To reverse a string. example `reverse:hola`
 * `count:characters:` - To count the number of characters. example: `count:characters:hola`
-* `count:words` - To count the number of words. example: `count:words:hola`
+* `count:words:` - To count the number of words. example: `count:words:hola`
 * `explode:` - To convert a sentence into seperate words in an array (The delimiter is ' ') example: `explode:Hi I am Joel Jolly.`
-* `remove:specialcharacters` - To remove special characters from the user input. example `remove:specialcharacters:H! How are you?`i
+* `remove:specialcharacters:` - To remove special characters from the user input. example `remove:specialcharacters:H! How are you?`i
 * `remove:space:` - To remove spaces from the input. example `remove:space:Hi I love Hello World program`
 * `remove:singlequotes:` - To remove single quotes. example `remove:singlequotes:'hello'`
 * `remove:doublequotes:` - To remove double quotes. example `remove:doublequotes:"hello"`
 * `convert:tolowercase:` - To convert to lowercase. example `convert:tolowercase:Hola`
-* `convert:touppercase` - To convert to uppercase. example `convert:touppercase:hola`
+* `convert:touppercase:` - To convert to uppercase. example `convert:touppercase:hola`
 * `convert:spacetounderscore:` - To convert spaces to underscore. example: `convert:spacetounderscore:hello world`
 * `convert:singlequotestodoublequotes:` - To convert single quotes to double quotes from the user's input. example `convert:singlequotestodoublequotes:Tom said 'hello'`
 * `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`

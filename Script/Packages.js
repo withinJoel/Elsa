@@ -637,6 +637,46 @@ function getRandomCountry() {
     echo (capitalizedCountry);
 }
 
+// Random European Country
+function getRandomEuropeanCountry() {
+    const randomIndex = Math.floor(Math.random() * europeancountries.length);
+    const randomEuropeanCountry = europeancountries[randomIndex];
+    const capitalizedEuropeanCountry = randomEuropeanCountry.charAt(0).toUpperCase() + randomEuropeanCountry.slice(1);
+    echo (capitalizedEuropeanCountry);
+}
+
+// Random North American Country
+function getRandomNorthAmericanCountry() {
+    const randomIndex = Math.floor(Math.random() * northamericancountries.length);
+    const randomNorthAmericanCountry = northamericancountries[randomIndex];
+    const capitalizedNorthAmericanCountry = randomNorthAmericanCountry.charAt(0).toUpperCase() + randomNorthAmericanCountry.slice(1);
+    echo (capitalizedNorthAmericanCountry);
+} 
+
+// Random South American Country
+function getRandomSouthAmericanCountry() {
+    const randomIndex = Math.floor(Math.random() * southamericancountries.length);
+    const randomSouthAmericanCountry = southamericancountries[randomIndex];
+    const capitalizedSouthAmericanCountry = randomSouthAmericanCountry.charAt(0).toUpperCase() + randomSouthAmericanCountry.slice(1);
+    echo (capitalizedSouthAmericanCountry);
+} 
+
+// Random Asian Country
+function getRandomAsianCountry() {
+    const randomIndex = Math.floor(Math.random() * asiancountries.length);
+    const randomAsianCountry = asiancountries[randomIndex];
+    const capitalizedAsianCountry = randomAsianCountry.charAt(0).toUpperCase() + randomAsianCountry.slice(1);
+    echo (capitalizedAsianCountry);
+}
+
+// Random African Country
+function getRandomAfricanCountry() {
+    const randomIndex = Math.floor(Math.random() * africancountries.length);
+    const randomAfricanCountry = africancountries[randomIndex];
+    const capitalizedAfricanCountry = randomAfricanCountry.charAt(0).toUpperCase() + randomAfricanCountry.slice(1);
+    echo (capitalizedAfricanCountry);
+}
+
 // Fortune Cookie
 function getFortuneCookie() {
     const randomIndex = Math.floor(Math.random() * fortunecookie.length);

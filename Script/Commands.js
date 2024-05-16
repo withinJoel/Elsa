@@ -185,6 +185,16 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomPlanet();
             } else if (commandName === "random:country") {
                 getRandomCountry();
+            } else if (commandName === "random:africancountry") {
+                getRandomAfricanCountry();
+            } else if (commandName === "random:europeancountry") {
+                getRandomEuropeanCountry();
+            } else if (commandName === "random:northamericancountry") {
+                getRandomNorthAmericanCountry();
+            } else if (commandName === "random:southamericancountry") {
+                getRandomSouthAmericanCountry();
+            } else if (commandName === "random:asiancountry") {
+                getRandomAsianCountry();
             } else if (commandName === "random:zodiacsign") {
                 getRandomZodiacSign();
             } else if (commandName === "fortunecookie") {
@@ -221,7 +231,7 @@ function runCmd(command, inMemory, fromInput) {
                 searchPinterest(commandName);
             } else if (commandName.includes("godaddy:")) {
                 searchGodaddy(commandName);
-            } else if (commandName === "createpassword") {
+            } else if (commandName === "create:password") {
                 createPassword();
             } else if (commandName.includes("createqr:")) {
                 createQrCode(commandName);
