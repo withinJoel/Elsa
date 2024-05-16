@@ -7,14 +7,19 @@
 * `developer` or `dev` - To know about the developer.
 * `help` - To get a list of all the supported commands.
 
+# Special Keywords
+* `fortunecookie` - To know the future.
+* `shortstory` - To get a short story.
+
 # Features
 * `random:weekday` - To get a random weekday.
 * `random:weekend` - To get a random weekend.
 * `random:joke` - To get a random joke.
+* `random:zodiacsign` - To get a random zodiac sign.
+* `random:solarsystem` - To get a random planet from our solar system.
 * `random:fact` - To get a random fact.
 * `random:quote` - To get a random quote.
 * `random:pickupline` - To get a random pickup line.
-* `fortunecookie` - To know the future.
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
 * `encode:` - To encode data. example: `encode:hola`
 * `decode:` - To decode data. example: `decode:aG9sYQ==`

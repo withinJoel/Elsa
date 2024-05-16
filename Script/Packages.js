@@ -607,10 +607,28 @@ function getRandomQuotes() {
     echo(quotes[randomIndex]);
 }
 
+//Random Zodiac Sign
+function getRandomZodiacSign() {
+    const randomIndex = Math.floor(Math.random() * zodiacSigns.length);
+    echo(zodiacSigns[randomIndex]);
+}
+
+//Random Quotes
+function getRandomSolarSystem() {
+    const randomIndex = Math.floor(Math.random() * solarsystem.length);
+    echo(solarsystem[randomIndex]);
+}
+
 //Fortune Cookie
 function getFortuneCookie() {
     const randomIndex = Math.floor(Math.random() * fortunecookie.length);
     echo(fortunecookie[randomIndex]);
+}
+
+//Short Story
+function getShortStory() {
+    const randomIndex = Math.floor(Math.random() * shortstories.length);
+    echo(shortstories[randomIndex]);
 }
 
 //Convert Binary to Decimal

@@ -181,8 +181,14 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomFacts();
             } else if (commandName === "random:quote") {
                 getRandomQuotes();
+            } else if (commandName === "random:solarsystem") {
+                getRandomSolarSystem();
+            } else if (commandName === "random:zodiacsign") {
+                getRandomZodiacSign();
             } else if (commandName === "fortunecookie") {
                 getFortuneCookie();
+            } else if (commandName === "shortstory") {
+                getShortStory();
             } else if (commandName.includes("convert:binarytodecimal:")) {
                 binaryToDecimal(commandName);
             } else if (commandName.includes("convert:binarytodecimal:")) {
