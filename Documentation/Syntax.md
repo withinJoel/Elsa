@@ -15,6 +15,7 @@
 * `random:weekday` - To get a random weekday.
 * `random:weekend` - To get a random weekend.
 * `random:joke` - To get a random joke.
+* `random:hairstyle` - To get a random hairstyle.
 * `random:maleclothing` or `random:masculineclothing` - To get a random male clothing.
 * `random:femaleclothing` or `random:feminineclothing` - To get a random female clothing.
 * `random:language` - To get a random language.

@@ -185,6 +185,8 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomHumanOrgan();
             } else if (commandName === "random:culture") {
                 getRandomCulture();
+            } else if (commandName === "random:hairstyle") {
+                getRandomHairstyle();
             } else if ((commandName === "random:maleclothing") || (commandName === "random:masculineclothing")) {
                 getRandomMaleClothing();
             } else if ((commandName === "random:femaleclothing") || (commandName === "random:feminineclothing")) {

@@ -701,6 +701,14 @@ function getRandomCulture() {
     echo (capitalizedCulture);
 }
 
+//Random Hairstyle
+function getRandomHairstyle() {
+    const randomIndex = Math.floor(Math.random() * hairstyles.length);
+    const randomHairstyle = hairstyles[randomIndex];
+    const capitalizedHairstyle = randomHairstyle.charAt(0).toUpperCase() + randomHairstyle.slice(1);
+    echo (capitalizedHairstyle);
+} 
+
 //Random Language
 function getRandomLanguage() {
     const randomIndex = Math.floor(Math.random() * humanlanguages.length);
