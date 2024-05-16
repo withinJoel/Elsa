@@ -1,4 +1,5 @@
 # Basic Commands
+* `sys` - To get the system information.
 * `cls` or `clearscreen` - To clear screen
 * `exit` - To exit the terminal
 * `refresh` - To refresh/reload.
@@ -140,6 +141,7 @@
 * `tenor:` - To search in Tenor. example `tenor:bird`
 
 # Network
+* `internet` - To get your internet information.
 * `networkstatus` - To get the status of the network. (online or offline).
 * `useragent` - To get the browser information.
 * `connectiontype` - To get the connection type example: 4g, 3g.. etc.

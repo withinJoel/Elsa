@@ -139,8 +139,12 @@ function runCmd(command, inMemory, fromInput) {
                 countWords(commandName);
             } else if (commandName === "help") {
                 Help();
+            } else if (commandName === "sys") {
+                getSys();
             } else if (commandName === "os") {
                 getOS();
+            } else if (commandName === "internet") {
+                getInternetInfo();
             } else if (commandName === "networkstatus") {
                 getNetworkStatus();
             } else if (commandName === "connectionspeed") {
