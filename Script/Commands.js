@@ -177,9 +177,9 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomJoke();
             } else if (commandName === "random:pickupline") {
                 getRandomPickupline();
-            } else if (commandName === "random:facts") {
+            } else if (commandName === "random:fact") {
                 getRandomFacts();
-            } else if (commandName === "random:quotes") {
+            } else if (commandName === "random:quote") {
                 getRandomQuotes();
             } else if (commandName === "fortunecookie") {
                 getFortuneCookie();
