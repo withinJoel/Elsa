@@ -551,84 +551,98 @@ function getDeviceType() {
     echo(`Device Type: ${isMobile ? 'Mobile' : 'Desktop'}`);
 }
 
-//Random Color
+// Random Color
 function getRandomColor() {
     const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    echo(`Random Color: ${randomColor}`);
+    echo (`Random Color: ${randomColor}`);
 }
 
-//Random Number
+// Random Number
 function getRandomNumber() {
-    min = 0;
-    max = 999999999999999;
-    echo(Math.floor(Math.random() * (max - min + 1)) + min);
+    const min = 0;
+    const max = 999999999999999;
+    echo (Math.floor(Math.random() * (max - min + 1)) + min);
 }
 
-//Random Alphabet
+// Random Alphabet
 function getRandomAlphabet() {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     const randomIndex = Math.floor(Math.random() * alphabet.length);
-    echo(alphabet[randomIndex]);
+    echo (alphabet[randomIndex]);
 }
 
-//Random Weekday
+// Random Weekday
 function getRandomWeekday() {
     const randomIndex = Math.floor(Math.random() * weekdays.length);
-    echo(weekdays[randomIndex]);
+    const capitalizedWeekday = weekdays[randomIndex].charAt(0).toUpperCase() + weekdays[randomIndex].slice(1);
+    echo (capitalizedWeekday);
 }
 
-//Random Weekend
+// Random Weekend
 function getRandomWeekend() {
     const randomIndex = Math.floor(Math.random() * weekends.length);
-    echo(weekends[randomIndex]);
+    const capitalizedWeekend = weekends[randomIndex].charAt(0).toUpperCase() + weekends[randomIndex].slice(1);
+    echo (capitalizedWeekend);
 }
 
-//Random Joke
+// Random Joke
 function getRandomJoke() {
     const randomIndex = Math.floor(Math.random() * jokes.length);
-    echo(jokes[randomIndex]);
+    const capitalizedJoke = jokes[randomIndex].charAt(0).toUpperCase() + jokes[randomIndex].slice(1);
+    echo (capitalizedJoke);
 }
 
-//Random Pickup line
+// Random Pickup line
 function getRandomPickupline() {
     const randomIndex = Math.floor(Math.random() * pickuplines.length);
-    echo(pickuplines[randomIndex]);
+    const capitalizedPickupline = pickuplines[randomIndex].charAt(0).toUpperCase() + pickuplines[randomIndex].slice(1);
+    echo (capitalizedPickupline);
 }
 
-//Random Facts
+// Random Facts
 function getRandomFacts() {
     const randomIndex = Math.floor(Math.random() * randomfacts.length);
-    echo(randomfacts[randomIndex]);
+    const capitalizedFact = randomfacts[randomIndex].charAt(0).toUpperCase() + randomfacts[randomIndex].slice(1);
+    echo (capitalizedFact);
 }
 
-//Random Quotes
+// Random Quotes
 function getRandomQuotes() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
-    echo(quotes[randomIndex]);
+    const capitalizedQuote = quotes[randomIndex].charAt(0).toUpperCase() + quotes[randomIndex].slice(1);
+    echo (capitalizedQuote);
 }
 
-//Random Zodiac Sign
+// Random Zodiac Sign
 function getRandomZodiacSign() {
     const randomIndex = Math.floor(Math.random() * zodiacSigns.length);
-    echo(zodiacSigns[randomIndex]);
+    const randomSign = zodiacSigns[randomIndex];
+    const capitalizedSign = randomSign.charAt(0).toUpperCase() + randomSign.slice(1);
+    echo (capitalizedSign);
 }
 
-//Random Quotes
+// Random Quotes
 function getRandomSolarSystem() {
     const randomIndex = Math.floor(Math.random() * solarsystem.length);
-    echo(solarsystem[randomIndex]);
+    const randomQuote = solarsystem[randomIndex];
+    const capitalizedQuote = randomQuote.charAt(0).toUpperCase() + randomQuote.slice(1);
+    echo (capitalizedQuote);
 }
 
-//Fortune Cookie
+// Fortune Cookie
 function getFortuneCookie() {
     const randomIndex = Math.floor(Math.random() * fortunecookie.length);
-    echo(fortunecookie[randomIndex]);
+    const randomFortune = fortunecookie[randomIndex];
+    const capitalizedFortune = randomFortune.charAt(0).toUpperCase() + randomFortune.slice(1);
+    echo (capitalizedFortune);
 }
 
-//Short Story
+// Short Story
 function getShortStory() {
     const randomIndex = Math.floor(Math.random() * shortstories.length);
-    echo(shortstories[randomIndex]);
+    const randomStory = shortstories[randomIndex];
+    const capitalizedStory = randomStory.charAt(0).toUpperCase() + randomStory.slice(1);
+    echo (capitalizedStory);
 }
 
 //Convert Binary to Decimal
