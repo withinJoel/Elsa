@@ -181,6 +181,8 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomFacts();
             } else if (commandName === "random:quote") {
                 getRandomQuotes();
+            } else if (commandName === "random:humanorgan") {
+                getRandomHumanOrgan();
             } else if (commandName === "random:planet") {
                 getRandomPlanet();
             } else if (commandName === "random:country") {

@@ -18,6 +18,7 @@
 * `random:zodiacsign` - To get a random zodiac sign.
 * `random:planet` - To get a random planet from our solar system.
 * `random:fact` - To get a random fact.
+* `random:humanorgan` - To get a random human organ.
 * `random:quote` - To get a random quote.
 * `random:country` - To get a random country.
 * `random:europeancountry` - To get a random European country.

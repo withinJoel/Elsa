@@ -685,6 +685,14 @@ function getFortuneCookie() {
     echo (capitalizedFortune);
 }
 
+//Random Human Organ
+function getRandomHumanOrgan() {
+    const randomIndex = Math.floor(Math.random() * humanorgans.length);
+    const randomHumanOrgan = humanorgans[randomIndex];
+    const capitalizedHumanOrgan = randomHumanOrgan.charAt(0).toUpperCase() + randomHumanOrgan.slice(1);
+    echo (capitalizedHumanOrgan);
+}
+
 // Short Story
 function getShortStory() {
     const randomIndex = Math.floor(Math.random() * shortstories.length);
