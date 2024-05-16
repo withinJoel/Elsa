@@ -56,6 +56,7 @@ function getSys() {
     }).catch(error => echo('Error getting battery status:', error));
     echo('OS: ' + platform);
     echo('System time: ' + timeString);
+    echo('Timezone: '+timezoneOffset);
     echo('Connection Type: '+ connectionType);
     echo('Connection Speed: '+downlinkSpeed);
     echo('Ram Info: '+memory+'Gb');
