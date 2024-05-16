@@ -571,6 +571,18 @@ function getRandomAlphabet() {
     echo(alphabet[randomIndex]);
 }
 
+//Random Weekday
+function getRandomWeekday() {
+    const randomIndex = Math.floor(Math.random() * weekdays.length);
+    echo(weekdays[randomIndex]);
+}
+
+//Random Weekend
+function getRandomWeekend() {
+    const randomIndex = Math.floor(Math.random() * weekends.length);
+    echo(weekends[randomIndex]);
+}
+
 //Convert Binary to Decimal
 function binaryToDecimal(number) {
     const binary = number.trim().replace(/^convert:binarytodecimal:\b\s*/i, '');

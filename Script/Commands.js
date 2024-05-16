@@ -165,10 +165,14 @@ function runCmd(command, inMemory, fromInput) {
                 getMousePosition();
             } else if (commandName === "devicetype") {
                 getDeviceType();
-            } else if (commandName === "randomnumber") {
+            } else if (commandName === "random:number") {
                 getRandomNumber();
-            } else if (commandName === "randomalphabet") {
+            } else if (commandName === "random:alphabet") {
                 getRandomAlphabet();
+            } else if (commandName === "random:weekday") {
+                getRandomWeekday();
+            } else if (commandName === "random:weekend") {
+                getRandomWeekend();
             } else if (commandName.includes("convert:binarytodecimal:")) {
                 binaryToDecimal(commandName);
             } else if (commandName.includes("convert:binarytodecimal:")) {
@@ -232,7 +236,7 @@ function runCmd(command, inMemory, fromInput) {
                     });
             } else if (commandName === "refresh") {
                 refreshPage();
-            } else if ((commandName === "randomcolor") || (commandName === "randomcolour")) {
+            } else if ((commandName === "random:color") || (commandName === "random:colour")) {
                 getRandomColor();
             } else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);
