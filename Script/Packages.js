@@ -589,6 +589,18 @@ function getRandomJoke() {
     echo(jokes[randomIndex]);
 }
 
+//Random Pickup line
+function getRandomPickupline() {
+    const randomIndex = Math.floor(Math.random() * pickuplines.length);
+    echo(pickuplines[randomIndex]);
+}
+
+//Random Facts
+function getRandomFacts() {
+    const randomIndex = Math.floor(Math.random() * randomfacts.length);
+    echo(randomfacts[randomIndex]);
+}
+
 //Convert Binary to Decimal
 function binaryToDecimal(number) {
     const binary = number.trim().replace(/^convert:binarytodecimal:\b\s*/i, '');

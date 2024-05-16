@@ -175,6 +175,10 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomWeekend();
             } else if (commandName === "random:joke") {
                 getRandomJoke();
+            } else if (commandName === "random:pickupline") {
+                getRandomPickupline();
+            } else if (commandName === "random:facts") {
+                getRandomFacts();
             } else if (commandName.includes("convert:binarytodecimal:")) {
                 binaryToDecimal(commandName);
             } else if (commandName.includes("convert:binarytodecimal:")) {
