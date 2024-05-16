@@ -14,6 +14,7 @@ Made with 💖 by Joel Jolly.
 * Install it. (Some antivirus may flag it as a virus, But trust me its not)
 * You can run the Elsa terminal from you desktop or by going to C/Program Files (x86)/Elsa/Elsa.exe.
 * That's it! 🎉
+
 # Features
 * Helps you to search the web faster.
 * Protects your online privacy.
