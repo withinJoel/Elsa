@@ -613,6 +613,27 @@ function getRandomQuotes() {
     echo (capitalizedQuote);
 }
 
+// Random Fooditem
+function getRandomFooditem() {
+    const randomIndex = Math.floor(Math.random() * fooditems.length);
+    const capitalizedFooditem = fooditems[randomIndex].charAt(0).toUpperCase() + fooditems[randomIndex].slice(1);
+    echo (capitalizedFooditem);
+}
+
+// Random Profession
+function getRandomProfession() {
+    const randomIndex = Math.floor(Math.random() * professions.length);
+    const capitalizedProfession = professions[randomIndex].charAt(0).toUpperCase() + professions[randomIndex].slice(1);
+    echo (capitalizedProfession);
+}
+
+// Random Brand
+function getRandomBrand() {
+    const randomIndex = Math.floor(Math.random() * brands.length);
+    const capitalizedBrand = brands[randomIndex].charAt(0).toUpperCase() + brands[randomIndex].slice(1);
+    echo (capitalizedBrand);
+}
+
 // Random Zodiac Sign
 function getRandomZodiacSign() {
     const randomIndex = Math.floor(Math.random() * zodiacSigns.length);

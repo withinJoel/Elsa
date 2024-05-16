@@ -183,6 +183,12 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomQuotes();
             } else if (commandName === "random:humanorgan") {
                 getRandomHumanOrgan();
+            } else if (commandName === "random:fooditem") {
+                getRandomFooditem();
+            } else if (commandName === "random:profession") {
+                getRandomProfession();
+            } else if (commandName === "random:brand") {
+                getRandomBrand();
             } else if (commandName === "random:culture") {
                 getRandomCulture();
             } else if (commandName === "random:hairstyle") {
