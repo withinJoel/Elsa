@@ -13,6 +13,9 @@
 
 # Random Keywords
 * `random:religion` - To get a random religion.
+* `random:programminglanguage` - To get a random programming language.
+* `random:os` or `random:operatingsystem` - To get a random operating system.
+* `random:videogame` - To get a random video game.
 * `random:weekday` or `random:day` - To get a random weekday.
 * `random:weekend` - To get a random weekend.
 * `random:joke` - To get a random joke.

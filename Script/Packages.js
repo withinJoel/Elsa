@@ -585,6 +585,27 @@ function getRandomWeekend() {
     echo (capitalizedWeekend);
 }
 
+// Random Video Games
+function getRandomVideoGame() {
+    const randomIndex = Math.floor(Math.random() * videogames.length);
+    const capitalizedVideoGame = videogames[randomIndex].charAt(0).toUpperCase() + videogames[randomIndex].slice(1);
+    echo (capitalizedVideoGame);
+} 
+
+// Random OS
+function getRandomOperatingSystem() {
+    const randomIndex = Math.floor(Math.random() * operatingsystems.length);
+    const capitalizedOperatingSystem = operatingsystems[randomIndex].charAt(0).toUpperCase() + operatingsystems[randomIndex].slice(1);
+    echo (capitalizedOperatingSystem);
+}
+
+// Random Programming Language
+function getRandomProgrammingLanguage() {
+    const randomIndex = Math.floor(Math.random() * programminglanguages.length);
+    const capitalizedProgrammingLanguages = programminglanguages[randomIndex].charAt(0).toUpperCase() + programminglanguages[randomIndex].slice(1);
+    echo (capitalizedProgrammingLanguages);
+}
+
 // Random Joke
 function getRandomJoke() {
     const randomIndex = Math.floor(Math.random() * jokes.length);

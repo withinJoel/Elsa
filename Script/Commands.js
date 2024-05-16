@@ -169,8 +169,14 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomReligion();
             } else if (commandName === "random:number") {
                 getRandomNumber();
+            } else if (commandName === "random:videogame") {
+                getRandomVideoGame();
             } else if (commandName === "random:alphabet") {
                 getRandomAlphabet();
+            } else if ((commandName === "random:os") || (commandName === "random:operatingsystem")) {
+                getRandomOperatingSystem();
+            } else if (commandName === "random:programminglanguage") {
+                getRandomProgrammingLanguage();
             } else if ((commandName === "random:weekday") || (commandName === "random:day")) {
                 getRandomWeekday();
             } else if (commandName === "random:weekend") {
