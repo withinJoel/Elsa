@@ -744,6 +744,21 @@ function getRandomLanguage() {
     const capitalizedLanguage = randomLanguage.charAt(0).toUpperCase() + randomLanguage.slice(1);
     echo (capitalizedLanguage);
 }
+//Random Male Name
+function getRandomMaleName() {
+    const randomIndex = Math.floor(Math.random() * masculinenames.length);
+    const randomMasculineNames = masculinenames[randomIndex];
+    const capitalizedMasculinename = randomMasculineNames.charAt(0).toUpperCase() + randomMasculineNames.slice(1);
+    echo (capitalizedMasculinename);
+}
+
+//Random Female Name
+function getRandomFemaleName() {
+    const randomIndex = Math.floor(Math.random() * femininenames.length);
+    const randomFeminineName = femininenames[randomIndex];
+    const capitalizedFemininename = randomFeminineName.charAt(0).toUpperCase() + randomFeminineName.slice(1);
+    echo (capitalizedFemininename);
+}
 
 //Random Male Clothing
 function getRandomMaleClothing() {
