@@ -601,6 +601,12 @@ function getRandomFacts() {
     echo(randomfacts[randomIndex]);
 }
 
+//Fortune Cookie
+function getFortuneCookie() {
+    const randomIndex = Math.floor(Math.random() * fortunecookie.length);
+    echo(fortunecookie[randomIndex]);
+}
+
 //Convert Binary to Decimal
 function binaryToDecimal(number) {
     const binary = number.trim().replace(/^convert:binarytodecimal:\b\s*/i, '');

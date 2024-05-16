@@ -13,6 +13,7 @@
 * `random:joke` - To get a random joke.
 * `random:fact` - To get a random fact.
 * `random:pickupline` - To get a random pickup line.
+* `fortunecookie` - To know the future.
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
 * `encode:` - To encode data. example: `encode:hola`
 * `decode:` - To decode data. example: `decode:aG9sYQ==`
