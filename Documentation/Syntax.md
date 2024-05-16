@@ -12,6 +12,7 @@
 * `random:weekend` - To get a random weekend.
 * `random:joke` - To get a random joke.
 * `random:fact` - To get a random fact.
+* `random:quote` - To get a random quote.
 * `random:pickupline` - To get a random pickup line.
 * `fortunecookie` - To know the future.
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`

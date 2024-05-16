@@ -179,6 +179,8 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomPickupline();
             } else if (commandName === "random:facts") {
                 getRandomFacts();
+            } else if (commandName === "random:quotes") {
+                getRandomQuotes();
             } else if (commandName === "fortunecookie") {
                 getFortuneCookie();
             } else if (commandName.includes("convert:binarytodecimal:")) {

@@ -601,6 +601,12 @@ function getRandomFacts() {
     echo(randomfacts[randomIndex]);
 }
 
+//Random Quotes
+function getRandomQuotes() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    echo(quotes[randomIndex]);
+}
+
 //Fortune Cookie
 function getFortuneCookie() {
     const randomIndex = Math.floor(Math.random() * fortunecookie.length);
