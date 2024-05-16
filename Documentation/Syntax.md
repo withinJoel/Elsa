@@ -141,7 +141,7 @@
 * `tenor:` - To search in Tenor. example `tenor:bird`
 
 # Network
-* `internet` - To get your internet information.
+* `internet` - To get the internet based information.
 * `networkstatus` - To get the status of the network. (online or offline).
 * `useragent` - To get the browser information.
 * `connectiontype` - To get the connection type example: 4g, 3g.. etc.
