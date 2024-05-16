@@ -30,6 +30,12 @@ function runCmd(command, inMemory, fromInput) {
                 getTimeZone();
             } else if (commandName === "open:camera") {
                 openCamera();
+            } else if (commandName === "theme:pinky") {
+                themePinky();
+            } else if (commandName === "theme:valentine") {
+                themeValentine();
+            } else if (commandName === "theme:hacker") {
+                themeHacker();
             } else if (commandName === "time") {
                 getTime();
             } else if (commandName === "day") {

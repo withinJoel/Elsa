@@ -74,6 +74,9 @@
 # Customization
 * `color:` or `colour:` - To change the terminal text color. example: `color:blue` or `colour:white`
 * `bgcolor:` or `bgcolour:` or `backgroundcolor:` or `backgroundcolour:` - To change the background color of the terminal. example `bgcolor:purple`
+* `theme:valentine` - To have a romantic theme.
+* `theme:pinky` - To have a pink based theme.
+* `theme:hacker` - To have a hacker like theme.
 
 # Text
 * `reverse:` - To reverse a string. example `reverse:hola`

@@ -20,14 +20,14 @@ function getInternetData(ip) {
         return res.json()
     }).then(data => {
         echo('Country: ' + data.country);
-        echo('Country code: '+data.countryCode);
+        echo('Country code: ' + data.countryCode);
         echo('Region: ' + data.regionName);
         echo('City: ' + data.city);
         echo('Timezone: ' + data.timezone);
         echo('Internet organization: ' + data.org);
-        echo('AS: '+data.as);
+        echo('AS: ' + data.as);
         echo('Zip code: ' + data.zip);
-        echo('ISP: '+data.isp);
+        echo('ISP: ' + data.isp);
     }).catch(err => {
         echo(`There was an error: ${err}`);
     })
@@ -59,12 +59,12 @@ function getSys() {
     }).catch(error => echo('Error getting battery status:', error));
     echo('OS: ' + platform);
     echo('System time: ' + timeString);
-    echo('Timezone: '+timezoneOffset);
-    echo('Connection Type: '+ connectionType);
-    echo('Connection Speed: '+downlinkSpeed);
-    echo('Ram Info: '+memory+'Gb');
-    echo('Color Depth: '+colorDepth);
-    echo('Screen Resolution: '+screenresolution);
+    echo('Timezone: ' + timezoneOffset);
+    echo('Connection Type: ' + connectionType);
+    echo('Connection Speed: ' + downlinkSpeed);
+    echo('Ram Info: ' + memory + 'Gb');
+    echo('Color Depth: ' + colorDepth);
+    echo('Screen Resolution: ' + screenresolution);
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -75,6 +75,30 @@ function getSys() {
 function Version() {
     echo("Elsa v1.1.2");
     echo('Made with love by Joel Jessie Jolly.');
+}
+
+//Theme Pinky
+function themePinky() {
+    userBgColor = 'pink';
+    userColor = 'black';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Hacker
+function themeHacker() {
+    userBgColor = 'black';
+    userColor = 'green';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Valentine
+function themeValentine() {
+    userBgColor = '#fe5757';
+    userColor = 'black';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
 }
 
 //Echo function
@@ -96,6 +120,7 @@ function changeBodyColor(userColor) {
         echo("Invalid color!");
     }
 }
+
 
 //Change Color
 function changeColor(userColor) {
