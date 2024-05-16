@@ -173,6 +173,8 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomWeekday();
             } else if (commandName === "random:weekend") {
                 getRandomWeekend();
+            } else if (commandName === "random:joke") {
+                getRandomJoke();
             } else if (commandName.includes("convert:binarytodecimal:")) {
                 binaryToDecimal(commandName);
             } else if (commandName.includes("convert:binarytodecimal:")) {

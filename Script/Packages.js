@@ -583,6 +583,12 @@ function getRandomWeekend() {
     echo(weekends[randomIndex]);
 }
 
+//Random Joke
+function getRandomJoke() {
+    const randomIndex = Math.floor(Math.random() * jokes.length);
+    echo(jokes[randomIndex]);
+}
+
 //Convert Binary to Decimal
 function binaryToDecimal(number) {
     const binary = number.trim().replace(/^convert:binarytodecimal:\b\s*/i, '');
