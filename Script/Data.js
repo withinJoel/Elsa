@@ -252,6 +252,7 @@ let femininenames = ["anna", "ann", "archana", "abby", "abigail", "ada", "adah",
 ////$Religions
 let religions = ["african traditional religion", "agnosticism", "animism", "asatru", "atheism", "ayyavazhi", "bahá'í faith", "bön", "buddhism", "cao dai", "chinese traditional religion", "christianity", "confucianism", "druze", "eckankar", "egyptian religion", "falun gong", "gnosticism", "hare krishna", "hinduism", "islam", "jainism", "judaism", "kemetism", "mandaeanism", "manichaeism", "mormonism", "native american religion", "new age", "norse religion", "odinism", "paganism", "rastafarianism", "ravidassia", "roman religion", "santeria", "scientology", "shinto", "sikhism", "spiritism", "sufism", "taoism", "tenrikyo", "thelema", "unitarian universalism", "vodou", "wicca", "yazidism", "zoroastrianism"];
 
+//done
 ////$Technology
 let mobilebrands = ['apple', 'samsung', 'huawei', 'xiaomi', 'oppo', 'vivo', 'oneplus', 'google', 'motorola', 'nokia'];
 let tvbrands = ['sony', 'lg', 'samsung', 'panasonic', 'toshiba', 'vizio', 'sharp', 'philips', 'hisense', 'tcl', 'jvc', 'akai', 'skyworth', 'element', 'westinghouse', 'insignia', 'sceptre', 'hitachi', 'emerson', 'rca'];

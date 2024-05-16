@@ -12,7 +12,8 @@
 * `shortstory` - To get a short story.
 
 # Random Keywords
-* `random:weekday` - To get a random weekday.
+* `random:religion` - To get a random religion.
+* `random:weekday` or `random:day` - To get a random weekday.
 * `random:weekend` - To get a random weekend.
 * `random:joke` - To get a random joke.
 * `random:hairstyle` - To get a random hairstyle.

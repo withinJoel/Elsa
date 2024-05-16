@@ -15,7 +15,7 @@ function runCmd(command, inMemory, fromInput) {
         }
         if (!toFile) {
             var commandName = command;
-
+            
             if (commandName === "cls" || commandName === "clearscreen") {
                 refreshPage();
             } else if (commandName === "exit") {
@@ -165,11 +165,13 @@ function runCmd(command, inMemory, fromInput) {
                 getMousePosition();
             } else if (commandName === "devicetype") {
                 getDeviceType();
+            } else if (commandName === "random:religion") {
+                getRandomReligion();
             } else if (commandName === "random:number") {
                 getRandomNumber();
             } else if (commandName === "random:alphabet") {
                 getRandomAlphabet();
-            } else if (commandName === "random:weekday") {
+            } else if ((commandName === "random:weekday") || (commandName === "random:day")) {
                 getRandomWeekday();
             } else if (commandName === "random:weekend") {
                 getRandomWeekend();

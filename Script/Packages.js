@@ -744,6 +744,15 @@ function getRandomLanguage() {
     const capitalizedLanguage = randomLanguage.charAt(0).toUpperCase() + randomLanguage.slice(1);
     echo (capitalizedLanguage);
 }
+
+//Random Religion
+function getRandomReligion() {
+    const randomIndex = Math.floor(Math.random() * religions.length);
+    const randomReligion = religions[randomIndex];
+    const capitalizedReligion = randomReligion.charAt(0).toUpperCase() + randomReligion.slice(1);
+    echo (capitalizedReligion);
+}
+
 //Random Male Name
 function getRandomMaleName() {
     const randomIndex = Math.floor(Math.random() * masculinenames.length);
