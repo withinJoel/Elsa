@@ -19,6 +19,7 @@
 * `random:brand` - To get a random brand.
 * `random:fooditem` - To get a random food item.
 * `random:profession` - To get a random profession.
+* `random:festival` - To get a random festivals.
 * `random:maleclothing` or `random:masculineclothing` - To get a random male clothing.
 * `random:femaleclothing` or `random:feminineclothing` - To get a random female clothing.
 * `random:language` - To get a random language.

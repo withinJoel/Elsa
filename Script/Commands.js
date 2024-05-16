@@ -191,6 +191,8 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomBrand();
             } else if (commandName === "random:culture") {
                 getRandomCulture();
+            } else if (commandName === "random:festival") {
+                getRandomFestival();
             } else if (commandName === "random:hairstyle") {
                 getRandomHairstyle();
             } else if ((commandName === "random:maleclothing") || (commandName === "random:masculineclothing")) {

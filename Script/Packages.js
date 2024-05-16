@@ -627,6 +627,13 @@ function getRandomProfession() {
     echo (capitalizedProfession);
 }
 
+// Random Festival
+function getRandomFestival() {
+    const randomIndex = Math.floor(Math.random() * festivals.length);
+    const capitalizedFestival = festivals[randomIndex].charAt(0).toUpperCase() + festivals[randomIndex].slice(1);
+    echo (capitalizedFestival);
+}
+
 // Random Brand
 function getRandomBrand() {
     const randomIndex = Math.floor(Math.random() * brands.length);
