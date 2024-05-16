@@ -16,9 +16,10 @@
 * `random:weekend` - To get a random weekend.
 * `random:joke` - To get a random joke.
 * `random:zodiacsign` - To get a random zodiac sign.
-* `random:solarsystem` - To get a random planet from our solar system.
+* `random:planet` - To get a random planet from our solar system.
 * `random:fact` - To get a random fact.
 * `random:quote` - To get a random quote.
+* `random:country` - To get a random country.
 * `random:pickupline` - To get a random pickup line.
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
 * `encode:` - To encode data. example: `encode:hola`

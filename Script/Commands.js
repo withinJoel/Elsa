@@ -181,8 +181,10 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomFacts();
             } else if (commandName === "random:quote") {
                 getRandomQuotes();
-            } else if (commandName === "random:solarsystem") {
-                getRandomSolarSystem();
+            } else if (commandName === "random:planet") {
+                getRandomPlanet();
+            } else if (commandName === "random:country") {
+                getRandomCountry();
             } else if (commandName === "random:zodiacsign") {
                 getRandomZodiacSign();
             } else if (commandName === "fortunecookie") {

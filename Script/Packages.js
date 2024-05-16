@@ -622,11 +622,19 @@ function getRandomZodiacSign() {
 }
 
 // Random Quotes
-function getRandomSolarSystem() {
-    const randomIndex = Math.floor(Math.random() * solarsystem.length);
-    const randomQuote = solarsystem[randomIndex];
-    const capitalizedQuote = randomQuote.charAt(0).toUpperCase() + randomQuote.slice(1);
+function getRandomPlanet() {
+    const randomIndex = Math.floor(Math.random() * planet.length);
+    const randomPlanet = planet[randomIndex];
+    const capitalizedQuote = randomPlanet.charAt(0).toUpperCase() + randomPlanet.slice(1);
     echo (capitalizedQuote);
+}
+
+// Random Country
+function getRandomCountry() {
+    const randomIndex = Math.floor(Math.random() * countries.length);
+    const randomCountry = countries[randomIndex];
+    const capitalizedCountry = randomCountry.charAt(0).toUpperCase() + randomCountry.slice(1);
+    echo (capitalizedCountry);
 }
 
 // Fortune Cookie
