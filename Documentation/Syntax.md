@@ -15,6 +15,9 @@
 * `random:weekday` - To get a random weekday.
 * `random:weekend` - To get a random weekend.
 * `random:joke` - To get a random joke.
+* `random:maleclothing` or `random:masculineclothing` - To get a random male clothing.
+* `random:femaleclothing` or `random:feminineclothing` - To get a random female clothing.
+* `random:language` - To get a random language.
 * `random:zodiacsign` - To get a random zodiac sign.
 * `random:planet` - To get a random planet from our solar system.
 * `random:fact` - To get a random fact.

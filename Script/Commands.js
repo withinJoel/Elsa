@@ -185,6 +185,12 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomHumanOrgan();
             } else if (commandName === "random:culture") {
                 getRandomCulture();
+            } else if ((commandName === "random:maleclothing") || (commandName === "random:masculineclothing")) {
+                getRandomMaleClothing();
+            } else if ((commandName === "random:femaleclothing") || (commandName === "random:feminineclothing")) {
+                getRandomFemaleClothing();
+            } else if (commandName === "random:language") {
+                getRandomLanguage();
             } else if (commandName === "random:planet") {
                 getRandomPlanet();
             } else if (commandName === "random:country") {

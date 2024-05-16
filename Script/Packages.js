@@ -701,6 +701,30 @@ function getRandomCulture() {
     echo (capitalizedCulture);
 }
 
+//Random Language
+function getRandomLanguage() {
+    const randomIndex = Math.floor(Math.random() * humanlanguages.length);
+    const randomLanguage = humanlanguages[randomIndex];
+    const capitalizedLanguage = randomLanguage.charAt(0).toUpperCase() + randomLanguage.slice(1);
+    echo (capitalizedLanguage);
+}
+
+//Random Male Clothing
+function getRandomMaleClothing() {
+    const randomIndex = Math.floor(Math.random() * masculineclothing.length);
+    const randomMasculineClothing = masculineclothing[randomIndex];
+    const capitalizedMasculineclothing = randomMasculineClothing.charAt(0).toUpperCase() + randomMasculineClothing.slice(1);
+    echo (capitalizedMasculineclothing);
+}
+
+//Random Female Clothing
+function getRandomFemaleClothing() {
+    const randomIndex = Math.floor(Math.random() * feminineclothing.length);
+    const randomFeminineClothing = feminineclothing[randomIndex];
+    const capitalizedFeminineclothing = randomFeminineClothing.charAt(0).toUpperCase() + randomFeminineClothing.slice(1);
+    echo (capitalizedFeminineclothing);
+}
+
 // Short Story
 function getShortStory() {
     const randomIndex = Math.floor(Math.random() * shortstories.length);
