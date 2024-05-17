@@ -1,4 +1,5 @@
 # Basic Commands
+* `sys` - To get the system information.
 * `cls` or `clearscreen` - To clear screen
 * `exit` - To exit the terminal
 * `refresh` - To refresh/reload.
@@ -12,7 +13,22 @@
 * `shortstory` - To get a short story.
 
 # Random Keywords
-* `random:weekday` - To get a random weekday.
+* `random:religion` - To get a random religion.
+* `random:programminglanguage` - To get a random programming language.
+* `random:os` or `random:operatingsystem` - To get a random operating system.
+* `random:alphabet` - To get a random alphabet.
+* `random:number` - To get a random number.
+* `random:flower` - To get a random flower.
+* `random:bird` - To get a random bird.
+* `random:animal` - To get a random animal.
+* `random:vegetable` - To get a random vegetable.
+* `random:fruit` - To get a random fruit.
+* `random:videogame` - To get a random video game.
+* `random:movie` or `random:film` - To get a random movie.
+* `random:moviegenre` or `random:filmgenre` - To get a random movie genre.
+* `random:song` or `random:music` - To get a random song.
+* `random:songgenre` or `random:musicgenre` - To get a random music genre.
+* `random:weekday` or `random:day` - To get a random weekday.
 * `random:weekend` - To get a random weekend.
 * `random:joke` - To get a random joke.
 * `random:hairstyle` - To get a random hairstyle.
@@ -20,6 +36,8 @@
 * `random:fooditem` - To get a random food item.
 * `random:profession` - To get a random profession.
 * `random:festival` - To get a random festivals.
+* `random:malename` or `random:masculinename` - To get a random male name.
+* `random:femalename` or `random:femininename` - To get a random female name.
 * `random:maleclothing` or `random:masculineclothing` - To get a random male clothing.
 * `random:femaleclothing` or `random:feminineclothing` - To get a random female clothing.
 * `random:language` - To get a random language.
@@ -56,9 +74,15 @@
 # Customization
 * `color:` or `colour:` - To change the terminal text color. example: `color:blue` or `colour:white`
 * `bgcolor:` or `bgcolour:` or `backgroundcolor:` or `backgroundcolour:` - To change the background color of the terminal. example `bgcolor:purple`
+* `theme:valentine` - To have a romantic theme.
+* `theme:pinky` - To have a pink based theme.
+* `theme:hacker` - To have a hacker like theme.
+* `theme:sunrise` - To have a sunrise based theme.
+* `theme:energy` - To have an energetic theme.
+* `theme:loversparadise` - To have paradise like theme.
+* `theme:soft` - To have soft touch like theme.
 
 # Text
-* `random:alphabet` - To get a random alphabet.
 * `reverse:` - To reverse a string. example `reverse:hola`
 * `count:characters:` - To count the number of characters. example: `count:characters:hola`
 * `count:words:` - To count the number of words. example: `count:words:hola`
@@ -74,8 +98,10 @@
 * `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`
 
 # Math
-* `random:number` - To get a random number.
 * `remove:numbers:` - To remove numbers from the input. example `remove:numbers:hello, 007`
+* `convert:decimaltobinary:` - To convert decimal to binary. example: `convert:decimaltobinary:45`
+* `convert:decimaltooctal:` - To convert decimal to octal. example: `convert:decimaltooctal:5`
+* `convert:decimaltohexadecimal:` - To convert decimal to hexadecimal. example: `convert:decimaltohexadecimal:007`
 * `convert:binarytodecimal:` - To convert binary to decimal. example: `convert:binarytodecimal:101010010`
 * `convert:binarytohexadecimal:` - To convert binary to hexadecimal. example: `convert:binarytohexadecimal:101010010`
 * `convert:binarytooctal:` - To convert binary to octal. example: `convert:binarytooctal:101010010`
@@ -125,6 +151,7 @@
 * `tenor:` - To search in Tenor. example `tenor:bird`
 
 # Network
+* `internet` - To get the internet based information.
 * `networkstatus` - To get the status of the network. (online or offline).
 * `useragent` - To get the browser information.
 * `connectiontype` - To get the connection type example: 4g, 3g.. etc.
@@ -183,6 +210,9 @@
 * `clips4sale:` - To search the clips4sale website with the keyword. example: `clips4sale:wife`
 * `bellesa:` - To search the bellesa website with the keyword. example: `bellesa:wife`
 
+# Adult Stories
+* `adultstory` or `eroticstory` - To get an adult story.
+
 # Adult Shopping
 * `siliconwives:` - To shop in siliconwives. example: `siliconwives:toy`
-* `yourdoll:` - To shop in siliconwives. example: `yourdoll:toy`
+* `yourdoll:` - To shop in yourdoll. example: `yourdoll:toy`

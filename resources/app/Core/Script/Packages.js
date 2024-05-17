@@ -1,7 +1,136 @@
+//////////////////////////////////////////////////////////////////////////////
+////Sub Process///////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+function getInternetInfo() {
+    fetch('https://jsonip.com/').then(res => {
+        return res.json()
+    }).then(data => {
+        getInternetData(data.ip)
+    }).catch(err => {
+        echo(`There was an error ${err}`)
+    })
+}
+
+function getInternetData(ip) {
+    let ipAddress = ip;
+    let output = "";
+
+    fetch(`http://ip-api.com/json/${ipAddress}`).then(res => {
+        return res.json()
+    }).then(data => {
+        echo('Country: ' + data.country);
+        echo('Country code: ' + data.countryCode);
+        echo('Region: ' + data.regionName);
+        echo('City: ' + data.city);
+        echo('Timezone: ' + data.timezone);
+        echo('Internet organization: ' + data.org);
+        echo('AS: ' + data.as);
+        echo('Zip code: ' + data.zip);
+        echo('ISP: ' + data.isp);
+    }).catch(err => {
+        echo(`There was an error: ${err}`);
+    })
+}
+
+//System
+function getSys() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    const platform = navigator.platform;
+    const timezoneOffset = new Date().getTimezoneOffset();
+    const connectionType = navigator.connection.effectiveType;
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const downlinkSpeed = connection.downlink + " Mbps";
+    const memory = navigator.deviceMemory;
+    const colorDepth = screen.colorDepth;
+    const screenWidth = screen.width; // Screen width in pixels
+    const screenHeight = screen.height; // Screen height in pixels
+    const screenresolution = ("Width: " + screenWidth + " and Height: " + screenHeight);
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => echo(`IP address: ${data.ip}`))
+        .catch(error => echo('Error fetching IP address:', error));
+    navigator.getBattery().then(battery => {
+        const level = battery.level * 100;
+        const charging = battery.charging ? 'Charging' : 'Discharging';
+        echo(`Battery Level: ${level}%`);
+        echo(`Battery Status: ${charging}`);
+    }).catch(error => echo('Error getting battery status:', error));
+    echo('OS: ' + platform);
+    echo('System time: ' + timeString);
+    echo('Timezone: ' + timezoneOffset);
+    echo('Connection Type: ' + connectionType);
+    echo('Connection Speed: ' + downlinkSpeed);
+    echo('Ram Info: ' + memory + 'Gb');
+    echo('Color Depth: ' + colorDepth);
+    echo('Screen Resolution: ' + screenresolution);
+}
+
+//////////////////////////////////////////////////////////////////////////////
+////Main Process//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
 //Version
 function Version() {
     echo("Elsa v1.1.2");
     echo('Made with love by Joel Jessie Jolly.');
+}
+
+//Theme Pinky
+function themePinky() {
+    userBgColor = 'pink';
+    userColor = 'black';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Hacker
+function themeHacker() {
+    userBgColor = 'black';
+    userColor = 'green';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Valentine
+function themeValentine() {
+    userBgColor = '#fe5757';
+    userColor = 'black';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Sunrise
+function themeSunrise() {
+    userBgColor = '#ff9a00';
+    userColor = 'black';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Energy
+function themeEnergy() {
+    userBgColor = '#101820';
+    userColor = '#FEE715';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Vibrant
+function themeLoversParadise() {
+    userBgColor = '#F96167';
+    userColor = '#F9E795';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Soft
+function themeSoft() {
+    userBgColor = '#F98866';
+    userColor = '#FFF2D7';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
 }
 
 //Echo function
@@ -23,6 +152,7 @@ function changeBodyColor(userColor) {
         echo("Invalid color!");
     }
 }
+
 
 //Change Color
 function changeColor(userColor) {
@@ -195,7 +325,7 @@ function searchYts(input) {
 //Search Youtube
 function searchYoutube(input) {
     const query = input.trim().replace(/^youtube:\b\s*/i, ''); // Trim spaces and replace "open"
-    const youtubeurl = 'https://www.youtube.com/results?search_query=' + query + '/';
+    const youtubeurl = 'https://www.youtube.com/results?search_query=' + query + '';
     window.open(youtubeurl, '_blank');
 }
 
@@ -554,91 +684,139 @@ function getDeviceType() {
 // Random Color
 function getRandomColor() {
     const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    echo (`Random Color: ${randomColor}`);
+    echo(`Random Color: ${randomColor}`);
 }
 
 // Random Number
 function getRandomNumber() {
     const min = 0;
     const max = 999999999999999;
-    echo (Math.floor(Math.random() * (max - min + 1)) + min);
+    echo(Math.floor(Math.random() * (max - min + 1)) + min);
 }
 
 // Random Alphabet
 function getRandomAlphabet() {
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    const randomIndex = Math.floor(Math.random() * alphabet.length);
-    echo (alphabet[randomIndex]);
+    const randomIndex = Math.floor(Math.random() * englishalphabets.length);
+    echo(englishalphabets[randomIndex]);
 }
 
 // Random Weekday
 function getRandomWeekday() {
     const randomIndex = Math.floor(Math.random() * weekdays.length);
     const capitalizedWeekday = weekdays[randomIndex].charAt(0).toUpperCase() + weekdays[randomIndex].slice(1);
-    echo (capitalizedWeekday);
+    echo(capitalizedWeekday);
 }
 
 // Random Weekend
 function getRandomWeekend() {
     const randomIndex = Math.floor(Math.random() * weekends.length);
     const capitalizedWeekend = weekends[randomIndex].charAt(0).toUpperCase() + weekends[randomIndex].slice(1);
-    echo (capitalizedWeekend);
+    echo(capitalizedWeekend);
+}
+
+// Random Video Game
+function getRandomVideoGame() {
+    const randomIndex = Math.floor(Math.random() * videogames.length);
+    const capitalizedVideoGame = videogames[randomIndex].charAt(0).toUpperCase() + videogames[randomIndex].slice(1);
+    echo(capitalizedVideoGame);
+}
+
+// Random Song
+function getRandomSong() {
+    const randomIndex = Math.floor(Math.random() * popularsongs.length);
+    const capitalizedSong = popularsongs[randomIndex].charAt(0).toUpperCase() + popularsongs[randomIndex].slice(1);
+    echo(capitalizedSong);
+}
+
+// Random Song Genre
+function getRandomSongGenre() {
+    const randomIndex = Math.floor(Math.random() * musicgenres.length);
+    const capitalizedMusicGenre = musicgenres[randomIndex].charAt(0).toUpperCase() + musicgenres[randomIndex].slice(1);
+    echo(capitalizedMusicGenre);
+}
+
+// Random Movie
+function getRandomMovie() {
+    const randomIndex = Math.floor(Math.random() * popularmovies.length);
+    const capitalizedMovie = popularmovies[randomIndex].charAt(0).toUpperCase() + popularmovies[randomIndex].slice(1);
+    echo(capitalizedMovie);
+}
+
+// Random Movie Genre
+function getRandomMovieGenre() {
+    const randomIndex = Math.floor(Math.random() * moviegenres.length);
+    const capitalizedMovieGenre = moviegenres[randomIndex].charAt(0).toUpperCase() + moviegenres[randomIndex].slice(1);
+    echo(capitalizedMovieGenre);
+}
+
+// Random OS
+function getRandomOperatingSystem() {
+    const randomIndex = Math.floor(Math.random() * operatingsystems.length);
+    const capitalizedOperatingSystem = operatingsystems[randomIndex].charAt(0).toUpperCase() + operatingsystems[randomIndex].slice(1);
+    echo(capitalizedOperatingSystem);
+}
+
+// Random Programming Language
+function getRandomProgrammingLanguage() {
+    const randomIndex = Math.floor(Math.random() * programminglanguages.length);
+    const capitalizedProgrammingLanguages = programminglanguages[randomIndex].charAt(0).toUpperCase() + programminglanguages[randomIndex].slice(1);
+    echo(capitalizedProgrammingLanguages);
 }
 
 // Random Joke
 function getRandomJoke() {
     const randomIndex = Math.floor(Math.random() * jokes.length);
     const capitalizedJoke = jokes[randomIndex].charAt(0).toUpperCase() + jokes[randomIndex].slice(1);
-    echo (capitalizedJoke);
+    echo(capitalizedJoke);
 }
 
 // Random Pickup line
 function getRandomPickupline() {
     const randomIndex = Math.floor(Math.random() * pickuplines.length);
     const capitalizedPickupline = pickuplines[randomIndex].charAt(0).toUpperCase() + pickuplines[randomIndex].slice(1);
-    echo (capitalizedPickupline);
+    echo(capitalizedPickupline);
 }
 
 // Random Facts
 function getRandomFacts() {
     const randomIndex = Math.floor(Math.random() * randomfacts.length);
     const capitalizedFact = randomfacts[randomIndex].charAt(0).toUpperCase() + randomfacts[randomIndex].slice(1);
-    echo (capitalizedFact);
+    echo(capitalizedFact);
 }
 
 // Random Quotes
 function getRandomQuotes() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const capitalizedQuote = quotes[randomIndex].charAt(0).toUpperCase() + quotes[randomIndex].slice(1);
-    echo (capitalizedQuote);
+    echo(capitalizedQuote);
 }
 
 // Random Fooditem
 function getRandomFooditem() {
     const randomIndex = Math.floor(Math.random() * fooditems.length);
     const capitalizedFooditem = fooditems[randomIndex].charAt(0).toUpperCase() + fooditems[randomIndex].slice(1);
-    echo (capitalizedFooditem);
+    echo(capitalizedFooditem);
 }
 
 // Random Profession
 function getRandomProfession() {
     const randomIndex = Math.floor(Math.random() * professions.length);
     const capitalizedProfession = professions[randomIndex].charAt(0).toUpperCase() + professions[randomIndex].slice(1);
-    echo (capitalizedProfession);
+    echo(capitalizedProfession);
 }
 
 // Random Festival
 function getRandomFestival() {
     const randomIndex = Math.floor(Math.random() * festivals.length);
     const capitalizedFestival = festivals[randomIndex].charAt(0).toUpperCase() + festivals[randomIndex].slice(1);
-    echo (capitalizedFestival);
+    echo(capitalizedFestival);
 }
 
 // Random Brand
 function getRandomBrand() {
     const randomIndex = Math.floor(Math.random() * brands.length);
     const capitalizedBrand = brands[randomIndex].charAt(0).toUpperCase() + brands[randomIndex].slice(1);
-    echo (capitalizedBrand);
+    echo(capitalizedBrand);
 }
 
 // Random Zodiac Sign
@@ -646,7 +824,7 @@ function getRandomZodiacSign() {
     const randomIndex = Math.floor(Math.random() * zodiacSigns.length);
     const randomSign = zodiacSigns[randomIndex];
     const capitalizedSign = randomSign.charAt(0).toUpperCase() + randomSign.slice(1);
-    echo (capitalizedSign);
+    echo(capitalizedSign);
 }
 
 // Random Quotes
@@ -654,7 +832,7 @@ function getRandomPlanet() {
     const randomIndex = Math.floor(Math.random() * planet.length);
     const randomPlanet = planet[randomIndex];
     const capitalizedQuote = randomPlanet.charAt(0).toUpperCase() + randomPlanet.slice(1);
-    echo (capitalizedQuote);
+    echo(capitalizedQuote);
 }
 
 // Random Country
@@ -662,7 +840,7 @@ function getRandomCountry() {
     const randomIndex = Math.floor(Math.random() * countries.length);
     const randomCountry = countries[randomIndex];
     const capitalizedCountry = randomCountry.charAt(0).toUpperCase() + randomCountry.slice(1);
-    echo (capitalizedCountry);
+    echo(capitalizedCountry);
 }
 
 // Random European Country
@@ -670,7 +848,7 @@ function getRandomEuropeanCountry() {
     const randomIndex = Math.floor(Math.random() * europeancountries.length);
     const randomEuropeanCountry = europeancountries[randomIndex];
     const capitalizedEuropeanCountry = randomEuropeanCountry.charAt(0).toUpperCase() + randomEuropeanCountry.slice(1);
-    echo (capitalizedEuropeanCountry);
+    echo(capitalizedEuropeanCountry);
 }
 
 // Random North American Country
@@ -678,23 +856,23 @@ function getRandomNorthAmericanCountry() {
     const randomIndex = Math.floor(Math.random() * northamericancountries.length);
     const randomNorthAmericanCountry = northamericancountries[randomIndex];
     const capitalizedNorthAmericanCountry = randomNorthAmericanCountry.charAt(0).toUpperCase() + randomNorthAmericanCountry.slice(1);
-    echo (capitalizedNorthAmericanCountry);
-} 
+    echo(capitalizedNorthAmericanCountry);
+}
 
 // Random South American Country
 function getRandomSouthAmericanCountry() {
     const randomIndex = Math.floor(Math.random() * southamericancountries.length);
     const randomSouthAmericanCountry = southamericancountries[randomIndex];
     const capitalizedSouthAmericanCountry = randomSouthAmericanCountry.charAt(0).toUpperCase() + randomSouthAmericanCountry.slice(1);
-    echo (capitalizedSouthAmericanCountry);
-} 
+    echo(capitalizedSouthAmericanCountry);
+}
 
 // Random Asian Country
 function getRandomAsianCountry() {
     const randomIndex = Math.floor(Math.random() * asiancountries.length);
     const randomAsianCountry = asiancountries[randomIndex];
     const capitalizedAsianCountry = randomAsianCountry.charAt(0).toUpperCase() + randomAsianCountry.slice(1);
-    echo (capitalizedAsianCountry);
+    echo(capitalizedAsianCountry);
 }
 
 // Random African Country
@@ -702,7 +880,7 @@ function getRandomAfricanCountry() {
     const randomIndex = Math.floor(Math.random() * africancountries.length);
     const randomAfricanCountry = africancountries[randomIndex];
     const capitalizedAfricanCountry = randomAfricanCountry.charAt(0).toUpperCase() + randomAfricanCountry.slice(1);
-    echo (capitalizedAfricanCountry);
+    echo(capitalizedAfricanCountry);
 }
 
 // Fortune Cookie
@@ -710,7 +888,7 @@ function getFortuneCookie() {
     const randomIndex = Math.floor(Math.random() * fortunecookie.length);
     const randomFortune = fortunecookie[randomIndex];
     const capitalizedFortune = randomFortune.charAt(0).toUpperCase() + randomFortune.slice(1);
-    echo (capitalizedFortune);
+    echo(capitalizedFortune);
 }
 
 //Random Human Organ
@@ -718,7 +896,7 @@ function getRandomHumanOrgan() {
     const randomIndex = Math.floor(Math.random() * humanorgans.length);
     const randomHumanOrgan = humanorgans[randomIndex];
     const capitalizedHumanOrgan = randomHumanOrgan.charAt(0).toUpperCase() + randomHumanOrgan.slice(1);
-    echo (capitalizedHumanOrgan);
+    echo(capitalizedHumanOrgan);
 }
 
 //Random Culture
@@ -726,7 +904,7 @@ function getRandomCulture() {
     const randomIndex = Math.floor(Math.random() * cultures.length);
     const randomCulture = cultures[randomIndex];
     const capitalizedCulture = randomCulture.charAt(0).toUpperCase() + randomCulture.slice(1);
-    echo (capitalizedCulture);
+    echo(capitalizedCulture);
 }
 
 //Random Hairstyle
@@ -734,15 +912,39 @@ function getRandomHairstyle() {
     const randomIndex = Math.floor(Math.random() * hairstyles.length);
     const randomHairstyle = hairstyles[randomIndex];
     const capitalizedHairstyle = randomHairstyle.charAt(0).toUpperCase() + randomHairstyle.slice(1);
-    echo (capitalizedHairstyle);
-} 
+    echo(capitalizedHairstyle);
+}
 
 //Random Language
 function getRandomLanguage() {
     const randomIndex = Math.floor(Math.random() * humanlanguages.length);
     const randomLanguage = humanlanguages[randomIndex];
     const capitalizedLanguage = randomLanguage.charAt(0).toUpperCase() + randomLanguage.slice(1);
-    echo (capitalizedLanguage);
+    echo(capitalizedLanguage);
+}
+
+//Random Religion
+function getRandomReligion() {
+    const randomIndex = Math.floor(Math.random() * religions.length);
+    const randomReligion = religions[randomIndex];
+    const capitalizedReligion = randomReligion.charAt(0).toUpperCase() + randomReligion.slice(1);
+    echo(capitalizedReligion);
+}
+
+//Random Male Name
+function getRandomMaleName() {
+    const randomIndex = Math.floor(Math.random() * masculinenames.length);
+    const randomMasculineNames = masculinenames[randomIndex];
+    const capitalizedMasculinename = randomMasculineNames.charAt(0).toUpperCase() + randomMasculineNames.slice(1);
+    echo(capitalizedMasculinename);
+}
+
+//Random Female Name
+function getRandomFemaleName() {
+    const randomIndex = Math.floor(Math.random() * femininenames.length);
+    const randomFeminineName = femininenames[randomIndex];
+    const capitalizedFemininename = randomFeminineName.charAt(0).toUpperCase() + randomFeminineName.slice(1);
+    echo(capitalizedFemininename);
 }
 
 //Random Male Clothing
@@ -750,7 +952,7 @@ function getRandomMaleClothing() {
     const randomIndex = Math.floor(Math.random() * masculineclothing.length);
     const randomMasculineClothing = masculineclothing[randomIndex];
     const capitalizedMasculineclothing = randomMasculineClothing.charAt(0).toUpperCase() + randomMasculineClothing.slice(1);
-    echo (capitalizedMasculineclothing);
+    echo(capitalizedMasculineclothing);
 }
 
 //Random Female Clothing
@@ -758,7 +960,55 @@ function getRandomFemaleClothing() {
     const randomIndex = Math.floor(Math.random() * feminineclothing.length);
     const randomFeminineClothing = feminineclothing[randomIndex];
     const capitalizedFeminineclothing = randomFeminineClothing.charAt(0).toUpperCase() + randomFeminineClothing.slice(1);
-    echo (capitalizedFeminineclothing);
+    echo(capitalizedFeminineclothing);
+}
+
+// Random Fruit
+function getRandomFruit() {
+    const randomIndex = Math.floor(Math.random() * fruits.length);
+    const randomFruit = fruits[randomIndex];
+    const capitalizedFruit = randomFruit.charAt(0).toUpperCase() + randomFruit.slice(1);
+    echo(capitalizedFruit);
+}
+
+// Random Vegetable
+function getRandomVegetable() {
+    const randomIndex = Math.floor(Math.random() * vegetables.length);
+    const randomVegetable = vegetables[randomIndex];
+    const capitalizedVegetable = randomVegetable.charAt(0).toUpperCase() + randomVegetable.slice(1);
+    echo(capitalizedVegetable);
+}
+
+// Random Animal
+function getRandomAnimal() {
+    const randomIndex = Math.floor(Math.random() * animals.length);
+    const randomAnimal = animals[randomIndex];
+    const capitalizedAnimal = randomAnimal.charAt(0).toUpperCase() + randomAnimal.slice(1);
+    echo(capitalizedAnimal);
+}
+
+// Random Bird
+function getRandomBird() {
+    const randomIndex = Math.floor(Math.random() * birds.length);
+    const randomBird = birds[randomIndex];
+    const capitalizedBird = randomBird.charAt(0).toUpperCase() + randomBird.slice(1);
+    echo(capitalizedBird);
+}
+
+// Random Flower
+function getRandomFlower() {
+    const randomIndex = Math.floor(Math.random() * flowers.length);
+    const randomFlower = flowers[randomIndex];
+    const capitalizedFlower = randomFlower.charAt(0).toUpperCase() + randomFlower.slice(1);
+    echo(capitalizedFlower);
+}
+
+// Short Adult Story
+function getAdultStory() {
+    const randomIndex = Math.floor(Math.random() * eroticstories.length);
+    const randomEroticStory = eroticstories[randomIndex];
+    const capitalizedEroticStory = randomEroticStory.charAt(0).toUpperCase() + randomEroticStory.slice(1);
+    echo(capitalizedEroticStory);
 }
 
 // Short Story
@@ -766,7 +1016,37 @@ function getShortStory() {
     const randomIndex = Math.floor(Math.random() * shortstories.length);
     const randomStory = shortstories[randomIndex];
     const capitalizedStory = randomStory.charAt(0).toUpperCase() + randomStory.slice(1);
-    echo (capitalizedStory);
+    echo(capitalizedStory);
+}
+
+// Function to convert decimal to binary
+function decimalToBinary(data) {
+    const decimal = data.trim().replace(/^convert:decimaltobinary:\b\s*/i, '');
+    if (isNaN(decimal)) {
+        echo('Invalid decimal number');
+        return;
+    }
+    echo(Number(decimal).toString(2));
+}
+
+// Function to convert decimal to octal
+function decimalToOctal(data) {
+    const decimal = data.trim().replace(/^convert:decimaltooctal:\b\s*/i, '');
+    if (isNaN(decimal)) {
+        echo('Invalid decimal number');
+        return;
+    }
+    echo (Number(decimal).toString(8));
+}
+
+// Function to convert decimal to hexadecimal
+function decimalToHexadecimal(data) {
+    const decimal = data.trim().replace(/^convert:decimaltohexadecimal:\b\s*/i, '');
+    if (isNaN(decimal)) {
+        echo('Invalid decimal number');
+        return;
+    }
+    echo(Number(decimal).toString(16).toUpperCase());
 }
 
 //Convert Binary to Decimal
@@ -979,16 +1259,16 @@ function reverseString(input) {
 // String Explode
 function stringExplode(sentence, delimiter) {
     if (typeof sentence !== 'string' || typeof delimiter !== 'string') {
-        echo ('Both sentence and delimiter must be strings.');
+        echo('Both sentence and delimiter must be strings.');
     }
-    echo ('['+sentence.split(delimiter)+']');
+    echo('[' + sentence.split(delimiter) + ']');
 }
 
 // String remove space
 function removeSpaces(data) {
     const input = data.trim().replace(/^remove:space:\s*/i, '');
     if (typeof input !== 'string') {
-        echo ('Input must be a string.');
+        echo('Input must be a string.');
     }
 
     // Use a regular expression to replace spaces globally
@@ -1011,7 +1291,7 @@ function removeNumbers(str) {
             end++;
         }
     }
-    echo (result);
+    echo(result);
 }
 
 //String remove single quotes
@@ -1020,7 +1300,7 @@ function removeSingleQuotes(data) {
     if (typeof inputString !== 'string') {
         echo('Input must be a string');
     }
-    echo (inputString.replace(/'/g, ''));
+    echo(inputString.replace(/'/g, ''));
 }
 
 //String remove double quotes
@@ -1029,7 +1309,7 @@ function removeDoubleQuotes(data) {
     if (typeof inputString !== 'string') {
         echo('Input must be a string');
     }
-    echo (inputString.replace(/"/g, ''));
+    echo(inputString.replace(/"/g, ''));
 }
 
 //String remove special characters
@@ -1039,7 +1319,7 @@ function removeSpecialCharacters(data) {
     var pattern = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/g;
     // Replace special characters with an empty string
     var result = inputString.replace(pattern, '');
-    echo ("Output:" + result);
+    echo("Output:" + result);
 }
 
 //String convert single quotes to double quotes
@@ -1048,7 +1328,7 @@ function convertSingleToDoubleQuotes(data) {
     if (typeof inputString !== 'string') {
         echo('Input must be a string');
     }
-    echo (inputString.replace(/'/g, '"'));
+    echo(inputString.replace(/'/g, '"'));
 }
 
 //String convert double quotes to single quotes
@@ -1057,7 +1337,7 @@ function convertDoubleToSingleQuotes(data) {
     if (typeof inputString !== 'string') {
         echo('Input must be a string');
     }
-    echo (inputString.replace(/"/g, `'`));
+    echo(inputString.replace(/"/g, `'`));
 }
 
 //String convert spaces to underscore
@@ -1068,7 +1348,7 @@ function convertSpacesToUnderscores(data) {
     }
 
     // Use replace method with a regular expression to replace spaces with underscores
-    echo (input.replace(/\s/g, '_'));
+    echo(input.replace(/\s/g, '_'));
 }
 
 //String Count Characters
@@ -1327,7 +1607,7 @@ function processGcdForLcm(input) {
         b = a % b;
         a = temp;
     }
-    return(a);
+    return (a);
 }
 
 // Function to calculate the Least Common Multiple (LCM) of two numbers
@@ -1353,9 +1633,9 @@ function processLcm(input) {
 function convertToLowerCase(data) {
     let input = data.trim().replace(/^convert:tolowercase:\s*/i, '');
     if (typeof input === 'string') {
-        echo (input.toLowerCase());
+        echo(input.toLowerCase());
     } else {
-        echo ('Input must be a string.');
+        echo('Input must be a string.');
     }
 }
 
@@ -1363,9 +1643,9 @@ function convertToLowerCase(data) {
 function convertToUpperCase(data) {
     let input = data.trim().replace(/^convert:touppercase:\s*/i, '');
     if (typeof input === 'string') {
-        echo (input.toUpperCase());
+        echo(input.toUpperCase());
     } else {
-        echo ('Input must be a string.');
+        echo('Input must be a string.');
     }
 }
 
