@@ -931,6 +931,18 @@ function getRandomReligion() {
     echo(capitalizedReligion);
 }
 
+//Random Name
+function getRandomName() {
+    randomarray = ['masculinenames','femininenames'];
+    const randomArrayIndex = Math.floor(Math.random() * randomarray.length);
+    const randomArrayOutput = randomarray[randomArrayIndex];
+    if (randomArrayOutput === 'masculinenames') {
+        getRandomMaleName();
+    } else {
+        getRandomFemaleName();
+    }
+}
+
 //Random Male Name
 function getRandomMaleName() {
     const randomIndex = Math.floor(Math.random() * masculinenames.length);

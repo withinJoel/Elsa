@@ -36,6 +36,7 @@
 * `random:fooditem` - To get a random food item.
 * `random:profession` - To get a random profession.
 * `random:festival` - To get a random festivals.
+* `random:name` - To get a random name.
 * `random:malename` or `random:masculinename` - To get a random male name.
 * `random:femalename` or `random:femininename` - To get a random female name.
 * `random:maleclothing` or `random:masculineclothing` - To get a random male clothing.

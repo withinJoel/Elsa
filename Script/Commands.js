@@ -229,6 +229,8 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomFestival();
             } else if (commandName === "random:hairstyle") {
                 getRandomHairstyle();
+            } else if (commandName === "random:name") {
+                getRandomName();
             } else if ((commandName === "random:malename") || (commandName === "random:masculinename")) {
                 getRandomMaleName();
             } else if ((commandName === "random:femalename") || (commandName === "random:femininename")) {
