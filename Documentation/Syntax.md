@@ -100,6 +100,7 @@
 * `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`
 
 # Math
+* `count:` - To count in backwards. example: `count:10`
 * `remove:numbers:` - To remove numbers from the input. example `remove:numbers:hello, 007`
 * `convert:decimaltobinary:` - To convert decimal to binary. example: `convert:decimaltobinary:45`
 * `convert:decimaltooctal:` - To convert decimal to octal. example: `convert:decimaltooctal:5`

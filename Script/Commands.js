@@ -46,6 +46,9 @@ function runCmd(command, inMemory, fromInput) {
                 themeSoft();
             } else if (commandName === "time") {
                 getTime();
+            } else if (commandName.includes("count:")) {
+                const count = commandName.trim().replace(/^count:\b\s*/i, '');
+                countBackward(count);
             } else if (commandName.includes("inputcolor:")) {
                 const color = commandName.trim().replace(/^inputcolor:\b\s*/i, '');
                 inputColor(color);

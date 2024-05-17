@@ -198,6 +198,35 @@ function getOS() {
     echo(platform);
 }
 
+//Count
+function countBackward(number) {
+    // Check if the input is a valid number
+    if (isNaN(number)) {
+        echo('Please provide a valid number after "count:".');  // Assuming echo is a function that displays a message
+        return;  // Exit the function if the input is not a valid number
+    }
+
+    // Check if the number is positive
+    if (number <= 0) {
+        echo('Please provide a positive number greater than zero.');
+        return;  // Exit the function if the input is not a positive number
+    }
+
+    // Start counting backward in real-time
+    let count = number;
+
+    // Define a function to update the count in real-time
+    function updateCount() {
+        if (count >= 1) {
+            echo(count + '\n');  // Append '\n' for a new line
+            count--;
+            setTimeout(updateCount, 1000);  // Update the count every 1000ms (1 second)
+        }
+    }
+
+    updateCount();  // Start updating the count in real-time
+}
+
 //Open Sites
 function openLink(input) {
     const url = input.trim().replace(/^open:\b\s*/i, ''); // Trim spaces and replace "open"
