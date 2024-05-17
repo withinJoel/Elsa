@@ -9,10 +9,18 @@ Made with 💖 by Joel Jolly.
 * Browse the web using the terminal.
 * If you are a very big fan of terminal and browsing, Then this app is for you.
 
+# To get started
+* Download the latest release from the github page (See to your right, There you could see 'Releases' under that you can see the latest release. In that download the .exe file)
+* Install it. (Some antivirus may flag it as a virus, But trust me its not)
+* You can run the Elsa terminal from you desktop or by going to C/Program Files (x86)/Elsa/Elsa.exe.
+* That's it! 🎉
+
 # Features
 * Helps you to search the web faster.
 * Protects your online privacy.
 * Fast and secure way to browse the web.
+* Customize the way you wanted it to be.
+* Shortcuts for all your favourite websites.
 * This project can work in your browser or you can download our official app for your operating system.
 
 # Documentation

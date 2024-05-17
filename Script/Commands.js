@@ -2,7 +2,7 @@ function runCmd(command, inMemory, fromInput) {
     if (command != undefined) {
         if (fromInput) {
             input.value = "";
-            echo(prompt + command);
+            echo('\n'+prompt + command);
         }
         if (inMemory && command != "") {
             if (command != memory[memory.length - 1]) {
@@ -15,7 +15,7 @@ function runCmd(command, inMemory, fromInput) {
         }
         if (!toFile) {
             var commandName = command;
-
+            
             if (commandName === "cls" || commandName === "clearscreen") {
                 refreshPage();
             } else if (commandName === "exit") {
@@ -30,6 +30,20 @@ function runCmd(command, inMemory, fromInput) {
                 getTimeZone();
             } else if (commandName === "open:camera") {
                 openCamera();
+            } else if (commandName === "theme:pinky") {
+                themePinky();
+            } else if (commandName === "theme:sunrise") {
+                themeSunrise();
+            } else if (commandName === "theme:valentine") {
+                themeValentine();
+            } else if (commandName === "theme:hacker") {
+                themeHacker();
+            } else if (commandName === "theme:energy") {
+                themeEnergy();
+            } else if (commandName === "theme:loversparadise") {
+                themeLoversParadise();
+            } else if (commandName === "theme:soft") {
+                themeSoft();
             } else if (commandName === "time") {
                 getTime();
             } else if (commandName === "day") {
@@ -139,8 +153,12 @@ function runCmd(command, inMemory, fromInput) {
                 countWords(commandName);
             } else if (commandName === "help") {
                 Help();
+            } else if (commandName === "sys") {
+                getSys();
             } else if (commandName === "os") {
                 getOS();
+            } else if (commandName === "internet") {
+                getInternetInfo();
             } else if (commandName === "networkstatus") {
                 getNetworkStatus();
             } else if (commandName === "connectionspeed") {
@@ -165,10 +183,100 @@ function runCmd(command, inMemory, fromInput) {
                 getMousePosition();
             } else if (commandName === "devicetype") {
                 getDeviceType();
-            } else if (commandName === "randomnumber") {
+            } else if (commandName === "random:religion") {
+                getRandomReligion();
+            } else if (commandName === "random:number") {
                 getRandomNumber();
-            } else if (commandName === "randomalphabet") {
+            } else if ((commandName === "random:musicgenre") || (commandName === "random:songgenre")) {
+                getRandomSongGenre();
+            } else if ((commandName === "random:moviegenre") || (commandName === "random:filmgenre")) {
+                getRandomMovieGenre();
+            } else if ((commandName === "random:movie") || (commandName === "random:film")) {
+                getRandomMovie();
+            } else if ((commandName === "random:song") || (commandName === "random:music")) {
+                getRandomSong();
+            } else if (commandName === "random:videogame") {
+                getRandomVideoGame();
+            } else if (commandName === "random:alphabet") {
                 getRandomAlphabet();
+            } else if ((commandName === "random:os") || (commandName === "random:operatingsystem")) {
+                getRandomOperatingSystem();
+            } else if (commandName === "random:programminglanguage") {
+                getRandomProgrammingLanguage();
+            } else if ((commandName === "random:weekday") || (commandName === "random:day")) {
+                getRandomWeekday();
+            } else if (commandName === "random:weekend") {
+                getRandomWeekend();
+            } else if (commandName === "random:joke") {
+                getRandomJoke();
+            } else if (commandName === "random:pickupline") {
+                getRandomPickupline();
+            } else if (commandName === "random:fact") {
+                getRandomFacts();
+            } else if (commandName === "random:quote") {
+                getRandomQuotes();
+            } else if (commandName === "random:humanorgan") {
+                getRandomHumanOrgan();
+            } else if (commandName === "random:fooditem") {
+                getRandomFooditem();
+            } else if (commandName === "random:profession") {
+                getRandomProfession();
+            } else if (commandName === "random:brand") {
+                getRandomBrand();
+            } else if (commandName === "random:culture") {
+                getRandomCulture();
+            } else if (commandName === "random:festival") {
+                getRandomFestival();
+            } else if (commandName === "random:hairstyle") {
+                getRandomHairstyle();
+            } else if ((commandName === "random:malename") || (commandName === "random:masculinename")) {
+                getRandomMaleName();
+            } else if ((commandName === "random:femalename") || (commandName === "random:femininename")) {
+                getRandomFemaleName();
+            } else if ((commandName === "random:maleclothing") || (commandName === "random:masculineclothing")) {
+                getRandomMaleClothing();
+            } else if ((commandName === "random:femaleclothing") || (commandName === "random:feminineclothing")) {
+                getRandomFemaleClothing();
+            } else if (commandName === "random:language") {
+                getRandomLanguage();
+            } else if (commandName === "random:planet") {
+                getRandomPlanet();
+            } else if (commandName === "random:vegetable") {
+                getRandomVegetable();
+            } else if (commandName === "random:fruit") {
+                getRandomFruit();
+            } else if (commandName === "random:animal") {
+                getRandomAnimal();
+            } else if (commandName === "random:bird") {
+                getRandomBird();
+            } else if (commandName === "random:flower") {
+                getRandomFlower();
+            } else if (commandName === "random:country") {
+                getRandomCountry();
+            } else if (commandName === "random:africancountry") {
+                getRandomAfricanCountry();
+            } else if (commandName === "random:europeancountry") {
+                getRandomEuropeanCountry();
+            } else if (commandName === "random:northamericancountry") {
+                getRandomNorthAmericanCountry();
+            } else if (commandName === "random:southamericancountry") {
+                getRandomSouthAmericanCountry();
+            } else if (commandName === "random:asiancountry") {
+                getRandomAsianCountry();
+            } else if (commandName === "random:zodiacsign") {
+                getRandomZodiacSign();
+            } else if (commandName === "fortunecookie") {
+                getFortuneCookie();
+            } else if ((commandName === "adultstory") || (commandName === "eroticstory")) {
+                getAdultStory();
+            } else if (commandName === "shortstory") {
+                getShortStory();
+            } else if (commandName.includes("convert:decimaltobinary:")) {
+                decimalToBinary(commandName);
+            } else if (commandName.includes("convert:decimaltooctal:")) {
+                decimalToOctal(commandName);
+            } else if (commandName.includes("convert:decimaltohexadecimal:")) {
+                decimalToHexadecimal(commandName);
             } else if (commandName.includes("convert:binarytodecimal:")) {
                 binaryToDecimal(commandName);
             } else if (commandName.includes("convert:binarytodecimal:")) {
@@ -199,7 +307,7 @@ function runCmd(command, inMemory, fromInput) {
                 searchPinterest(commandName);
             } else if (commandName.includes("godaddy:")) {
                 searchGodaddy(commandName);
-            } else if (commandName === "createpassword") {
+            } else if (commandName === "create:password") {
                 createPassword();
             } else if (commandName.includes("createqr:")) {
                 createQrCode(commandName);
@@ -232,7 +340,7 @@ function runCmd(command, inMemory, fromInput) {
                     });
             } else if (commandName === "refresh") {
                 refreshPage();
-            } else if ((commandName === "randomcolor") || (commandName === "randomcolour")) {
+            } else if ((commandName === "random:color") || (commandName === "random:colour")) {
                 getRandomColor();
             } else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);
