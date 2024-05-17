@@ -325,7 +325,7 @@ function searchYts(input) {
 //Search Youtube
 function searchYoutube(input) {
     const query = input.trim().replace(/^youtube:\b\s*/i, ''); // Trim spaces and replace "open"
-    const youtubeurl = 'https://www.youtube.com/results?search_query=' + query + '/';
+    const youtubeurl = 'https://www.youtube.com/results?search_query=' + query + '';
     window.open(youtubeurl, '_blank');
 }
 
