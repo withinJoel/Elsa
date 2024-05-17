@@ -73,6 +73,7 @@
 * `mouseposition` - To get the mouse position.
 
 # Customization
+* `inputcolor:` or `inputcolour:` - To change the input color. example: `inputcolor:pink`
 * `color:` or `colour:` - To change the terminal text color. example: `color:blue` or `colour:white`
 * `bgcolor:` or `bgcolour:` or `backgroundcolor:` or `backgroundcolour:` - To change the background color of the terminal. example `bgcolor:purple`
 * `theme:valentine` - To have a romantic theme.

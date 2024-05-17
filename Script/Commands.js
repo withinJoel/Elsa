@@ -46,6 +46,12 @@ function runCmd(command, inMemory, fromInput) {
                 themeSoft();
             } else if (commandName === "time") {
                 getTime();
+            } else if (commandName.includes("inputcolor:")) {
+                const color = commandName.trim().replace(/^inputcolor:\b\s*/i, '');
+                inputColor(color);
+            } else if (commandName.includes("inputcolour:")) {
+                const color = commandName.trim().replace(/^inputcolour:\b\s*/i, '');
+                inputColor(color);
             } else if (commandName === "day") {
                 getDay();
             } else if (commandName === "date") {

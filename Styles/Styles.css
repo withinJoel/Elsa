@@ -29,14 +29,11 @@ body {
     margin-right: -20px; /* Add margin between prompt and input */
   }
 
-  #input {
-    display: inline-flex; /* Display input inline */
-    flex-wrap: wrap; /* Wrap input to next line if width is crossed */
-    word-wrap: break-word; /* Break words to next line if they don't fit */
+  #input { 
     background: transparent;
     border: 0;
     width: 1200px;
-    color: inherit;
+    color: white;
     font: inherit;
     outline: none;
   }  

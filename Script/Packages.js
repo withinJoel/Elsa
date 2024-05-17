@@ -77,6 +77,11 @@ function Version() {
     echo('Made with love by Joel Jessie Jolly.');
 }
 
+//Input color
+function inputColor (input){
+    document.getElementById('input').style.color = input;
+}
+
 //Theme Pinky
 function themePinky() {
     userBgColor = 'pink';
