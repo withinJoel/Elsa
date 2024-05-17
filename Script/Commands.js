@@ -2,7 +2,7 @@ function runCmd(command, inMemory, fromInput) {
     if (command != undefined) {
         if (fromInput) {
             input.value = "";
-            echo('\n'+prompt + command);
+            echo('\n' + prompt + command);
         }
         if (inMemory && command != "") {
             if (command != memory[memory.length - 1]) {
@@ -15,7 +15,7 @@ function runCmd(command, inMemory, fromInput) {
         }
         if (!toFile) {
             var commandName = command;
-            
+
             if (commandName === "cls" || commandName === "clearscreen") {
                 refreshPage();
             } else if (commandName === "exit") {
@@ -126,6 +126,9 @@ function runCmd(command, inMemory, fromInput) {
                 convertToUpperCase(commandName);
             } else if (commandName.includes("check:even:")) {
                 isEvenNumber(commandName);
+            } else if (commandName.includes("read:")) {
+                const data = commandName.trim().replace(/^read:\s*/i, '');
+                readOutLine(data);
             } else if (commandName.includes("encode:")) {
                 encode(commandName);
             } else if (commandName.includes("decode:")) {

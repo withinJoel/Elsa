@@ -78,7 +78,7 @@ function Version() {
 }
 
 //Input color
-function inputColor (input){
+function inputColor(input) {
     document.getElementById('input').style.color = input;
 }
 
@@ -245,7 +245,7 @@ function customSort(input) {
         items.sort((a, b) => order * a.localeCompare(b));
     }
 
-    echo (items.join(','));
+    echo(items.join(','));
 }
 
 //Open Sites
@@ -988,7 +988,7 @@ function getRandomReligion() {
 
 //Random Name
 function getRandomName() {
-    randomarray = ['masculinenames','femininenames'];
+    randomarray = ['masculinenames', 'femininenames'];
     const randomArrayIndex = Math.floor(Math.random() * randomarray.length);
     const randomArrayOutput = randomarray[randomArrayIndex];
     if (randomArrayOutput === 'masculinenames') {
@@ -1103,7 +1103,7 @@ function decimalToOctal(data) {
         echo('Invalid decimal number');
         return;
     }
-    echo (Number(decimal).toString(8));
+    echo(Number(decimal).toString(8));
 }
 
 // Function to convert decimal to hexadecimal
@@ -1278,17 +1278,6 @@ function createPassword(length = 16) {
     echo(`Password: ${password}`);
 }
 
-// Decode
-function decode(input) {
-    const data = input.trim().replace(/^decode:\s*/i, '');
-    try {
-        const decoded = atob(data);
-        echo(`Base64 decoded: ${decoded}`);
-    } catch (error) {
-        echo(`Error decoding: ${error.message}`);
-    }
-}
-
 //Latency
 function measureLatency(url) {
     const startTime = performance.now(); // Get the current time before sending the request
@@ -1305,6 +1294,17 @@ function measureLatency(url) {
         });
 }
 
+// Decode
+function decode(input) {
+    const data = input.trim().replace(/^decode:\s*/i, '');
+    try {
+        const decoded = atob(data);
+        echo(`Base64 decoded: ${decoded}`);
+    } catch (error) {
+        echo(`Error decoding: ${error.message}`);
+    }
+}
+
 //Encode
 function encode(input) {
     const data = input.trim().replace(/^encode:\s*/i, '');
@@ -1313,6 +1313,48 @@ function encode(input) {
         echo(`Base64 encoded: ${encoded}`);
     } catch (error) {
         echo(`Error encoding: ${error.message}`);
+    }
+}
+
+//Read
+function readOutLine(text) {
+    // Check if the Web Speech API is supported
+    if ('speechSynthesis' in window) {
+        // Create a new instance of SpeechSynthesisUtterance
+        let utterance = new SpeechSynthesisUtterance(text);
+
+        // Function to set the voice to a female one
+        function setFemaleVoice() {
+            // Get the available voices
+            let voices = window.speechSynthesis.getVoices();
+            // Find a female voice
+            let femaleVoice = voices.find(voice => voice.gender === 'female' || voice.name.toLowerCase().includes('female'));
+
+            // If a female voice is found, set it
+            if (femaleVoice) {
+                utterance.voice = femaleVoice;
+            } else {
+                // Default to the first voice if no female voice is found
+                utterance.voice = voices[0];
+            }
+        }
+
+        // Voices might not be immediately available, so use the onvoiceschanged event
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = setFemaleVoice;
+        } else {
+            setFemaleVoice();
+        }
+
+        // Set some properties for the speech
+        utterance.rate = 1; // Speed of the speech
+        utterance.pitch = 1; // Pitch of the speech
+        utterance.volume = 1; // Volume of the speech
+
+        // Speak the text
+        window.speechSynthesis.speak(utterance);
+    } else {
+        console.error('Speech synthesis not supported in this browser.');
     }
 }
 

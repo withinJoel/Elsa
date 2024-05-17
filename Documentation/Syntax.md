@@ -57,6 +57,7 @@
 * `random:pickupline` - To get a random pickup line.
 
 # Features
+* `read:` - To read out the input. example: `read:hello world` 
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
 * `encode:` - To encode data. example: `encode:hola`
 * `decode:` - To decode data. example: `decode:aG9sYQ==`
