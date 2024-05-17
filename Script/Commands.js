@@ -271,6 +271,12 @@ function runCmd(command, inMemory, fromInput) {
                 getAdultStory();
             } else if (commandName === "shortstory") {
                 getShortStory();
+            } else if (commandName.includes("convert:decimaltobinary:")) {
+                decimalToBinary(commandName);
+            } else if (commandName.includes("convert:decimaltooctal:")) {
+                decimalToOctal(commandName);
+            } else if (commandName.includes("convert:decimaltohexadecimal:")) {
+                decimalToHexadecimal(commandName);
             } else if (commandName.includes("convert:binarytodecimal:")) {
                 binaryToDecimal(commandName);
             } else if (commandName.includes("convert:binarytodecimal:")) {

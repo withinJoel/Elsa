@@ -99,6 +99,9 @@
 
 # Math
 * `remove:numbers:` - To remove numbers from the input. example `remove:numbers:hello, 007`
+* `convert:decimaltobinary:` - To convert decimal to binary. example: `convert:decimaltobinary:45`
+* `convert:decimaltooctal:` - To convert decimal to octal. example: `convert:decimaltooctal:5`
+* `convert:decimaltohexadecimal:` - To convert decimal to hexadecimal. example: `convert:decimaltohexadecimal:007`
 * `convert:binarytodecimal:` - To convert binary to decimal. example: `convert:binarytodecimal:101010010`
 * `convert:binarytohexadecimal:` - To convert binary to hexadecimal. example: `convert:binarytohexadecimal:101010010`
 * `convert:binarytooctal:` - To convert binary to octal. example: `convert:binarytooctal:101010010`

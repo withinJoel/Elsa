@@ -1019,6 +1019,36 @@ function getShortStory() {
     echo(capitalizedStory);
 }
 
+// Function to convert decimal to binary
+function decimalToBinary(data) {
+    const decimal = data.trim().replace(/^convert:decimaltobinary:\b\s*/i, '');
+    if (isNaN(decimal)) {
+        echo('Invalid decimal number');
+        return;
+    }
+    echo(Number(decimal).toString(2));
+}
+
+// Function to convert decimal to octal
+function decimalToOctal(data) {
+    const decimal = data.trim().replace(/^convert:decimaltooctal:\b\s*/i, '');
+    if (isNaN(decimal)) {
+        echo('Invalid decimal number');
+        return;
+    }
+    echo (Number(decimal).toString(8));
+}
+
+// Function to convert decimal to hexadecimal
+function decimalToHexadecimal(data) {
+    const decimal = data.trim().replace(/^convert:decimaltohexadecimal:\b\s*/i, '');
+    if (isNaN(decimal)) {
+        echo('Invalid decimal number');
+        return;
+    }
+    echo(Number(decimal).toString(16).toUpperCase());
+}
+
 //Convert Binary to Decimal
 function binaryToDecimal(number) {
     const binary = number.trim().replace(/^convert:binarytodecimal:\b\s*/i, '');
