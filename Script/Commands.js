@@ -44,6 +44,10 @@ function runCmd(command, inMemory, fromInput) {
                 themeLoversParadise();
             } else if (commandName === "theme:soft") {
                 themeSoft();
+            } else if (commandName.includes("sort:ascending:")) {
+                customSort(commandName);
+            } else if (commandName.includes("sort:descending:")) {
+                customSort(commandName);
             } else if (commandName === "time") {
                 getTime();
             } else if (commandName.includes("count:")) {

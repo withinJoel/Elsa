@@ -71,6 +71,8 @@
 * `webrtc` - To get the WebRTC info.
 * `randomcolor` or `randomcolour` - To get a random color.
 * `mouseposition` - To get the mouse position.
+* `sort:ascending:` - To sort in ascending order. example: `sort:ascending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
+* `sort:descending:` - To sort in descending order. example: `sort:descending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
 
 # Customization
 * `inputcolor:` or `inputcolour:` - To change the input color. example: `inputcolor:pink`
