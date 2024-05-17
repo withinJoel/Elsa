@@ -1,1 +1,2 @@
 *. filter=lfs diff=lfs merge=lfs -text
+Elsa.exe. filter=lfs diff=lfs merge=lfs -text
