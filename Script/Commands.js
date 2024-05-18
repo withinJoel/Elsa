@@ -63,6 +63,9 @@ function runCmd(command, inMemory, fromInput) {
                 getDay();
             } else if (commandName === "date") {
                 getDate();
+            } else if (commandName.includes("guess:")) {
+                let data = commandName.trim().replace(/^guess:\s*/i, '');
+                getGuesses(data);
             } else if (commandName.includes("check:palindrome:")) {
                 isPalindrome(commandName);
             } else if (commandName.includes("multiplicationtable:")) {
