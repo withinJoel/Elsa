@@ -57,6 +57,8 @@
 * `random:pickupline` - To get a random pickup line.
 
 # Features
+* `flames:` - To play the famous game for relationship. example: `flames:joel:anna`
+* `numerology:` - To get the numerology details for 2 people. example: `numerology:joel:2002-05-11:sophia:2003-05-27` pattern: YYYY-MM-DD
 * `guess:` - To guess the word. example: `guess:tac`.
 * `read:` - To read out the input. example: `read:hello world` 
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`

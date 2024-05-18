@@ -69,6 +69,12 @@ function runCmd(command, inMemory, fromInput) {
                 removePunctuation(data);
             } else if (commandName === "date") {
                 getDate();
+            } else if (commandName.includes("numerology:")) {
+                let data = commandName.trim().replace(/^numerology:\s*/i, '');
+                processNumerologyInput(data);
+            } else if (commandName.includes("flames:")) {
+                let data = commandName.trim().replace(/^flames:\s*/i, '');
+                flames(data);
             } else if (commandName.includes("guess:")) {
                 let data = commandName.trim().replace(/^guess:\s*/i, '');
                 getGuesses(data);

@@ -101,6 +101,150 @@ function mean(arr) {
     return arr.reduce((sum, value) => sum + value, 0) / arr.length;
 }
 
+//Numerlogy
+function processNumerologyInput(input) {
+    // Numerology value mappings for letters
+    const numerologyValues = {
+      A: 1, B: 2, C: 3, D: 4, E: 5, F: 6, G: 7, H: 8, I: 9,
+      J: 1, K: 2, L: 3, M: 4, N: 5, O: 6, P: 7, Q: 8, R: 9,
+      S: 1, T: 2, U: 3, V: 4, W: 5, X: 6, Y: 7, Z: 8
+    };
+  
+    // Extract input values
+    const [name1, dob1, name2, dob2] = input.split(':').map((s, i) => i % 2 === 0 ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : s);
+    if (!name1 || !dob1 || !name2 || !dob2) {
+      return 'Invalid input. Please provide names and dates of birth in the format "name1:dob1:name2:dob2".';
+    }
+  
+    // Helper function to calculate numerology number
+    function calculateNumber(value) {
+      while (value > 9 && ![11, 22, 33].includes(value)) {
+        value = value.toString().split('').reduce((acc, num) => acc + parseInt(num), 0);
+      }
+      return value;
+    }
+  
+    // Calculate numerology numbers for names
+    let sumName1 = 0, sumName2 = 0;
+    for (let char of name1.toUpperCase()) {
+      if (numerologyValues[char]) {
+        sumName1 += numerologyValues[char];
+      }
+    }
+    for (let char of name2.toUpperCase()) {
+      if (numerologyValues[char]) {
+        sumName2 += numerologyValues[char];
+      }
+    }
+    const num1 = calculateNumber(sumName1);
+    const num2 = calculateNumber(sumName2);
+  
+    // Calculate Life Path numbers from dates of birth
+    const [year1, month1, day1] = dob1.split('-').map(Number);
+    const [year2, month2, day2] = dob2.split('-').map(Number);
+    const lifePath1 = calculateNumber(year1 + month1 + day1);
+    const lifePath2 = calculateNumber(year2 + month2 + day2);
+  
+    // Calculate Destiny numbers
+    const destiny1 = calculateNumber(sumName1);
+    const destiny2 = calculateNumber(sumName2);
+  
+    // Calculate Soul Urge numbers
+    const vowels = 'AEIOU';
+    let sumSoulUrge1 = 0, sumSoulUrge2 = 0;
+    for (let char of name1.toUpperCase()) {
+      if (vowels.includes(char)) {
+        sumSoulUrge1 += numerologyValues[char];
+      }
+    }
+    for (let char of name2.toUpperCase()) {
+      if (vowels.includes(char)) {
+        sumSoulUrge2 += numerologyValues[char];
+      }
+    }
+    const soulUrge1 = calculateNumber(sumSoulUrge1);
+    const soulUrge2 = calculateNumber(sumSoulUrge2);
+  
+    // Compatibility descriptions
+    const compatibility = {
+      1: 'Leadership, independence, and individuality.',
+      2: 'Sensitivity, balance, and harmony.',
+      3: 'Creativity, self-expression, and joy.',
+      4: 'Stability, order, and responsibility.',
+      5: 'Freedom, change, and adventure.',
+      6: 'Love, family, and responsibility.',
+      7: 'Spirituality, introspection, and wisdom.',
+      8: 'Power, success, and material achievement.',
+      9: 'Compassion, humanitarianism, and completion.',
+      11: 'Inspiration, idealism, and intuition.',
+      22: 'Master builder, large-scale plans, and potential.',
+      33: 'Master teacher, spiritual uplifting, and compassion.'
+    };
+  
+    const relationshipPotential = (num1 + num2) % 9 || 9;
+  
+    echo (`Numerology compatibility for ${name1} and ${name2}:
+  
+      ${name1}:
+      - Core Number: ${num1} (${compatibility[num1]})
+      - Life Path Number: ${lifePath1} (${compatibility[lifePath1]})
+      - Destiny Number: ${destiny1} (${compatibility[destiny1]})
+      - Soul Urge Number: ${soulUrge1} (${compatibility[soulUrge1]})
+  
+      ${name2}:
+      - Core Number: ${num2} (${compatibility[num2]})
+      - Life Path Number: ${lifePath2} (${compatibility[lifePath2]})
+      - Destiny Number: ${destiny2} (${compatibility[destiny2]})
+      - Soul Urge Number: ${soulUrge2} (${compatibility[soulUrge2]})
+  
+      Together, ${name1} and ${name2} have a relationship potential number ${relationshipPotential}, which signifies:
+      ${compatibility[relationshipPotential]}.`);
+  }
+  
+  //const input = 'joel:1990-01-15:sana:1992-05-20';
+  
+//FLAMES Game
+function flames(input) {
+    // Split the input into two names
+    const [name1, name2] = input.split(':');
+
+    // Remove spaces and convert to lowercase
+    const cleanName1 = name1.replace(/\s+/g, '').toLowerCase();
+    const cleanName2 = name2.replace(/\s+/g, '').toLowerCase();
+
+    // Function to count and remove common characters
+    function getCommonCharactersCount(name1, name2) {
+        let name1Arr = name1.split('');
+        let name2Arr = name2.split('');
+
+        name1Arr.forEach(char => {
+            const index = name2Arr.indexOf(char);
+            if (index !== -1) {
+                name2Arr.splice(index, 1);
+            }
+        });
+
+        return name1Arr.length + name2Arr.length;
+    }
+
+    const count = getCommonCharactersCount(cleanName1, cleanName2);
+
+    const flamesArr = ['Friends', 'Lovers', 'Affection', 'Marriage', 'Enemies', 'Siblings'];
+    let index = 0;
+
+    // Loop to find the FLAMES outcome
+    while (flamesArr.length > 1) {
+        index = (count % flamesArr.length) - 1;
+        if (index >= 0) {
+            flamesArr.splice(index, 1);
+        } else {
+            flamesArr.splice(flamesArr.length - 1, 1);
+        }
+    }
+
+    echo (flamesArr[0]);
+}
+
 //Remove Punctuation
 function removePunctuation(text) {
     // Define the punctuation marks to remove
