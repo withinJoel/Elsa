@@ -101,6 +101,15 @@ function mean(arr) {
     return arr.reduce((sum, value) => sum + value, 0) / arr.length;
 }
 
+//Remove Punctuation
+function removePunctuation(text) {
+    // Define the punctuation marks to remove
+    const punctuationMarks = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+    
+    // Remove punctuation using regex and return the cleaned text
+    echo (text.replace(punctuationMarks, ''));
+}
+
 // Function to calculate the next number in the sequence using linear regression
 function predictNextNumber(sequence) {
     const numbers = sequence.split(',').map(Number);

@@ -64,6 +64,9 @@ function runCmd(command, inMemory, fromInput) {
                 inputColor(color);
             } else if (commandName === "day") {
                 getDay();
+            } else if (commandName.includes("remove:punctuation:")) {
+                const data = commandName.trim().replace(/^remove:punctuation:\b\s*/i, '');
+                removePunctuation(data);
             } else if (commandName === "date") {
                 getDate();
             } else if (commandName.includes("guess:")) {
