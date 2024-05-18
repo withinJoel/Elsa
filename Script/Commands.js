@@ -50,6 +50,9 @@ function runCmd(command, inMemory, fromInput) {
                 customSort(commandName);
             } else if (commandName === "time") {
                 getTime();
+            } else if (commandName.includes("predict:")) {
+                const data = commandName.trim().replace(/^predict:\b\s*/i, '');
+                predictNextNumber(data);
             } else if (commandName.includes("count:")) {
                 const count = commandName.trim().replace(/^count:\b\s*/i, '');
                 countBackward(count);

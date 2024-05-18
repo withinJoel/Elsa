@@ -95,6 +95,44 @@ function getGuesses(input) {
     echo(matchingWords);
 }
 
+//predict
+// Function to calculate the mean of an array
+function mean(arr) {
+    return arr.reduce((sum, value) => sum + value, 0) / arr.length;
+}
+
+// Function to calculate the next number in the sequence using linear regression
+function predictNextNumber(sequence) {
+    const numbers = sequence.split(',').map(Number);
+    const n = numbers.length;
+
+    if (n < 2) {
+        throw new Error("At least two numbers are required to predict the next number.");
+    }
+
+    const x = Array.from({ length: n }, (_, i) => i + 1);
+    const y = numbers;
+
+    const meanX = mean(x);
+    const meanY = mean(y);
+
+    let numerator = 0;
+    let denominator = 0;
+
+    for (let i = 0; i < n; i++) {
+        numerator += (x[i] - meanX) * (y[i] - meanY);
+        denominator += (x[i] - meanX) * (x[i] - meanX);
+    }
+
+    const slope = numerator / denominator;
+    const intercept = meanY - slope * meanX;
+
+    const nextX = n + 1;
+    const nextY = slope * nextX + intercept;
+
+    echo (nextY);
+}
+
 //Input color
 function inputColor(input) {
     document.getElementById('input').style.color = input;
