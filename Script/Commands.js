@@ -72,6 +72,9 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("numerology:")) {
                 let data = commandName.trim().replace(/^numerology:\s*/i, '');
                 processNumerologyInput(data);
+            } else if (commandName.includes("zodiacsign:")) {
+                let data = commandName.trim().replace(/^zodiacsign:\s*/i, '');
+                getZodiacSign(data);
             } else if (commandName.includes("flames:")) {
                 let data = commandName.trim().replace(/^flames:\s*/i, '');
                 flames(data);
