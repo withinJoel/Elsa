@@ -15,7 +15,13 @@ function getInternetInfo() {
 function getInternetData(ip) {
     let ipAddress = ip;
     let output = "";
-
+    const connectionType = navigator.connection.effectiveType;
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const downlinkSpeed = connection.downlink + " Mbps";
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => echo(`IP address: ${data.ip}`))
+        .catch(error => echo('Error fetching IP address:', error));
     fetch(`http://ip-api.com/json/${ipAddress}`).then(res => {
         return res.json()
     }).then(data => {
@@ -28,6 +34,8 @@ function getInternetData(ip) {
         echo('AS: ' + data.as);
         echo('Zip code: ' + data.zip);
         echo('ISP: ' + data.isp);
+        echo('Connection Type: ' + connectionType);
+        echo('Connection Speed: ' + downlinkSpeed);
     }).catch(err => {
         echo(`There was an error: ${err}`);
     })
