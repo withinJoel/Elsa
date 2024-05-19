@@ -278,11 +278,102 @@ async function detectNudity(data) {
     const isNude5 = prediction5[0] < 0.7; // Adjust threshold for sensitivity
 
     if ((isNude1 === isNude2) && (isNude2 === isNude3) && (isNude3 === isNude4) && (isNude4 === isNude5)) {
-        echo (isNude1 ? 'Yes, The image contains nudity.' : 'No, The image does not contain any nudity.');
+        echo(isNude1 ? 'Yes, The image contains nudity.' : 'No, The image does not contain any nudity.');
     } else {
         // Call the function again for comparison
         await detectNudity(data);
     }
+
+    setTimeout(() => {
+        document.body.removeChild(imgElement);
+    }, 10000); // Remove the image after 10 seconds
+}
+
+//Open Image
+async function image(data) {
+    const existingImgElement = document.querySelector('img[data-role="dynamic-image"]');
+    const existingErrorElement = document.querySelector('div[data-role="error-message"]');
+
+    // Remove existing error message if any
+    if (existingErrorElement) {
+        document.body.removeChild(existingErrorElement);
+    }
+
+    if (data && data.trim().startsWith("open:image:")) {
+        const img = data.trim().replace(/^open:image:\s*/i, '');
+        const imageElement = imagedir + img;
+
+        if (existingImgElement) {
+            existingImgElement.src = imageElement;
+        } else {
+            const imgElement = document.createElement('img');
+            imgElement.style.position = 'fixed';
+            imgElement.style.top = '15px';
+            imgElement.style.right = '30px';
+            imgElement.style.maxWidth = '300px';
+            imgElement.style.maxHeight = '500px';
+            imgElement.setAttribute('data-role', 'dynamic-image');
+
+            document.body.appendChild(imgElement);
+        }
+
+        try {
+            await new Promise((resolve, reject) => {
+                existingImgElement.onload = resolve;
+                existingImgElement.onerror = reject;
+                existingImgElement.src = imageElement;
+            });
+        } catch (error) {
+            echo ("Image failed to load. Please check the path or filename.");
+        }
+    } else if (existingImgElement) {
+        document.body.removeChild(existingImgElement);
+    }
+}
+
+//Detect Clothing
+// Load the MobileNet model
+async function loadModel() {
+    const model = await mobilenet.load();
+    return model;
+}
+
+// Detect clothing in an image
+async function detectClothing(data) {
+    const imageElement = imagedir + data;
+    const imgElement = document.createElement('img');
+    imgElement.style.position = 'fixed';
+    imgElement.style.top = '15px';
+    imgElement.style.right = '30px';
+    imgElement.style.maxWidth = '300px';
+    imgElement.style.maxHeight = '500px';
+
+    document.body.appendChild(imgElement);
+
+    await new Promise((resolve, reject) => {
+        imgElement.onload = resolve;
+        imgElement.onerror = reject;
+        imgElement.src = imageElement;
+    });
+
+    const model = await loadModel();
+    const img = tf.browser.fromPixels(imageElement);
+
+    // Resize the image to match MobileNet's input size
+    const resizedImg = tf.image.resizeBilinear(img, [224, 224]);
+
+    // Normalize the image and preprocess it
+    const normalizedImg = resizedImg.div(255.0).expandDims();
+
+    // Make predictions
+    const predictions = await model.classify(normalizedImg);
+
+    // Filter predictions related to clothing
+    const clothingPredictions = predictions.filter(prediction =>
+        prediction.className.toLowerCase().includes('clothing')
+    );
+
+    echo (clothingPredictions);
 
     setTimeout(() => {
         document.body.removeChild(imgElement);

@@ -37,9 +37,16 @@ function runCmd(command, inMemory, fromInput) {
                 getGPUInfo();
             } else if (commandName === "timezone") {
                 getTimeZone();
-            } else if (commandName.includes("detect:imagenudity:")) {
-                const data = commandName.trim().replace(/^detect:imagenudity:\b\s*/i, '');
+            } else if (commandName.includes("detect:nudity:")) {
+                const data = commandName.trim().replace(/^detect:nudity:\b\s*/i, '');
                 detectNudity(data);
+            } else if (commandName.includes("detect:clothing:")) {
+                const data = commandName.trim().replace(/^detect:clothing:\b\s*/i, '');
+                detectClothing(data);
+            } else if (commandName.includes("open:image:")) {
+                image(commandName);
+            } else if (commandName === "close:image") {
+                image();
             } else if (commandName === "open:camera") {
                 openCamera();
             } else if (commandName === "theme:pinky") {
