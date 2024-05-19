@@ -28,6 +28,10 @@ function runCmd(command, inMemory, fromInput) {
                 Version();
             } else if (commandName === "update") {
                 getUpdate();
+            } else if (commandName === "cpuinfo") {
+                getCPUInfo();
+            } else if (commandName === "gpuinfo") {
+                getGPUInfo();
             } else if (commandName === "timezone") {
                 getTimeZone();
             } else if (commandName === "open:camera") {

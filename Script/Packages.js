@@ -111,154 +111,212 @@ function getUpdate() {
     }
 }
 
+//CPU Info
+function getCPUInfo() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    let generation = 'Unknown';
+    let manufacturer = 'Unknown';
+    let modelName = 'Unknown';
+
+    // Check if the userAgent contains information about CPU
+    if (userAgent.includes('intel')) {
+        const match = userAgent.match(/intel\s+core\s+[0-9]+/);
+        if (match) {
+            generation = match[0];
+            manufacturer = 'Intel';
+        }
+    } else if (userAgent.includes('amd')) {
+        const match = userAgent.match(/amd\s+[a-z]+\s+[0-9]+/);
+        if (match) {
+            generation = match[0];
+            manufacturer = 'AMD';
+        }
+    }
+
+    // Check if navigator.cpuClass is available for model name
+    if (navigator.cpuClass) {
+        modelName = navigator.cpuClass;
+    }
+
+    // Output CPU information
+    echo('Processor: ' + generation);
+    echo('Cores: ' + navigator.hardwareConcurrency);
+    echo('Manufacturer: ' + manufacturer);
+    echo('Model name: ' + modelName);
+}
+
+//GPU Info
+function getGPUInfo() {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+    const renderer = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : 'Unavailable';
+    const vendor = debugInfo ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) : 'Unavailable';
+    const version = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : 'Unavailable';
+
+    const maxTextureSize = gl.getParameter(gl.MAX_TEXTURE_SIZE);
+    const maxCubeMapSize = gl.getParameter(gl.MAX_CUBE_MAP_TEXTURE_SIZE);
+    const maxRenderBufferSize = gl.getParameter(gl.MAX_RENDERBUFFER_SIZE);
+    const maxViewportDims = gl.getParameter(gl.MAX_VIEWPORT_DIMS);
+
+    echo('GPU Renderer: ' + renderer);
+    echo('GPU Vendor: ' + vendor);
+    echo('GPU Version: ' + version);
+    echo('Maximum Texture Size: ' + maxTextureSize);
+    echo('Maximum CubeMap Texture Size: ' + maxCubeMapSize);
+    echo('Maximum RenderBuffer Size: ' + maxRenderBufferSize);
+    echo('Maximum Viewport Dimensions: ' + maxViewportDims[0] + 'x' + maxViewportDims[1]);
+}
+
 // Convert seconds to minutes
 function secondsToMinutes(seconds) {
-    echo (seconds / 60);
+    echo(seconds / 60);
 }
 
 // Convert seconds to hours
 function secondsToHours(seconds) {
-    echo (seconds / 3600); // 60 seconds * 60 minutes
+    echo(seconds / 3600); // 60 seconds * 60 minutes
 }
 
 // Convert seconds to days
 function secondsToDays(seconds) {
-    echo (seconds / 86400); // 60 seconds * 60 minutes * 24 hours
+    echo(seconds / 86400); // 60 seconds * 60 minutes * 24 hours
 }
 
 // Convert seconds to months
 function secondsToMonths(seconds) {
-    echo (seconds / 2592000); // 60 seconds * 60 minutes * 24 hours * 30 days
+    echo(seconds / 2592000); // 60 seconds * 60 minutes * 24 hours * 30 days
 }
 
 // Convert seconds to years
 function secondsToYears(seconds) {
-    echo (seconds / 31536000); // 60 seconds * 60 minutes * 24 hours * 365 days
+    echo(seconds / 31536000); // 60 seconds * 60 minutes * 24 hours * 365 days
 }
 
 // Convert minutes to seconds
 function minutesToSeconds(minutes) {
-    echo (minutes * 60);
+    echo(minutes * 60);
 }
 
 // Convert minutes to hours
 function minutesToHours(minutes) {
-    echo (minutes / 60);
+    echo(minutes / 60);
 }
 
 // Convert minutes to days
 function minutesToDays(minutes) {
-    echo (minutes / 1440); // 60 minutes * 24 hours
+    echo(minutes / 1440); // 60 minutes * 24 hours
 }
 
 // Convert minutes to months
 function minutesToMonths(minutes) {
-    echo (minutes / 43200); // 60 minutes * 24 hours * 30 days
+    echo(minutes / 43200); // 60 minutes * 24 hours * 30 days
 }
 
 // Convert minutes to years
 function minutesToYears(minutes) {
-    echo (minutes / 525600); // 60 minutes * 24 hours * 365 days
+    echo(minutes / 525600); // 60 minutes * 24 hours * 365 days
 }
 
 // Convert hours to seconds
 function hoursToSeconds(hours) {
-    echo (hours * 3600); // 60 seconds * 60 minutes
+    echo(hours * 3600); // 60 seconds * 60 minutes
 }
 
 // Convert hours to minutes
 function hoursToMinutes(hours) {
-    echo (hours * 60);
+    echo(hours * 60);
 }
 
 // Convert hours to days
 function hoursToDays(hours) {
-    echo (hours / 24);
+    echo(hours / 24);
 }
 
 // Convert hours to months
 function hoursToMonths(hours) {
-    echo (hours / 720); // 24 hours * 30 days
+    echo(hours / 720); // 24 hours * 30 days
 }
 
 // Convert hours to years
 function hoursToYears(hours) {
-    echo (hours / 8760); // 24 hours * 365 days
+    echo(hours / 8760); // 24 hours * 365 days
 }
 
 // Convert days to seconds
 function daysToSeconds(days) {
-    echo (days * 86400); // 60 seconds * 60 minutes * 24 hours
+    echo(days * 86400); // 60 seconds * 60 minutes * 24 hours
 }
 
 // Convert days to minutes
 function daysToMinutes(days) {
-    echo (days * 1440); // 60 minutes * 24 hours
+    echo(days * 1440); // 60 minutes * 24 hours
 }
 
 // Convert days to hours
 function daysToHours(days) {
-    echo (days * 24);
+    echo(days * 24);
 }
 
 // Convert days to months
 function daysToMonths(days) {
-    echo (days / 30);
+    echo(days / 30);
 }
 
 // Convert days to years
 function daysToYears(days) {
-    echo (days / 365);
+    echo(days / 365);
 }
 
 // Convert months to seconds
 function monthsToSeconds(months) {
-    echo (months * 2592000); // 60 seconds * 60 minutes * 24 hours * 30 days
+    echo(months * 2592000); // 60 seconds * 60 minutes * 24 hours * 30 days
 }
 
 // Convert months to minutes
 function monthsToMinutes(months) {
-    echo (months * 43200); // 60 minutes * 24 hours * 30 days
+    echo(months * 43200); // 60 minutes * 24 hours * 30 days
 }
 
 // Convert months to hours
 function monthsToHours(months) {
-    echo (months * 720); // 24 hours * 30 days
+    echo(months * 720); // 24 hours * 30 days
 }
 
 // Convert months to days
 function monthsToDays(months) {
-    echo (months * 30);
+    echo(months * 30);
 }
 
 // Convert months to years
 function monthsToYears(months) {
-    echo (months / 12);
+    echo(months / 12);
 }
 
 // Convert years to seconds
 function yearsToSeconds(years) {
-    echo (years * 31536000); // 60 seconds * 60 minutes * 24 hours * 365 days
+    echo(years * 31536000); // 60 seconds * 60 minutes * 24 hours * 365 days
 }
 
 // Convert years to minutes
 function yearsToMinutes(years) {
-    echo (years * 525600); // 60 minutes * 24 hours * 365 days
+    echo(years * 525600); // 60 minutes * 24 hours * 365 days
 }
 
 // Convert years to hours
 function yearsToHours(years) {
-    echo (years * 8760); // 24 hours * 365 days
+    echo(years * 8760); // 24 hours * 365 days
 }
 
 // Convert years to days
 function yearsToDays(years) {
-    echo (years * 365);
+    echo(years * 365);
 }
 
 // Convert years to months
 function yearsToMonths(years) {
-    echo (years * 12);
+    echo(years * 12);
 }
 
 //Guess
@@ -1081,7 +1139,7 @@ function getConnectionSpeed() {
 //Ram Type
 function getRamInfo() {
     const memory = navigator.deviceMemory;
-    echo(memory);
+    echo('Ram: ' + memory + 'Gb');
 }
 
 //Screen Width
