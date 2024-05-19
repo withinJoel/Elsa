@@ -2,7 +2,7 @@
 ////Details///////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 const currentVersion = '1.1.4';
-let imagedir = 'Bin/Images/';
+let imagedir = '../../../Bin/Images/';
 let videodir = 'Bin/Videos/';
 
 //////////////////////////////////////////////////////////////////////////////
@@ -259,23 +259,23 @@ async function detectNudity(data) {
 
     // Make first prediction using the neural network
     const prediction1 = neuralNetwork.predict(grayscaleArray);
-    const isNude1 = prediction1[0] > 0.4; // Adjust threshold for sensitivity
+    const isNude1 = prediction1[0] < 0.3; // Adjust threshold for sensitivity
 
     // Make second prediction using the neural network
     const prediction2 = neuralNetwork.predict(grayscaleArray);
-    const isNude2 = prediction2[0] > 0.5; // Adjust threshold for sensitivity
+    const isNude2 = prediction2[0] < 0.4; // Adjust threshold for sensitivity
 
     // Make third prediction using the neural network
     const prediction3 = neuralNetwork.predict(grayscaleArray);
-    const isNude3 = prediction3[0] > 0.6; // Adjust threshold for sensitivity
+    const isNude3 = prediction3[0] < 0.5; // Adjust threshold for sensitivity
 
     // Make fourth prediction using the neural network
     const prediction4 = neuralNetwork.predict(grayscaleArray);
-    const isNude4 = prediction4[0] > 0.7; // Adjust threshold for sensitivity
+    const isNude4 = prediction4[0] < 0.6; // Adjust threshold for sensitivity
 
     // Make fith prediction using the neural network
     const prediction5 = neuralNetwork.predict(grayscaleArray);
-    const isNude5 = prediction5[0] > 0.8; // Adjust threshold for sensitivity
+    const isNude5 = prediction5[0] < 0.7; // Adjust threshold for sensitivity
 
     if ((isNude1 === isNude2) && (isNude2 === isNude3) && (isNude3 === isNude4) && (isNude4 === isNude5)) {
         echo (isNude1 ? 'Yes, The image contains nudity.' : 'No, The image does not contain any nudity.');
