@@ -171,12 +171,28 @@
 * `lcm:` - To get the lcm of two numbers. example `lcm:10,2`
 * `gcd:` - To get the gcd of two numbers. example `gcd:10,2`
 
-# Torrent 
-`yts:` - To search for movies in the yts.mx website. example: `yts:fast`
+# Network
+* `internet` - To get the internet based information.
+* `networkstatus` - To get the status of the network. (online or offline).
+* `useragent` - To get the browser information.
+* `connectiontype` - To get the connection type example: 4g, 3g.. etc.
+* `connectionspeed` - To get the connection speed.
+* `ipaddress` - To get the ip address.
+* `latency:` - To get the latency for a particular website. example: `latency:https://github.com/`
 
-# Shopping
-* `amazon:` - To shop in amazon. example: `amazon:toy car`
-* `flipkart:` - To shop in flipkart. example: `flipkart:toy car`
+# Display
+* `screenwidth` - To get the screen width.
+* `screenheight` - To get the screen height.
+* `screenresolution` - To get the screen resolution.
+* `colordepth` or `colourdepth` - To get the color depth of the screen.
+
+# Hardware
+* `raminfo` - To get ram information.
+* `batteryinfo` - To get the battery info.
+* `devicetype` - To get the devicie type.
+
+# Operating System
+* `os` - To get the operating system details.
 
 # Web
 * `codepen:` - To search codepen. example: `codepen:nav bar`
@@ -192,14 +208,9 @@
 * `youtube:` - To search in Youtube. example `youtube:avicii`
 * `tenor:` - To search in Tenor. example `tenor:bird`
 
-# Network
-* `internet` - To get the internet based information.
-* `networkstatus` - To get the status of the network. (online or offline).
-* `useragent` - To get the browser information.
-* `connectiontype` - To get the connection type example: 4g, 3g.. etc.
-* `connectionspeed` - To get the connection speed.
-* `ipaddress` - To get the ip address.
-* `latency:` - To get the latency for a particular website. example: `latency:https://github.com/`
+# Shopping
+* `amazon:` - To shop in amazon. example: `amazon:toy car`
+* `flipkart:` - To shop in flipkart. example: `flipkart:toy car`
 
 # Search Engine
 * `google:` - To search using Google search engine. example `google:youtubestudio`
@@ -216,19 +227,8 @@
 * `clubhouse:` - To open their clubhouse profile example: `clubhouse:withinjoel`
 * `reddit:` - To search in reddit. example `reddit:car`
 
-# Display
-* `screenwidth` - To get the screen width.
-* `screenheight` - To get the screen height.
-* `screenresolution` - To get the screen resolution.
-* `colordepth` or `colourdepth` - To get the color depth of the screen.
-
-# Hardware
-* `raminfo` - To get ram information.
-* `batteryinfo` - To get the battery info.
-* `devicetype` - To get the devicie type.
-
-# Operating System
-* `os` - To get the operating system details.
+# Torrent 
+`yts:` - To search for movies in the yts.mx website. example: `yts:fast`
 
 # Adult
 * `onlyfans:` - To open their onlyfans profile example: `onlyfans:rileyreid`
