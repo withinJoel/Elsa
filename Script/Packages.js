@@ -173,6 +173,100 @@ function getGPUInfo() {
     echo('Maximum Viewport Dimensions: ' + maxViewportDims[0] + 'x' + maxViewportDims[1]);
 }
 
+//Open Image
+async function image(data) {
+    const existingImgElement = document.querySelector('img[data-role="dynamic-image"]');
+    const existingErrorElement = document.querySelector('div[data-role="error-message"]');
+
+    // Remove existing error message if any
+    if (existingErrorElement) {
+        document.body.removeChild(existingErrorElement);
+    }
+
+    if (data && data.trim().startsWith("open:image:")) {
+        const img = data.trim().replace(/^open:image:\s*/i, '');
+        const imageElement = imagedir + img;
+
+        if (existingImgElement) {
+            existingImgElement.src = imageElement;
+        } else {
+            const imgElement = document.createElement('img');
+            imgElement.style.position = 'fixed';
+            imgElement.style.top = '15px';
+            imgElement.style.right = '30px';
+            imgElement.style.maxWidth = '500px';
+            imgElement.style.maxHeight = '500px';
+            imgElement.setAttribute('data-role', 'dynamic-image');
+
+            document.body.appendChild(imgElement);
+        }
+
+        try {
+            await new Promise((resolve, reject) => {
+                existingImgElement.onload = resolve;
+                existingImgElement.onerror = reject;
+                existingImgElement.src = imageElement;
+            });
+        } catch (error) {
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
+            echo("Image failed to load. Please check the path or filename.");
+        }
+    } else if (existingImgElement) {
+        document.body.removeChild(existingImgElement);
+    }
+}
+
+//Open Video
+async function video(data) {
+    const existingVidElement = document.querySelector('video[data-role="dynamic-video"]');
+    const existingErrorElement = document.querySelector('div[data-role="error-message"]');
+
+    // Remove existing error message if any
+    if (existingErrorElement) {
+        document.body.removeChild(existingErrorElement);
+    }
+
+    if (data && data.trim().startsWith("open:video:")) {
+        const vid = data.trim().replace(/^open:video:\s*/i, '');
+        const videoSrc = videodir + vid;
+
+        let vidElement = existingVidElement;
+
+        try {
+            // Create a temporary video element to check if the video loads
+            const tempVideo = document.createElement('video');
+            await new Promise((resolve, reject) => {
+                tempVideo.onloadeddata = resolve; // Use onloadeddata for video
+                tempVideo.onerror = reject;
+                tempVideo.src = videoSrc;
+            });
+
+            if (vidElement) {
+                vidElement.src = videoSrc;
+            } else {
+                vidElement = document.createElement('video');
+                vidElement.style.position = 'fixed';
+                vidElement.style.top = '15px';
+                vidElement.style.right = '30px';
+                vidElement.style.maxWidth = '500px';
+                vidElement.style.maxHeight = '500px';
+                vidElement.setAttribute('data-role', 'dynamic-video');
+                vidElement.controls = true; // Add video controls for play/pause, etc.
+                vidElement.src = videoSrc;
+                document.body.appendChild(vidElement);
+            }
+        } catch (error) {
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
+            echo("Video failed to load. Please check the path or filename.");
+
+        }
+    } else if (existingVidElement) {
+        document.body.removeChild(existingVidElement);
+    }
+}
+
 //Detect nudity
 class NeuralNetwork {
     constructor(inputNodes, hiddenNodes, outputNodes) {
@@ -287,100 +381,6 @@ async function detectNudity(data) {
     setTimeout(() => {
         document.body.removeChild(imgElement);
     }, 10000); // Remove the image after 10 seconds
-}
-
-//Open Image
-async function image(data) {
-    const existingImgElement = document.querySelector('img[data-role="dynamic-image"]');
-    const existingErrorElement = document.querySelector('div[data-role="error-message"]');
-
-    // Remove existing error message if any
-    if (existingErrorElement) {
-        document.body.removeChild(existingErrorElement);
-    }
-
-    if (data && data.trim().startsWith("open:image:")) {
-        const img = data.trim().replace(/^open:image:\s*/i, '');
-        const imageElement = imagedir + img;
-
-        if (existingImgElement) {
-            existingImgElement.src = imageElement;
-        } else {
-            const imgElement = document.createElement('img');
-            imgElement.style.position = 'fixed';
-            imgElement.style.top = '15px';
-            imgElement.style.right = '30px';
-            imgElement.style.maxWidth = '500px';
-            imgElement.style.maxHeight = '500px';
-            imgElement.setAttribute('data-role', 'dynamic-image');
-
-            document.body.appendChild(imgElement);
-        }
-
-        try {
-            await new Promise((resolve, reject) => {
-                existingImgElement.onload = resolve;
-                existingImgElement.onerror = reject;
-                existingImgElement.src = imageElement;
-            });
-        } catch (error) {
-            const audio = new Audio('Effects/Wrong Input.mp3');
-            audio.play();
-            echo("Image failed to load. Please check the path or filename.");
-        }
-    } else if (existingImgElement) {
-        document.body.removeChild(existingImgElement);
-    }
-}
-
-//Open Video
-async function video(data) {
-    const existingVidElement = document.querySelector('video[data-role="dynamic-video"]');
-    const existingErrorElement = document.querySelector('div[data-role="error-message"]');
-
-    // Remove existing error message if any
-    if (existingErrorElement) {
-        document.body.removeChild(existingErrorElement);
-    }
-
-    if (data && data.trim().startsWith("open:video:")) {
-        const vid = data.trim().replace(/^open:video:\s*/i, '');
-        const videoSrc = videodir + vid;
-
-        let vidElement = existingVidElement;
-
-        try {
-            // Create a temporary video element to check if the video loads
-            const tempVideo = document.createElement('video');
-            await new Promise((resolve, reject) => {
-                tempVideo.onloadeddata = resolve; // Use onloadeddata for video
-                tempVideo.onerror = reject;
-                tempVideo.src = videoSrc;
-            });
-
-            if (vidElement) {
-                vidElement.src = videoSrc;
-            } else {
-                vidElement = document.createElement('video');
-                vidElement.style.position = 'fixed';
-                vidElement.style.top = '15px';
-                vidElement.style.right = '30px';
-                vidElement.style.maxWidth = '500px';
-                vidElement.style.maxHeight = '500px';
-                vidElement.setAttribute('data-role', 'dynamic-video');
-                vidElement.controls = true; // Add video controls for play/pause, etc.
-                vidElement.src = videoSrc;
-                document.body.appendChild(vidElement);
-            }
-        } catch (error) {
-            const audio = new Audio('Effects/Wrong Input.mp3');
-            audio.play();
-            echo("Video failed to load. Please check the path or filename.");
-
-        }
-    } else if (existingVidElement) {
-        document.body.removeChild(existingVidElement);
-    }
 }
 
 //Detect Emotion
