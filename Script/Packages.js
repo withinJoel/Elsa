@@ -91,24 +91,174 @@ function Version() {
 }
 
 //Update 
-function getUpdate(){
+function getUpdate() {
     const networkstatus = navigator.onLine ? "online" : "offline";
     if (networkstatus === "offline") {
-        echo ("Please connect to the internet to check for updates.")
+        echo("Please connect to the internet to check for updates.")
     } else if (networkstatus === "online") {
-        echo ("Checking for updates");
+        echo("Checking for updates");
         if (currentVersion === latestVersion) {
-            echo ("You are in the latest version.")
+            echo("You are in the latest version.")
         } else if (currentVersion < latestVersion) {
-            echo ("Downloading the latest version.")
+            echo("Downloading the latest version.")
             url = `https://github.com/withinJoel/Elsa/releases/download/v${latestVersion}/Elsa.exe`;
             window.open(url, '_blank');
         } else if (currentVersion > latestVersion) {
-            echo ('You are in the latest developer version.')
+            echo('You are in the latest developer version.')
         }
     } else {
-        echo ("Error fetching updates.")
+        echo("Error fetching updates.")
     }
+}
+
+// Convert seconds to minutes
+function secondsToMinutes(seconds) {
+    echo (seconds / 60);
+}
+
+// Convert seconds to hours
+function secondsToHours(seconds) {
+    echo (seconds / 3600); // 60 seconds * 60 minutes
+}
+
+// Convert seconds to days
+function secondsToDays(seconds) {
+    echo (seconds / 86400); // 60 seconds * 60 minutes * 24 hours
+}
+
+// Convert seconds to months
+function secondsToMonths(seconds) {
+    echo (seconds / 2592000); // 60 seconds * 60 minutes * 24 hours * 30 days
+}
+
+// Convert seconds to years
+function secondsToYears(seconds) {
+    echo (seconds / 31536000); // 60 seconds * 60 minutes * 24 hours * 365 days
+}
+
+// Convert minutes to seconds
+function minutesToSeconds(minutes) {
+    echo (minutes * 60);
+}
+
+// Convert minutes to hours
+function minutesToHours(minutes) {
+    echo (minutes / 60);
+}
+
+// Convert minutes to days
+function minutesToDays(minutes) {
+    echo (minutes / 1440); // 60 minutes * 24 hours
+}
+
+// Convert minutes to months
+function minutesToMonths(minutes) {
+    echo (minutes / 43200); // 60 minutes * 24 hours * 30 days
+}
+
+// Convert minutes to years
+function minutesToYears(minutes) {
+    echo (minutes / 525600); // 60 minutes * 24 hours * 365 days
+}
+
+// Convert hours to seconds
+function hoursToSeconds(hours) {
+    echo (hours * 3600); // 60 seconds * 60 minutes
+}
+
+// Convert hours to minutes
+function hoursToMinutes(hours) {
+    echo (hours * 60);
+}
+
+// Convert hours to days
+function hoursToDays(hours) {
+    echo (hours / 24);
+}
+
+// Convert hours to months
+function hoursToMonths(hours) {
+    echo (hours / 720); // 24 hours * 30 days
+}
+
+// Convert hours to years
+function hoursToYears(hours) {
+    echo (hours / 8760); // 24 hours * 365 days
+}
+
+// Convert days to seconds
+function daysToSeconds(days) {
+    echo (days * 86400); // 60 seconds * 60 minutes * 24 hours
+}
+
+// Convert days to minutes
+function daysToMinutes(days) {
+    echo (days * 1440); // 60 minutes * 24 hours
+}
+
+// Convert days to hours
+function daysToHours(days) {
+    echo (days * 24);
+}
+
+// Convert days to months
+function daysToMonths(days) {
+    echo (days / 30);
+}
+
+// Convert days to years
+function daysToYears(days) {
+    echo (days / 365);
+}
+
+// Convert months to seconds
+function monthsToSeconds(months) {
+    echo (months * 2592000); // 60 seconds * 60 minutes * 24 hours * 30 days
+}
+
+// Convert months to minutes
+function monthsToMinutes(months) {
+    echo (months * 43200); // 60 minutes * 24 hours * 30 days
+}
+
+// Convert months to hours
+function monthsToHours(months) {
+    echo (months * 720); // 24 hours * 30 days
+}
+
+// Convert months to days
+function monthsToDays(months) {
+    echo (months * 30);
+}
+
+// Convert months to years
+function monthsToYears(months) {
+    echo (months / 12);
+}
+
+// Convert years to seconds
+function yearsToSeconds(years) {
+    echo (years * 31536000); // 60 seconds * 60 minutes * 24 hours * 365 days
+}
+
+// Convert years to minutes
+function yearsToMinutes(years) {
+    echo (years * 525600); // 60 minutes * 24 hours * 365 days
+}
+
+// Convert years to hours
+function yearsToHours(years) {
+    echo (years * 8760); // 24 hours * 365 days
+}
+
+// Convert years to days
+function yearsToDays(years) {
+    echo (years * 365);
+}
+
+// Convert years to months
+function yearsToMonths(years) {
+    echo (years * 12);
 }
 
 //Guess
@@ -131,85 +281,85 @@ function mean(arr) {
 function processNumerologyInput(input) {
     // Numerology value mappings for letters
     const numerologyValues = {
-      A: 1, B: 2, C: 3, D: 4, E: 5, F: 6, G: 7, H: 8, I: 9,
-      J: 1, K: 2, L: 3, M: 4, N: 5, O: 6, P: 7, Q: 8, R: 9,
-      S: 1, T: 2, U: 3, V: 4, W: 5, X: 6, Y: 7, Z: 8
+        A: 1, B: 2, C: 3, D: 4, E: 5, F: 6, G: 7, H: 8, I: 9,
+        J: 1, K: 2, L: 3, M: 4, N: 5, O: 6, P: 7, Q: 8, R: 9,
+        S: 1, T: 2, U: 3, V: 4, W: 5, X: 6, Y: 7, Z: 8
     };
-  
+
     // Extract input values
     const [name1, dob1, name2, dob2] = input.split(':').map((s, i) => i % 2 === 0 ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : s);
     if (!name1 || !dob1 || !name2 || !dob2) {
-      return 'Invalid input. Please provide names and dates of birth in the format "name1:dob1:name2:dob2".';
+        return 'Invalid input. Please provide names and dates of birth in the format "name1:dob1:name2:dob2".';
     }
-  
+
     // Helper function to calculate numerology number
     function calculateNumber(value) {
-      while (value > 9 && ![11, 22, 33].includes(value)) {
-        value = value.toString().split('').reduce((acc, num) => acc + parseInt(num), 0);
-      }
-      return value;
+        while (value > 9 && ![11, 22, 33].includes(value)) {
+            value = value.toString().split('').reduce((acc, num) => acc + parseInt(num), 0);
+        }
+        return value;
     }
-  
+
     // Calculate numerology numbers for names
     let sumName1 = 0, sumName2 = 0;
     for (let char of name1.toUpperCase()) {
-      if (numerologyValues[char]) {
-        sumName1 += numerologyValues[char];
-      }
+        if (numerologyValues[char]) {
+            sumName1 += numerologyValues[char];
+        }
     }
     for (let char of name2.toUpperCase()) {
-      if (numerologyValues[char]) {
-        sumName2 += numerologyValues[char];
-      }
+        if (numerologyValues[char]) {
+            sumName2 += numerologyValues[char];
+        }
     }
     const num1 = calculateNumber(sumName1);
     const num2 = calculateNumber(sumName2);
-  
+
     // Calculate Life Path numbers from dates of birth
     const [year1, month1, day1] = dob1.split('-').map(Number);
     const [year2, month2, day2] = dob2.split('-').map(Number);
     const lifePath1 = calculateNumber(year1 + month1 + day1);
     const lifePath2 = calculateNumber(year2 + month2 + day2);
-  
+
     // Calculate Destiny numbers
     const destiny1 = calculateNumber(sumName1);
     const destiny2 = calculateNumber(sumName2);
-  
+
     // Calculate Soul Urge numbers
     const vowels = 'AEIOU';
     let sumSoulUrge1 = 0, sumSoulUrge2 = 0;
     for (let char of name1.toUpperCase()) {
-      if (vowels.includes(char)) {
-        sumSoulUrge1 += numerologyValues[char];
-      }
+        if (vowels.includes(char)) {
+            sumSoulUrge1 += numerologyValues[char];
+        }
     }
     for (let char of name2.toUpperCase()) {
-      if (vowels.includes(char)) {
-        sumSoulUrge2 += numerologyValues[char];
-      }
+        if (vowels.includes(char)) {
+            sumSoulUrge2 += numerologyValues[char];
+        }
     }
     const soulUrge1 = calculateNumber(sumSoulUrge1);
     const soulUrge2 = calculateNumber(sumSoulUrge2);
-  
+
     // Compatibility descriptions
     const compatibility = {
-      1: 'Leadership, independence, and individuality.',
-      2: 'Sensitivity, balance, and harmony.',
-      3: 'Creativity, self-expression, and joy.',
-      4: 'Stability, order, and responsibility.',
-      5: 'Freedom, change, and adventure.',
-      6: 'Love, family, and responsibility.',
-      7: 'Spirituality, introspection, and wisdom.',
-      8: 'Power, success, and material achievement.',
-      9: 'Compassion, humanitarianism, and completion.',
-      11: 'Inspiration, idealism, and intuition.',
-      22: 'Master builder, large-scale plans, and potential.',
-      33: 'Master teacher, spiritual uplifting, and compassion.'
+        1: 'Leadership, independence, and individuality.',
+        2: 'Sensitivity, balance, and harmony.',
+        3: 'Creativity, self-expression, and joy.',
+        4: 'Stability, order, and responsibility.',
+        5: 'Freedom, change, and adventure.',
+        6: 'Love, family, and responsibility.',
+        7: 'Spirituality, introspection, and wisdom.',
+        8: 'Power, success, and material achievement.',
+        9: 'Compassion, humanitarianism, and completion.',
+        11: 'Inspiration, idealism, and intuition.',
+        22: 'Master builder, large-scale plans, and potential.',
+        33: 'Master teacher, spiritual uplifting, and compassion.'
     };
-  
+
     const relationshipPotential = (num1 + num2) % 9 || 9;
-  
-    echo (`Numerology compatibility for ${name1} and ${name2}:
+
+    echo(`Numerology compatibility for ${name1} and ${name2}:
   
       ${name1}:
       - Core Number: ${num1} (${compatibility[num1]})
@@ -225,7 +375,7 @@ function processNumerologyInput(input) {
   
       Together, ${name1} and ${name2} have a relationship potential number ${relationshipPotential}, which signifies:
       ${compatibility[relationshipPotential]}.`);
-  }
+}
 
 //Zodiac Sign
 function getZodiacSign(dateOfBirth) {
@@ -251,9 +401,9 @@ function getZodiacSign(dateOfBirth) {
 
     const sign = zodiacSigns.find(({ start, end }) => dateStr >= start && dateStr <= end);
     if (sign) {
-        echo (`You are a ${sign.sign}. ${sign.details}`);
+        echo(`You are a ${sign.sign}. ${sign.details}`);
     } else {
-        echo ('Invalid date of birth.');
+        echo('Invalid date of birth.');
     }
 }
 
@@ -296,16 +446,16 @@ function flames(input) {
         }
     }
 
-    echo (flamesArr[0]);
+    echo(flamesArr[0]);
 }
 
 //Remove Punctuation
 function removePunctuation(text) {
     // Define the punctuation marks to remove
     const punctuationMarks = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
-    
+
     // Remove punctuation using regex and return the cleaned text
-    echo (text.replace(punctuationMarks, ''));
+    echo(text.replace(punctuationMarks, ''));
 }
 
 // Function to calculate the next number in the sequence using linear regression
@@ -337,7 +487,7 @@ function predictNextNumber(sequence) {
     const nextX = n + 1;
     const nextY = slope * nextX + intercept;
 
-    echo (nextY);
+    echo(nextY);
 }
 
 //Input color

@@ -165,6 +165,96 @@ function runCmd(command, inMemory, fromInput) {
                 searchFlipkart(commandName);
             } else if (commandName.includes("reverse:")) {
                 reverseString(commandName);
+            } else if (commandName.includes("convert:secondstominutes:")) {
+                const data = commandName.trim().replace(/^convert:secondstominutes:\s*/i, '');
+                secondsToMinutes(data);
+            } else if (commandName.includes("convert:secondstohours:")) {
+                const data = commandName.trim().replace(/^convert:secondstohours:\s*/i, '');
+                secondsToHours(data);
+            } else if (commandName.includes("convert:secondstodays:")) {
+                const data = commandName.trim().replace(/^convert:secondstodays:\s*/i, '');
+                secondsToDays(data);
+            } else if (commandName.includes("convert:secondstomonths:")) {
+                const data = commandName.trim().replace(/^convert:secondstomonths:\s*/i, '');
+                secondsToMonths(data);
+            } else if (commandName.includes("convert:secondstoyears:")) {
+                const data = commandName.trim().replace(/^convert:secondstoyears:\s*/i, '');
+                secondsToYears(data);
+            } else if (commandName.includes("convert:minutestoseconds:")) {
+                const data = commandName.trim().replace(/^convert:minutestoseconds:\s*/i, '');
+                minutesToSeconds(data);
+            } else if (commandName.includes("convert:minutestohours:")) {
+                const data = commandName.trim().replace(/^convert:minutestohours:\s*/i, '');
+                minutesToHours(data);
+            } else if (commandName.includes("convert:minutestodays:")) {
+                const data = commandName.trim().replace(/^convert:minutestodays:\s*/i, '');
+                minutesToDays(data);
+            } else if (commandName.includes("convert:minutestomonths:")) {
+                const data = commandName.trim().replace(/^convert:minutestomonths:\s*/i, '');
+                minutesToMonths(data);
+            } else if (commandName.includes("convert:minutestoyears:")) {
+                const data = commandName.trim().replace(/^convert:minutestoyears:\s*/i, '');
+                minutesToYears(data);
+            } else if (commandName.includes("convert:hourstoseconds:")) {
+                const data = commandName.trim().replace(/^convert:hourstoseconds:\s*/i, '');
+                hoursToSeconds(data);
+            } else if (commandName.includes("convert:hourstominutes:")) {
+                const data = commandName.trim().replace(/^convert:hourstominutes:\s*/i, '');
+                hoursToMinutes(data);
+            } else if (commandName.includes("convert:hourstodays:")) {
+                const data = commandName.trim().replace(/^convert:hourstodays:\s*/i, '');
+                hoursToDays(data);
+            } else if (commandName.includes("convert:hourstomonths:")) {
+                const data = commandName.trim().replace(/^convert:hoursmonths:\s*/i, '');
+                hoursToMonths(data);
+            } else if (commandName.includes("convert:hourstoyears:")) {
+                const data = commandName.trim().replace(/^convert:hoursyears:\s*/i, '');
+                hoursToYears(data);
+            } else if (commandName.includes("convert:daystoseconds:")) {
+                const data = commandName.trim().replace(/^convert:daystoseconds:\s*/i, '');
+                daysToSeconds(data);
+            } else if (commandName.includes("convert:daystominutes:")) {
+                const data = commandName.trim().replace(/^convert:daystominutes:\s*/i, '');
+                daysToMinutes(data);
+            } else if (commandName.includes("convert:daystohours:")) {
+                const data = commandName.trim().replace(/^convert:daystohours:\s*/i, '');
+                daysToHours(data);
+            } else if (commandName.includes("convert:daystomonths:")) {
+                const data = commandName.trim().replace(/^convert:daystomonths:\s*/i, '');
+                daysToMonths(data);
+            } else if (commandName.includes("convert:daystoyears:")) {
+                const data = commandName.trim().replace(/^convert:daystoyears:\s*/i, '');
+                daysToYears(data);
+            } else if (commandName.includes("convert:monthstoseconds:")) {
+                const data = commandName.trim().replace(/^convert:monthstoseconds:\s*/i, '');
+                monthsToSeconds(data);
+            } else if (commandName.includes("convert:monthstominutes:")) {
+                const data = commandName.trim().replace(/^convert:monthstominutes:\s*/i, '');
+                monthsToMinutes(data);
+            } else if (commandName.includes("convert:monthstohours:")) {
+                const data = commandName.trim().replace(/^convert:monthstohours:\s*/i, '');
+                monthsToHours(data);
+            } else if (commandName.includes("convert:monthstodays:")) {
+                const data = commandName.trim().replace(/^convert:monthstodays:\s*/i, '');
+                monthsToDays(data);
+            } else if (commandName.includes("convert:monthstoyears:")) {
+                const data = commandName.trim().replace(/^convert:monthstoyears:\s*/i, '');
+                monthsToYears(data);
+            } else if (commandName.includes("convert:yearstoseconds:")) {
+                const data = commandName.trim().replace(/^convert:yearstoseconds:\s*/i, '');
+                yearsToSeconds(data);
+            } else if (commandName.includes("convert:yearstominutes:")) {
+                const data = commandName.trim().replace(/^convert:yearstominutes:\s*/i, '');
+                yearsToMinutes(data);
+            } else if (commandName.includes("convert:yearstohours:")) {
+                const data = commandName.trim().replace(/^convert:yearstohours:\s*/i, '');
+                yearsToHours(data);
+            } else if (commandName.includes("convert:yearstodays:")) {
+                const data = commandName.trim().replace(/^convert:yearstodays:\s*/i, '');
+                yearsToDays(data);
+            } else if (commandName.includes("convert:yearstomonths:")) {
+                const data = commandName.trim().replace(/^convert:yearstomonths:\s*/i, '');
+                yearsToMonths(data);
             } else if (commandName.includes("convert:spacetounderscore:")) {
                 convertSpacesToUnderscores(commandName);
             } else if (commandName.includes("convert:singlequotestodoublequotes:")) {

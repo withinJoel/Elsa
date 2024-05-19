@@ -57,6 +57,36 @@
 * `random:pickupline` - To get a random pickup line.
 
 # Features
+* `convert:secondstominutes:` - To convert seconds to minutes. example: `convert:secondstominutes:1024`
+* `convert:secondstohours:` - To convert seconds to hours. example: `convert:secondstohours:1024`
+* `convert:secondstodays:` - To convert seconds to days. example: `convert:secondstodays:1024`
+* `convert:secondstomonths:` - To convert seconds to months. example: `convert:secondstomonths:1024`
+* `convert:secondstoyears:` - To convert seconds to years. example: `convert:secondstoyears:1024`
+* `convert:minutestoseconds:` - To convert minutes to seconds. example: `convert:minutestoseconds:1024`
+* `convert:minutestohours:` - To convert minutes to hours. example: `convert:minutestohours:1024`
+* `convert:minutestodays:` - To convert minutes to days. example: `convert:minutestodays:1024`
+* `convert:minutestomonths:` - To convert minutes to months. example: `convert:minutestomonths:1024`
+* `convert:minutestoyears:` - To convert minutes to years. example: `convert:minutestoyears:1024`
+* `convert:hourstoseconds:` - To convert hours to seconds. example: `convert:hourstoseconds:1024`
+* `convert:hourstominutes:` - To convert hours to minutes. example: `convert:hourstominutes:1024`
+* `convert:hourstodays:` - To convert hours to days. example: `convert:hourstodays:1024`
+* `convert:hourstomonths:` - To convert hours to months. example: `convert:hourstomonths:1024`
+* `convert:hourstoyears:` - To convert hours to years. example: `convert:hourstoyears:1024`
+* `convert:daystoseconds:` - To convert days to seconds. example: `convert:daystoseconds:1024`
+* `convert:daystominutes:` - To convert days to minutes. example: `convert:daystominutes:1024`
+* `convert:daystohours:` - To convert days to hours. example: `convert:daystohours:1024`
+* `convert:daystomonths:` - To convert days to months. example: `convert:daystomonths:1024`
+* `convert:daystoyears:` - To convert days to years. example: `convert:daystoyears:1024`
+* `convert:monthstoseconds:` - To convert months to seconds. example: `convert:monthstoseconds:1024`
+* `convert:monthstominutes:` - To convert months to minutes. example: `convert:monthstominutes:1024`
+* `convert:monthstohours:` - To convert months to hours. example: `convert:monthstohours:1024`
+* `convert:monthstodays:` - To convert months to days. example: `convert:monthstodays:1024`
+* `convert:monthstoyears:` - To convert months to years. example: `convert:monthstoyears:1024`
+* `convert:yearstoseconds:` - To convert years to seconds. example: `convert:yearstoseconds:1024`
+* `convert:yearstominutes:` - To convert years to minutes. example: `convert:yearstominutes:1024`
+* `convert:yearstohours:` - To convert years to hours. example: `convert:yearstohours:1024`
+* `convert:yearstodays:` - To convert years to days. example: `convert:yearstodays:1024`
+* `convert:yearstomonths:` - To convert years to months. example: `convert:yearstomonths:1024`
 * `flames:` - To play the famous game for relationship. example: `flames:joel:anna`
 * `zodiacsign:` - To get the zodiac sign based on the date of birth. example: `zodiacsign:2002-05-11` pattern: YYY-MM-DD
 * `numerology:` - To get the numerology details for 2 people. example: `numerology:joel:2002-05-11:sophia:2003-05-27` pattern: YYYY-MM-DD
