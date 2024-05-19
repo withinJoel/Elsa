@@ -12,6 +12,9 @@
 * `fortunecookie` - To know the future.
 * `shortstory` - To get a short story.
 
+# AI Based Detection
+* `detect:imagenudity:` - To detect nudity in images. example: `detect:imagenudity:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/resources/app/Core/Bin/Images/)
+
 # Random Keywords
 * `random:religion` - To get a random religion.
 * `random:programminglanguage` - To get a random programming language.

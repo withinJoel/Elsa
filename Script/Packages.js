@@ -2,6 +2,8 @@
 ////Details///////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 const currentVersion = '1.1.4';
+let imagedir = 'Bin/Images/';
+let videodir = 'Bin/Videos/';
 
 //////////////////////////////////////////////////////////////////////////////
 ////Sub Process///////////////////////////////////////////////////////////////
@@ -169,6 +171,122 @@ function getGPUInfo() {
     echo('Maximum CubeMap Texture Size: ' + maxCubeMapSize);
     echo('Maximum RenderBuffer Size: ' + maxRenderBufferSize);
     echo('Maximum Viewport Dimensions: ' + maxViewportDims[0] + 'x' + maxViewportDims[1]);
+}
+
+//Detect nudity
+class NeuralNetwork {
+    constructor(inputNodes, hiddenNodes, outputNodes) {
+        this.inputNodes = inputNodes;
+        this.hiddenNodes = hiddenNodes;
+        this.outputNodes = outputNodes;
+
+        // Initialize weights randomly
+        this.weightsIH = new Array(this.hiddenNodes).fill().map(() => new Array(this.inputNodes).fill().map(() => Math.random() * 2 - 1));
+        this.weightsHO = new Array(this.outputNodes).fill().map(() => new Array(this.hiddenNodes).fill().map(() => Math.random() * 2 - 1));
+
+        // Initialize biases randomly
+        this.biasH = new Array(this.hiddenNodes).fill().map(() => Math.random() * 2 - 1);
+        this.biasO = new Array(this.outputNodes).fill().map(() => Math.random() * 2 - 1);
+    }
+
+    // Activation function (sigmoid)
+    sigmoid(x) {
+        return 1 / (1 + Math.exp(-x));
+    }
+
+    // Feedforward function
+    predict(inputArray) {
+        // Calculate hidden layer outputs
+        const hiddenOutputs = this.weightsIH.map((weights, i) => {
+            return this.sigmoid(weights.reduce((sum, weight, j) => sum + weight * inputArray[j], 0) + this.biasH[i]);
+        });
+
+        // Calculate output layer outputs
+        const outputs = this.weightsHO.map((weights, i) => {
+            return this.sigmoid(weights.reduce((sum, weight, j) => sum + weight * hiddenOutputs[j], 0) + this.biasO[i]);
+        });
+
+        return outputs;
+    }
+}
+
+// Function to convert image data to grayscale array
+function imageToGrayscale(imgData) {
+    const grayscale = [];
+    for (let i = 0; i < imgData.data.length; i += 4) {
+        const r = imgData.data[i];
+        const g = imgData.data[i + 1];
+        const b = imgData.data[i + 2];
+        grayscale.push((r + g + b) / 3);
+    }
+    return grayscale;
+}
+
+async function detectNudity(data) {
+    let filePath = imagedir + data;
+    const imgElement = document.createElement('img');
+    imgElement.style.position = 'fixed';
+    imgElement.style.top = '15px';
+    imgElement.style.right = '30px';
+    imgElement.style.maxWidth = '300px';
+    imgElement.style.maxHeight = '500px';
+
+    document.body.appendChild(imgElement);
+
+    await new Promise((resolve, reject) => {
+        imgElement.onload = resolve;
+        imgElement.onerror = reject;
+        imgElement.src = filePath;
+    });
+
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = imgElement.width;
+    canvas.height = imgElement.height;
+    ctx.drawImage(imgElement, 0, 0, imgElement.width, imgElement.height);
+
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const grayscaleArray = imageToGrayscale(imageData);
+
+    // Define neural network parameters
+    const inputNodes = grayscaleArray.length;
+    const hiddenNodes = 64;
+    const outputNodes = 1;
+
+    // Create and train neural network
+    const neuralNetwork = new NeuralNetwork(inputNodes, hiddenNodes, outputNodes);
+    // Assuming you have training data and a training function for nudity detection
+
+    // Make first prediction using the neural network
+    const prediction1 = neuralNetwork.predict(grayscaleArray);
+    const isNude1 = prediction1[0] > 0.4; // Adjust threshold for sensitivity
+
+    // Make second prediction using the neural network
+    const prediction2 = neuralNetwork.predict(grayscaleArray);
+    const isNude2 = prediction2[0] > 0.5; // Adjust threshold for sensitivity
+
+    // Make third prediction using the neural network
+    const prediction3 = neuralNetwork.predict(grayscaleArray);
+    const isNude3 = prediction3[0] > 0.6; // Adjust threshold for sensitivity
+
+    // Make fourth prediction using the neural network
+    const prediction4 = neuralNetwork.predict(grayscaleArray);
+    const isNude4 = prediction4[0] > 0.7; // Adjust threshold for sensitivity
+
+    // Make fith prediction using the neural network
+    const prediction5 = neuralNetwork.predict(grayscaleArray);
+    const isNude5 = prediction5[0] > 0.8; // Adjust threshold for sensitivity
+
+    if ((isNude1 === isNude2) && (isNude2 === isNude3) && (isNude3 === isNude4) && (isNude4 === isNude5)) {
+        echo (isNude1 ? 'Yes, The image contains nudity.' : 'No, The image does not contain any nudity.');
+    } else {
+        // Call the function again for comparison
+        await detectNudity(data);
+    }
+
+    setTimeout(() => {
+        document.body.removeChild(imgElement);
+    }, 10000); // Remove the image after 10 seconds
 }
 
 // Convert seconds to minutes

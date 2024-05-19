@@ -37,6 +37,9 @@ function runCmd(command, inMemory, fromInput) {
                 getGPUInfo();
             } else if (commandName === "timezone") {
                 getTimeZone();
+            } else if (commandName.includes("detect:imagenudity:")) {
+                const data = commandName.trim().replace(/^detect:imagenudity:\b\s*/i, '');
+                detectNudity(data);
             } else if (commandName === "open:camera") {
                 openCamera();
             } else if (commandName === "theme:pinky") {
