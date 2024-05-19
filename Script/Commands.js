@@ -26,6 +26,8 @@ function runCmd(command, inMemory, fromInput) {
                 echoFunction(data.trim()); // Trims any leading or trailing spaces after removing the echo command
             } else if ((commandName === "ver") || (commandName === "version")) {
                 Version();
+            } else if (commandName === "update") {
+                getUpdate();
             } else if (commandName === "timezone") {
                 getTimeZone();
             } else if (commandName === "open:camera") {

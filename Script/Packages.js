@@ -1,4 +1,9 @@
 //////////////////////////////////////////////////////////////////////////////
+////Details///////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+const currentVersion = '1.1.4';
+
+//////////////////////////////////////////////////////////////////////////////
 ////Sub Process///////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
@@ -92,8 +97,18 @@ function getUpdate(){
         echo ("Please connect to the internet to check for updates.")
     } else if (networkstatus === "online") {
         echo ("Checking for updates");
+        if (currentVersion === latestVersion) {
+            echo ("You are in the latest version.")
+        } else if (currentVersion < latestVersion) {
+            echo ("Downloading the latest version.")
+            url = `https://github.com/withinJoel/Elsa/releases/download/v${latestVersion}/Elsa.exe`;
+            window.open(url, '_blank');
+        } else if (currentVersion > latestVersion) {
+            echo ('You are in the latest developer version.')
+        }
+    } else {
+        echo ("Error fetching updates.")
     }
-
 }
 
 //Guess
