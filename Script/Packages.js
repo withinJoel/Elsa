@@ -228,7 +228,7 @@ async function detectNudity(data) {
     imgElement.style.position = 'fixed';
     imgElement.style.top = '15px';
     imgElement.style.right = '30px';
-    imgElement.style.maxWidth = '300px';
+    imgElement.style.maxWidth = '500px';
     imgElement.style.maxHeight = '500px';
 
     document.body.appendChild(imgElement);
