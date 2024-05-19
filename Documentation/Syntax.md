@@ -13,7 +13,9 @@
 * `shortstory` - To get a short story.
 
 # AI Based Detection
-* `detect:imagenudity:` - To detect nudity in images. example: `detect:imagenudity:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/resources/app/Core/Bin/Images/)
+* `detect:age:` - To detect age in images. example: `detect:age:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
+* `detect:gender:` - To detect gender in images. example: `detect:gender:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
+* `detect:nudity:` - To detect nudity in images. example: `detect:nudity:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 
 # Random Keywords
 * `random:religion` - To get a random religion.
@@ -59,7 +61,7 @@
 * `random:africancountry` - To get a random African country.
 * `random:pickupline` - To get a random pickup line.
 
-# Features
+# Conversion Functions
 * `convert:secondstominutes:` - To convert seconds to minutes. example: `convert:secondstominutes:1024`
 * `convert:secondstohours:` - To convert seconds to hours. example: `convert:secondstohours:1024`
 * `convert:secondstodays:` - To convert seconds to days. example: `convert:secondstodays:1024`
@@ -90,6 +92,25 @@
 * `convert:yearstohours:` - To convert years to hours. example: `convert:yearstohours:1024`
 * `convert:yearstodays:` - To convert years to days. example: `convert:yearstodays:1024`
 * `convert:yearstomonths:` - To convert years to months. example: `convert:yearstomonths:1024`
+* `convert:decimaltobinary:` - To convert decimal to binary. example: `convert:decimaltobinary:45`
+* `convert:decimaltooctal:` - To convert decimal to octal. example: `convert:decimaltooctal:5`
+* `convert:decimaltohexadecimal:` - To convert decimal to hexadecimal. example: `convert:decimaltohexadecimal:007`
+* `convert:binarytodecimal:` - To convert binary to decimal. example: `convert:binarytodecimal:101010010`
+* `convert:binarytohexadecimal:` - To convert binary to hexadecimal. example: `convert:binarytohexadecimal:101010010`
+* `convert:binarytooctal:` - To convert binary to octal. example: `convert:binarytooctal:101010010`
+* `convert:octaltobinary:` - To convert octal to binary. example: `convert:octaltobinary:1232345`
+* `convert:octaltodecimal:` - To convert octal to decimal. example: `convert:octaltodecimal:5632345`
+* `convert:octaltohexadecimal:` - To convert octal to hexadecimal. example: `convert:octaltohexadecimal:52323565`
+* `convert:hexadecimaltobinary:` - To convert hexadecimal to binary. example: `convert:hexadecimaltobinary:145abc`
+* `convert:hexadecimaltodecimal:` - To convert hexadecimal to decimal. example: `convert:hexadecimaltodecimal:464ad`
+* `convert:hexadecimaltooctal:` - To convert hexadecimal to octal. example: `convert:hexadecimaltooctal:abc56cb`
+* `convert:tolowercase:` - To convert to lowercase. example `convert:tolowercase:Hola`
+* `convert:touppercase:` - To convert to uppercase. example `convert:touppercase:hola`
+* `convert:spacetounderscore:` - To convert spaces to underscore. example: `convert:spacetounderscore:hello world`
+* `convert:singlequotestodoublequotes:` - To convert single quotes to double quotes from the user's input. example `convert:singlequotestodoublequotes:Tom said 'hello'`
+* `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`
+
+# Features
 * `flames:` - To play the famous game for relationship. example: `flames:joel:anna`
 * `zodiacsign:` - To get the zodiac sign based on the date of birth. example: `zodiacsign:2002-05-11` pattern: YYY-MM-DD
 * `numerology:` - To get the numerology details for 2 people. example: `numerology:joel:2002-05-11:sophia:2003-05-27` pattern: YYYY-MM-DD
@@ -100,6 +121,8 @@
 * `decode:` - To decode data. example: `decode:aG9sYQ==`
 * `open:image` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
 * `close:image` - To close an image.
+* `open:video` - To open a video. example: `open:video:10.mp4` (Note only videos that are present in the C:/Program files(x86)/Elsa/Bin/Videos/)
+* `close:video` - To close a video.
 * `open:camera` - To get the live video feed from the camera.
 * `check:palindrome:` - To check wether it is palindrome or not. example: `check:palindrome:hola`.
 * `create:password` - To create a password.
@@ -136,28 +159,11 @@
 * `remove:punctuation:` - To remove punctuation from the input. example: `remove:punctuation:hello! welcome to Elsa!`
 * `remove:singlequotes:` - To remove single quotes. example `remove:singlequotes:'hello'`
 * `remove:doublequotes:` - To remove double quotes. example `remove:doublequotes:"hello"`
-* `convert:tolowercase:` - To convert to lowercase. example `convert:tolowercase:Hola`
-* `convert:touppercase:` - To convert to uppercase. example `convert:touppercase:hola`
-* `convert:spacetounderscore:` - To convert spaces to underscore. example: `convert:spacetounderscore:hello world`
-* `convert:singlequotestodoublequotes:` - To convert single quotes to double quotes from the user's input. example `convert:singlequotestodoublequotes:Tom said 'hello'`
-* `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`
 
 # Math
 * `predict:` - To predict the next number. `predict:1,2,3` or `predict:11,22,33`
 * `count:` - To count in backwards. example: `count:10`
 * `remove:numbers:` - To remove numbers from the input. example `remove:numbers:hello, 007`
-* `convert:decimaltobinary:` - To convert decimal to binary. example: `convert:decimaltobinary:45`
-* `convert:decimaltooctal:` - To convert decimal to octal. example: `convert:decimaltooctal:5`
-* `convert:decimaltohexadecimal:` - To convert decimal to hexadecimal. example: `convert:decimaltohexadecimal:007`
-* `convert:binarytodecimal:` - To convert binary to decimal. example: `convert:binarytodecimal:101010010`
-* `convert:binarytohexadecimal:` - To convert binary to hexadecimal. example: `convert:binarytohexadecimal:101010010`
-* `convert:binarytooctal:` - To convert binary to octal. example: `convert:binarytooctal:101010010`
-* `convert:octaltobinary:` - To convert octal to binary. example: `convert:octaltobinary:1232345`
-* `convert:octaltodecimal:` - To convert octal to decimal. example: `convert:octaltodecimal:5632345`
-* `convert:octaltohexadecimal:` - To convert octal to hexadecimal. example: `convert:octaltohexadecimal:52323565`
-* `convert:hexadecimaltobinary:` - To convert hexadecimal to binary. example: `convert:hexadecimaltobinary:145abc`
-* `convert:hexadecimaltodecimal:` - To convert hexadecimal to decimal. example: `convert:hexadecimaltodecimal:464ad`
-* `convert:hexadecimaltooctal:` - To convert hexadecimal to octal. example: `convert:hexadecimaltooctal:abc56cb`
 * `check:prime:` - To check wether the given number is prime. example: `check:prime:45`
 * `check:composite:` - To check wether the given number is composite. example: `check:composite:11`
 * `check:odd:` - To check wether the given number is odd. example: `check:odd:45`

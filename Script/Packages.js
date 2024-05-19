@@ -385,6 +385,13 @@ async function video(data) {
 
 //Detect Gender
 async function detectGender(data) {
+    if (!data) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
+        echo('No image data provided.');
+        return;
+    }
+
     // Load the models
     await faceapi.nets.ssdMobilenetv1.loadFromUri("Models/Faceapi/");
     await faceapi.nets.faceLandmark68Net.loadFromUri("Models/Faceapi/");
@@ -398,27 +405,39 @@ async function detectGender(data) {
     img.style.maxWidth = '500px';
     img.style.maxHeight = '500px';
     img.setAttribute('data-role', 'dynamic-image');
-    img.src = imagedir + data;
+    
+    const imgSrc = imagedir + data;
+    img.src = imgSrc;
 
-    document.body.appendChild(img);
-
-    // Wait for the image to load
+    // Check if the image source is valid
     img.onload = async () => {
-        // Detect faces with gender
-        const detections = await faceapi.detectAllFaces(img)
-            .withFaceLandmarks()
-            .withFaceDescriptors()
-            .withAgeAndGender();
+        if (img.complete && img.naturalWidth !== 0 && img.naturalHeight !== 0) {
+            document.body.appendChild(img);
 
-        if (detections.length > 0) {
-            detections.forEach(detection => {
-                const { gender, genderProbability } = detection;
-                echo(`Gender: ${gender}, Probability: ${(genderProbability * 100).toFixed(2)}`);
-            });
+            // Detect faces with gender
+            const detections = await faceapi.detectAllFaces(img)
+                .withFaceLandmarks()
+                .withFaceDescriptors()
+                .withAgeAndGender();
+
+            if (detections.length > 0) {
+                detections.forEach(detection => {
+                    const { gender, genderProbability } = detection;
+                    echo(`Gender: ${gender}, Probability: ${(genderProbability * 100).toFixed(2)}`);
+                });
+            } else {
+                const audio = new Audio('Effects/Wrong Input.mp3');
+                audio.play();
+                echo('No faces detected.');
+            }
+
+            setTimeout(() => {
+                document.body.removeChild(img);
+            }, 10000);
         } else {
             const audio = new Audio('Effects/Wrong Input.mp3');
             audio.play();
-            echo('No faces detected.');
+            echo('Failed to load image.');
         }
     };
 
@@ -430,17 +449,75 @@ async function detectGender(data) {
     };
 }
 
-//Detect Clothing
-// Load the MobileNet model
-async function loadModel() {
-    const model = await mobilenet.load();
-    return model;
+//Detect Age
+async function detectAge(data) {
+    if (!data) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
+        echo('No image data provided.');
+        return;
+    }
+
+    // Load the models
+    await faceapi.nets.ssdMobilenetv1.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.faceLandmark68Net.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.faceRecognitionNet.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.ageGenderNet.loadFromUri("Models/Faceapi/");
+
+    const img = document.createElement('img');
+    img.style.position = 'fixed';
+    img.style.top = '15px';
+    img.style.right = '30px';
+    img.style.maxWidth = '500px';
+    img.style.maxHeight = '500px';
+    img.setAttribute('data-role', 'dynamic-image');
+
+    const imgSrc = imagedir + data;
+    img.src = imgSrc;
+
+    // Check if the image source is valid
+    img.onload = async () => {
+        if (img.complete && img.naturalWidth !== 0 && img.naturalHeight !== 0) {
+            document.body.appendChild(img);
+
+            // Detect faces with age and gender
+            const detections = await faceapi.detectAllFaces(img)
+                .withFaceLandmarks()
+                .withFaceDescriptors()
+                .withAgeAndGender();
+
+            if (detections.length > 0) {
+                detections.forEach(detection => {
+                    const { gender, genderProbability, age } = detection;
+                    echo(`Age: ${age}`);
+                });
+            } else {
+                const audio = new Audio('Effects/Wrong Input.mp3');
+                audio.play();
+                echo('No faces detected.');
+            }
+
+            setTimeout(() => {
+                document.body.removeChild(img);
+            }, 10000);
+        } else {
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
+            echo('Failed to load image.');
+        }
+    };
+
+    // Handle image load error
+    img.onerror = () => {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
+        echo('Failed to load image.');
+    };
 }
 
-// Detect clothing in an image
-async function detectClothing(data) {
-    // Assuming imagedir is a string representing the directory of the image
-    const imageElement = imagedir + data;
+// Example usage
+async function processDetectClothing(data) {
+    let imageUrl = imagedir + data;
     const imgElement = document.createElement('img');
     imgElement.style.position = 'fixed';
     imgElement.style.top = '15px';
@@ -454,32 +531,12 @@ async function detectClothing(data) {
     await new Promise((resolve, reject) => {
         imgElement.onload = resolve;
         imgElement.onerror = reject;
-        imgElement.src = imageElement;
+        imgElement.src = imageUrl;
     });
 
-    const model = await loadModel();
+    await detectClothing(imgElement);
 
-    // Use the actual image element for tf.browser.fromPixels
-    const img = tf.browser.fromPixels(imgElement);
-
-    // Resize the image to match MobileNet's input size
-    const resizedImg = tf.image.resizeBilinear(img, [224, 224]);
-
-    // Normalize the image and preprocess it
-    const normalizedImg = resizedImg.div(255.0).expandDims();
-
-    // Make predictions
-    const predictions = await model.classify(normalizedImg);
-
-    // Filter predictions related to clothing
-    const clothingPredictions = predictions.filter(prediction =>
-        prediction.className.toLowerCase().includes('clothing')
-    );
-
-    // Output predictions
-    echo(clothingPredictions);
-
-    // Remove the image after 10 seconds
+    // Remove the image after 10 seconds (or adjust as needed)
     setTimeout(() => {
         document.body.removeChild(imgElement);
     }, 10000);

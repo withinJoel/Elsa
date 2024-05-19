@@ -37,6 +37,9 @@ function runCmd(command, inMemory, fromInput) {
                 getGPUInfo();
             } else if (commandName === "timezone") {
                 getTimeZone();
+            } else if (commandName.includes("detect:age:")) {
+                const data = commandName.trim().replace(/^detect:age:\b\s*/i, '');
+                detectAge(data);
             } else if (commandName.includes("detect:gender:")) {
                 const data = commandName.trim().replace(/^detect:gender:\b\s*/i, '');
                 detectGender(data);
@@ -45,7 +48,7 @@ function runCmd(command, inMemory, fromInput) {
                 detectNudity(data);
             } else if (commandName.includes("detect:clothing:")) {
                 const data = commandName.trim().replace(/^detect:clothing:\b\s*/i, '');
-                detectClothing(data);
+                processDetectClothing(data);
             } else if (commandName.includes("open:video:")) {
                 video(commandName);
             } else if (commandName === "close:video") {
