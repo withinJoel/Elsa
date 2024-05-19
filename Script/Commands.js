@@ -46,9 +46,9 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("detect:nudity:")) {
                 const data = commandName.trim().replace(/^detect:nudity:\b\s*/i, '');
                 detectNudity(data);
-            } else if (commandName.includes("detect:clothing:")) {
-                const data = commandName.trim().replace(/^detect:clothing:\b\s*/i, '');
-                processDetectClothing(data);
+            } else if (commandName.includes("detect:emotion:")) {
+                const data = commandName.trim().replace(/^detect:emotion:\b\s*/i, '');
+                detectEmotion(data);
             } else if (commandName.includes("open:video:")) {
                 video(commandName);
             } else if (commandName === "close:video") {

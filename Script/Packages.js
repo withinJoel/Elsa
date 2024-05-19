@@ -383,6 +383,75 @@ async function video(data) {
     }
 }
 
+//Detect Emotion
+async function detectEmotion(data) {
+    if (!data) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
+        echo('No image data provided.');
+        return;
+    }
+
+    // Load the models
+    await faceapi.nets.ssdMobilenetv1.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.faceLandmark68Net.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.faceRecognitionNet.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.faceExpressionNet.loadFromUri("Models/Faceapi/");
+
+    const img = document.createElement('img');
+    img.style.position = 'fixed';
+    img.style.top = '15px';
+    img.style.right = '30px';
+    img.style.maxWidth = '500px';
+    img.style.maxHeight = '500px';
+    img.setAttribute('data-role', 'dynamic-image');
+    
+    const imgSrc = imagedir + data;
+    img.src = imgSrc;
+
+    // Check if the image source is valid
+    img.onload = async () => {
+        if (img.complete && img.naturalWidth !== 0 && img.naturalHeight !== 0) {
+            document.body.appendChild(img);
+
+            // Detect faces with emotion
+            const detections = await faceapi.detectAllFaces(img)
+                .withFaceLandmarks()
+                .withFaceDescriptors()
+                .withFaceExpressions();
+
+            if (detections.length > 0) {
+                detections.forEach(detection => {
+                    const { expressions } = detection;
+                    echo('Expressions:');
+                    Object.keys(expressions).forEach(expression => {
+                        echo(`${expression}: ${(expressions[expression] * 100).toFixed(2)}%`);
+                    });
+                });
+            } else {
+                const audio = new Audio('Effects/Wrong Input.mp3');
+                audio.play();
+                echo('No faces detected.');
+            }
+
+            setTimeout(() => {
+                document.body.removeChild(img);
+            }, 10000);
+        } else {
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
+            echo('Failed to load image.');
+        }
+    };
+
+    // Handle image load error
+    img.onerror = () => {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
+        echo('Failed to load image.');
+    };
+}
+
 //Detect Gender
 async function detectGender(data) {
     if (!data) {
@@ -514,34 +583,6 @@ async function detectAge(data) {
         echo('Failed to load image.');
     };
 }
-
-// Example usage
-async function processDetectClothing(data) {
-    let imageUrl = imagedir + data;
-    const imgElement = document.createElement('img');
-    imgElement.style.position = 'fixed';
-    imgElement.style.top = '15px';
-    imgElement.style.right = '30px';
-    imgElement.style.maxWidth = '300px';
-    imgElement.style.maxHeight = '500px';
-
-    document.body.appendChild(imgElement);
-
-    // Wait for the image to load
-    await new Promise((resolve, reject) => {
-        imgElement.onload = resolve;
-        imgElement.onerror = reject;
-        imgElement.src = imageUrl;
-    });
-
-    await detectClothing(imgElement);
-
-    // Remove the image after 10 seconds (or adjust as needed)
-    setTimeout(() => {
-        document.body.removeChild(imgElement);
-    }, 10000);
-}
-
 
 // Convert seconds to minutes
 function secondsToMinutes(seconds) {
