@@ -340,6 +340,7 @@ async function loadModel() {
 
 // Detect clothing in an image
 async function detectClothing(data) {
+    // Assuming imagedir is a string representing the directory of the image
     const imageElement = imagedir + data;
     const imgElement = document.createElement('img');
     imgElement.style.position = 'fixed';
@@ -350,6 +351,7 @@ async function detectClothing(data) {
 
     document.body.appendChild(imgElement);
 
+    // Wait for the image to load
     await new Promise((resolve, reject) => {
         imgElement.onload = resolve;
         imgElement.onerror = reject;
@@ -357,7 +359,9 @@ async function detectClothing(data) {
     });
 
     const model = await loadModel();
-    const img = tf.browser.fromPixels(imageElement);
+
+    // Use the actual image element for tf.browser.fromPixels
+    const img = tf.browser.fromPixels(imgElement);
 
     // Resize the image to match MobileNet's input size
     const resizedImg = tf.image.resizeBilinear(img, [224, 224]);
@@ -373,12 +377,15 @@ async function detectClothing(data) {
         prediction.className.toLowerCase().includes('clothing')
     );
 
-    echo (clothingPredictions);
+    // Output predictions
+    echo(clothingPredictions);
 
+    // Remove the image after 10 seconds
     setTimeout(() => {
         document.body.removeChild(imgElement);
-    }, 10000); // Remove the image after 10 seconds
+    }, 10000);
 }
+
 
 // Convert seconds to minutes
 function secondsToMinutes(seconds) {
