@@ -55,6 +55,10 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("predict:")) {
                 const data = commandName.trim().replace(/^predict:\b\s*/i, '');
                 predictNextNumber(data);
+            } else if (commandName.includes("count:characters:")) {
+                countCharacters(commandName);
+            } else if (commandName.includes("count:words:")) {
+                countWords(commandName);
             } else if (commandName.includes("count:")) {
                 const count = commandName.trim().replace(/^count:\b\s*/i, '');
                 countBackward(count);
@@ -183,10 +187,6 @@ function runCmd(command, inMemory, fromInput) {
                 let delimiter = ' ';
                 let sentence = commandName.trim().replace(/^explode:\s*/i, '');
                 stringExplode(sentence, delimiter);
-            } else if (commandName.includes("count:characters:")) {
-                countCharacters(commandName);
-            } else if (commandName.includes("count:words:")) {
-                countWords(commandName);
             } else if (commandName === "help") {
                 Help();
             } else if (commandName === "sys") {
