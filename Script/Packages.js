@@ -86,7 +86,7 @@ function getSys() {
 
 //Version
 function Version() {
-    echo("Elsa v1.1.3");
+    echo("Elsa v1.1.4");
     echo('Made with love by Joel Jessie Jolly.');
 }
 
