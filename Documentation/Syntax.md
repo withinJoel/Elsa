@@ -13,6 +13,7 @@
 * `shortstory` - To get a short story.
 
 # AI Based Detection
+* `detect:emotion:` - To detect emotion in images. example: `detect:emotion:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:age:` - To detect age in images. example: `detect:age:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:gender:` - To detect gender in images. example: `detect:gender:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:nudity:` - To detect nudity in images. example: `detect:nudity:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
