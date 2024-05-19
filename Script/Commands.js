@@ -26,6 +26,9 @@ function runCmd(command, inMemory, fromInput) {
                 echoFunction(data.trim()); // Trims any leading or trailing spaces after removing the echo command
             } else if ((commandName === "ver") || (commandName === "version")) {
                 Version();
+            } else if (commandName === "easteregg") {
+                const url = 'Additional/Easter Egg.html';
+                window.open(url, '_blank');
             } else if (commandName === "update") {
                 getUpdate();
             } else if (commandName === "cpuinfo") {
