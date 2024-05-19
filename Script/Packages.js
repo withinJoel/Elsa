@@ -107,6 +107,8 @@ function getUpdate() {
             echo('You are in the latest developer version.')
         }
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo("Error fetching updates.")
     }
 }
@@ -347,6 +349,8 @@ function processNumerologyInput(input) {
     // Extract input values
     const [name1, dob1, name2, dob2] = input.split(':').map((s, i) => i % 2 === 0 ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : s);
     if (!name1 || !dob1 || !name2 || !dob2) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         return 'Invalid input. Please provide names and dates of birth in the format "name1:dob1:name2:dob2".';
     }
 
@@ -461,6 +465,8 @@ function getZodiacSign(dateOfBirth) {
     if (sign) {
         echo(`You are a ${sign.sign}. ${sign.details}`);
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid date of birth.');
     }
 }
@@ -625,6 +631,8 @@ function changeBodyColor(userColor) {
         // Set the body background color
         document.body.style.backgroundColor = userColor;
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo("Invalid color!");
     }
 }
@@ -640,6 +648,8 @@ function changeColor(userColor) {
         // Set the body background color
         document.body.style.color = userColor;
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo("Invalid color!");
     }
 }
@@ -673,12 +683,16 @@ function getOS() {
 function countBackward(number) {
     // Check if the input is a valid number
     if (isNaN(number)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Please provide a valid number after "count:".');  // Assuming echo is a function that displays a message
         return;  // Exit the function if the input is not a valid number
     }
 
     // Check if the number is positive
     if (number <= 0) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Please provide a positive number greater than zero.');
         return;  // Exit the function if the input is not a positive number
     }
@@ -1561,6 +1575,8 @@ function getShortStory() {
 function decimalToBinary(data) {
     const decimal = data.trim().replace(/^convert:decimaltobinary:\b\s*/i, '');
     if (isNaN(decimal)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid decimal number');
         return;
     }
@@ -1571,6 +1587,8 @@ function decimalToBinary(data) {
 function decimalToOctal(data) {
     const decimal = data.trim().replace(/^convert:decimaltooctal:\b\s*/i, '');
     if (isNaN(decimal)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid decimal number');
         return;
     }
@@ -1581,6 +1599,8 @@ function decimalToOctal(data) {
 function decimalToHexadecimal(data) {
     const decimal = data.trim().replace(/^convert:decimaltohexadecimal:\b\s*/i, '');
     if (isNaN(decimal)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid decimal number');
         return;
     }
@@ -1592,6 +1612,8 @@ function binaryToDecimal(number) {
     const binary = number.trim().replace(/^convert:binarytodecimal:\b\s*/i, '');
     // Check if the input is a valid binary number
     if (!/^[01]+$/.test(binary)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid binary number');
     }
 
@@ -1607,6 +1629,8 @@ function binaryToDecimal(number) {
 function decimalToBinary(number) {
     const decimal = parseInt(number.trim().replace(/^convert:decimaltobinary:\b\s*/i, ''), 10);
     if (isNaN(decimal)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid decimal number');
         return;
     }
@@ -1619,6 +1643,8 @@ function decimalToBinary(number) {
 function binaryToOctal(number) {
     const binary = number.trim().replace(/^convert:binarytooctal:\b\s*/i, '');
     if (!/^[01]+$/.test(binary)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid binary number');
         return;
     }
@@ -1632,6 +1658,8 @@ function binaryToOctal(number) {
 function octalToBinary(number) {
     const octal = parseInt(number.trim().replace(/^convert:octaltobinary:\b\s*/i, ''), 8);
     if (isNaN(octal)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid octal number');
         return;
     }
@@ -1644,6 +1672,8 @@ function octalToBinary(number) {
 function octalToDecimal(number) {
     const octal = parseInt(number.trim().replace(/^convert:octaltodecimal:\b\s*/i, ''), 8);
     if (isNaN(octal)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid octal number');
         return;
     }
@@ -1655,6 +1685,8 @@ function octalToDecimal(number) {
 function octalToHexadecimal(number) {
     const octal = parseInt(number.trim().replace(/^convert:octaltohexadecimal:\b\s*/i, ''), 8);
     if (isNaN(octal)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid octal number');
         return;
     }
@@ -1667,6 +1699,8 @@ function octalToHexadecimal(number) {
 function hexadecimalToBinary(number) {
     const hexadecimal = number.trim().replace(/^convert:hexadecimaltobinary:\b\s*/i, '');
     if (!/^[0-9A-Fa-f]+$/.test(hexadecimal)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid hexadecimal number');
         return;
     }
@@ -1680,6 +1714,8 @@ function hexadecimalToBinary(number) {
 function hexadecimalToDecimal(number) {
     const hexadecimal = number.trim().replace(/^convert:hexadecimaltodecimal:\b\s*/i, '');
     if (!/^[0-9A-Fa-f]+$/.test(hexadecimal)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid hexadecimal number');
         return;
     }
@@ -1692,6 +1728,8 @@ function hexadecimalToDecimal(number) {
 function hexadecimalToOctal(number) {
     const hexadecimal = number.trim().replace(/^convert:hexadecimaltooctal:\b\s*/i, '');
     if (!/^[0-9A-Fa-f]+$/.test(hexadecimal)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid hexadecimal number');
         return;
     }
@@ -1705,6 +1743,8 @@ function hexadecimalToOctal(number) {
 function binaryToHexadecimal(number) {
     const binary = number.trim().replace(/^convert:binarytohexadecimal:\b\s*/i, '');
     if (!/^[01]+$/.test(binary)) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid binary number');
         return;
     }
@@ -1734,6 +1774,8 @@ function createQrCode(input) {
     if (newTab) {
         newTab.focus();
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         alert('Please allow pop-ups for this website to view the QR code.');
     }
 }
@@ -1760,6 +1802,8 @@ function measureLatency(url) {
             return Promise.resolve(latency); // Resolve the promise with the calculated latency
         })
         .catch(error => {
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
             console.error('Error measuring latency:', error);
             return Promise.reject(error); // Reject the promise if there's an error
         });
@@ -1772,6 +1816,8 @@ function decode(input) {
         const decoded = atob(data);
         echo(`Base64 decoded: ${decoded}`);
     } catch (error) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo(`Error decoding: ${error.message}`);
     }
 }
@@ -1783,6 +1829,8 @@ function encode(input) {
         const encoded = btoa(data);
         echo(`Base64 encoded: ${encoded}`);
     } catch (error) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo(`Error encoding: ${error.message}`);
     }
 }
@@ -1825,6 +1873,8 @@ function readOutLine(text) {
         // Speak the text
         window.speechSynthesis.speak(utterance);
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         console.error('Speech synthesis not supported in this browser.');
     }
 }
@@ -1839,6 +1889,8 @@ function reverseString(input) {
 // String Explode
 function stringExplode(sentence, delimiter) {
     if (typeof sentence !== 'string' || typeof delimiter !== 'string') {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Both sentence and delimiter must be strings.');
     }
     echo('[' + sentence.split(delimiter) + ']');
@@ -1848,6 +1900,8 @@ function stringExplode(sentence, delimiter) {
 function removeSpaces(data) {
     const input = data.trim().replace(/^remove:space:\s*/i, '');
     if (typeof input !== 'string') {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Input must be a string.');
     }
 
@@ -1878,6 +1932,8 @@ function removeNumbers(str) {
 function removeSingleQuotes(data) {
     const inputString = data.trim().replace(/^remove:singlequotes:\s*/i, '');
     if (typeof inputString !== 'string') {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Input must be a string');
     }
     echo(inputString.replace(/'/g, ''));
@@ -1887,6 +1943,8 @@ function removeSingleQuotes(data) {
 function removeDoubleQuotes(data) {
     const inputString = data.trim().replace(/^remove:doublequotes:\s*/i, '');
     if (typeof inputString !== 'string') {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Input must be a string');
     }
     echo(inputString.replace(/"/g, ''));
@@ -1906,6 +1964,8 @@ function removeSpecialCharacters(data) {
 function convertSingleToDoubleQuotes(data) {
     const inputString = data.trim().replace(/^convert:singlequotestodoublequotes:\s*/i, '');
     if (typeof inputString !== 'string') {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Input must be a string');
     }
     echo(inputString.replace(/'/g, '"'));
@@ -1915,6 +1975,8 @@ function convertSingleToDoubleQuotes(data) {
 function convertDoubleToSingleQuotes(data) {
     const inputString = data.trim().replace(/^convert:doublequotestosinglequotes:\s*/i, '');
     if (typeof inputString !== 'string') {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Input must be a string');
     }
     echo(inputString.replace(/"/g, `'`));
@@ -1924,6 +1986,8 @@ function convertDoubleToSingleQuotes(data) {
 function convertSpacesToUnderscores(data) {
     const input = data.trim().replace(/^convert:spacetounderscore:\s*/i, '');
     if (typeof input !== 'string') {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Input must be a string.');
     }
 
@@ -1960,13 +2024,19 @@ function openCamera() {
                     video.srcObject = stream;
                     newWindow.document.body.appendChild(video);
                 } else {
+                    const audio = new Audio('Effects/Wrong Input.mp3');
+                    audio.play();
                     echo('Failed to open new window.');
                 }
             })
             .catch(function (error) {
+                const audio = new Audio('Effects/Wrong Input.mp3');
+                audio.play();
                 echo('Error accessing the webcam:', error);
             });
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('getUserMedia is not supported on this browser.');
     }
 }
@@ -2075,6 +2145,8 @@ function squareRoot(num) {
 function calculate(num) {
     const parts = num.split('calculate:');
     if (parts.length !== 2) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid input format');
     }
 
@@ -2085,6 +2157,8 @@ function calculate(num) {
         // Using eval to evaluate the expression
         echo('The answer is ' + eval(formattedExpression));
     } catch (error) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         // Handle any errors in the expression
         echo('Error: Invalid expression');
     }
@@ -2100,6 +2174,8 @@ function processLogCommand(input) {
         const result = Math.log10(value);
         echo(`The logarithm base 10 of ${value} is ${result}`);
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid log command or value');
     }
 }
@@ -2114,6 +2190,8 @@ function processCeilCommand(input) {
         const result = ceil(value);
         echo(`The ceiling value of ${value} is ${result}`);
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid ceil command or value');
     }
 }
@@ -2132,6 +2210,8 @@ function processFloatAbsolute(num) {
     if (!isNaN(x)) {
         echo('The float absolute for ' + x + ' is ' + Math.abs(x));
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid value'); // Return NaN for unsupported types or invalid input
     }
 }
@@ -2142,6 +2222,8 @@ function processFloat(num) {
     if (!isNaN(x)) {
         echo('The float value is ' + x);
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid value'); // Return NaN for unsupported types or invalid input
     }
 }
@@ -2153,6 +2235,8 @@ function processGcd(input) {
 
     // Ensure there are two numbers in the input
     if (numbers.length !== 2 || isNaN(numbers[0]) || isNaN(numbers[1])) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid input format. Please use "gcd:a,b" where a and b are numbers.');
         return;
     }
@@ -2175,6 +2259,8 @@ function processGcdForLcm(input) {
 
     // Ensure there are two numbers in the input
     if (numbers.length !== 2 || isNaN(numbers[0]) || isNaN(numbers[1])) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid input format. Please use "gcd:a,b" where a and b are numbers.');
         return;
     }
@@ -2197,6 +2283,8 @@ function processLcm(input) {
 
     // Ensure there are two numbers in the input
     if (numbers.length !== 2 || isNaN(numbers[0]) || isNaN(numbers[1])) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Invalid input format. Please use "lcm:a,b" where a and b are numbers.');
         return;
     }
@@ -2215,6 +2303,8 @@ function convertToLowerCase(data) {
     if (typeof input === 'string') {
         echo(input.toLowerCase());
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Input must be a string.');
     }
 }
@@ -2225,12 +2315,16 @@ function convertToUpperCase(data) {
     if (typeof input === 'string') {
         echo(input.toUpperCase());
     } else {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
         echo('Input must be a string.');
     }
 }
 
 //error
 function errorhandling() {
+    const audio = new Audio('Effects/Error.mp3');
+    audio.play();
     echo(`Not a valid command.`);
 }
 
