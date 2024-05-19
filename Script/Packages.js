@@ -85,6 +85,17 @@ function Version() {
     echo('Made with love by Joel Jessie Jolly.');
 }
 
+//Update 
+function getUpdate(){
+    const networkstatus = navigator.onLine ? "online" : "offline";
+    if (networkstatus === "offline") {
+        echo ("Please connect to the internet to check for updates.")
+    } else if (networkstatus === "online") {
+        echo ("Checking for updates");
+    }
+
+}
+
 //Guess
 function getGuesses(input) {
     const sortedInput = input.split('').sort().join(''); // Sort the input letters alphabetically
