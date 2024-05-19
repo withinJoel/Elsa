@@ -98,6 +98,8 @@
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
 * `encode:` - To encode data. example: `encode:hola`
 * `decode:` - To decode data. example: `decode:aG9sYQ==`
+* `open:image` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
+* `close:image` - To close an image.
 * `open:camera` - To get the live video feed from the camera.
 * `check:palindrome:` - To check wether it is palindrome or not. example: `check:palindrome:hola`.
 * `create:password` - To create a password.

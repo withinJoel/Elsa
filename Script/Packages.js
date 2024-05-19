@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////////////
 const currentVersion = '1.1.4';
 let imagedir = '../../../Bin/Images/';
-let videodir = 'Bin/Videos/';
+let videodir = '../../../Bin/Videos/';
 
 //////////////////////////////////////////////////////////////////////////////
 ////Sub Process///////////////////////////////////////////////////////////////
@@ -310,7 +310,7 @@ async function image(data) {
             imgElement.style.position = 'fixed';
             imgElement.style.top = '15px';
             imgElement.style.right = '30px';
-            imgElement.style.maxWidth = '300px';
+            imgElement.style.maxWidth = '500px';
             imgElement.style.maxHeight = '500px';
             imgElement.setAttribute('data-role', 'dynamic-image');
 
@@ -324,11 +324,110 @@ async function image(data) {
                 existingImgElement.src = imageElement;
             });
         } catch (error) {
-            echo ("Image failed to load. Please check the path or filename.");
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
+            echo("Image failed to load. Please check the path or filename.");
         }
     } else if (existingImgElement) {
         document.body.removeChild(existingImgElement);
     }
+}
+
+//Open Video
+async function video(data) {
+    const existingVidElement = document.querySelector('video[data-role="dynamic-video"]');
+    const existingErrorElement = document.querySelector('div[data-role="error-message"]');
+
+    // Remove existing error message if any
+    if (existingErrorElement) {
+        document.body.removeChild(existingErrorElement);
+    }
+
+    if (data && data.trim().startsWith("open:video:")) {
+        const vid = data.trim().replace(/^open:video:\s*/i, '');
+        const videoSrc = videodir + vid;
+
+        let vidElement = existingVidElement;
+
+        try {
+            // Create a temporary video element to check if the video loads
+            const tempVideo = document.createElement('video');
+            await new Promise((resolve, reject) => {
+                tempVideo.onloadeddata = resolve; // Use onloadeddata for video
+                tempVideo.onerror = reject;
+                tempVideo.src = videoSrc;
+            });
+
+            if (vidElement) {
+                vidElement.src = videoSrc;
+            } else {
+                vidElement = document.createElement('video');
+                vidElement.style.position = 'fixed';
+                vidElement.style.top = '15px';
+                vidElement.style.right = '30px';
+                vidElement.style.maxWidth = '500px';
+                vidElement.style.maxHeight = '500px';
+                vidElement.setAttribute('data-role', 'dynamic-video');
+                vidElement.controls = true; // Add video controls for play/pause, etc.
+                vidElement.src = videoSrc;
+                document.body.appendChild(vidElement);
+            }
+        } catch (error) {
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
+            echo("Video failed to load. Please check the path or filename.");
+
+        }
+    } else if (existingVidElement) {
+        document.body.removeChild(existingVidElement);
+    }
+}
+
+//Detect Gender
+async function detectGender(data) {
+    // Load the models
+    await faceapi.nets.ssdMobilenetv1.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.faceLandmark68Net.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.faceRecognitionNet.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.ageGenderNet.loadFromUri("Models/Faceapi/");
+
+    const img = document.createElement('img');
+    img.style.position = 'fixed';
+    img.style.top = '15px';
+    img.style.right = '30px';
+    img.style.maxWidth = '500px';
+    img.style.maxHeight = '500px';
+    img.setAttribute('data-role', 'dynamic-image');
+    img.src = imagedir + data;
+
+    document.body.appendChild(img);
+
+    // Wait for the image to load
+    img.onload = async () => {
+        // Detect faces with gender
+        const detections = await faceapi.detectAllFaces(img)
+            .withFaceLandmarks()
+            .withFaceDescriptors()
+            .withAgeAndGender();
+
+        if (detections.length > 0) {
+            detections.forEach(detection => {
+                const { gender, genderProbability } = detection;
+                echo(`Gender: ${gender}, Probability: ${(genderProbability * 100).toFixed(2)}`);
+            });
+        } else {
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
+            echo('No faces detected.');
+        }
+    };
+
+    // Handle image load error
+    img.onerror = () => {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
+        echo('Failed to load image.');
+    };
 }
 
 //Detect Clothing
