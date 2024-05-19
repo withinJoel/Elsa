@@ -187,6 +187,7 @@
 * `colordepth` or `colourdepth` - To get the color depth of the screen.
 
 # Hardware
+* `cpuinfo` - To get the CPU information.
 * `gpuinfo` - To get the GPU information.
 * `raminfo` - To get ram information.
 * `batteryinfo` - To get the battery info.
