@@ -26,6 +26,10 @@
 * `randomcolor` or `randomcolour` - To get a random color.
 * `mouseposition` - To get the mouse position.
 
+# Shortcuts
+* Top arrow for the previous command.
+* Down arrow for the latest command.
+
 # Customization
 * `inputcolor:` or `inputcolour:` - To change the input color. example: `inputcolor:pink`
 * `color:` or `colour:` - To change the terminal text color. example: `color:blue` or `colour:white`

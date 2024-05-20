@@ -46,7 +46,7 @@ function handleFileDrop(event) {
             }
         }
     } else {
-        alert('Unsupported file type. Please upload an image, a video, a PDF, or a text file.');
+        alert('Unsupported file type. Please upload an Image or a Video or a PDF or a Text file.');
     }
 }
 
