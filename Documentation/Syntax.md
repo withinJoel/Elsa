@@ -12,8 +12,9 @@
 * `fortunecookie` - To know the future.
 * `shortstory` - To get a short story.
 
-# AI Based Detection
+# Detection Keywords
 * `detect:face:` - To detect faces in images. example: `detect:face:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
+* `detect:human:` - To detect humans in images. example: `detect:human:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:emotion:` - To detect emotion in images. example: `detect:emotion:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:age:` - To detect age in images. example: `detect:age:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:gender:` - To detect gender in images. example: `detect:gender:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)

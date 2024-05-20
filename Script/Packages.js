@@ -497,6 +497,66 @@ async function predictNudityForVideo(filePath) {
         document.body.removeChild(videoElement);
     }, 10000); // Remove the video element after 10 seconds
 }
+//Detect Humans
+async function detectHumans(data) {
+    if (!data) {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
+        echo('No image data provided.');
+        return;
+    }
+
+    // Load the models
+    await faceapi.nets.ssdMobilenetv1.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.faceLandmark68Net.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.faceRecognitionNet.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.faceExpressionNet.loadFromUri("Models/Faceapi/");
+
+    const img = document.createElement('img');
+    img.style.position = 'fixed';
+    img.style.top = '15px';
+    img.style.right = '30px';
+    img.style.maxWidth = '500px';
+    img.style.maxHeight = '500px';
+    img.setAttribute('data-role', 'dynamic-image');
+
+    const imgSrc = imagedir + data;
+    img.src = imgSrc;
+
+    // Check if the image source is valid
+    img.onload = async () => {
+        if (img.complete && img.naturalWidth !== 0 && img.naturalHeight !== 0) {
+            document.body.appendChild(img);
+
+            // Detect faces
+            const detections = await faceapi.detectAllFaces(img);
+
+            if (detections.length > 1) {
+                echo('Humans are detected.');
+                echo(`Number of faces detected: ${detections.length}`);
+            } else if (detections.length < 1) {
+                echo('No humans are detected.');
+            } else if (detections.length === 1) {
+                echo('Human is detected.');
+                echo(`Number of faces detected: ${detections.length}`);
+            }
+            setTimeout(() => {
+                document.body.removeChild(img);
+            }, 10000);
+        } else {
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
+            echo('Failed to load image.');
+        }
+    };
+
+    // Handle image load error
+    img.onerror = () => {
+        const audio = new Audio('Effects/Wrong Input.mp3');
+        audio.play();
+        echo('Failed to load image.');
+    };
+}
 
 //Detect Faces
 async function detectFaces(data) {
