@@ -52,7 +52,7 @@
 * `detect:emotion:` - To detect emotion in images. example: `detect:emotion:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:age:` - To detect age in images. example: `detect:age:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:gender:` - To detect gender in images. example: `detect:gender:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
-* `detect:nudity:` - To detect nudity in images and videos. example: `detect:nudity:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/) (or) `detect:nudity:75.mp4` (Note: The default video path is C:/Program Files (x86)/Elsa/Bin/Videos/) (Note: For better prediction results, close the video that had been opened earlier.)
+* `detect:nudity:` - To detect nudity in images and videos. example: `detect:nudity:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/) (or) `detect:nudity:75.mp4` (Note: The default video path is C:/Program Files (x86)/Elsa/Bin/Videos/) (Note: For better prediction results, close the video that had been opened earlier.) (Note: When trying to predict for nudity only try once per image or video as trying more than once may pollute the system resources, leading to data corruption.)
 
 # Random Functions
 * `random:religion` - To get a random religion.
