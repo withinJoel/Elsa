@@ -386,11 +386,11 @@ async function predictNudityForImage(filePath) {
 
     // Make multiple predictions using the neural network
     const predictions = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 50; i++) {
         predictions.push(neuralNetwork.predict(grayscaleArray)[0]);
     }
 
-    const isNude = predictions.every(prediction => prediction < 0.5); // Adjust threshold for sensitivity
+    const isNude = predictions.every(prediction => prediction < 40); // Adjust threshold for sensitivity
 
     if (isNude) {
         echo('Yes, The image contains nudity.');
