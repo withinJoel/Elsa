@@ -8,11 +8,41 @@
 * `developer` or `dev` - To know about the developer.
 * `help` - To get a list of all the supported commands.
 
-# Special Keywords
+# Features
+* `flames:` - To play the famous game for relationship. example: `flames:joel:anna`
+* `zodiacsign:` - To get the zodiac sign based on the date of birth. example: `zodiacsign:2002-05-11` pattern: YYY-MM-DD
+* `numerology:` - To get the numerology details for 2 people. example: `numerology:joel:2002-05-11:sophia:2003-05-27` pattern: YYYY-MM-DD
+* `guess:` - To guess the word. example: `guess:tac`.
+* `read:` - To read out the input. example: `read:hello world` 
+* `encode:` - To encode data. example: `encode:hola`
+* `decode:` - To decode data. example: `decode:aG9sYQ==`
+* `open:camera` - To get the live video feed from the camera.
+* `time` - To display the current time.
+* `open:` or `url:` - to open a site example `open:https://fb.com` or `open:fb` or `url:fb` or `url:https://www.facebook.com/`
+* `day` - To get the day info.
+* `date` - To get the date info.
+* `timezone` - To get the time zone.
+* `webrtc` - To get the WebRTC info.
+* `randomcolor` or `randomcolour` - To get a random color.
+* `mouseposition` - To get the mouse position.
+
+# Customization
+* `inputcolor:` or `inputcolour:` - To change the input color. example: `inputcolor:pink`
+* `color:` or `colour:` - To change the terminal text color. example: `color:blue` or `colour:white`
+* `bgcolor:` or `bgcolour:` or `backgroundcolor:` or `backgroundcolour:` - To change the background color of the terminal. example `bgcolor:purple`
+* `theme:valentine` - To have a romantic theme.
+* `theme:pinky` - To have a pink based theme.
+* `theme:hacker` - To have a hacker like theme.
+* `theme:sunrise` - To have a sunrise based theme.
+* `theme:energy` - To have an energetic theme.
+* `theme:loversparadise` - To have paradise like theme.
+* `theme:soft` - To have soft touch like theme.
+
+# Special Functions
 * `fortunecookie` - To know the future.
 * `shortstory` - To get a short story.
 
-# Detection Keywords
+# Detection Functions
 * `detect:face:` - To detect faces in images. example: `detect:face:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:human:` - To detect humans in images. example: `detect:human:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:emotion:` - To detect emotion in images. example: `detect:emotion:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
@@ -20,7 +50,7 @@
 * `detect:gender:` - To detect gender in images. example: `detect:gender:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:nudity:` - To detect nudity in images and videos. example: `detect:nudity:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/) (or) `detect:nudity:75.mp4` (Note: The default video path is C:/Program Files (x86)/Elsa/Bin/Videos/)
 
-# Random Keywords
+# Random Functions
 * `random:religion` - To get a random religion.
 * `random:programminglanguage` - To get a random programming language.
 * `random:os` or `random:operatingsystem` - To get a random operating system.
@@ -113,6 +143,17 @@
 * `convert:singlequotestodoublequotes:` - To convert single quotes to double quotes from the user's input. example `convert:singlequotestodoublequotes:Tom said 'hello'`
 * `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`
 
+# Create Functions
+* `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
+* `create:password` - To create a password.
+
+# Check Functions
+* `check:palindrome:` - To check wether it is palindrome or not. example: `check:palindrome:hola`.
+
+# Sort Functions
+* `sort:ascending:` - To sort in ascending order. example: `sort:ascending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
+* `sort:descending:` - To sort in descending order. example: `sort:descending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
+
 # Media
 * `open:txt:` - To open a text file. example: `open:txt:hello.txt` (Note only txts that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
 * `open:pdf:` - To open a pdf. example: `open:pdf:10.pdf` (Note only pdfs that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
@@ -120,41 +161,6 @@
 * `close:image` - To close an image.
 * `open:video:` - To open a video. example: `open:video:10.mp4` (Note only videos that are present in the C:/Program files(x86)/Elsa/Bin/Videos/)
 * `close:video` - To close a video.
-
-# Features
-* `flames:` - To play the famous game for relationship. example: `flames:joel:anna`
-* `zodiacsign:` - To get the zodiac sign based on the date of birth. example: `zodiacsign:2002-05-11` pattern: YYY-MM-DD
-* `numerology:` - To get the numerology details for 2 people. example: `numerology:joel:2002-05-11:sophia:2003-05-27` pattern: YYYY-MM-DD
-* `guess:` - To guess the word. example: `guess:tac`.
-* `read:` - To read out the input. example: `read:hello world` 
-* `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
-* `encode:` - To encode data. example: `encode:hola`
-* `decode:` - To decode data. example: `decode:aG9sYQ==`
-* `open:camera` - To get the live video feed from the camera.
-* `check:palindrome:` - To check wether it is palindrome or not. example: `check:palindrome:hola`.
-* `create:password` - To create a password.
-* `time` - To display the current time.
-* `open:` or `url:` - to open a site example `open:https://fb.com` or `open:fb` or `url:fb` or `url:https://www.facebook.com/`
-* `day` - To get the day info.
-* `date` - To get the date info.
-* `timezone` - To get the time zone.
-* `webrtc` - To get the WebRTC info.
-* `randomcolor` or `randomcolour` - To get a random color.
-* `mouseposition` - To get the mouse position.
-* `sort:ascending:` - To sort in ascending order. example: `sort:ascending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
-* `sort:descending:` - To sort in descending order. example: `sort:descending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
-
-# Customization
-* `inputcolor:` or `inputcolour:` - To change the input color. example: `inputcolor:pink`
-* `color:` or `colour:` - To change the terminal text color. example: `color:blue` or `colour:white`
-* `bgcolor:` or `bgcolour:` or `backgroundcolor:` or `backgroundcolour:` - To change the background color of the terminal. example `bgcolor:purple`
-* `theme:valentine` - To have a romantic theme.
-* `theme:pinky` - To have a pink based theme.
-* `theme:hacker` - To have a hacker like theme.
-* `theme:sunrise` - To have a sunrise based theme.
-* `theme:energy` - To have an energetic theme.
-* `theme:loversparadise` - To have paradise like theme.
-* `theme:soft` - To have soft touch like theme.
 
 # Text
 * `reverse:` - To reverse a string. example `reverse:hola`
