@@ -27,7 +27,8 @@ Made with 💖 by Joel Jolly.
 # Documentation
 * <a href="https://github.com/withinJoel/webshell/blob/main/Documentation/Syntax.md">Syntax</a>
 
-[Additional Information](Documentation/Syntax.md) file.
+```markdown
+![](https://raw.githack.com/withinjoel/elsa/main/Documentation/Syntax.md)
 
 # Website
 https://elsafoundation.pages.dev/
