@@ -161,6 +161,7 @@
 * `close:image` - To close an image.
 * `open:video:` - To open a video. example: `open:video:10.mp4` (Note only videos that are present in the C:/Program files(x86)/Elsa/Bin/Videos/)
 * `close:video` - To close a video.
+* You find the above hard, Then just drag and drop to open it (Note: Only images, videos, pdf and txt will open via this method)
 
 # Text
 * `reverse:` - To reverse a string. example `reverse:hola`
