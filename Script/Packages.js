@@ -180,7 +180,7 @@ function openPDF(data) {
     const pdf = data.trim().replace(/^open:pdf:\b\s*/i, '');
     // Specify the URL of the PDF file
     var pdfURL = docdir + pdf;
-    
+
     // Open the PDF file in a new tab
     window.open(pdfURL, '_blank');
 }
@@ -386,13 +386,27 @@ async function predictNudityForImage(filePath) {
 
     // Make multiple predictions using the neural network
     const predictions = [];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 200; i++) {
         predictions.push(neuralNetwork.predict(grayscaleArray)[0]);
     }
 
-    const isNude = predictions.every(prediction => prediction < 40); // Adjust threshold for sensitivity
+    // Count occurrences of each prediction value
+    const predictionCounts = predictions.reduce((acc, prediction) => {
+        acc[prediction] = (acc[prediction] || 0) + 1;
+        return acc;
+    }, {});
 
-    if (isNude) {
+    // Find the prediction with the highest count
+    let maxCount = -1;
+    let majorityPrediction = null;
+    for (const prediction in predictionCounts) {
+        if (predictionCounts[prediction] > maxCount) {
+            maxCount = predictionCounts[prediction];
+            majorityPrediction = prediction;
+        }
+    }
+
+    if (majorityPrediction > 0.5) {
         echo('Yes, The image contains nudity.');
     } else {
         echo('No, The image does not contain any nudity.');
