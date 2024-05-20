@@ -1,3 +1,8 @@
+Menu
+# Basic Commands
+# Features
+# Shortcuts
+# Customization
 # Basic Commands
 * `sys` - To get the system information.
 * `cls` or `clearscreen` - To clear screen
