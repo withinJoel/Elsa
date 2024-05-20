@@ -55,6 +55,8 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("detect:human:")) {
                 const data = commandName.trim().replace(/^detect:human:\b\s*/i, '');
                 detectHumans(data);
+            } else if (commandName.includes("caption:video:")) {
+                openvid(commandName);
             } else if (commandName.includes("open:video:")) {
                 openVideo(commandName);
             } else if (commandName === "close:video") {

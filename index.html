@@ -5,7 +5,8 @@
   default-src 'self' * data:;
   script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
   style-src 'self' 'unsafe-inline' *;
-  ">
+  media-src 'self' blob: *;
+">
 	<link rel="icon" href="Logo/Elsa.png">
 	<link rel="stylesheet" href="Styles/Styles.css">
 	<title>Elsa</title>
@@ -20,10 +21,11 @@
 		</div>
 	</form>
 </body>
+<script src="Script/Features.js"></script>
 <script src="Models/Faceapi/face-api.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/withinJoel/Elsa/Version/Version-1.0.0.js"></script>
-<script src="Script/Data.js"></script>
-<script src="Script/wordBank.js"></script>
+<script src="Datasets/Data.js"></script>
+<script src="Datasets/wordBank.js"></script>
 <script src="Script/Variables.js"></script>
 <script src="Script/Commands.js"></script>
 <script src="Script/Packages.js"></script>

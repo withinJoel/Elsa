@@ -196,7 +196,7 @@ function openTXT(data) {
 
 //Open Image
 async function openImage(data) {
-    const existingImgElement = document.querySelector('img[data-role="dynamic-image"]');
+    const existingImgElement = document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
     const existingErrorElement = document.querySelector('div[data-role="error-message"]');
 
     // Remove existing error message if any
@@ -240,7 +240,7 @@ async function openImage(data) {
 
 //Open Video
 async function openVideo(data) {
-    const existingVidElement = document.querySelector('video[data-role="dynamic-video"]');
+    const existingVidElement = document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
     const existingErrorElement = document.querySelector('div[data-role="error-message"]');
 
     // Remove existing error message if any
@@ -386,7 +386,7 @@ async function predictNudityForImage(filePath) {
 
     // Make multiple predictions using the neural network
     const predictions = [];
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 250; i++) {
         predictions.push(neuralNetwork.predict(grayscaleArray)[0]);
     }
 
