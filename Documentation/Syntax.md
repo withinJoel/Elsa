@@ -30,6 +30,9 @@
 * Top arrow for the previous command.
 * Down arrow for the latest command.
 
+# Tips
+* If you feel that the UI is slow, try `refresh`.
+
 # Customization
 * `inputcolor:` or `inputcolour:` - To change the input color. example: `inputcolor:pink`
 * `color:` or `colour:` - To change the terminal text color. example: `color:blue` or `colour:white`
