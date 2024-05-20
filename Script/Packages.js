@@ -4,6 +4,8 @@
 const currentVersion = '1.1.4';
 let imagedir = '../../../Bin/Images/';
 let videodir = '../../../Bin/Videos/';
+let docdir = '../../../Bin/Documents/';
+let audiodir = '../../../Bin/Audios/';
 
 //////////////////////////////////////////////////////////////////////////////
 ////Sub Process///////////////////////////////////////////////////////////////
@@ -173,8 +175,17 @@ function getGPUInfo() {
     echo('Maximum Viewport Dimensions: ' + maxViewportDims[0] + 'x' + maxViewportDims[1]);
 }
 
+//Open Pdf
+function openPDF(data) {
+    const pdf = data.trim().replace(/^open:pdf:\b\s*/i, '');
+    // Specify the URL of the PDF file
+    var pdfURL = docdir + pdf;
+    
+    // Open the PDF file in a new tab
+    window.open(pdfURL, '_blank');
+}
 //Open Image
-async function image(data) {
+async function openImage(data) {
     const existingImgElement = document.querySelector('img[data-role="dynamic-image"]');
     const existingErrorElement = document.querySelector('div[data-role="error-message"]');
 
@@ -218,7 +229,7 @@ async function image(data) {
 }
 
 //Open Video
-async function video(data) {
+async function openVideo(data) {
     const existingVidElement = document.querySelector('video[data-role="dynamic-video"]');
     const existingErrorElement = document.querySelector('div[data-role="error-message"]');
 

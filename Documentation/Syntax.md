@@ -113,6 +113,13 @@
 * `convert:singlequotestodoublequotes:` - To convert single quotes to double quotes from the user's input. example `convert:singlequotestodoublequotes:Tom said 'hello'`
 * `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`
 
+# Media
+* `open:pdf:` - To open a pdf. example: `open:pdf:10.pdf` (Note only pdfs that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
+* `open:image:` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
+* `close:image` - To close an image.
+* `open:video:` - To open a video. example: `open:video:10.mp4` (Note only videos that are present in the C:/Program files(x86)/Elsa/Bin/Videos/)
+* `close:video` - To close a video.
+
 # Features
 * `flames:` - To play the famous game for relationship. example: `flames:joel:anna`
 * `zodiacsign:` - To get the zodiac sign based on the date of birth. example: `zodiacsign:2002-05-11` pattern: YYY-MM-DD
@@ -122,10 +129,6 @@
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
 * `encode:` - To encode data. example: `encode:hola`
 * `decode:` - To decode data. example: `decode:aG9sYQ==`
-* `open:image` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
-* `close:image` - To close an image.
-* `open:video` - To open a video. example: `open:video:10.mp4` (Note only videos that are present in the C:/Program files(x86)/Elsa/Bin/Videos/)
-* `close:video` - To close a video.
 * `open:camera` - To get the live video feed from the camera.
 * `check:palindrome:` - To check wether it is palindrome or not. example: `check:palindrome:hola`.
 * `create:password` - To create a password.

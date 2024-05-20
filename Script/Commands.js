@@ -56,13 +56,15 @@ function runCmd(command, inMemory, fromInput) {
                 const data = commandName.trim().replace(/^detect:human:\b\s*/i, '');
                 detectHumans(data);
             } else if (commandName.includes("open:video:")) {
-                video(commandName);
+                openVideo(commandName);
             } else if (commandName === "close:video") {
-                video();
+                openVideo();
+            } else if (commandName.includes("open:pdf:")) {
+                openPDF(commandName);
             } else if (commandName.includes("open:image:")) {
-                image(commandName);
+                openImage(commandName);
             } else if (commandName === "close:image") {
-                image();
+                openImage();
             } else if (commandName === "open:camera") {
                 openCamera();
             } else if (commandName === "theme:pinky") {
