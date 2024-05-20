@@ -12,6 +12,8 @@ Made with 💖 by Joel Jolly.
 # Features
 * Helps you to search the web faster.
 * Protects your online privacy.
+* Has more than 40+ math functions.
+* Supports AI based detections.
 * Fast and secure way to browse the web.
 * Detect humans, nudity, gender and many more.
 * Customize the way you wanted it to be.
@@ -26,9 +28,6 @@ Made with 💖 by Joel Jolly.
 
 # Documentation
 * <a href="https://github.com/withinJoel/webshell/blob/main/Documentation/Syntax.md">Syntax</a>
-
-```markdown
-![](https://raw.githack.com/withinjoel/elsa/main/Documentation/Syntax.md)
 
 # Website
 https://elsafoundation.pages.dev/
