@@ -184,6 +184,16 @@ function openPDF(data) {
     // Open the PDF file in a new tab
     window.open(pdfURL, '_blank');
 }
+
+//Open Text
+function openTXT(data) {
+    const txt = data.trim().replace(/^open:txt:\b\s*/i, '');
+    // Specify the URL of the Txt file
+    var txtURL = docdir + txt;
+
+    window.open(txtURL, '_blank');
+}
+
 //Open Image
 async function openImage(data) {
     const existingImgElement = document.querySelector('img[data-role="dynamic-image"]');

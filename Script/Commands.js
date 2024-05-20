@@ -61,6 +61,8 @@ function runCmd(command, inMemory, fromInput) {
                 openVideo();
             } else if (commandName.includes("open:pdf:")) {
                 openPDF(commandName);
+            } else if (commandName.includes("open:txt:")) {
+                openTXT(commandName);
             } else if (commandName.includes("open:image:")) {
                 openImage(commandName);
             } else if (commandName === "close:image") {

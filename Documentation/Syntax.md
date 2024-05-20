@@ -114,6 +114,7 @@
 * `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`
 
 # Media
+* `open:txt:` - To open a text file. example: `open:txt:hello.txt` (Note only txts that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
 * `open:pdf:` - To open a pdf. example: `open:pdf:10.pdf` (Note only pdfs that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
 * `open:image:` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
 * `close:image` - To close an image.
