@@ -49,6 +49,9 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("detect:emotion:")) {
                 const data = commandName.trim().replace(/^detect:emotion:\b\s*/i, '');
                 detectEmotion(data);
+            } else if (commandName.includes("detect:face:")) {
+                const data = commandName.trim().replace(/^detect:face:\b\s*/i, '');
+                detectFaces(data);
             } else if (commandName.includes("open:video:")) {
                 video(commandName);
             } else if (commandName === "close:video") {
