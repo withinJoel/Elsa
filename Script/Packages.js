@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////
 ////Details///////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
-const currentVersion = '1.1.4';
+const currentVersion = '1.1.5';
 let imagedir = '../../../Bin/Images/';
 let videodir = '../../../Bin/Videos/';
 let docdir = '../../../Bin/Documents/';
@@ -90,7 +90,7 @@ function getSys() {
 
 //Version
 function Version() {
-    echo("Elsa v1.1.4");
+    echo("Elsa v"+currentVersion);
     echo('Made with love by Joel Jessie Jolly.');
 }
 

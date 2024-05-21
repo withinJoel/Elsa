@@ -23,7 +23,6 @@
 * `date` - To get the date info.
 * `timezone` - To get the time zone.
 * `webrtc` - To get the WebRTC info.
-* `randomcolor` or `randomcolour` - To get a random color.
 * `mouseposition` - To get the mouse position.
 
 # Shortcuts
@@ -66,6 +65,7 @@
 * `random:flower` - To get a random flower.
 * `random:bird` - To get a random bird.
 * `random:animal` - To get a random animal.
+* `random:color` or `random:colour` - To get a random color.
 * `random:vegetable` - To get a random vegetable.
 * `random:fruit` - To get a random fruit.
 * `random:videogame` - To get a random video game.
