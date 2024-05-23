@@ -90,7 +90,7 @@ function getSys() {
 
 //Version
 function Version() {
-    echo("Elsa v"+currentVersion);
+    echo("Elsa [Version "+currentVersion+']');
     echo('Made with love by Joel Jessie Jolly.');
 }
 
