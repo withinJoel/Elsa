@@ -9,7 +9,7 @@
 * `help` - To get a list of all the supported commands.
 
 # Features
-* `flames:` - To play the famous game for relationship. example: `flames:Joel:Anna`
+* `flames:` - To play the famous game for relationship. example: `flames:Joel,Anna`
 * `zodiacsign:` - To get the zodiac sign based on the date of birth. example: `zodiacsign:2002-05-11` pattern: YYY-MM-DD
 * `numerology:` - To get the numerology details for 2 people. example: `numerology:Joel:2002-05-11:Sophia:2003-05-27` pattern: YYYY-MM-DD
 * `lovecalculator:` - To get a love score based on two names. example: `lovecalculator:Joel,Anna`

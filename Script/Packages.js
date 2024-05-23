@@ -1080,6 +1080,7 @@ function processNumerologyInput(input) {
 
     // Extract input values
     const [name1, dob1, name2, dob2] = input.split(':').map((s, i) => i % 2 === 0 ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : s);
+    
     if (!name1 || !dob1 || !name2 || !dob2) {
         const audio = new Audio('Effects/Wrong Input.mp3');
         audio.play();
@@ -1206,7 +1207,7 @@ function getZodiacSign(dateOfBirth) {
 //FLAMES Game
 function flames(input) {
     // Split the input into two names
-    const [name1, name2] = input.split(':');
+    const [name1, name2] = input.split(',');
 
     // Remove spaces and convert to lowercase
     const cleanName1 = name1.replace(/\s+/g, '').toLowerCase();
