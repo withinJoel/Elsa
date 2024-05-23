@@ -1065,8 +1065,8 @@ function loveCalculator(name1, name2) {
         ? `Good compatibility: ${compatibilityMessages[compatibilityScore]}`
         : `Poor compatibility: ${compatibilityMessages[compatibilityScore]}`;
 
-        echo ('score: '+compatibilityScore);
-        echo ('message: '+ message);
+        echo ('Score: '+compatibilityScore);
+        echo ('Prediction: '+ message);
 }
 
 //Numerlogy
