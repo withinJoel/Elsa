@@ -45,6 +45,8 @@ function getInternetData(ip) {
         echo('ISP: ' + data.isp);
         echo('Connection Type: ' + connectionType);
         echo('Connection Speed: ' + downlinkSpeed);
+        echo('Round-trip time (RTT): '+ navigator.connection.rtt); // Estimated round-trip time in milliseconds
+        echo('Save data mode: '+ navigator.connection.saveData);
     }).catch(err => {
         echo(`There was an error: ${err}`);
     })
