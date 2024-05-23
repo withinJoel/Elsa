@@ -1014,6 +1014,61 @@ function mean(arr) {
     return arr.reduce((sum, value) => sum + value, 0) / arr.length;
 }
 
+//Love Calculator
+function loveCalculator(name1, name2) {
+    // Clean up names and combine them
+    let combinedNames = (name1 + name2).toLowerCase().replace(/\s+/g, '');
+
+    // Create a frequency map of letters
+    let letterCounts = {};
+    for (let char of combinedNames) {
+        if (letterCounts[char]) {
+            letterCounts[char]++;
+        } else {
+            letterCounts[char] = 1;
+        }
+    }
+
+    // Convert the frequency map to a string of numbers
+    let countsString = Object.values(letterCounts).join('');
+
+    // Function to reduce a string of numbers to a single digit
+    function reduceToSingleDigit(numberString) {
+        while (numberString.length > 1) {
+            let sum = 0;
+            for (let char of numberString) {
+                sum += parseInt(char, 10);
+            }
+            numberString = sum.toString();
+        }
+        return parseInt(numberString, 10);
+    }
+
+    // Reduce the countsString to a single digit
+    let compatibilityScore = reduceToSingleDigit(countsString);
+
+    // Create a compatibility message based on the score
+    let compatibilityMessages = {
+        1: 'You are not a good match. Your strong personalities are likely to clash and lead to power struggles.',
+        2: 'You are a good match! You have a balanced and harmonious relationship, making you a strong and supportive couple.',
+        3: 'You are not a good match. While your relationship may be full of creativity and joy, balancing fun with responsibility will be difficult.',
+        4: 'You are not a good match. Although you bring stability and order to each other, your relationship may become too rigid and inflexible.',
+        5: 'You are not a good match. Your relationship is adventurous and dynamic, but you may struggle with restlessness and commitment issues.',
+        6: 'You are a great match! You have a loving, family-oriented relationship, nurturing and caring deeply for each other.',
+        7: 'You are not a good match. Despite your deep spiritual and introspective connection, you may struggle with emotional expression and openness.',
+        8: 'You are not a good match. While you may achieve great things together, you might focus too much on material success and neglect emotional needs.',
+        9: 'You are a good match! Your relationship is compassionate and humanitarian, working together for the greater good.'
+    };
+
+    let goodScores = [2, 6, 9]; // Adjust this array based on your preferences for "good" scores
+    let message = goodScores.includes(compatibilityScore)
+        ? `Good compatibility: ${compatibilityMessages[compatibilityScore]}`
+        : `Poor compatibility: ${compatibilityMessages[compatibilityScore]}`;
+
+        echo ('score: '+compatibilityScore);
+        echo ('message: '+ message);
+}
+
 //Numerlogy
 function processNumerologyInput(input) {
     // Numerology value mappings for letters
@@ -1082,18 +1137,18 @@ function processNumerologyInput(input) {
 
     // Compatibility descriptions
     const compatibility = {
-        1: 'Leadership, independence, and individuality. Pros: Strong leadership qualities, highly independent and self-reliant, ambitious and goal-oriented. Cons: Can be domineering or controlling, may struggle with compromise, possible tendency towards selfishness. Advice: Partners need to respect each other\'s independence and create a balance between leading and supporting. Open communication and mutual respect are key.',
-        2: 'Sensitivity, balance, and harmony. Pros: Highly empathetic and understanding, excellent at creating balance and harmony, good at mediating conflicts. Cons: May be overly sensitive or emotional, can be indecisive, may avoid confrontation. Advice: Focus on open and honest communication to prevent misunderstandings. Encourage each other to make decisions confidently and address issues directly.',
-        3: 'Creativity, self-expression, and joy. Pros: Highly creative and expressive, brings joy and enthusiasm into relationships, excellent communication skills. Cons: May be prone to mood swings, can be overly expressive or dramatic, may struggle with responsibility. Advice: Encourage each other\'s creative pursuits and find ways to balance joy with responsibility. Be patient and understanding during emotional ups and downs.',
-        4: 'Stability, order, and responsibility. Pros: Highly reliable and responsible, excellent at creating structure and order, strong sense of duty and commitment. Cons: Can be rigid or inflexible, may struggle with spontaneity, possible tendency towards being overly serious. Advice: Appreciate each other\'s reliability and work together to introduce flexibility and fun into the relationship. Balance structure with spontaneity.',
-        5: 'Freedom, change, and adventure. Pros: Highly adaptable and open to change, brings excitement and adventure into relationships, excellent at embracing new experiences. Cons: May be restless or impulsive, can struggle with commitment, possible tendency towards being unpredictable. Advice: Embrace each other\'s need for freedom and adventure while finding ways to create stability and commitment. Communicate openly about boundaries and expectations.',
-        6: 'Love, family, and responsibility. Pros: Highly nurturing and caring, excellent at creating a loving and supportive environment, strong sense of responsibility towards family. Cons: Can be overly protective or controlling, may struggle with self-care, possible tendency towards taking on too much responsibility. Advice: Support each other\'s nurturing qualities while encouraging self-care and independence. Balance family responsibilities with personal well-being.',
-        7: 'Spirituality, introspection, and wisdom. Pros: Highly introspective and wise, excellent at seeking deeper meaning and understanding, strong sense of spirituality. Cons: Can be withdrawn or aloof, may struggle with emotional expression, possible tendency towards overthinking. Advice: Appreciate each other\'s introspective nature and find ways to connect on a deeper level. Encourage open emotional expression and avoid overthinking.',
-        8: 'Power, success, and material achievement. Pros: Highly ambitious and goal-oriented, excellent at achieving success and material wealth, strong leadership qualities. Cons: Can be overly focused on material success, may struggle with work-life balance, possible tendency towards being controlling. Advice: Support each other\'s ambitions while finding ways to balance work and personal life. Emphasize the importance of emotional and relational success alongside material achievements.',
-        9: 'Compassion, humanitarianism, and completion. Pros: Highly compassionate and caring, excellent at seeing the bigger picture and working towards humanitarian goals, strong sense of empathy. Cons: Can be overly idealistic, may struggle with practicality, possible tendency towards neglecting personal needs. Advice: Encourage each other\'s compassionate nature while finding ways to balance idealism with practicality. Ensure personal needs are met alongside humanitarian goals.',
-        11: 'Inspiration, idealism, and intuition. Pros: Highly intuitive and inspirational, excellent at bringing visionary ideas into relationships, strong sense of idealism. Cons: Can be overly idealistic or unrealistic, may struggle with practical implementation, possible tendency towards being overly sensitive. Advice: Embrace each other\'s visionary qualities while finding ways to ground ideas in reality. Balance idealism with practicality and encourage open communication.',
-        22: 'Master builder, large-scale plans, and potential. Pros: Highly capable of achieving large-scale goals, excellent at creating and building substantial projects, strong sense of potential and ambition. Cons: Can be overly focused on grand plans, may struggle with details, possible tendency towards being overly serious. Advice: Support each other\'s grand visions while ensuring attention to detail and balance. Find ways to incorporate joy and relaxation into the pursuit of large-scale goals.',
-        33: 'Master teacher, spiritual uplifting, and compassion. Pros: Highly compassionate and spiritually uplifting, excellent at teaching and guiding others, strong sense of empathy and understanding. Cons: Can be overly self-sacrificing, may struggle with setting boundaries, possible tendency towards neglecting personal needs. Advice: Encourage each other\'s compassionate and teaching qualities while ensuring personal boundaries and self-care. Balance giving to others with taking care of personal well-being.'
+        1: 'Leadership, independence, and individuality. \n - Pros: Strong leadership qualities, highly independent and self-reliant, ambitious and goal-oriented. \n - Cons: Can be domineering or controlling, may struggle with compromise, possible tendency towards selfishness. \n - Advice: Partners need to respect each other\'s independence and create a balance between leading and supporting. Open communication and mutual respect are key.',
+        2: 'Sensitivity, balance, and harmony. \n - Pros: Highly empathetic and understanding, excellent at creating balance and harmony, good at mediating conflicts. \n - Cons: May be overly sensitive or emotional, can be indecisive, may avoid confrontation. \n - Advice: Focus on open and honest communication to prevent misunderstandings. Encourage each other to make decisions confidently and address issues directly.',
+        3: 'Creativity, self-expression, and joy. \n - Pros: Highly creative and expressive, brings joy and enthusiasm into relationships, excellent communication skills. \n - Cons: May be prone to mood swings, can be overly expressive or dramatic, may struggle with responsibility. \n - Advice: Encourage each other\'s creative pursuits and find ways to balance joy with responsibility. Be patient and understanding during emotional ups and downs.',
+        4: 'Stability, order, and responsibility. \n - Pros: Highly reliable and responsible, excellent at creating structure and order, strong sense of duty and commitment. \n - Cons: Can be rigid or inflexible, may struggle with spontaneity, possible tendency towards being overly serious. \n - Advice: Appreciate each other\'s reliability and work together to introduce flexibility and fun into the relationship. Balance structure with spontaneity.',
+        5: 'Freedom, change, and adventure. \n - Pros: Highly adaptable and open to change, brings excitement and adventure into relationships, excellent at embracing new experiences. \n - Cons: May be restless or impulsive, can struggle with commitment, possible tendency towards being unpredictable. \n - Advice: Embrace each other\'s need for freedom and adventure while finding ways to create stability and commitment. Communicate openly about boundaries and expectations.',
+        6: 'Love, family, and responsibility. \n - Pros: Highly nurturing and caring, excellent at creating a loving and supportive environment, strong sense of responsibility towards family. \n - Cons: Can be overly protective or controlling, may struggle with self-care, possible tendency towards taking on too much responsibility. \n - Advice: Support each other\'s nurturing qualities while encouraging self-care and independence. Balance family responsibilities with personal well-being.',
+        7: 'Spirituality, introspection, and wisdom. \n - Pros: Highly introspective and wise, excellent at seeking deeper meaning and understanding, strong sense of spirituality. \n - Cons: Can be withdrawn or aloof, may struggle with emotional expression, possible tendency towards overthinking. \n - Advice: Appreciate each other\'s introspective nature and find ways to connect on a deeper level. Encourage open emotional expression and avoid overthinking.',
+        8: 'Power, success, and material achievement. \n - Pros: Highly ambitious and goal-oriented, excellent at achieving success and material wealth, strong leadership qualities. \n - Cons: Can be overly focused on material success, may struggle with work-life balance, possible tendency towards being controlling. \n - Advice: Support each other\'s ambitions while finding ways to balance work and personal life. Emphasize the importance of emotional and relational success alongside material achievements.',
+        9: 'Compassion, humanitarianism, and completion. \n - Pros: Highly compassionate and caring, excellent at seeing the bigger picture and working towards humanitarian goals, strong sense of empathy. \n - Cons: Can be overly idealistic, may struggle with practicality, possible tendency towards neglecting personal needs. \n - Advice: Encourage each other\'s compassionate nature while finding ways to balance idealism with practicality. Ensure personal needs are met alongside humanitarian goals.',
+        11: 'Inspiration, idealism, and intuition. \n - Pros: Highly intuitive and inspirational, excellent at bringing visionary ideas into relationships, strong sense of idealism. \n - Cons: Can be overly idealistic or unrealistic, may struggle with practical implementation, possible tendency towards being overly sensitive. \n - Advice: Embrace each other\'s visionary qualities while finding ways to ground ideas in reality. Balance idealism with practicality and encourage open communication.',
+        22: 'Master builder, large-scale plans, and potential. \n - Pros: Highly capable of achieving large-scale goals, excellent at creating and building substantial projects, strong sense of potential and ambition. \n - Cons: Can be overly focused on grand plans, may struggle with details, possible tendency towards being overly serious. \n - Advice: Support each other\'s grand visions while ensuring attention to detail and balance. Find ways to incorporate joy and relaxation into the pursuit of large-scale goals.',
+        33: 'Master teacher, spiritual uplifting, and compassion. \n - Pros: Highly compassionate and spiritually uplifting, excellent at teaching and guiding others, strong sense of empathy and understanding. \n - Cons: Can be overly self-sacrificing, may struggle with setting boundaries, possible tendency towards neglecting personal needs. \n - Advice: Encourage each other\'s compassionate and teaching qualities while ensuring personal boundaries and self-care. Balance giving to others with taking care of personal well-being.'
     };    
 
     const relationshipPotential = (num1 + num2) % 9 || 9;

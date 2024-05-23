@@ -91,6 +91,10 @@ function runCmd(command, inMemory, fromInput) {
                 customSort(commandName);
             } else if (commandName === "time") {
                 getTime();
+            } else if (commandName.includes("lovecalculator:")) {
+                const data = commandName.trim().replace(/^lovecalculator:\b\s*/i, '');
+                let [name1, name2] = data.split(',');
+                loveCalculator(name1, name2);
             } else if (commandName.includes("predict:")) {
                 const data = commandName.trim().replace(/^predict:\b\s*/i, '');
                 predictNextNumber(data);
