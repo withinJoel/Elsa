@@ -9,10 +9,10 @@
 * `help` - To get a list of all the supported commands.
 
 # Features
-* `flames:` - To play the famous game for relationship. example: `flames:joel:anna`
+* `flames:` - To play the famous game for relationship. example: `flames:Joel:Anna`
 * `zodiacsign:` - To get the zodiac sign based on the date of birth. example: `zodiacsign:2002-05-11` pattern: YYY-MM-DD
-* `numerology:` - To get the numerology details for 2 people. example: `numerology:joel:2002-05-11:sophia:2003-05-27` pattern: YYYY-MM-DD
-* `lovecalculator:` - To get a love score based on two names. example: `lovecalculator:joel,sana`
+* `numerology:` - To get the numerology details for 2 people. example: `numerology:Joel:2002-05-11:Sophia:2003-05-27` pattern: YYYY-MM-DD
+* `lovecalculator:` - To get a love score based on two names. example: `lovecalculator:Joel,Anna`
 * `guess:` - To guess the word. example: `guess:tac`.
 * `read:` - To read out the input. example: `read:hello world` 
 * `encode:` - To encode data. example: `encode:hola`
