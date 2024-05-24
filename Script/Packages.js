@@ -1350,10 +1350,27 @@ function themeSoft() {
     document.body.style.backgroundColor = userBgColor;
 }
 
-//Echo function
+function outputRepeat (text,count) {
+    // Repeat the text the specified number of times
+    for (let i = 0; i < count; i++) {
+        echo(text);
+    }
+}
+
+//Echo Function
 function echoFunction(input) {
-    const data = input.trim().replace(/^echo:\b\s*/i, ''); // Trim spaces and replace "open"
-    echo(data);
+    // Remove the 'echo:' prefix and trim spaces
+    const data = input.trim().replace(/^echo:\s*/i, '');
+
+    // Extract the text and repetition count using a regular expression
+    const match = data.match(/(.*)\s*\*\s*(\d+)/);
+    if (match) {
+        const text = match[1].trim();
+        const count = parseInt(match[2], 10);
+        outputRepeat (text, count)
+    } else {
+        echo(data);
+    }
 }
 
 //Change Background Color
