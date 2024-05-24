@@ -50,6 +50,9 @@
 * `fortunecookie` - To know the future.
 * `shortstory` - To get a short story.
 
+# Religion
+* `bible:` - To get a bible verse based on the search. example: `bible:joel:2:1-3` (book name - chapter number - verses)
+
 # Detection Functions
 * `detect:face:` - To detect faces in images. example: `detect:face:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:human:` - To detect humans in images. example: `detect:human:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)

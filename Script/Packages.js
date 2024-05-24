@@ -45,8 +45,8 @@ function getInternetData(ip) {
         echo('ISP: ' + data.isp);
         echo('Connection Type: ' + connectionType);
         echo('Connection Speed: ' + downlinkSpeed);
-        echo('Round-trip time (RTT): '+ navigator.connection.rtt); // Estimated round-trip time in milliseconds
-        echo('Save data mode: '+ navigator.connection.saveData);
+        echo('Round-trip time (RTT): ' + navigator.connection.rtt); // Estimated round-trip time in milliseconds
+        echo('Save data mode: ' + navigator.connection.saveData);
     }).catch(err => {
         echo(`There was an error: ${err}`);
     })
@@ -92,7 +92,7 @@ function getSys() {
 
 //Version
 function Version() {
-    echo("Elsa [Version "+currentVersion+']');
+    echo("Elsa [Version " + currentVersion + ']');
     echo('Made with love by Joel Jessie Jolly.');
 }
 
@@ -116,6 +116,55 @@ function getUpdate() {
         const audio = new Audio('Effects/Wrong Input.mp3');
         audio.play();
         echo("Error fetching updates.")
+    }
+}
+
+//Bible
+function Bible(input) {
+    const bibleBooks = [
+        "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth", "1 Samuel",
+        "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther", "Job",
+        "Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah", "Lamentations", "Ezekiel",
+        "Daniel", "Hosea", "Joel", "Amos", "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai",
+        "Zechariah", "Malachi", "Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians",
+        "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy",
+        "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John",
+        "Jude", "Revelation"
+    ];
+
+    // Split input to get the book name, chapter, and verse range
+    let [bookName, chapter, verseRange] = input.split(':');
+    
+    // Capitalize the book name
+    bookName = bookName.charAt(0).toUpperCase() + bookName.slice(1).toLowerCase();
+
+    // Find the index of the book name in the Bible books array
+    const bookIndex = bibleBooks.indexOf(bookName);
+    
+    // If the book name is found, calculate the book number and retrieve the verses
+    if (bookIndex !== -1) {
+        const bookNumber = bookIndex + 1;
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(bible, 'text/xml');
+        const verses = [];
+
+        const [startVerse, endVerse] = verseRange.includes('-') ? verseRange.split('-').map(Number) : [parseInt(verseRange), parseInt(verseRange)];
+        const versesNodeList = xmlDoc.querySelectorAll(`book[number='${bookNumber}'] chapter[number='${chapter}'] verse[number]`);
+        
+        for (const verseNode of versesNodeList) {
+            const verseNumber = parseInt(verseNode.getAttribute('number'));
+            if (verseNumber >= startVerse && verseNumber <= endVerse) {
+                verses.push(`Verse ${verseNumber}: ${verseNode.textContent.trim()}`);
+            }
+        }
+
+        if (verses.length > 0) {
+            echo(verses.join('\n'));
+        } else {
+            echo(`No verses found for the specified range in ${bookName} chapter ${chapter}.`);
+        }
+    } else {
+        echo(`${bookName} is not a valid book name in the Bible.`);
     }
 }
 
@@ -1060,15 +1109,15 @@ function loveCalculator(name1, name2) {
         7: 'You are not a good match. Emotional expression may be a challenge. Cultivating emotional intelligence and empathy can deepen your connection.',
         8: 'You are not a good match. Material success might overshadow emotional needs. Balancing material goals with emotional fulfillment is essential for your happiness.',
         9: 'You are a good match! Your relationship focuses on compassion and the greater good. Supporting each other’s dreams and values strengthens your bond.'
-    };    
+    };
 
     let goodScores = [2, 6, 9]; // Adjust this array based on your preferences for "good" scores
     let message = goodScores.includes(compatibilityScore)
         ? `Good compatibility: ${compatibilityMessages[compatibilityScore]}`
         : `Poor compatibility: ${compatibilityMessages[compatibilityScore]}`;
 
-        echo ('Score: '+compatibilityScore);
-        echo ('Prediction: '+ message);
+    echo('Score: ' + compatibilityScore);
+    echo('Prediction: ' + message);
 }
 
 //Numerlogy
@@ -1082,7 +1131,7 @@ function processNumerologyInput(input) {
 
     // Extract input values
     const [name1, dob1, name2, dob2] = input.split(':').map((s, i) => i % 2 === 0 ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : s);
-    
+
     if (!name1 || !dob1 || !name2 || !dob2) {
         const audio = new Audio('Effects/Wrong Input.mp3');
         audio.play();
@@ -1152,7 +1201,7 @@ function processNumerologyInput(input) {
         11: 'Inspiration, idealism, and intuition. \n - Pros: Highly intuitive and inspirational, excellent at bringing visionary ideas into relationships, strong sense of idealism. \n - Cons: Can be overly idealistic or unrealistic, may struggle with practical implementation, possible tendency towards being overly sensitive. \n - Advice: Embrace each other\'s visionary qualities while finding ways to ground ideas in reality. Balance idealism with practicality and encourage open communication.',
         22: 'Master builder, large-scale plans, and potential. \n - Pros: Highly capable of achieving large-scale goals, excellent at creating and building substantial projects, strong sense of potential and ambition. \n - Cons: Can be overly focused on grand plans, may struggle with details, possible tendency towards being overly serious. \n - Advice: Support each other\'s grand visions while ensuring attention to detail and balance. Find ways to incorporate joy and relaxation into the pursuit of large-scale goals.',
         33: 'Master teacher, spiritual uplifting, and compassion. \n - Pros: Highly compassionate and spiritually uplifting, excellent at teaching and guiding others, strong sense of empathy and understanding. \n - Cons: Can be overly self-sacrificing, may struggle with setting boundaries, possible tendency towards neglecting personal needs. \n - Advice: Encourage each other\'s compassionate and teaching qualities while ensuring personal boundaries and self-care. Balance giving to others with taking care of personal well-being.'
-    };    
+    };
 
     const relationshipPotential = (num1 + num2) % 9 || 9;
 
@@ -1350,7 +1399,7 @@ function themeSoft() {
     document.body.style.backgroundColor = userBgColor;
 }
 
-function outputRepeat (text,count) {
+function outputRepeat(text, count) {
     // Repeat the text the specified number of times
     for (let i = 0; i < count; i++) {
         echo(text);
@@ -1367,7 +1416,7 @@ function echoFunction(input) {
     if (match) {
         const text = match[1].trim();
         const count = parseInt(match[2], 10);
-        outputRepeat (text, count)
+        outputRepeat(text, count)
     } else {
         echo(data);
     }
