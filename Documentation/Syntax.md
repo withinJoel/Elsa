@@ -6,6 +6,7 @@
 * `echo:` - To display something on the terminal. example: `echo:I am Joel.`
     * `echo:` - To display the output n number of times. example: `echo: I am Joel *11`
 * `ver` or `version` - To display the version of the Web shell
+* `config` - To get the configuration information.
 * `developer` or `dev` - To know about the developer.
 * `help` - To get a list of all the supported commands.
 
@@ -63,6 +64,7 @@
 
 # Random Functions
 * `random:religion` - To get a random religion.
+* `random:biblebook` - To get a random bible book.
 * `random:programminglanguage` - To get a random programming language.
 * `random:os` or `random:operatingsystem` - To get a random operating system.
 * `random:alphabet` - To get a random alphabet.

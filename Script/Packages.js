@@ -52,6 +52,156 @@ function getInternetData(ip) {
     })
 }
 
+//Config
+function getConfig() {
+    // Check if the browser's developer tools are open
+    let devToolsOpen = false;
+    const threshold = 160;
+
+    const devToolsCheck = () => {
+        if (window.outerWidth - window.innerWidth > threshold || 
+            window.outerHeight - window.innerHeight > threshold) {
+            devToolsOpen = true;
+        } else {
+            devToolsOpen = false;
+        }
+    };
+
+    // Initial check
+    devToolsCheck();
+
+    // Monitor resizing to check for dev tools being opened/closed
+    window.addEventListener('resize', devToolsCheck);
+
+    // Check for specific browser features and log to console
+    const featuresEnabled = {
+        cookies: navigator.cookieEnabled,
+        localStorage: typeof localStorage !== 'undefined',
+        sessionStorage: typeof sessionStorage !== 'undefined',
+        serviceWorkers: 'serviceWorker' in navigator,
+        indexedDB: 'indexedDB' in window,
+        geolocation: 'geolocation' in navigator,
+        notifications: 'Notification' in window,
+        webGL: (() => {
+            try {
+                const canvas = document.createElement('canvas');
+                return !!(window.WebGLRenderingContext && 
+                          (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+            } catch (e) {
+                return false;
+            }
+        })(),
+        mediaDevices: 'mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices,
+        online: navigator.onLine,
+        fullscreen: document.fullscreenEnabled,
+        webAssembly: 'WebAssembly' in window,
+        touchEvents: 'ontouchstart' in window || navigator.maxTouchPoints > 0,
+        battery: 'getBattery' in navigator,
+        webRTC: 'RTCPeerConnection' in window,
+        speechRecognition: 'webkitSpeechRecognition' in window || 'SpeechRecognition' in window,
+        deviceMemory: navigator.deviceMemory || 'unknown',
+        bluetooth: 'bluetooth' in navigator,
+        clipboard: 'clipboard' in navigator,
+        webSockets: 'WebSocket' in window,
+        vibration: 'vibrate' in navigator,
+        paymentRequest: 'PaymentRequest' in window,
+        webShare: 'share' in navigator,
+        pointerLock: 'pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document,
+        screenOrientation: 'screen' in window && 'orientation' in window.screen,
+        gamepad: 'getGamepads' in navigator,
+        webAudio: 'AudioContext' in window || 'webkitAudioContext' in window,
+        beacon: 'sendBeacon' in navigator,
+        fetch: 'fetch' in window,
+        history: 'history' in window && 'pushState' in window.history,
+        url: 'URL' in window,
+        fileAPI: 'FileReader' in window && 'Blob' in window && 'File' in window,
+        dragAndDrop: 'draggable' in document.createElement('span'),
+        webNotifications: 'Notification' in window,
+        performance: 'performance' in window && 'now' in window.performance,
+        visualViewport: 'visualViewport' in window,
+        domParsing: 'DOMParser' in window && 'XMLSerializer' in window,
+        webVR: 'getVRDisplays' in navigator,
+        webXR: 'xr' in navigator,
+        speechSynthesis: 'speechSynthesis' in window,
+        nfc: 'nfc' in navigator,
+        magnetometer: 'Magnetometer' in window,
+        gyroscope: 'Gyroscope' in window,
+        accelerometer: 'Accelerometer' in window,
+        ambientLightSensor: 'AmbientLightSensor' in window,
+        proximitySensor: 'ProximitySensor' in window,
+        orientationSensor: 'AbsoluteOrientationSensor' in window || 'RelativeOrientationSensor' in window,
+        presentation: 'presentation' in navigator,
+        backgroundSync: 'sync' in navigator.serviceWorker,
+        credentialManagement: 'credentials' in navigator,
+        networkInformation: 'connection' in navigator,
+        webAuthentication: 'PublicKeyCredential' in window,
+        webMIDI: 'requestMIDIAccess' in navigator,
+        webCrypto: 'crypto' in window && 'subtle' in window.crypto,
+        permissions: 'permissions' in navigator,
+        storage: 'storage' in navigator,
+        textEncoder: 'TextEncoder' in window && 'TextDecoder' in window
+    };
+
+    // Log each feature status to the console
+   echo('Cookies enabled:'+ featuresEnabled.cookies);
+   echo('Local Storage available:'+ featuresEnabled.localStorage);
+   echo('Session Storage available:'+ featuresEnabled.sessionStorage);
+   echo('Service Workers available:'+ featuresEnabled.serviceWorkers);
+   echo('IndexedDB available:'+ featuresEnabled.indexedDB);
+   echo('Geolocation available:'+ featuresEnabled.geolocation);
+   echo('Notifications available:'+ featuresEnabled.notifications);
+   echo('WebGL available:'+ featuresEnabled.webGL);
+   echo('Media Devices available:'+ featuresEnabled.mediaDevices);
+   echo('Online status:'+ featuresEnabled.online);
+   echo('Fullscreen enabled:'+ featuresEnabled.fullscreen);
+   echo('WebAssembly support:'+ featuresEnabled.webAssembly);
+   echo('Touch Events support:'+ featuresEnabled.touchEvents);
+   echo('Battery support:'+ featuresEnabled.battery);
+   echo('WebRTC support:'+ featuresEnabled.webRTC);
+   echo('Speech Recognition support:'+ featuresEnabled.speechRecognition);
+   echo('Device Memory:'+ featuresEnabled.deviceMemory);
+   echo('Bluetooth support:'+ featuresEnabled.bluetooth);
+   echo('Clipboard API support:'+ featuresEnabled.clipboard);
+   echo('WebSockets support:'+ featuresEnabled.webSockets);
+   echo('Vibration API support:'+ featuresEnabled.vibration);
+   echo('Payment Request API support:'+ featuresEnabled.paymentRequest);
+   echo('Web Share API support:'+ featuresEnabled.webShare);
+   echo('Pointer Lock API support:'+ featuresEnabled.pointerLock);
+   echo('Screen Orientation API support:'+ featuresEnabled.screenOrientation);
+   echo('Gamepad API support:'+ featuresEnabled.gamepad);
+   echo('Web Audio API support:'+ featuresEnabled.webAudio);
+   echo('Beacon API support:'+ featuresEnabled.beacon);
+   echo('Fetch API support:'+ featuresEnabled.fetch);
+   echo('History API support:'+ featuresEnabled.history);
+   echo('URL API support:'+ featuresEnabled.url);
+   echo('File API support:'+ featuresEnabled.fileAPI);
+   echo('Drag and Drop API support:'+ featuresEnabled.dragAndDrop);
+   echo('Web Notifications support:'+ featuresEnabled.webNotifications);
+   echo('Performance API support:'+ featuresEnabled.performance);
+   echo('Visual Viewport API support:'+ featuresEnabled.visualViewport);
+   echo('DOM Parsing and Serialization API support:'+ featuresEnabled.domParsing);
+   echo('WebVR API support:'+ featuresEnabled.webVR);
+   echo('WebXR API support:'+ featuresEnabled.webXR);
+   echo('Speech Synthesis support:'+ featuresEnabled.speechSynthesis);
+   echo('NFC support:'+ featuresEnabled.nfc);
+   echo('Magnetometer support:'+ featuresEnabled.magnetometer);
+   echo('Gyroscope support:'+ featuresEnabled.gyroscope);
+   echo('Accelerometer support:'+ featuresEnabled.accelerometer);
+   echo('Ambient Light Sensor support:'+ featuresEnabled.ambientLightSensor);
+   echo('Proximity Sensor support:'+ featuresEnabled.proximitySensor);
+   echo('Orientation Sensor support:'+ featuresEnabled.orientationSensor);
+   echo('Presentation API support:'+ featuresEnabled.presentation);
+   echo('Background Sync API support:'+ featuresEnabled.backgroundSync);
+   echo('Credential Management API support:'+ featuresEnabled.credentialManagement);
+   echo('Network Information API support:'+ featuresEnabled.networkInformation);
+   echo('Web Authentication API support:'+ featuresEnabled.webAuthentication);
+   echo('Web MIDI API support:'+ featuresEnabled.webMIDI);
+   echo('Web Crypto API support:'+ featuresEnabled.webCrypto);
+   echo('Permissions API support:'+ featuresEnabled.permissions);
+   echo('Storage API support:'+ featuresEnabled.storage);
+   echo('TextEncoder and TextDecoder support:'+ featuresEnabled.textEncoder);
+}
+
 //System
 function getSys() {
     const now = new Date();
@@ -121,17 +271,6 @@ function getUpdate() {
 
 //Bible
 function Bible(input) {
-    const bibleBooks = [
-        "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth", "1 Samuel",
-        "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther", "Job",
-        "Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah", "Lamentations", "Ezekiel",
-        "Daniel", "Hosea", "Joel", "Amos", "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai",
-        "Zechariah", "Malachi", "Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians",
-        "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy",
-        "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John",
-        "Jude", "Revelation"
-    ];
-
     // Split input to get the book name, chapter, and verse range
     let [bookName, chapter, verseRange] = input.split(':');
     
@@ -2298,6 +2437,14 @@ function getRandomFemaleName() {
     const randomFeminineName = femininenames[randomIndex];
     const capitalizedFemininename = randomFeminineName.charAt(0).toUpperCase() + randomFeminineName.slice(1);
     echo(capitalizedFemininename);
+}
+
+//Random Bible Book
+function getRandomBibleBook () {
+    const randomIndex = Math.floor(Math.random() * bibleBooks.length);
+    const randombibleBook = bibleBooks[randomIndex];
+    const capitalizedbibleBook = randombibleBook.charAt(0).toUpperCase() + randombibleBook.slice(1);
+    echo(capitalizedbibleBook);
 }
 
 //Random Male Clothing

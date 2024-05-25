@@ -29,6 +29,8 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName === "easteregg") {
                 const url = 'Additional/Easter Egg.html';
                 window.open(url, '_blank');
+            } else if (commandName === "config") {
+                getConfig();
             } else if (commandName === "update") {
                 getUpdate();
             } else if (commandName === "cpuinfo") {
@@ -355,6 +357,8 @@ function runCmd(command, inMemory, fromInput) {
                 getMousePosition();
             } else if (commandName === "devicetype") {
                 getDeviceType();
+            } else if (commandName === "random:biblebook") {
+                getRandomBibleBook();
             } else if (commandName === "random:religion") {
                 getRandomReligion();
             } else if (commandName === "random:number") {
