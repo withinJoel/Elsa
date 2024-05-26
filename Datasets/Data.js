@@ -643,6 +643,27 @@ let fruits = ["apple", "apricot", "avocado", "acerola",
 	"watermelon",
 	"yellow watermelon"];
 
+let sexPositions = [
+	"Missionary", "Doggy Style", "Cowgirl", "Reverse Cowgirl", "Spooning", "Standing", "Lotus", "Scissors", "69", "Lap Dance",
+	"Bridge", "Butterfly", "Wheelbarrow", "Corkscrew", "Magic Mountain", "Cross", "Pretzel Dip", "Face-Off", "Side-by-Side", "Chair",
+	"Flatiron", "The Hook", "G-Whiz", "The Toad", "T-Bone", "Scoop Me Up", "Deep Stick", "Yab Yum", "Chairman", "The Seated Swan",
+	"The Ballet Dancer", "The Reverse Scoop", "The Erotic V", "The Pretzel", "The Clasp", "The Waterfall", "The Crisscross", "The Amazon", "The Snake", "The Octopus",
+	"The Cowgirl's Helper", "The Bumper Cars", "The Spider", "The Crossed Keys", "The Lean", "The Champ", "The Lovers' Knot", "The Peg", "The Embrace", "The Slide",
+	"The Twister", "The Magic Bullet", "The Anvil", "The Golden Gate", "The Edge", "The Arch", "The Pole Position", "The Rowboat", "The Dolphin", "The Spork",
+	"The Viennese Oyster", "The X Marks the Spot", "The Glide", "The Clam", "The Deck Chair", "The Melting Ice Cream", "The Kneeling Thrust", "The Sling", "The Galloping Horse", "The Arc",
+	"The Face Hug", "The Bandoleer", "The Thigh High", "The Crossover", "The Twine", "The Long Haul", "The Propeller", "The Diamond", "The Cradle", "The Crab",
+	"The Windmill", "The Twirl", "The Mermaid", "The Helicopter", "The Rocking Horse", "The Swirl", "The Stirrup", "The Goblet", "The Whirligig", "The Charmer",
+	"The Pendulum", "The Pivot", "The Spinner", "The Toggle", "The Rocket", "The Lotus Blossom", "The Reverse Lotus", "The Triangle", "The Altar", "The Prop",
+	"The Archway", "The Clip", "The Ramp", "The Ballerina", "The Hammer", "The Bounce", "The Plow", "The Frog", "The Elevator", "The Stallion",
+	"The Rollercoaster", "The Wheel", "The Kite", "The Curve", "The Capsule", "The Buckle", "The Shield", "The Whirlwind", "The Rider's Seat", "The Spiral",
+	"The Fanblade", "The Parachute", "The Sling Shot", "The Tilt", "The Diver", "The Cliffhanger", "The Switch", "The Loop", "The Fusion", "The Horizon",
+	"The Rover", "The Bounceback", "The Wedge", "The Throne", "The Whirler", "The Axis", "The Rotor", "The Plunge", "The Soar", "The Tangle",
+	"The Grip", "The Hold", "The Seize", "The Grasp", "The Hug", "The Clinch", "The Clench", "The Cat", "The Bow", "The Phoenix",
+	"The Crossroads", "The Ascender", "The Mount", "The Pinnacle", "The Ridge", "The Summit", "The Crest", "The Peak", "The Tidal Wave", "The Surge",
+	"The Ripple", "The Cascade", "The Tsunami", "The Vortex", "The Tornado", "The Hurricane", "The Whirlpool", "The Firestarter", "The Blaze", "The Inferno",
+	"The Flare", "The Ember"
+];
+
 let colors = ["azure", "aqua", "amber", "amethyst", "apple green",
 	"black", "blue", "brown", "beige", "burgundy",
 	"crimson", "coral", "cyan", "chartreuse", "chocolate",

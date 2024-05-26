@@ -2517,6 +2517,14 @@ function getRandomFlower() {
     echo(capitalizedFlower);
 }
 
+// Random Sex Position
+function getRandomSexPosition() {
+    const randomIndex = Math.floor(Math.random() * sexPositions.length);
+    const randomsexPositions = sexPositions[randomIndex];
+    const capitalizedsexPositions = randomsexPositions.charAt(0).toUpperCase() + randomsexPositions.slice(1);
+    echo(capitalizedsexPositions);
+}
+
 // Short Adult Story
 function getAdultStory() {
     const randomIndex = Math.floor(Math.random() * eroticstories.length);

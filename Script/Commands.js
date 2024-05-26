@@ -446,6 +446,8 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomAsianCountry();
             } else if (commandName === "random:zodiacsign") {
                 getRandomZodiacSign();
+            } else if (commandName === "random:sexposition") {
+                getRandomSexPosition();
             } else if (commandName === "fortunecookie") {
                 getFortuneCookie();
             } else if ((commandName === "adultstory") || (commandName === "eroticstory")) {

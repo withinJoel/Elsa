@@ -8,8 +8,8 @@ function handleFileDrop(event) {
         if (existingDynamicElement) {
             existingDynamicElement.remove();
         }
-        
-        if (file.type === 'application/pdf' || file.type === 'text/plain') {
+
+        if (file.type === 'application.pdf' || file.type === 'text/plain') {
             const reader = new FileReader();
             reader.onload = function(e) {
                 if (file.type === 'application/pdf') {
@@ -21,32 +21,28 @@ function handleFileDrop(event) {
             };
             reader.readAsText(file);
         } else {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const imgElement = document.createElement(file.type.startsWith('video/') ? 'video' : 'img');
-                if (file.type.startsWith('video/')) {
-                    imgElement.src = URL.createObjectURL(file);
-                    imgElement.setAttribute('controls', true);
-                } else {
-                    imgElement.src = e.target.result;
-                }
-                imgElement.style.position = 'fixed';
-                imgElement.style.top = '15px';
-                imgElement.style.right = '30px';
-                imgElement.style.maxWidth = '500px';
-                imgElement.style.maxHeight = '500px';
-                imgElement.setAttribute('data-role', 'dynamic-dragged');
-                
-                document.body.appendChild(imgElement);
-            };
-            if (file.type.startsWith('image/')) {
-                reader.readAsDataURL(file);
-            } else if (file.type.startsWith('video/')) {
-                reader.readAsArrayBuffer(file);
+            const url = URL.createObjectURL(file);
+            const mediaElement = document.createElement(file.type.startsWith('video/') ? 'video' : 'img');
+
+            if (file.type.startsWith('video/')) {
+                mediaElement.src = url;
+                mediaElement.setAttribute('controls', true);
+                mediaElement.setAttribute('data-role', 'dynamic-video');
+            } else {
+                mediaElement.src = url;
+                mediaElement.setAttribute('data-role', 'dynamic-image');
             }
+
+            mediaElement.style.position = 'fixed';
+            mediaElement.style.top = '15px';
+            mediaElement.style.right = '30px';
+            mediaElement.style.maxWidth = '500px';
+            mediaElement.style.maxHeight = '500px';
+
+            document.body.appendChild(mediaElement);
         }
     } else {
-        alert('Unsupported file type. Please upload an Image or a Video or a PDF or a Text file.');
+        alert('Unsupported file type. Please upload an Image, a Video, a PDF, or a Text file.');
     }
 }
 

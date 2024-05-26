@@ -91,6 +91,7 @@
 * `random:fooditem` - To get a random food item.
 * `random:profession` - To get a random profession.
 * `random:festival` - To get a random festivals.
+* `random:sexposition` - To get a random sex position.
 * `random:name` - To get a random name.
 * `random:malename` or `random:masculinename` - To get a random male name.
 * `random:femalename` or `random:femininename` - To get a random female name.
