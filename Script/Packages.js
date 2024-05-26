@@ -59,7 +59,7 @@ function getConfig() {
     const threshold = 160;
 
     const devToolsCheck = () => {
-        if (window.outerWidth - window.innerWidth > threshold || 
+        if (window.outerWidth - window.innerWidth > threshold ||
             window.outerHeight - window.innerHeight > threshold) {
             devToolsOpen = true;
         } else {
@@ -85,8 +85,8 @@ function getConfig() {
         webGL: (() => {
             try {
                 const canvas = document.createElement('canvas');
-                return !!(window.WebGLRenderingContext && 
-                          (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+                return !!(window.WebGLRenderingContext &&
+                    (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
             } catch (e) {
                 return false;
             }
@@ -143,63 +143,63 @@ function getConfig() {
     };
 
     // Log each feature status to the console
-   echo('Cookies enabled:'+ featuresEnabled.cookies);
-   echo('Local Storage available:'+ featuresEnabled.localStorage);
-   echo('Session Storage available:'+ featuresEnabled.sessionStorage);
-   echo('Service Workers available:'+ featuresEnabled.serviceWorkers);
-   echo('IndexedDB available:'+ featuresEnabled.indexedDB);
-   echo('Geolocation available:'+ featuresEnabled.geolocation);
-   echo('Notifications available:'+ featuresEnabled.notifications);
-   echo('WebGL available:'+ featuresEnabled.webGL);
-   echo('Media Devices available:'+ featuresEnabled.mediaDevices);
-   echo('Online status:'+ featuresEnabled.online);
-   echo('Fullscreen enabled:'+ featuresEnabled.fullscreen);
-   echo('WebAssembly support:'+ featuresEnabled.webAssembly);
-   echo('Touch Events support:'+ featuresEnabled.touchEvents);
-   echo('Battery support:'+ featuresEnabled.battery);
-   echo('WebRTC support:'+ featuresEnabled.webRTC);
-   echo('Speech Recognition support:'+ featuresEnabled.speechRecognition);
-   echo('Device Memory:'+ featuresEnabled.deviceMemory);
-   echo('Bluetooth support:'+ featuresEnabled.bluetooth);
-   echo('Clipboard API support:'+ featuresEnabled.clipboard);
-   echo('WebSockets support:'+ featuresEnabled.webSockets);
-   echo('Vibration API support:'+ featuresEnabled.vibration);
-   echo('Payment Request API support:'+ featuresEnabled.paymentRequest);
-   echo('Web Share API support:'+ featuresEnabled.webShare);
-   echo('Pointer Lock API support:'+ featuresEnabled.pointerLock);
-   echo('Screen Orientation API support:'+ featuresEnabled.screenOrientation);
-   echo('Gamepad API support:'+ featuresEnabled.gamepad);
-   echo('Web Audio API support:'+ featuresEnabled.webAudio);
-   echo('Beacon API support:'+ featuresEnabled.beacon);
-   echo('Fetch API support:'+ featuresEnabled.fetch);
-   echo('History API support:'+ featuresEnabled.history);
-   echo('URL API support:'+ featuresEnabled.url);
-   echo('File API support:'+ featuresEnabled.fileAPI);
-   echo('Drag and Drop API support:'+ featuresEnabled.dragAndDrop);
-   echo('Web Notifications support:'+ featuresEnabled.webNotifications);
-   echo('Performance API support:'+ featuresEnabled.performance);
-   echo('Visual Viewport API support:'+ featuresEnabled.visualViewport);
-   echo('DOM Parsing and Serialization API support:'+ featuresEnabled.domParsing);
-   echo('WebVR API support:'+ featuresEnabled.webVR);
-   echo('WebXR API support:'+ featuresEnabled.webXR);
-   echo('Speech Synthesis support:'+ featuresEnabled.speechSynthesis);
-   echo('NFC support:'+ featuresEnabled.nfc);
-   echo('Magnetometer support:'+ featuresEnabled.magnetometer);
-   echo('Gyroscope support:'+ featuresEnabled.gyroscope);
-   echo('Accelerometer support:'+ featuresEnabled.accelerometer);
-   echo('Ambient Light Sensor support:'+ featuresEnabled.ambientLightSensor);
-   echo('Proximity Sensor support:'+ featuresEnabled.proximitySensor);
-   echo('Orientation Sensor support:'+ featuresEnabled.orientationSensor);
-   echo('Presentation API support:'+ featuresEnabled.presentation);
-   echo('Background Sync API support:'+ featuresEnabled.backgroundSync);
-   echo('Credential Management API support:'+ featuresEnabled.credentialManagement);
-   echo('Network Information API support:'+ featuresEnabled.networkInformation);
-   echo('Web Authentication API support:'+ featuresEnabled.webAuthentication);
-   echo('Web MIDI API support:'+ featuresEnabled.webMIDI);
-   echo('Web Crypto API support:'+ featuresEnabled.webCrypto);
-   echo('Permissions API support:'+ featuresEnabled.permissions);
-   echo('Storage API support:'+ featuresEnabled.storage);
-   echo('TextEncoder and TextDecoder support:'+ featuresEnabled.textEncoder);
+    echo('Cookies enabled:' + featuresEnabled.cookies);
+    echo('Local Storage available:' + featuresEnabled.localStorage);
+    echo('Session Storage available:' + featuresEnabled.sessionStorage);
+    echo('Service Workers available:' + featuresEnabled.serviceWorkers);
+    echo('IndexedDB available:' + featuresEnabled.indexedDB);
+    echo('Geolocation available:' + featuresEnabled.geolocation);
+    echo('Notifications available:' + featuresEnabled.notifications);
+    echo('WebGL available:' + featuresEnabled.webGL);
+    echo('Media Devices available:' + featuresEnabled.mediaDevices);
+    echo('Online status:' + featuresEnabled.online);
+    echo('Fullscreen enabled:' + featuresEnabled.fullscreen);
+    echo('WebAssembly support:' + featuresEnabled.webAssembly);
+    echo('Touch Events support:' + featuresEnabled.touchEvents);
+    echo('Battery support:' + featuresEnabled.battery);
+    echo('WebRTC support:' + featuresEnabled.webRTC);
+    echo('Speech Recognition support:' + featuresEnabled.speechRecognition);
+    echo('Device Memory:' + featuresEnabled.deviceMemory);
+    echo('Bluetooth support:' + featuresEnabled.bluetooth);
+    echo('Clipboard API support:' + featuresEnabled.clipboard);
+    echo('WebSockets support:' + featuresEnabled.webSockets);
+    echo('Vibration API support:' + featuresEnabled.vibration);
+    echo('Payment Request API support:' + featuresEnabled.paymentRequest);
+    echo('Web Share API support:' + featuresEnabled.webShare);
+    echo('Pointer Lock API support:' + featuresEnabled.pointerLock);
+    echo('Screen Orientation API support:' + featuresEnabled.screenOrientation);
+    echo('Gamepad API support:' + featuresEnabled.gamepad);
+    echo('Web Audio API support:' + featuresEnabled.webAudio);
+    echo('Beacon API support:' + featuresEnabled.beacon);
+    echo('Fetch API support:' + featuresEnabled.fetch);
+    echo('History API support:' + featuresEnabled.history);
+    echo('URL API support:' + featuresEnabled.url);
+    echo('File API support:' + featuresEnabled.fileAPI);
+    echo('Drag and Drop API support:' + featuresEnabled.dragAndDrop);
+    echo('Web Notifications support:' + featuresEnabled.webNotifications);
+    echo('Performance API support:' + featuresEnabled.performance);
+    echo('Visual Viewport API support:' + featuresEnabled.visualViewport);
+    echo('DOM Parsing and Serialization API support:' + featuresEnabled.domParsing);
+    echo('WebVR API support:' + featuresEnabled.webVR);
+    echo('WebXR API support:' + featuresEnabled.webXR);
+    echo('Speech Synthesis support:' + featuresEnabled.speechSynthesis);
+    echo('NFC support:' + featuresEnabled.nfc);
+    echo('Magnetometer support:' + featuresEnabled.magnetometer);
+    echo('Gyroscope support:' + featuresEnabled.gyroscope);
+    echo('Accelerometer support:' + featuresEnabled.accelerometer);
+    echo('Ambient Light Sensor support:' + featuresEnabled.ambientLightSensor);
+    echo('Proximity Sensor support:' + featuresEnabled.proximitySensor);
+    echo('Orientation Sensor support:' + featuresEnabled.orientationSensor);
+    echo('Presentation API support:' + featuresEnabled.presentation);
+    echo('Background Sync API support:' + featuresEnabled.backgroundSync);
+    echo('Credential Management API support:' + featuresEnabled.credentialManagement);
+    echo('Network Information API support:' + featuresEnabled.networkInformation);
+    echo('Web Authentication API support:' + featuresEnabled.webAuthentication);
+    echo('Web MIDI API support:' + featuresEnabled.webMIDI);
+    echo('Web Crypto API support:' + featuresEnabled.webCrypto);
+    echo('Permissions API support:' + featuresEnabled.permissions);
+    echo('Storage API support:' + featuresEnabled.storage);
+    echo('TextEncoder and TextDecoder support:' + featuresEnabled.textEncoder);
 }
 
 //System
@@ -273,13 +273,13 @@ function getUpdate() {
 function Bible(input) {
     // Split input to get the book name, chapter, and verse range
     let [bookName, chapter, verseRange] = input.split(':');
-    
+
     // Capitalize the book name
     bookName = bookName.charAt(0).toUpperCase() + bookName.slice(1).toLowerCase();
 
     // Find the index of the book name in the Bible books array
     const bookIndex = bibleBooks.indexOf(bookName);
-    
+
     // If the book name is found, calculate the book number and retrieve the verses
     if (bookIndex !== -1) {
         const bookNumber = bookIndex + 1;
@@ -289,7 +289,7 @@ function Bible(input) {
 
         const [startVerse, endVerse] = verseRange.includes('-') ? verseRange.split('-').map(Number) : [parseInt(verseRange), parseInt(verseRange)];
         const versesNodeList = xmlDoc.querySelectorAll(`book[number='${bookNumber}'] chapter[number='${chapter}'] verse[number]`);
-        
+
         for (const verseNode of versesNodeList) {
             const verseNumber = parseInt(verseNode.getAttribute('number'));
             if (verseNumber >= startVerse && verseNumber <= endVerse) {
@@ -363,6 +363,234 @@ function getGPUInfo() {
     echo('Maximum CubeMap Texture Size: ' + maxCubeMapSize);
     echo('Maximum RenderBuffer Size: ' + maxRenderBufferSize);
     echo('Maximum Viewport Dimensions: ' + maxViewportDims[0] + 'x' + maxViewportDims[1]);
+}
+
+//Download Video
+function downloadVideo(url) {
+    link = `https://www.savethevideo.com/downloader?url=` + url;
+    echo(link);
+    window.open(link, '_blank');
+}
+
+//Upscale Video
+async function upscaleVideo(data) {
+    const videoPath = videodir + data;
+
+    // Create and configure the video element
+    const vidElement = document.createElement('video');
+    vidElement.style.position = 'fixed';
+    vidElement.style.top = '15px';
+    vidElement.style.right = '30px';
+    vidElement.style.maxWidth = '500px';
+    vidElement.style.maxHeight = '500px';
+    vidElement.controls = true;
+    vidElement.src = videoPath;
+    document.body.appendChild(vidElement);
+
+    await new Promise((resolve) => {
+        vidElement.onloadedmetadata = resolve;
+    });
+
+    console.log('Video metadata loaded');
+
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) {
+        console.error('WebGL is not supported.');
+        return;
+    }
+
+    canvas.width = vidElement.videoWidth;
+    canvas.height = vidElement.videoHeight;
+
+    const upscaledCanvas = document.createElement('canvas');
+    const upscaledContext = upscaledCanvas.getContext('2d');
+    upscaledCanvas.width = vidElement.videoWidth * 2;  // Example upscaling factor
+    upscaledCanvas.height = vidElement.videoHeight * 2;
+
+    const vertexShaderSource = `
+            attribute vec4 a_position;
+            attribute vec2 a_texCoord;
+            varying vec2 v_texCoord;
+            void main() {
+                gl_Position = a_position;
+                v_texCoord = a_texCoord;
+            }
+        `;
+
+    const fragmentShaderSource = `
+            precision mediump float;
+            varying vec2 v_texCoord;
+            uniform sampler2D u_image;
+            uniform vec2 u_textureSize;
+    
+            vec4 bicubic(vec2 texCoords) {
+                vec2 texCoord = texCoords * u_textureSize - 0.5;
+                vec2 fxy = fract(texCoord);
+                texCoord -= fxy;
+                vec2 fxy2 = fxy * fxy;
+                vec2 fxy3 = fxy2 * fxy;
+                vec4 xc[4];
+                for (int i = 0; i < 4; i++) {
+                    float x = texCoord.x + float(i - 1);
+                    xc[i] = mix(
+                        mix(texture2D(u_image, (vec2(x, texCoord.y - 1.0) + 0.5) / u_textureSize), texture2D(u_image, (vec2(x, texCoord.y) + 0.5) / u_textureSize), fxy.y),
+                        mix(texture2D(u_image, (vec2(x, texCoord.y + 1.0) + 0.5) / u_textureSize), texture2D(u_image, (vec2(x, texCoord.y + 2.0) + 0.5) / u_textureSize), fxy.y),
+                        fxy.y);
+                }
+                vec4 col = mix(mix(xc[0], xc[1], fxy.x), mix(xc[2], xc[3], fxy.x), fxy.x);
+                return col;
+            }
+    
+            void main() {
+                gl_FragColor = bicubic(v_texCoord);
+            }
+        `;
+
+    const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
+    const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+    const program = createProgram(gl, vertexShader, fragmentShader);
+    gl.useProgram(program);
+
+    const positionLocation = gl.getAttribLocation(program, "a_position");
+    const texCoordLocation = gl.getAttribLocation(program, "a_texCoord");
+    const textureSizeLocation = gl.getUniformLocation(program, "u_textureSize");
+    const positionBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+    setRectangle(gl, 0, 0, canvas.width, canvas.height);
+
+    const texCoordBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, texCoordBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+        0.0, 0.0,
+        1.0, 0.0,
+        0.0, 1.0,
+        0.0, 1.0,
+        1.0, 0.0,
+        1.0, 1.0,
+    ]), gl.STATIC_DRAW);
+
+    gl.enableVertexAttribArray(positionLocation);
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+    gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+    gl.enableVertexAttribArray(texCoordLocation);
+    gl.bindBuffer(gl.ARRAY_BUFFER, texCoordBuffer);
+    gl.vertexAttribPointer(texCoordLocation, 2, gl.FLOAT, false, 0, 0);
+
+    const texture = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+
+    const encoder = new VideoEncoder({
+        output: handleChunk,
+        error: (e) => console.error('Encoder error:', e),
+    });
+
+    encoder.configure({
+        codec: 'vp8',
+        width: upscaledCanvas.width,
+        height: upscaledCanvas.height,
+        bitrate: 5_000_000,
+    });
+
+    console.log('Encoder configured');
+
+    const reader = new MediaStreamTrackProcessor(vidElement.captureStream().getVideoTracks()[0]).readable.getReader();
+    let frame;
+    const chunks = [];
+
+    async function processFrames() {
+        while (!(frame = await reader.read()).done) {
+            const { value: videoFrame } = frame;
+
+            gl.bindTexture(gl.TEXTURE_2D, texture);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, videoFrame);
+            gl.uniform2f(textureSizeLocation, canvas.width, canvas.height);
+            gl.drawArrays(gl.TRIANGLES, 0, 6);
+
+            console.log('Frame upscaled');
+
+            upscaledContext.drawImage(canvas, 0, 0, upscaledCanvas.width, upscaledCanvas.height);
+
+            const upscaledFrame = new VideoFrame(upscaledCanvas, {
+                timestamp: videoFrame.timestamp,
+                duration: videoFrame.duration,
+            });
+
+            encoder.encode(upscaledFrame);
+            console.log('Frame encoded');
+
+            videoFrame.close();
+            upscaledFrame.close();
+        }
+
+        await encoder.flush();
+        console.log('Encoding complete');
+
+        // Automatically download the video
+        const blob = new Blob(chunks, { type: 'video/webm' });
+        const url = URL.createObjectURL(blob);
+        const downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = 'upscaled_video.webm';
+        downloadLink.style.display = 'none';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+
+        console.log('Video URL created and download triggered');
+    }
+
+    function handleChunk(chunk) {
+        chunks.push(chunk);
+        console.log('Chunk received');
+    }
+
+    processFrames();
+}
+
+function createShader(gl, type, source) {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        console.error(gl.getShaderInfoLog(shader));
+        gl.deleteShader(shader);
+        return null;
+    }
+    return shader;
+}
+
+function createProgram(gl, vertexShader, fragmentShader) {
+    const program = gl.createProgram();
+    gl.attachShader(program, vertexShader);
+    gl.attachShader(program, fragmentShader);
+    gl.linkProgram(program);
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+        console.error(gl.getProgramInfoLog(program));
+        gl.deleteProgram(program);
+        return null;
+    }
+    return program;
+}
+
+function setRectangle(gl, x, y, width, height) {
+    const x1 = x;
+    const y1 = y;
+    const x2 = x + width;
+    const y2 = y + height;
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+        x1, y1,
+        x2, y1,
+        x1, y2,
+        x1, y2,
+        x2, y1,
+        x2, y2,
+    ]), gl.STATIC_DRAW);
 }
 
 //Open Pdf
@@ -1985,6 +2213,13 @@ function openGoodPorn(input) {
     window.open(goodpornurl, '_blank');
 }
 
+//Search NoodleMagazine
+function openNoodleMagazine(input) {
+    const query = input.trim().replace(/^noodlemagazine:\b\s*/i, ''); // Trim spaces and replace "open"
+    const noodlemagazineurl = 'https://noodlemagazine.com/video/' + query;
+    window.open(noodlemagazineurl, '_blank');
+}
+
 //Search Xhamster
 function openXhamster(input) {
     const query = input.trim().replace(/^xhamster:\b\s*/i, ''); // Trim spaces and replace "open"
@@ -2440,7 +2675,7 @@ function getRandomFemaleName() {
 }
 
 //Random Bible Book
-function getRandomBibleBook () {
+function getRandomBibleBook() {
     const randomIndex = Math.floor(Math.random() * bibleBooks.length);
     const randombibleBook = bibleBooks[randomIndex];
     const capitalizedbibleBook = randombibleBook.charAt(0).toUpperCase() + randombibleBook.slice(1);

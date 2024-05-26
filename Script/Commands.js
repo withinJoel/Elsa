@@ -39,6 +39,12 @@ function runCmd(command, inMemory, fromInput) {
                 getGPUInfo();
             } else if (commandName === "timezone") {
                 getTimeZone();
+            } else if (commandName.includes("upscale:video:")) {
+                const data = commandName.trim().replace(/^upscale:video:\b\s*/i, '');
+                upscaleVideo(data);
+            } else if (commandName.includes("download:video:")) {
+                const data = commandName.trim().replace(/^download:video:\b\s*/i, '');
+                downloadVideo(data);
             } else if (commandName.includes("detect:age:")) {
                 const data = commandName.trim().replace(/^detect:age:\b\s*/i, '');
                 detectAge(data);
@@ -580,6 +586,8 @@ function runCmd(command, inMemory, fromInput) {
                 searchReddit(commandName);
             } else if (commandName.includes("goodporn:")) {
                 openGoodPorn(commandName);
+            } else if (commandName.includes("noodlemagazine:")) {
+                openNoodleMagazine(commandName);
             } else if (commandName.includes("xhamster:")) {
                 openXhamster(commandName);
             } else if (commandName.includes("redtube:")) {
