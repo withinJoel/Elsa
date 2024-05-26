@@ -2541,6 +2541,129 @@ function getShortStory() {
     echo(capitalizedStory);
 }
 
+//Truthordare
+function truthOrDare() {
+    const result = Math.floor(Math.random() * 6) + 1;
+    if (result % 2 !== 0) {
+            const randomQuestion = truthQuestions[Math.floor(Math.random() * truthQuestions.length)];
+        echo ('Outcome: Truth');
+        echo ('Question: '+ randomQuestion );
+    } else {
+        const randomChallenge = dareChallenges[Math.floor(Math.random() * dareChallenges.length)];
+        echo ('Outcome: Dare');
+        echo ('Challenge: '+ randomChallenge);
+    }
+}
+
+//Roll a dice
+function rollDice() {
+    // Generate a random number between 1 and 6 (inclusive)
+    const result = Math.floor(Math.random() * 6) + 1;
+    echo (result);
+}
+
+//Heads or taisl
+function headsOrTails() {
+    // Generate a random number (0 or 1)
+    const result = Math.floor(Math.random() * 2);
+
+    // Check the result and return heads or tails
+    if (result === 0) {
+        echo ('Heads');
+    } else {
+        echo('Tails');
+    }
+}
+//Happy Birthday 
+function getHappybirthday() {
+    // Initialize Tone.js
+    Tone.start();
+
+    // Create a synthesizer for the piano sound
+    const piano = new Tone.Synth({
+        oscillator: {
+            type: 'sine' // You can change the type of oscillator for different piano sounds
+        },
+        envelope: {
+            attack: 0.02,
+            decay: 0.1,
+            sustain: 0.3,
+            release: 1
+        }
+    }).toDestination(); // Connect to the audio output
+
+    // Define the notes and their durations for "Twinkle, Twinkle, Little Star"
+    const notes = [
+        { note: 'C4', duration: '4n' },
+        { note: 'C4', duration: '4n' },
+        { note: 'G4', duration: '4n' },
+        { note: 'G4', duration: '4n' },
+        { note: 'A4', duration: '4n' },
+        { note: 'A4', duration: '4n' },
+        { note: 'G4', duration: '2n' },
+        { note: 'F4', duration: '4n' },
+        { note: 'F4', duration: '4n' },
+        { note: 'E4', duration: '4n' },
+        { note: 'E4', duration: '4n' },
+        { note: 'D4', duration: '4n' },
+        { note: 'D4', duration: '4n' },
+        { note: 'C4', duration: '2n' }
+    ];
+
+    // Function to play a note
+    function playNote(note, time, duration) {
+        piano.triggerAttackRelease(note, duration, time);
+    }
+
+    // Function to play the melody
+    function playMelody() {
+        let startTime = Tone.now();
+        notes.forEach((noteInfo) => {
+            playNote(noteInfo.note, startTime, noteInfo.duration);
+            startTime += Tone.Time(noteInfo.duration).toSeconds();
+        });
+    }
+
+    // Call the playMelody function to play "Twinkle, Twinkle, Little Star"
+    playMelody();
+
+}
+
+// Function to convert number to text
+const ones = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+const teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+function numberToWords(num) {
+    if (num === 0) return 'zero';
+
+    let result = '';
+
+    if (num >= 1000) {
+        result += ones[Math.floor(num / 1000)] + ' thousand ';
+        num %= 1000;
+    }
+
+    if (num >= 100) {
+        result += ones[Math.floor(num / 100)] + ' hundred ';
+        num %= 100;
+    }
+
+    if (num >= 20) {
+        result += tens[Math.floor(num / 10)] + ' ';
+        num %= 10;
+    } else if (num >= 10) {
+        result += teens[num - 10];
+        num = 0;
+    }
+
+    if (num > 0) {
+        result += ones[num];
+    }
+
+    let finalresult = result.trim();
+    echo(finalresult);
+}
+
 // Function to convert decimal to binary
 function decimalToBinary(data) {
     const decimal = data.trim().replace(/^convert:decimaltobinary:\b\s*/i, '');

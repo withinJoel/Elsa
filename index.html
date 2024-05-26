@@ -3,10 +3,13 @@
 <head>
 	<meta http-equiv="Content-Security-Policy" content="
   default-src 'self' * data:;
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+  script-src 'self' 'unsafe-inline' *;
   style-src 'self' 'unsafe-inline' *;
   media-src 'self' blob: *;
+  worker-src 'self' blob:;
 ">
+
+
 	<link rel="icon" href="Logo/Elsa.png">
 	<link rel="stylesheet" href="Styles/Styles.css">
 	<title>Elsa</title>
@@ -21,7 +24,9 @@
 		</div>
 	</form>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 <script src="Script/Features.js"></script>
+<script src="Models/Tone/Tone.min.js"></script>
 <script src="Models/Faceapi/face-api.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/withinJoel/Elsa/Version/Version-1.0.0.js"></script>
 <script src="Datasets/Data.js"></script>

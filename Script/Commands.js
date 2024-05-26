@@ -29,6 +29,14 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName === "easteregg") {
                 const url = 'Additional/Easter Egg.html';
                 window.open(url, '_blank');
+            } else if (commandName === "truthordare") {
+                truthOrDare();
+            } else if (commandName === "rolldice") {
+                rollDice();
+            } else if (commandName === "headsortails") {
+                headsOrTails();
+            } else if (commandName === "happybirthday") {
+                getHappybirthday();
             } else if (commandName === "config") {
                 getConfig();
             } else if (commandName === "update") {
@@ -480,6 +488,9 @@ function runCmd(command, inMemory, fromInput) {
                 hexadecimalToDecimal(commandName);
             } else if (commandName.includes("convert:hexadecimaltooctal:")) {
                 hexadecimalToOctal(commandName);
+            } else if (commandName.includes("convert:numbertotext:")) {
+                num = commandName.trim().replace(/^convert:numbertotext:\b\s*/i, '');
+                numberToWords(num);
             } else if (commandName.includes("spotify:")) {
                 searchSpotify(commandName);
             } else if (commandName.includes("yts:")) {

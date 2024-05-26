@@ -113,6 +113,7 @@
 * `random:pickupline` - To get a random pickup line.
 
 # Conversion Functions
+* `convert:numbertotext:` - To convert numbers to text. example: `convert:numbertotext:777`
 * `convert:secondstominutes:` - To convert seconds to minutes. example: `convert:secondstominutes:1024`
 * `convert:secondstohours:` - To convert seconds to hours. example: `convert:secondstohours:1024`
 * `convert:secondstodays:` - To convert seconds to days. example: `convert:secondstodays:1024`
@@ -171,6 +172,14 @@
 # Sort Functions
 * `sort:ascending:` - To sort in ascending order. example: `sort:ascending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
 * `sort:descending:` - To sort in descending order. example: `sort:descending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
+
+# Games
+* `truthordare` - To play the truth or dare game.
+* `headsortails` - To return heads or tails.
+* `rolldice` - To roll a dice.
+
+# Audio
+* `happybirthday` - To play the happy birthday song.
 
 # Media
 * `open:txt:` - To open a text file. example: `open:txt:hello.txt` (Note only txts that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
