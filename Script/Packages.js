@@ -371,6 +371,125 @@ function downloadVideo(url) {
     window.open(link, '_blank');
 }
 
+//Open Pdf
+function openPDF(data) {
+    const pdf = data.trim().replace(/^open:pdf:\b\s*/i, '');
+    // Specify the URL of the PDF file
+    var pdfURL = docdir + pdf;
+
+    // Open the PDF file in a new tab
+    window.open(pdfURL, '_blank');
+}
+
+//Open Text
+function openTXT(data) {
+    const txt = data.trim().replace(/^open:txt:\b\s*/i, '');
+    // Specify the URL of the Txt file
+    var txtURL = docdir + txt;
+
+    window.open(txtURL, '_blank');
+}
+
+//Open Image
+async function openImage(data) {
+    const existingElement = document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    const existingImgElement = document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    const existingErrorElement = document.querySelector('div[data-role="error-message"]');
+    if (existingElement) {
+        existingElement.remove();
+    }
+    // Remove existing error message if any
+    if (existingErrorElement) {
+        document.body.removeChild(existingErrorElement);
+    }
+
+    if (data && data.trim().startsWith("open:image:")) {
+        const img = data.trim().replace(/^open:image:\s*/i, '');
+        const imageElement = imagedir + img;
+
+        if (existingImgElement) {
+            existingImgElement.src = imageElement;
+        } else {
+            const imgElement = document.createElement('img');
+            imgElement.style.position = 'fixed';
+            imgElement.style.top = '15px';
+            imgElement.style.right = '30px';
+            imgElement.style.maxWidth = '500px';
+            imgElement.style.maxHeight = '500px';
+            imgElement.setAttribute('data-role', 'dynamic-image');
+
+            document.body.appendChild(imgElement);
+        }
+
+        try {
+            await new Promise((resolve, reject) => {
+                existingImgElement.onload = resolve;
+                existingImgElement.onerror = reject;
+                existingImgElement.src = imageElement;
+            });
+        } catch (error) {
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
+            echo("Image failed to load. Please check the path or filename.");
+        }
+    } else if (existingImgElement) {
+        document.body.removeChild(existingImgElement);
+    }
+}
+
+//Open Video
+async function openVideo(data) {
+    const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    const existingVidElement = document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    const existingErrorElement = document.querySelector('div[data-role="error-message"]');
+    if (existingElement) {
+        existingElement.remove();
+    }
+    // Remove existing error message if any
+    if (existingErrorElement) {
+        document.body.removeChild(existingErrorElement);
+    }
+
+    if (data && data.trim().startsWith("open:video:")) {
+        const vid = data.trim().replace(/^open:video:\s*/i, '');
+        const videoSrc = videodir + vid;
+
+        let vidElement = existingVidElement;
+
+        try {
+            // Create a temporary video element to check if the video loads
+            const tempVideo = document.createElement('video');
+            await new Promise((resolve, reject) => {
+                tempVideo.onloadeddata = resolve; // Use onloadeddata for video
+                tempVideo.onerror = reject;
+                tempVideo.src = videoSrc;
+            });
+
+            if (vidElement) {
+                vidElement.src = videoSrc;
+            } else {
+                vidElement = document.createElement('video');
+                vidElement.style.position = 'fixed';
+                vidElement.style.top = '15px';
+                vidElement.style.right = '30px';
+                vidElement.style.maxWidth = '500px';
+                vidElement.style.maxHeight = '500px';
+                vidElement.setAttribute('data-role', 'dynamic-video');
+                vidElement.controls = true; // Add video controls for play/pause, etc.
+                vidElement.src = videoSrc;
+                document.body.appendChild(vidElement);
+            }
+        } catch (error) {
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
+            echo("Video failed to load. Please check the path or filename.");
+
+        }
+    } else if (existingVidElement) {
+        document.body.removeChild(existingVidElement);
+    }
+}
+
 //Remove the background and get only the head
 async function removeBackgroundAndExtractFace(img) {
     const imageElement = imagedir + img;
@@ -540,126 +659,6 @@ async function removeBackground(img) {
     });
 }
 
-
-//Open Pdf
-function openPDF(data) {
-    const pdf = data.trim().replace(/^open:pdf:\b\s*/i, '');
-    // Specify the URL of the PDF file
-    var pdfURL = docdir + pdf;
-
-    // Open the PDF file in a new tab
-    window.open(pdfURL, '_blank');
-}
-
-//Open Text
-function openTXT(data) {
-    const txt = data.trim().replace(/^open:txt:\b\s*/i, '');
-    // Specify the URL of the Txt file
-    var txtURL = docdir + txt;
-
-    window.open(txtURL, '_blank');
-}
-
-//Open Image
-async function openImage(data) {
-    const existingElement = document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
-    const existingImgElement = document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
-    const existingErrorElement = document.querySelector('div[data-role="error-message"]');
-    if (existingElement) {
-        existingElement.remove();
-    }
-    // Remove existing error message if any
-    if (existingErrorElement) {
-        document.body.removeChild(existingErrorElement);
-    }
-
-    if (data && data.trim().startsWith("open:image:")) {
-        const img = data.trim().replace(/^open:image:\s*/i, '');
-        const imageElement = imagedir + img;
-
-        if (existingImgElement) {
-            existingImgElement.src = imageElement;
-        } else {
-            const imgElement = document.createElement('img');
-            imgElement.style.position = 'fixed';
-            imgElement.style.top = '15px';
-            imgElement.style.right = '30px';
-            imgElement.style.maxWidth = '500px';
-            imgElement.style.maxHeight = '500px';
-            imgElement.setAttribute('data-role', 'dynamic-image');
-
-            document.body.appendChild(imgElement);
-        }
-
-        try {
-            await new Promise((resolve, reject) => {
-                existingImgElement.onload = resolve;
-                existingImgElement.onerror = reject;
-                existingImgElement.src = imageElement;
-            });
-        } catch (error) {
-            const audio = new Audio('Effects/Wrong Input.mp3');
-            audio.play();
-            echo("Image failed to load. Please check the path or filename.");
-        }
-    } else if (existingImgElement) {
-        document.body.removeChild(existingImgElement);
-    }
-}
-
-//Open Video
-async function openVideo(data) {
-    const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
-    const existingVidElement = document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
-    const existingErrorElement = document.querySelector('div[data-role="error-message"]');
-    if (existingElement) {
-        existingElement.remove();
-    }
-    // Remove existing error message if any
-    if (existingErrorElement) {
-        document.body.removeChild(existingErrorElement);
-    }
-
-    if (data && data.trim().startsWith("open:video:")) {
-        const vid = data.trim().replace(/^open:video:\s*/i, '');
-        const videoSrc = videodir + vid;
-
-        let vidElement = existingVidElement;
-
-        try {
-            // Create a temporary video element to check if the video loads
-            const tempVideo = document.createElement('video');
-            await new Promise((resolve, reject) => {
-                tempVideo.onloadeddata = resolve; // Use onloadeddata for video
-                tempVideo.onerror = reject;
-                tempVideo.src = videoSrc;
-            });
-
-            if (vidElement) {
-                vidElement.src = videoSrc;
-            } else {
-                vidElement = document.createElement('video');
-                vidElement.style.position = 'fixed';
-                vidElement.style.top = '15px';
-                vidElement.style.right = '30px';
-                vidElement.style.maxWidth = '500px';
-                vidElement.style.maxHeight = '500px';
-                vidElement.setAttribute('data-role', 'dynamic-video');
-                vidElement.controls = true; // Add video controls for play/pause, etc.
-                vidElement.src = videoSrc;
-                document.body.appendChild(vidElement);
-            }
-        } catch (error) {
-            const audio = new Audio('Effects/Wrong Input.mp3');
-            audio.play();
-            echo("Video failed to load. Please check the path or filename.");
-
-        }
-    } else if (existingVidElement) {
-        document.body.removeChild(existingVidElement);
-    }
-}
-
 //Detect nudity
 class NeuralNetwork {
     constructor(inputNodes, hiddenNodes, outputNodes) {
@@ -710,6 +709,10 @@ function imageToGrayscale(imgData) {
 }
 
 async function detectNudity(data) {
+    const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    if (existingElement) {
+        existingElement.remove();
+    }
     const fileExtension = data.split('.').pop().toLowerCase();
     const imageExtensions = ['png', 'jpg', 'jpeg', 'webp'];
 
@@ -898,8 +901,11 @@ async function predictNudityForVideo(filePath) {
 }
 //Detect Humans
 async function detectHumans(data) {
+    const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    if (existingElement) {
+        existingElement.remove();
+    }
     if (!data) {
-        
         echo('No image data provided.');
         return;
     }
@@ -954,8 +960,11 @@ async function detectHumans(data) {
 
 //Detect Faces
 async function detectFaces(data) {
+    const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    if (existingElement) {
+        existingElement.remove();
+    }
     if (!data) {
-        
         echo('No image data provided.');
         return;
     }
@@ -1003,8 +1012,11 @@ async function detectFaces(data) {
 
 //Detect Emotion
 async function detectEmotion(data) {
+    const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    if (existingElement) {
+        existingElement.remove();
+    }
     if (!data) {
-        
         echo('No image data provided.');
         return;
     }
@@ -1067,8 +1079,11 @@ async function detectEmotion(data) {
 
 //Detect Gender
 async function detectGender(data) {
+    const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    if (existingElement) {
+        existingElement.remove();
+    }
     if (!data) {
-        
         echo('No image data provided.');
         return;
     }
@@ -1128,8 +1143,11 @@ async function detectGender(data) {
 
 //Detect Age
 async function detectAge(data) {
+    const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    if (existingElement) {
+        existingElement.remove();
+    }
     if (!data) {
-        
         echo('No image data provided.');
         return;
     }
