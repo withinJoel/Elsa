@@ -182,17 +182,24 @@
 * `headsortails` - To return heads or tails.
 * `rolldice` - To roll a dice.
 
-# Audio
-* `happybirthday` - To play the happy birthday song.
-
-# Media
+# Text
 * `open:txt:` - To open a text file. example: `open:txt:hello.txt` (Note only txts that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
+
+# PDF
 * `open:pdf:` - To open a pdf. example: `open:pdf:10.pdf` (Note only pdfs that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
-* `open:image:` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
-* `close:image` - To close an image.
+
+# Video
 * `open:video:` - To open a video. example: `open:video:10.mp4` (Note only videos that are present in the C:/Program files(x86)/Elsa/Bin/Videos/)
 * `close:video` - To close a video.
 * You find the above hard, Then just drag and drop to open it (Note: Only images, videos, pdf and txt will open via this method)
+
+# Audio
+* `happybirthday` - To play the happy birthday song.
+
+# Image
+* `open:image:` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
+* `close:image` - To close an image.
+* `remove:background:` - To remove the background of an image. example: `remove:background:10.png`(Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
 
 # Text
 * `reverse:` - To reverse a string. example `reverse:hola`

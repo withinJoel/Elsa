@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Security-Policy" content="
   default-src 'self' * data:;
-  script-src 'self' 'unsafe-inline' *;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
   style-src 'self' 'unsafe-inline' *;
   media-src 'self' blob: *;
   worker-src 'self' blob:;
@@ -24,8 +24,11 @@
 		</div>
 	</form>
 </body>
+<script src="Models/Tensorflow/tfjs.js"></script>
+<script src="Models/Tensorflow/deeplab.js"></script>
+<script src="Models/Tensorflow/body-pix.js"></script>
 <script src="../../../API/Apikeys.js"></script>
-<script src ="Models/Gemini/Gemini.js"></script>
+<script src="Models/Gemini/Gemini.js"></script>
 <script src="Script/Features.js"></script>
 <script src="Models/Tone/Tone.min.js"></script>
 <script src="Models/Faceapi/face-api.min.js"></script>
@@ -37,4 +40,5 @@
 <script src="Script/Commands.js"></script>
 <script src="Script/Packages.js"></script>
 <script src="Script/Process.js"></script>
+
 </html>
