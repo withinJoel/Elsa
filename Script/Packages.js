@@ -393,9 +393,12 @@ function openTXT(data) {
 
 //Open Image
 async function openImage(data) {
+    const existingElement = document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
     const existingImgElement = document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
     const existingErrorElement = document.querySelector('div[data-role="error-message"]');
-
+    if (existingElement) {
+        existingElement.remove();
+    }
     // Remove existing error message if any
     if (existingErrorElement) {
         document.body.removeChild(existingErrorElement);
@@ -437,9 +440,12 @@ async function openImage(data) {
 
 //Open Video
 async function openVideo(data) {
+    const existingElement =  document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
     const existingVidElement = document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
     const existingErrorElement = document.querySelector('div[data-role="error-message"]');
-
+    if (existingElement) {
+        existingElement.remove();
+    }
     // Remove existing error message if any
     if (existingErrorElement) {
         document.body.removeChild(existingErrorElement);
