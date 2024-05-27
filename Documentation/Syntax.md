@@ -1,3 +1,10 @@
+# Shortcuts
+* Top arrow for the previous command.
+* Down arrow for the latest command.
+
+# Tips
+* If you feel that the UI is slow, try `refresh`.
+
 # Basic Commands
 * `sys` - To get the system information.
 * `cls` or `clearscreen` - To clear screen
@@ -28,12 +35,9 @@
 * `webrtc` - To get the WebRTC info.
 * `mouseposition` - To get the mouse position.
 
-# Shortcuts
-* Top arrow for the previous command.
-* Down arrow for the latest command.
-
-# Tips
-* If you feel that the UI is slow, try `refresh`.
+# AI
+* `chat:gemini:` - To chat with the gemini model. example: `chat:gemini:hello i am Joel` (Note: To use gemini you should obtain the api key from the gemini developer page and paste it in the C:/Program Files (x86)/Elsa/API/Apikeys.js)
+    * `chat:gemini:` with `-read` at the end to read out the response. example: `chat:gemini:i am Joel -read`
 
 # Customization
 * `inputcolor:` or `inputcolour:` - To change the input color. example: `inputcolor:pink`

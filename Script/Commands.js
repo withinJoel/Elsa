@@ -47,6 +47,15 @@ function runCmd(command, inMemory, fromInput) {
                 getGPUInfo();
             } else if (commandName === "timezone") {
                 getTimeZone();
+            } else if (commandName.includes("chat:gemini:") && commandName.includes("read")) {
+                const rawdata = commandName.trim().replace(/^chat:gemini:\b\s*/i, '');
+                const data = rawdata.trim().replace(/^-read\b\s*/i, '');
+                let flag = 'True';
+                getGeminiResponse(data, flag);
+            } else if (commandName.includes("chat:gemini:")) {
+                const data = commandName.trim().replace(/^chat:gemini:\b\s*/i, '');
+                let flag = 'False';
+                getGeminiResponse(data, flag);
             } else if (commandName.includes("download:video:")) {
                 const data = commandName.trim().replace(/^download:video:\b\s*/i, '');
                 downloadVideo(data);

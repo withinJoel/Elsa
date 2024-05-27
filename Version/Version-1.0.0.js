@@ -1,7 +1,6 @@
-const latestVersion = '1.1.5';
+const latestVersion = '1.1.6';
 
-//* Added AI based functions to detect humans, age, gender, nudity and many more 
-//* Added more functions. \n 
-//* Improved UI \n 
-//* Check for updates has been simplified \n 
+//* Added the ability to chat with gemini
+//* Added more functions 
+//* Improved UI
 //* Many more
