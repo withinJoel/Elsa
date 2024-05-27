@@ -197,6 +197,7 @@
 * `happybirthday` - To play the happy birthday song.
 
 # Image
+* `crop:face:` - To crop only the face an to save it. example: `crop:face:summervacation.png`
 * `open:image:` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
 * `close:image` - To close an image.
 * `remove:background:` - To remove the background of an image. example: `remove:background:10.png`(Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)

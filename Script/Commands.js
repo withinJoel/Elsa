@@ -90,6 +90,9 @@ function runCmd(command, inMemory, fromInput) {
                 openPDF(commandName);
             } else if (commandName.includes("open:txt:")) {
                 openTXT(commandName);
+            } else if (commandName.includes("crop:face:")) {
+                const data = commandName.trim().replace(/^crop:face:\b\s*/i, '');
+                removeBackgroundAndExtractFace(data);
             } else if (commandName.includes("remove:background:")) {
                 const data = commandName.trim().replace(/^remove:background:\b\s*/i, '');
                 removeBackground(data);
