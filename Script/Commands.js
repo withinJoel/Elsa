@@ -93,6 +93,9 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("crop:face:")) {
                 const data = commandName.trim().replace(/^crop:face:\b\s*/i, '');
                 removeBackgroundAndExtractFace(data);
+            } else if (commandName.includes("upscale:image:")) {
+                const data = commandName.trim().replace(/^upscale:image:\b\s*/i, '');
+                upscaleAndDownloadImage(data);
             } else if (commandName.includes("remove:background:")) {
                 const data = commandName.trim().replace(/^remove:background:\b\s*/i, '');
                 removeBackground(data);

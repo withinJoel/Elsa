@@ -564,6 +564,125 @@ async function removeBackgroundAndExtractFace(img) {
     }
 }
 
+//Upscale
+async function upscaleAndDownloadImage(data) {
+    try {
+        const imageUrl = imagedir + data;
+        const imgOriginal = document.createElement('img');
+        imgOriginal.src = imageUrl;
+        imgOriginal.style.position = 'fixed';
+        imgOriginal.style.top = '15px';
+        imgOriginal.style.right = '30px';
+        imgOriginal.style.maxWidth = '500px';
+        imgOriginal.style.maxHeight = '500px';
+        imgOriginal.setAttribute('data-role', 'dynamic-image');
+        document.body.appendChild(imgOriginal);
+
+        // Wait for the image to load
+        await imgOriginal.decode();
+
+        const originalWidth = imgOriginal.width;
+        const originalHeight = imgOriginal.height;
+        const upscaleFactor = 4; // Define the upscaling factor
+        const upscaledWidth = originalWidth * upscaleFactor;
+        const upscaledHeight = originalHeight * upscaleFactor;
+
+        // Load the image into an OpenCV matrix
+        const originalCanvas = document.createElement('canvas');
+        originalCanvas.width = originalWidth;
+        originalCanvas.height = originalHeight;
+        const originalCtx = originalCanvas.getContext('2d');
+        originalCtx.drawImage(imgOriginal, 0, 0, originalWidth, originalHeight);
+
+        let src = cv.imread(originalCanvas);
+        let upscaled = new cv.Mat();
+        let dsize = new cv.Size(upscaledWidth, upscaledHeight);
+
+        // Upscale using OpenCV's INTER_CUBIC (bicubic interpolation)
+        cv.resize(src, upscaled, dsize, 0, 0, cv.INTER_CUBIC);
+
+        // Apply sharpening filter
+        let sharpened = applySharpeningFilter(upscaled);
+
+        // Enhance color
+        let colorEnhanced = enhanceColor(sharpened);
+
+        // Convert the result back to an image and display it
+        const upscaledCanvas = document.createElement('canvas');
+        cv.imshow(upscaledCanvas, colorEnhanced);
+        src.delete();
+        upscaled.delete();
+        sharpened.delete();
+        colorEnhanced.delete();
+
+        const upscaledImage = new Image();
+        upscaledImage.src = upscaledCanvas.toDataURL();
+        upscaledImage.style.position = 'fixed';
+        upscaledImage.style.top = '15px';
+        upscaledImage.style.right = '30px';
+        upscaledImage.style.maxWidth = '500px';
+        upscaledImage.style.maxHeight = '500px';
+        upscaledImage.setAttribute('data-role', 'dynamic-image');
+        document.body.appendChild(upscaledImage);
+
+        // Automatically download the upscaled image
+        const a = document.createElement('a');
+        a.href = upscaledImage.src;
+        a.download = 'upscaled_image.png';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    } catch (error) {
+        console.error('Error occurred during upscaling:', error);
+    }
+}
+
+function applySharpeningFilter(src) {
+    let dst = new cv.Mat();
+    // Define the sharpening kernel
+    let kernel = cv.matFromArray(3, 3, cv.CV_32F, [-1, -1, -1, -1, 9, -1, -1, -1, -1]);
+    cv.filter2D(src, dst, cv.CV_8U, kernel);
+    return dst;
+}
+
+function enhanceColor(src) {
+    let dst = new cv.Mat();
+    cv.cvtColor(src, dst, cv.COLOR_BGR2Lab);
+    let labPlanes = new cv.MatVector();
+    cv.split(dst, labPlanes);
+
+    let l = labPlanes.get(0);
+    let a = labPlanes.get(1);
+    let b = labPlanes.get(2);
+
+    // Apply histogram equalization to the L channel for slight brightness adjustment
+    cv.equalizeHist(l, l);
+
+    // Adjust a and b channels slightly to maintain natural color profile
+    // Using a small scale factor to ensure natural enhancement
+    let alpha = 1.0;
+    let beta = 0;
+    a.convertTo(a, a.type(), alpha, beta);
+    b.convertTo(b, b.type(), alpha, beta);
+
+    let newLab = new cv.MatVector();
+    newLab.push_back(l);
+    newLab.push_back(a);
+    newLab.push_back(b);
+
+    cv.merge(newLab, dst);
+    cv.cvtColor(dst, dst, cv.COLOR_Lab2BGR);
+
+    // Clean up
+    l.delete();
+    a.delete();
+    b.delete();
+    labPlanes.delete();
+    newLab.delete();
+
+    return dst;
+}
+
 //Remove Background
 async function removeBackground(img) {
     const imageElement = imagedir + img;
