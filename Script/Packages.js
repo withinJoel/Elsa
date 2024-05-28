@@ -263,7 +263,7 @@ function getUpdate() {
             echo('You are in the latest developer version.')
         }
     } else {
-        
+
         echo("Error fetching updates.")
     }
 }
@@ -413,7 +413,7 @@ async function openImage(data) {
             const imgElement = document.createElement('img');
             imgElement.style.position = 'fixed';
             imgElement.style.top = '15px';
-            imgElement.style.right = '30px';
+            imgElement.style.right = '15px';
             imgElement.style.maxWidth = '500px';
             imgElement.style.maxHeight = '500px';
             imgElement.setAttribute('data-role', 'dynamic-image');
@@ -471,7 +471,7 @@ async function openVideo(data) {
                 vidElement = document.createElement('video');
                 vidElement.style.position = 'fixed';
                 vidElement.style.top = '15px';
-                vidElement.style.right = '30px';
+                vidElement.style.right = '15px';
                 vidElement.style.maxWidth = '500px';
                 vidElement.style.maxHeight = '500px';
                 vidElement.setAttribute('data-role', 'dynamic-video');
@@ -501,7 +501,7 @@ async function removeBackgroundAndExtractFace(img) {
     imgOriginal.src = imageElement;
     imgOriginal.style.position = 'fixed';
     imgOriginal.style.top = '15px';
-    imgOriginal.style.right = '30px';
+    imgOriginal.style.right = '15px';
     imgOriginal.style.maxWidth = '500px';
     imgOriginal.style.maxHeight = '500px';
     imgOriginal.setAttribute('data-role', 'dynamic-image');
@@ -538,7 +538,7 @@ async function removeBackgroundAndExtractFace(img) {
         imgProcessed.src = tempCanvas.toDataURL('image/png');
         imgProcessed.style.position = 'fixed';
         imgProcessed.style.top = '15px';
-        imgProcessed.style.right = '30px'; // Adjust to position next to the original image
+        imgProcessed.style.right = '15px'; // Adjust to position next to the original image
         imgProcessed.style.maxWidth = '500px';
         imgProcessed.style.maxHeight = '500px';
         imgProcessed.setAttribute('data-role', 'dynamic-image');
@@ -551,7 +551,7 @@ async function removeBackgroundAndExtractFace(img) {
         const min = 0;
         const max = 999999999999999;
         const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        link.download = 'face_output'+randomnumber+'.png';
+        link.download = 'face_output' + randomnumber + '.png';
         link.href = tempCanvas.toDataURL('image/png');
         link.click();
 
@@ -572,7 +572,7 @@ async function upscaleAndDownloadImage(data) {
         imgOriginal.src = imageUrl;
         imgOriginal.style.position = 'fixed';
         imgOriginal.style.top = '15px';
-        imgOriginal.style.right = '30px';
+        imgOriginal.style.right = '15px';
         imgOriginal.style.maxWidth = '500px';
         imgOriginal.style.maxHeight = '500px';
         imgOriginal.setAttribute('data-role', 'dynamic-image');
@@ -580,46 +580,39 @@ async function upscaleAndDownloadImage(data) {
 
         // Wait for the image to load
         await imgOriginal.decode();
-
+        console.log('Image loaded.');
         const originalWidth = imgOriginal.width;
         const originalHeight = imgOriginal.height;
-        const upscaleFactor = 4; // Define the upscaling factor
+        const upscaleFactor = 8; // Define the upscaling factor
         const upscaledWidth = originalWidth * upscaleFactor;
         const upscaledHeight = originalHeight * upscaleFactor;
 
-        // Load the image into an OpenCV matrix
+        // Load the image into an offscreen canvas for processing
         const originalCanvas = document.createElement('canvas');
         originalCanvas.width = originalWidth;
         originalCanvas.height = originalHeight;
         const originalCtx = originalCanvas.getContext('2d');
         originalCtx.drawImage(imgOriginal, 0, 0, originalWidth, originalHeight);
 
-        let src = cv.imread(originalCanvas);
-        let upscaled = new cv.Mat();
-        let dsize = new cv.Size(upscaledWidth, upscaledHeight);
+        console.log('Denoising image.');
+        // Apply enhanced Non-Local Means (NLM) Denoising to the image
+        const denoisedCanvas = await denoiseImage(originalCanvas);
 
-        // Upscale using OpenCV's INTER_CUBIC (bicubic interpolation)
-        cv.resize(src, upscaled, dsize, 0, 0, cv.INTER_CUBIC);
+        console.log('Upscaling image.');
+        // Apply bicubic interpolation to the denoised image
+        const bicubicResampledCanvas = await bicubicResample(denoisedCanvas, upscaleFactor);
 
-        // Apply sharpening filter
-        let sharpened = applySharpeningFilter(upscaled);
+        console.log('Sharpening image.');
+        // Apply sharpening to the upscaled image
+        const sharpenedCanvas = await sharpenImage(bicubicResampledCanvas);
 
-        // Enhance color
-        let colorEnhanced = enhanceColor(sharpened);
-
+        console.log('Converting to image.');
         // Convert the result back to an image and display it
-        const upscaledCanvas = document.createElement('canvas');
-        cv.imshow(upscaledCanvas, colorEnhanced);
-        src.delete();
-        upscaled.delete();
-        sharpened.delete();
-        colorEnhanced.delete();
-
         const upscaledImage = new Image();
-        upscaledImage.src = upscaledCanvas.toDataURL();
+        upscaledImage.src = sharpenedCanvas.toDataURL();
         upscaledImage.style.position = 'fixed';
         upscaledImage.style.top = '15px';
-        upscaledImage.style.right = '30px';
+        upscaledImage.style.right = '15px';
         upscaledImage.style.maxWidth = '500px';
         upscaledImage.style.maxHeight = '500px';
         upscaledImage.setAttribute('data-role', 'dynamic-image');
@@ -633,54 +626,228 @@ async function upscaleAndDownloadImage(data) {
         a.click();
         document.body.removeChild(a);
     } catch (error) {
-        console.error('Error occurred during upscaling:', error);
+        console.log('Error occurred during upscaling:', error);
     }
 }
 
-function applySharpeningFilter(src) {
-    let dst = new cv.Mat();
-    // Define the sharpening kernel
-    let kernel = cv.matFromArray(3, 3, cv.CV_32F, [-1, -1, -1, -1, 9, -1, -1, -1, -1]);
-    cv.filter2D(src, dst, cv.CV_8U, kernel);
-    return dst;
+// Function to denoise the image using enhanced Non-Local Means (NLM) Denoising
+async function denoiseImage(canvas) {
+    const imageData = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height);
+    const nlmDenoisedImageData = await imageDenoisingNLM(imageData);
+    const denoisedCanvas = document.createElement('canvas');
+    denoisedCanvas.width = canvas.width;
+    denoisedCanvas.height = canvas.height;
+    const ctx = denoisedCanvas.getContext('2d');
+    ctx.putImageData(nlmDenoisedImageData, 0, 0);
+    return denoisedCanvas;
 }
 
-function enhanceColor(src) {
-    let dst = new cv.Mat();
-    cv.cvtColor(src, dst, cv.COLOR_BGR2Lab);
-    let labPlanes = new cv.MatVector();
-    cv.split(dst, labPlanes);
+// Function to perform bicubic interpolation
+async function bicubicResample(canvas, scaleFactor) {
+    const width = canvas.width * scaleFactor;
+    const height = canvas.height * scaleFactor;
+    const srcCtx = canvas.getContext('2d');
+    const srcImageData = srcCtx.getImageData(0, 0, canvas.width, canvas.height);
+    const srcData = srcImageData.data;
 
-    let l = labPlanes.get(0);
-    let a = labPlanes.get(1);
-    let b = labPlanes.get(2);
+    const destCanvas = document.createElement('canvas');
+    destCanvas.width = width;
+    destCanvas.height = height;
+    const destCtx = destCanvas.getContext('2d');
+    const destImageData = destCtx.createImageData(width, height);
+    const destData = destImageData.data;
 
-    // Apply histogram equalization to the L channel for slight brightness adjustment
-    cv.equalizeHist(l, l);
+    function cubicInterpolation(p0, p1, p2, p3, t) {
+        return (
+            p1 +
+            0.5 *
+                t *
+                (p2 - p0 + t * (2.0 * p0 - 5.0 * p1 + 4.0 * p2 - p3 + t * (3.0 * (p1 - p2) + p3 - p0)))
+        );
+    }
 
-    // Adjust a and b channels slightly to maintain natural color profile
-    // Using a small scale factor to ensure natural enhancement
-    let alpha = 1.0;
-    let beta = 0;
-    a.convertTo(a, a.type(), alpha, beta);
-    b.convertTo(b, b.type(), alpha, beta);
+    function getPixelValue(data, width, height, x, y, c) {
+        x = Math.min(Math.max(x, 0), width - 1);
+        y = Math.min(Math.max(y, 0), height - 1);
+        return data[(y * width + x) * 4 + c];
+    }
 
-    let newLab = new cv.MatVector();
-    newLab.push_back(l);
-    newLab.push_back(a);
-    newLab.push_back(b);
+    for (let y = 0; y < height; y++) {
+        const srcY = y / scaleFactor;
+        const y0 = Math.floor(srcY);
+        const yT = srcY - y0;
 
-    cv.merge(newLab, dst);
-    cv.cvtColor(dst, dst, cv.COLOR_Lab2BGR);
+        for (let x = 0; x < width; x++) {
+            const srcX = x / scaleFactor;
+            const x0 = Math.floor(srcX);
+            const xT = srcX - x0;
 
-    // Clean up
-    l.delete();
-    a.delete();
-    b.delete();
-    labPlanes.delete();
-    newLab.delete();
+            for (let c = 0; c < 3; c++) {
+                const col0 = cubicInterpolation(
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 - 1, y0 - 1, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0, y0 - 1, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 + 1, y0 - 1, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 + 2, y0 - 1, c),
+                    xT
+                );
+                const col1 = cubicInterpolation(
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 - 1, y0, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0, y0, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 + 1, y0, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 + 2, y0, c),
+                    xT
+                );
+                const col2 = cubicInterpolation(
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 - 1, y0 + 1, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0, y0 + 1, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 + 1, y0 + 1, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 + 2, y0 + 1, c),
+                    xT
+                );
+                const col3 = cubicInterpolation(
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 - 1, y0 + 2, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0, y0 + 2, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 + 1, y0 + 2, c),
+                    getPixelValue(srcData, canvas.width, canvas.height, x0 + 2, y0 + 2, c),
+                    xT
+                );
 
-    return dst;
+                const value = cubicInterpolation(col0, col1, col2, col3, yT);
+                destData[(y * width + x) * 4 + c] = Math.max(0, Math.min(255, value));
+            }
+            destData[(y * width + x) * 4 + 3] = 255; // Set alpha to fully opaque
+        }
+    }
+
+    destCtx.putImageData(destImageData, 0, 0);
+    return destCanvas;
+}
+
+// Function to apply sharpening to the image
+async function sharpenImage(canvas) {
+    const width = canvas.width;
+    const height = canvas.height;
+    const ctx = canvas.getContext('2d');
+    const imageData = ctx.getImageData(0, 0, width, height);
+    const data = imageData.data;
+
+    const sharpenKernel = [
+        0, -1, 0,
+        -1, 5, -1,
+        0, -1, 0
+    ];
+
+    const getPixelValue = (x, y, c) => {
+        if (x < 0 || y < 0 || x >= width || y >= height) return 0;
+        return data[(y * width + x) * 4 + c];
+    };
+
+    const newImageData = ctx.createImageData(width, height);
+    const newData = newImageData.data;
+
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            for (let c = 0; c < 3; c++) {
+                let newValue = 0;
+                for (let ky = -1; ky <= 1; ky++) {
+                    for (let kx = -1; kx <= 1; kx++) {
+                        const weight = sharpenKernel[(ky + 1) * 3 + (kx + 1)];
+                        newValue += weight * getPixelValue(x + kx, y + ky, c);
+                    }
+                }
+                newData[(y * width + x) * 4 + c] = Math.max(0, Math.min(255, newValue));
+            }
+            newData[(y * width + x) * 4 + 3] = 255; // Set alpha to fully opaque
+        }
+    }
+
+    ctx.putImageData(newImageData, 0, 0);
+    return canvas;
+}
+
+// Function to denoise the image using enhanced Non-Local Means (NLM) Denoising
+function imageDenoisingNLM(imageData) {
+    return new Promise((resolve) => {
+        const width = imageData.width;
+        const height = imageData.height;
+        const data = imageData.data;
+
+        const windowSize = 11; // Size of the search window
+        const patchSize = 2; // Reduced size of the patch for better quality
+        const h = 0.20; // Increased h parameter for smoother results
+
+        // Function to compute the weighted average of patches in the search window
+        function computeWeightedAverage(x, y) {
+            let [numeratorR, numeratorG, numeratorB] = [0, 0, 0];
+            let denominator = 0;
+
+            const refPatch = getPatch(x, y);
+
+            for (let i = -windowSize; i <= windowSize; i++) {
+                for (let j = -windowSize; j <= windowSize; j++) {
+                    const nx = x + i;
+                    const ny = y + j;
+
+                    if (nx >= 0 && ny >= 0 && nx < width && ny < height) {
+                        const curPatch = getPatch(nx, ny);
+
+                        const weight = computeWeight(refPatch, curPatch);
+                        const index = (ny * width + nx) * 4;
+
+                        numeratorR += weight * data[index];
+                        numeratorG += weight * data[index + 1];
+                        numeratorB += weight * data[index + 2];
+                        denominator += weight;
+                    }
+                }
+            }
+
+            return [numeratorR / denominator, numeratorG / denominator, numeratorB / denominator];
+        }
+
+        // Function to get the patch centered at (x, y)
+        function getPatch(x, y) {
+            const patch = [];
+            for (let ny = y - Math.floor(patchSize / 2); ny <= y + Math.floor(patchSize / 2); ny++) {
+                for (let nx = x - Math.floor(patchSize / 2); nx <= x + Math.floor(patchSize / 2); nx++) {
+                    const px = Math.min(Math.max(nx, 0), width - 1); // Correct for boundary
+                    const py = Math.min(Math.max(ny, 0), height - 1); // Correct for boundary
+                    const index = (py * width + px) * 4;
+                    patch.push(data[index], data[index + 1], data[index + 2]);
+                }
+            }
+            return patch;
+        }
+
+        // Function to compute the Euclidean distance between two patches
+        function patchDistance(patch1, patch2) {
+            let distance = 0;
+            for (let i = 0; i < patch1.length; i++) {
+                distance += Math.pow(patch1[i] - patch2[i], 2);
+            }
+            return Math.sqrt(distance);
+        }
+
+        // Function to compute the weight of two patches
+        function computeWeight(patch1, patch2) {
+            const distance = patchDistance(patch1, patch2);
+            return Math.exp(-distance / (h * h));
+        }
+
+        for (let y = 0; y < height; y++) {
+            for (let x = 0; x < width; x++) {
+                const [newValueR, newValueG, newValueB] = computeWeightedAverage(x, y);
+
+                const index = (y * width + x) * 4;
+                data[index] = newValueR;
+                data[index + 1] = newValueG;
+                data[index + 2] = newValueB;
+            }
+        }
+
+        console.log("Denoising complete.");
+        resolve(imageData);
+    });
 }
 
 //Remove Background
@@ -694,7 +861,7 @@ async function removeBackground(img) {
     imgOriginal.src = imageElement;
     imgOriginal.style.position = 'fixed';
     imgOriginal.style.top = '15px';
-    imgOriginal.style.right = '30px';
+    imgOriginal.style.right = '15px';
     imgOriginal.style.maxWidth = '500px';
     imgOriginal.style.maxHeight = '500px';
     imgOriginal.setAttribute('data-role', 'dynamic-image');
@@ -755,7 +922,7 @@ async function removeBackground(img) {
     imgProcessed.src = canvas.toDataURL('image/png');
     imgProcessed.style.position = 'fixed';
     imgProcessed.style.top = '15px';
-    imgProcessed.style.right = '30px'; // Adjust to position next to the original image
+    imgProcessed.style.right = '15px'; // Adjust to position next to the original image
     imgProcessed.style.maxWidth = '500px';
     imgProcessed.style.maxHeight = '500px';
     imgProcessed.setAttribute('data-role', 'dynamic-image');
@@ -768,7 +935,7 @@ async function removeBackground(img) {
     const min = 0;
     const max = 999999999999999;
     const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    link.download = 'output'+randomnumber+'.png';
+    link.download = 'output' + randomnumber + '.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
 
@@ -848,7 +1015,7 @@ async function predictNudityForImage(filePath) {
     const imgElement = document.createElement('img');
     imgElement.style.position = 'fixed';
     imgElement.style.top = '15px';
-    imgElement.style.right = '30px';
+    imgElement.style.right = '15px';
     imgElement.style.maxWidth = '500px';
     imgElement.style.maxHeight = '500px';
 
@@ -911,7 +1078,7 @@ async function predictNudityForVideo(filePath) {
     const videoElement = document.createElement('video');
     videoElement.style.position = 'fixed';
     videoElement.style.top = '15px';
-    videoElement.style.right = '30px';
+    videoElement.style.right = '15px';
     videoElement.style.maxWidth = '500px';
     videoElement.style.maxHeight = '500px';
     videoElement.src = filePath;
@@ -1038,7 +1205,7 @@ async function detectHumans(data) {
     const img = document.createElement('img');
     img.style.position = 'fixed';
     img.style.top = '15px';
-    img.style.right = '30px';
+    img.style.right = '15px';
     img.style.maxWidth = '500px';
     img.style.maxHeight = '500px';
     img.setAttribute('data-role', 'dynamic-image');
@@ -1072,7 +1239,7 @@ async function detectHumans(data) {
 
     // Handle image load error
     img.onerror = () => {
-        
+
         echo('Failed to load image.');
     };
 }
@@ -1097,7 +1264,7 @@ async function detectFaces(data) {
     const img = document.createElement('img');
     img.style.position = 'fixed';
     img.style.top = '15px';
-    img.style.right = '30px';
+    img.style.right = '15px';
     img.style.maxWidth = '500px';
     img.style.maxHeight = '500px';
     img.setAttribute('data-role', 'dynamic-image');
@@ -1124,7 +1291,7 @@ async function detectFaces(data) {
 
     // Handle image load error
     img.onerror = () => {
-        
+
         echo('Failed to load image.');
     };
 }
@@ -1149,7 +1316,7 @@ async function detectEmotion(data) {
     const img = document.createElement('img');
     img.style.position = 'fixed';
     img.style.top = '15px';
-    img.style.right = '30px';
+    img.style.right = '15px';
     img.style.maxWidth = '500px';
     img.style.maxHeight = '500px';
     img.setAttribute('data-role', 'dynamic-image');
@@ -1191,7 +1358,7 @@ async function detectEmotion(data) {
 
     // Handle image load error
     img.onerror = () => {
-        
+
         echo('Failed to load image.');
     };
 }
@@ -1216,7 +1383,7 @@ async function detectGender(data) {
     const img = document.createElement('img');
     img.style.position = 'fixed';
     img.style.top = '15px';
-    img.style.right = '30px';
+    img.style.right = '15px';
     img.style.maxWidth = '500px';
     img.style.maxHeight = '500px';
     img.setAttribute('data-role', 'dynamic-image');
@@ -1255,7 +1422,7 @@ async function detectGender(data) {
 
     // Handle image load error
     img.onerror = () => {
-        
+
         echo('Failed to load image.');
     };
 }
@@ -1280,7 +1447,7 @@ async function detectAge(data) {
     const img = document.createElement('img');
     img.style.position = 'fixed';
     img.style.top = '15px';
-    img.style.right = '30px';
+    img.style.right = '15px';
     img.style.maxWidth = '500px';
     img.style.maxHeight = '500px';
     img.setAttribute('data-role', 'dynamic-image');
@@ -1319,7 +1486,7 @@ async function detectAge(data) {
 
     // Handle image load error
     img.onerror = () => {
-        
+
         echo('Failed to load image.');
     };
 }
@@ -1558,7 +1725,7 @@ function processNumerologyInput(input) {
     const [name1, dob1, name2, dob2] = input.split(':').map((s, i) => i % 2 === 0 ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : s);
 
     if (!name1 || !dob1 || !name2 || !dob2) {
-        
+
         return 'Invalid input. Please provide names and dates of birth in the format "name1:dob1:name2:dob2".';
     }
 
@@ -1673,7 +1840,7 @@ function getZodiacSign(dateOfBirth) {
     if (sign) {
         echo(`You are a ${sign.sign}. ${sign.details}`);
     } else {
-        
+
         echo('Invalid date of birth.');
     }
 }
@@ -1855,7 +2022,7 @@ function changeBodyColor(userColor) {
         // Set the body background color
         document.body.style.backgroundColor = userColor;
     } else {
-        
+
         echo("Invalid color!");
     }
 }
@@ -1871,7 +2038,7 @@ function changeColor(userColor) {
         // Set the body background color
         document.body.style.color = userColor;
     } else {
-        
+
         echo("Invalid color!");
     }
 }
@@ -1905,14 +2072,14 @@ function getOS() {
 function countBackward(number) {
     // Check if the input is a valid number
     if (isNaN(number)) {
-        
+
         echo('Please provide a valid number after "count:".');  // Assuming echo is a function that displays a message
         return;  // Exit the function if the input is not a valid number
     }
 
     // Check if the number is positive
     if (number <= 0) {
-        
+
         echo('Please provide a positive number greater than zero.');
         return;  // Exit the function if the input is not a positive number
     }
@@ -2941,7 +3108,7 @@ function numberToWords(num) {
 function decimalToBinary(data) {
     const decimal = data.trim().replace(/^convert:decimaltobinary:\b\s*/i, '');
     if (isNaN(decimal)) {
-        
+
         echo('Invalid decimal number');
         return;
     }
@@ -2952,7 +3119,7 @@ function decimalToBinary(data) {
 function decimalToOctal(data) {
     const decimal = data.trim().replace(/^convert:decimaltooctal:\b\s*/i, '');
     if (isNaN(decimal)) {
-        
+
         echo('Invalid decimal number');
         return;
     }
@@ -2963,7 +3130,7 @@ function decimalToOctal(data) {
 function decimalToHexadecimal(data) {
     const decimal = data.trim().replace(/^convert:decimaltohexadecimal:\b\s*/i, '');
     if (isNaN(decimal)) {
-        
+
         echo('Invalid decimal number');
         return;
     }
@@ -2975,7 +3142,7 @@ function binaryToDecimal(number) {
     const binary = number.trim().replace(/^convert:binarytodecimal:\b\s*/i, '');
     // Check if the input is a valid binary number
     if (!/^[01]+$/.test(binary)) {
-        
+
         echo('Invalid binary number');
     }
 
@@ -2991,7 +3158,7 @@ function binaryToDecimal(number) {
 function decimalToBinary(number) {
     const decimal = parseInt(number.trim().replace(/^convert:decimaltobinary:\b\s*/i, ''), 10);
     if (isNaN(decimal)) {
-        
+
         echo('Invalid decimal number');
         return;
     }
@@ -3004,7 +3171,7 @@ function decimalToBinary(number) {
 function binaryToOctal(number) {
     const binary = number.trim().replace(/^convert:binarytooctal:\b\s*/i, '');
     if (!/^[01]+$/.test(binary)) {
-        
+
         echo('Invalid binary number');
         return;
     }
@@ -3018,7 +3185,7 @@ function binaryToOctal(number) {
 function octalToBinary(number) {
     const octal = parseInt(number.trim().replace(/^convert:octaltobinary:\b\s*/i, ''), 8);
     if (isNaN(octal)) {
-        
+
         echo('Invalid octal number');
         return;
     }
@@ -3031,7 +3198,7 @@ function octalToBinary(number) {
 function octalToDecimal(number) {
     const octal = parseInt(number.trim().replace(/^convert:octaltodecimal:\b\s*/i, ''), 8);
     if (isNaN(octal)) {
-        
+
         echo('Invalid octal number');
         return;
     }
@@ -3043,7 +3210,7 @@ function octalToDecimal(number) {
 function octalToHexadecimal(number) {
     const octal = parseInt(number.trim().replace(/^convert:octaltohexadecimal:\b\s*/i, ''), 8);
     if (isNaN(octal)) {
-        
+
         echo('Invalid octal number');
         return;
     }
@@ -3056,7 +3223,7 @@ function octalToHexadecimal(number) {
 function hexadecimalToBinary(number) {
     const hexadecimal = number.trim().replace(/^convert:hexadecimaltobinary:\b\s*/i, '');
     if (!/^[0-9A-Fa-f]+$/.test(hexadecimal)) {
-        
+
         echo('Invalid hexadecimal number');
         return;
     }
@@ -3070,7 +3237,7 @@ function hexadecimalToBinary(number) {
 function hexadecimalToDecimal(number) {
     const hexadecimal = number.trim().replace(/^convert:hexadecimaltodecimal:\b\s*/i, '');
     if (!/^[0-9A-Fa-f]+$/.test(hexadecimal)) {
-        
+
         echo('Invalid hexadecimal number');
         return;
     }
@@ -3083,7 +3250,7 @@ function hexadecimalToDecimal(number) {
 function hexadecimalToOctal(number) {
     const hexadecimal = number.trim().replace(/^convert:hexadecimaltooctal:\b\s*/i, '');
     if (!/^[0-9A-Fa-f]+$/.test(hexadecimal)) {
-        
+
         echo('Invalid hexadecimal number');
         return;
     }
@@ -3097,7 +3264,7 @@ function hexadecimalToOctal(number) {
 function binaryToHexadecimal(number) {
     const binary = number.trim().replace(/^convert:binarytohexadecimal:\b\s*/i, '');
     if (!/^[01]+$/.test(binary)) {
-        
+
         echo('Invalid binary number');
         return;
     }
@@ -3127,7 +3294,7 @@ function createQrCode(input) {
     if (newTab) {
         newTab.focus();
     } else {
-        
+
         alert('Please allow pop-ups for this website to view the QR code.');
     }
 }
@@ -3168,7 +3335,7 @@ function decode(input) {
         const decoded = atob(data);
         echo(`Base64 decoded: ${decoded}`);
     } catch (error) {
-        
+
         echo(`Error decoding: ${error.message}`);
     }
 }
@@ -3180,7 +3347,7 @@ function encode(input) {
         const encoded = btoa(data);
         echo(`Base64 encoded: ${encoded}`);
     } catch (error) {
-        
+
         echo(`Error encoding: ${error.message}`);
     }
 }
@@ -3223,7 +3390,7 @@ function readOutLine(text) {
         // Speak the text
         window.speechSynthesis.speak(utterance);
     } else {
-        
+
         console.error('Speech synthesis not supported in this browser.');
     }
 }
@@ -3238,7 +3405,7 @@ function reverseString(input) {
 // String Explode
 function stringExplode(sentence, delimiter) {
     if (typeof sentence !== 'string' || typeof delimiter !== 'string') {
-        
+
         echo('Both sentence and delimiter must be strings.');
     }
     echo('[' + sentence.split(delimiter) + ']');
@@ -3248,7 +3415,7 @@ function stringExplode(sentence, delimiter) {
 function removeSpaces(data) {
     const input = data.trim().replace(/^remove:space:\s*/i, '');
     if (typeof input !== 'string') {
-        
+
         echo('Input must be a string.');
     }
 
@@ -3279,7 +3446,7 @@ function removeNumbers(str) {
 function removeSingleQuotes(data) {
     const inputString = data.trim().replace(/^remove:singlequotes:\s*/i, '');
     if (typeof inputString !== 'string') {
-        
+
         echo('Input must be a string');
     }
     echo(inputString.replace(/'/g, ''));
@@ -3289,7 +3456,7 @@ function removeSingleQuotes(data) {
 function removeDoubleQuotes(data) {
     const inputString = data.trim().replace(/^remove:doublequotes:\s*/i, '');
     if (typeof inputString !== 'string') {
-        
+
         echo('Input must be a string');
     }
     echo(inputString.replace(/"/g, ''));
@@ -3309,7 +3476,7 @@ function removeSpecialCharacters(data) {
 function convertSingleToDoubleQuotes(data) {
     const inputString = data.trim().replace(/^convert:singlequotestodoublequotes:\s*/i, '');
     if (typeof inputString !== 'string') {
-        
+
         echo('Input must be a string');
     }
     echo(inputString.replace(/'/g, '"'));
@@ -3319,7 +3486,7 @@ function convertSingleToDoubleQuotes(data) {
 function convertDoubleToSingleQuotes(data) {
     const inputString = data.trim().replace(/^convert:doublequotestosinglequotes:\s*/i, '');
     if (typeof inputString !== 'string') {
-        
+
         echo('Input must be a string');
     }
     echo(inputString.replace(/"/g, `'`));
@@ -3329,7 +3496,7 @@ function convertDoubleToSingleQuotes(data) {
 function convertSpacesToUnderscores(data) {
     const input = data.trim().replace(/^convert:spacetounderscore:\s*/i, '');
     if (typeof input !== 'string') {
-        
+
         echo('Input must be a string.');
     }
 
@@ -3377,7 +3544,7 @@ function openCamera() {
                 echo('Error accessing the webcam:', error);
             });
     } else {
-        
+
         echo('getUserMedia is not supported on this browser.');
     }
 }
@@ -3486,7 +3653,7 @@ function squareRoot(num) {
 function calculate(num) {
     const parts = num.split('calculate:');
     if (parts.length !== 2) {
-        
+
         echo('Invalid input format');
     }
 
@@ -3497,7 +3664,7 @@ function calculate(num) {
         // Using eval to evaluate the expression
         echo('The answer is ' + eval(formattedExpression));
     } catch (error) {
-        
+
         // Handle any errors in the expression
         echo('Error: Invalid expression');
     }
@@ -3513,7 +3680,7 @@ function processLogCommand(input) {
         const result = Math.log10(value);
         echo(`The logarithm base 10 of ${value} is ${result}`);
     } else {
-        
+
         echo('Invalid log command or value');
     }
 }
@@ -3528,7 +3695,7 @@ function processCeilCommand(input) {
         const result = ceil(value);
         echo(`The ceiling value of ${value} is ${result}`);
     } else {
-        
+
         echo('Invalid ceil command or value');
     }
 }
@@ -3547,7 +3714,7 @@ function processFloatAbsolute(num) {
     if (!isNaN(x)) {
         echo('The float absolute for ' + x + ' is ' + Math.abs(x));
     } else {
-        
+
         echo('Invalid value'); // Return NaN for unsupported types or invalid input
     }
 }
@@ -3558,7 +3725,7 @@ function processFloat(num) {
     if (!isNaN(x)) {
         echo('The float value is ' + x);
     } else {
-        
+
         echo('Invalid value'); // Return NaN for unsupported types or invalid input
     }
 }
@@ -3570,7 +3737,7 @@ function processGcd(input) {
 
     // Ensure there are two numbers in the input
     if (numbers.length !== 2 || isNaN(numbers[0]) || isNaN(numbers[1])) {
-        
+
         echo('Invalid input format. Please use "gcd:a,b" where a and b are numbers.');
         return;
     }
@@ -3593,7 +3760,7 @@ function processGcdForLcm(input) {
 
     // Ensure there are two numbers in the input
     if (numbers.length !== 2 || isNaN(numbers[0]) || isNaN(numbers[1])) {
-        
+
         echo('Invalid input format. Please use "gcd:a,b" where a and b are numbers.');
         return;
     }
@@ -3616,7 +3783,7 @@ function processLcm(input) {
 
     // Ensure there are two numbers in the input
     if (numbers.length !== 2 || isNaN(numbers[0]) || isNaN(numbers[1])) {
-        
+
         echo('Invalid input format. Please use "lcm:a,b" where a and b are numbers.');
         return;
     }
@@ -3635,7 +3802,7 @@ function convertToLowerCase(data) {
     if (typeof input === 'string') {
         echo(input.toLowerCase());
     } else {
-        
+
         echo('Input must be a string.');
     }
 }
@@ -3646,7 +3813,7 @@ function convertToUpperCase(data) {
     if (typeof input === 'string') {
         echo(input.toUpperCase());
     } else {
-        
+
         echo('Input must be a string.');
     }
 }

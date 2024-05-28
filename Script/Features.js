@@ -32,7 +32,7 @@ function handleFileDrop(event) {
                 }
                 imgElement.style.position = 'fixed';
                 imgElement.style.top = '15px';
-                imgElement.style.right = '30px';
+                imgElement.style.right = '15px';
                 imgElement.style.maxWidth = '500px';
                 imgElement.style.maxHeight = '500px';
                 imgElement.setAttribute('data-role', 'dynamic-dragged');
