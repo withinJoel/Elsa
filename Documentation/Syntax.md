@@ -197,6 +197,10 @@
 * `happybirthday` - To play the happy birthday song.
 
 # Image
+* `convert:webptojpeg:` - To convert a webp to jpeg.
+* `convert:jpegtowebp:` - To convert jpeg to webp.
+* `convert:jpgtopng:` - To convert jpg to png.
+* `convert:jpegtopng:` - To convert jpeg to png.
 * `crop:face:` - To crop only the face an to save it. example: `crop:face:summervacation.png`
 * `open:image:` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
 * `close:image` - To close an image.

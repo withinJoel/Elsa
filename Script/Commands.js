@@ -99,6 +99,18 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("remove:background:")) {
                 const data = commandName.trim().replace(/^remove:background:\b\s*/i, '');
                 removeBackground(data);
+            } else if (commandName.includes("convert:jpegtowebp:")) {
+                const data = commandName.trim().replace(/^convert:jpegtowebp:\b\s*/i, '');
+                convertJpegtoWebP(data);
+            } else if (commandName.includes("convert:webptojpeg:")) {
+                const data = commandName.trim().replace(/^convert:webptojpeg:\b\s*/i, '');
+                convertWebPtoJpeg(data);
+            } else if (commandName.includes("convert:jpgtopng:")) {
+                const data = commandName.trim().replace(/^convert:jpgtopng:\b\s*/i, '');
+                convertJpegtoPng(data);
+            } else if (commandName.includes("convert:jpegtopng:")) {
+                const data = commandName.trim().replace(/^convert:jpegtopng:\b\s*/i, '');
+                convertJpegtoPng(data);
             } else if (commandName.includes("open:image:")) {
                 openImage(commandName);
             } else if (commandName === "close:image") {

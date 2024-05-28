@@ -245,3 +245,120 @@ function getHappybirthday() {
     // Call the playMelody function to play "Twinkle, Twinkle, Little Star"
     playMelody();
 }
+
+//convert webp to jpeg
+function convertWebPtoJpeg(data) {
+    const imgOriginal = new Image();
+    imgOriginal.src = imagedir + data;
+    imgOriginal.onload = function () {
+        // Create a temporary canvas to draw the image
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = imgOriginal.width;
+        tempCanvas.height = imgOriginal.height;
+        const ctx = tempCanvas.getContext('2d');
+        ctx.drawImage(imgOriginal, 0, 0);
+
+        // Convert the image to JPEG
+        const jpegDataUrl = tempCanvas.toDataURL('image/jpeg');
+
+        // Display the original image
+        const originalImgElement = document.createElement('img');
+        originalImgElement.src = imgOriginal.src;
+        originalImgElement.style.position = 'fixed';
+        originalImgElement.style.top = '15px';
+        originalImgElement.style.right = '15px'; // Adjust position as needed
+        originalImgElement.style.maxWidth = '500px';
+        originalImgElement.style.maxHeight = '500px';
+        originalImgElement.setAttribute('data-role', 'dynamic-image');
+        document.body.appendChild(originalImgElement);
+
+        // Generate a random number
+        const randomNumber = Math.floor(Math.random() * 100000);
+
+        // Automatically download the converted JPEG image with a random filename
+        const link = document.createElement('a');
+        link.href = jpegDataUrl;
+        link.download = `converted_image_${randomNumber}.jpg`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link); // Clean up the DOM
+    };
+}
+
+//convert jpeg to webp
+function convertJpegtoWebP(data) {
+    const imgOriginal = new Image();
+    imgOriginal.src = imagedir + data;
+    imgOriginal.onload = function () {
+        // Create a temporary canvas to draw the image
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = imgOriginal.width;
+        tempCanvas.height = imgOriginal.height;
+        const ctx = tempCanvas.getContext('2d');
+        ctx.drawImage(imgOriginal, 0, 0);
+
+        // Convert the image to WebP
+        const webpDataUrl = tempCanvas.toDataURL('image/webp');
+
+        // Display the original image
+        const originalImgElement = document.createElement('img');
+        originalImgElement.src = imgOriginal.src;
+        originalImgElement.style.position = 'fixed';
+        originalImgElement.style.top = '15px';
+        originalImgElement.style.right = '15px'; // Adjust position as needed
+        originalImgElement.style.maxWidth = '500px';
+        originalImgElement.style.maxHeight = '500px';
+        originalImgElement.setAttribute('data-role', 'dynamic-image');
+        document.body.appendChild(originalImgElement);
+
+        // Generate a random number
+        const randomNumber = Math.floor(Math.random() * 100000);
+
+        // Automatically download the converted WebP image with a random filename
+        const link = document.createElement('a');
+        link.href = webpDataUrl;
+        link.download = `converted_image_${randomNumber}.webp`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link); // Clean up the DOM
+    };
+}
+
+//Convert Jpeg to png
+function convertJpegtoPng(data) {
+    const imgOriginal = new Image();
+    imgOriginal.src = imagedir + data;
+    imgOriginal.onload = function () {
+        // Create a temporary canvas to draw the image
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = imgOriginal.width;
+        tempCanvas.height = imgOriginal.height;
+        const ctx = tempCanvas.getContext('2d');
+        ctx.drawImage(imgOriginal, 0, 0);
+
+        // Convert the image to PNG
+        const pngDataUrl = tempCanvas.toDataURL('image/png');
+
+        // Display the original image
+        const originalImgElement = document.createElement('img');
+        originalImgElement.src = imgOriginal.src;
+        originalImgElement.style.position = 'fixed';
+        originalImgElement.style.top = '15px';
+        originalImgElement.style.right = '15px'; // Adjust position as needed
+        originalImgElement.style.maxWidth = '500px';
+        originalImgElement.style.maxHeight = '500px';
+        originalImgElement.setAttribute('data-role', 'dynamic-image');
+        document.body.appendChild(originalImgElement);
+
+        // Generate a random number
+        const randomNumber = Math.floor(Math.random() * 100000);
+
+        // Automatically download the converted PNG image with a random filename
+        const link = document.createElement('a');
+        link.href = pngDataUrl;
+        link.download = `converted_image_${randomNumber}.png`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link); // Clean up the DOM
+    };
+}
