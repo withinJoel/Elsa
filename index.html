@@ -5,10 +5,9 @@
   default-src 'self' * data:;
   script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
   style-src 'self' 'unsafe-inline' *;
+  img-src 'self' blob: data: *;
   media-src 'self' blob: *;
-  worker-src 'self' blob:;
-">
-
+  worker-src 'self' blob:;">
 
 	<link rel="icon" href="Logo/Elsa.png">
 	<link rel="stylesheet" href="Styles/Styles.css">
@@ -24,22 +23,15 @@
 		</div>
 	</form>
 </body>
-<script src="Models/Opencv/opencv.js"></script>
 <script src="Models/Tensorflow/tfjs.js"></script>
-<script src="Models/Tensorflow/deeplab.js"></script>
 <script src="Models/Tensorflow/body-pix.js"></script>
-<script src="../../../API/Apikeys.js"></script>
-<script src="Models/Gemini/Gemini.js"></script>
-<script src="Script/Features.js"></script>
+<script src="Models/Tensorflow/deeplab.js"></script>
+<script src="Models/Opencv/opencv.js"></script>
 <script src="Models/Tone/Tone.min.js"></script>
 <script src="Models/Faceapi/face-api.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/withinJoel/Elsa/Version/Version-1.0.0.js"></script>
-<script src="Datasets/Data.js"></script>
-<script src="Datasets/wordBank.js"></script>
-<script src="Datasets/Bible.js"></script>
-<script src="Script/Variables.js"></script>
-<script src="Script/Commands.js"></script>
-<script src="Script/Packages.js"></script>
-<script src="Script/Process.js"></script>
 
+<script src="Script/Variables.js"></script>
+<script src="Script/Modules.js"></script>
+<script src="Script/Commands.js"></script>
+<script src="Script/Process.js"></script>
 </html>

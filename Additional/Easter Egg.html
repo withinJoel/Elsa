@@ -1,236 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elsa</title>
-<link rel="icon" href="../Logo/Elsa.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elsa</title>
+  <link rel="icon" href="../Logo/Elsa.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<style>
-:root {
-  --glow-rgb: 239, 42, 201;
-}
+  <style>
+    :root {
+      --glow-rgb: 239, 42, 201;
+    }
 
-body {
-  background: #090909;
-  height: 100vh;
-  overflow: hidden;
-}
+    body {
+      background: #090909;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.centered-image {
-    max-width: 300px;
-    max-height: 300px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+    .centered-image {
+      max-width: 300px;
+      max-height: 300px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-.glow-point {
-  position: absolute;
-  box-shadow: 0rem 0rem 1.2rem 0.6rem rgb(var(--glow-rgb));
-  pointer-events: none;
-}
+    .glow-point {
+      position: absolute;
+      box-shadow: 0rem 0rem 1.2rem 0.6rem rgb(var(--glow-rgb));
+      pointer-events: none;
+    }
 
-.star {
-  position: absolute;
-  z-index: 2;
-  color: white;
-  font-size: 1rem;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
-  pointer-events: none;
-}
+    .star {
+      position: absolute;
+      z-index: 2;
+      color: white;
+      font-size: 1rem;
+      animation-duration: 1500ms;
+      animation-fill-mode: forwards;
+      pointer-events: none;
+    }
 
-@keyframes fall-1 {
-  0% {
-    transform: translate(0px, 0px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(0.25);
-    opacity: 0;
-  }
-  5% {
-    transform: translate(10px, -10px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(25px, 200px) rotateX(180deg) rotateY(270deg) rotateZ(90deg) scale(1);
-    opacity: 0;
-  }
-}
+    @keyframes fall-1 {
+      0% {
+        transform: translate(0px, 0px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(0.25);
+        opacity: 0;
+      }
 
-@keyframes fall-2 {
-  0% {
-    transform: translate(0px, 0px) rotateX(-20deg) rotateY(10deg) scale(0.25);
-    opacity: 0;
-  }
-  10% {
-    transform: translate(-10px, -5px) rotateX(-20deg) rotateY(10deg) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-10px, 160px) rotateX(-90deg) rotateY(45deg) scale(0.25);
-    opacity: 0;
-  }
-}
+      5% {
+        transform: translate(10px, -10px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(1);
+        opacity: 1;
+      }
 
-@keyframes fall-3 {
-  0% {
-    transform: translate(0px, 0px) rotateX(0deg) rotateY(45deg) scale(0.5);
-    opacity: 0;
-  }
-  15% {
-    transform: translate(7px, 5px) rotateX(0deg) rotateY(45deg) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(20px, 120px) rotateX(-180deg) rotateY(-90deg) scale(0.5);
-    opacity: 0;
-  }
-}
-</style>
+      100% {
+        transform: translate(25px, 200px) rotateX(180deg) rotateY(270deg) rotateZ(90deg) scale(1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fall-2 {
+      0% {
+        transform: translate(0px, 0px) rotateX(-20deg) rotateY(10deg) scale(0.25);
+        opacity: 0;
+      }
+
+      10% {
+        transform: translate(-10px, -5px) rotateX(-20deg) rotateY(10deg) scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-10px, 160px) rotateX(-90deg) rotateY(45deg) scale(0.25);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fall-3 {
+      0% {
+        transform: translate(0px, 0px) rotateX(0deg) rotateY(45deg) scale(0.5);
+        opacity: 0;
+      }
+
+      15% {
+        transform: translate(7px, 5px) rotateX(0deg) rotateY(45deg) scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(20px, 120px) rotateX(-180deg) rotateY(-90deg) scale(0.5);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <img src="../Logo/Elsa.ico" alt="Centered Image" class="centered-image">
-<script>
-let start = new Date().getTime();
+  <img src="../Logo/Elsa.ico" alt="Centered Image" class="centered-image">
+  <script>
+    let start = new Date().getTime();
 
-const originPosition = { x: 0, y: 0 };
+    const originPosition = { x: 0, y: 0 };
 
-const last = {
-  starTimestamp: start,
-  starPosition: originPosition,
-  mousePosition: originPosition
-}
+    const last = {
+      starTimestamp: start,
+      starPosition: originPosition,
+      mousePosition: originPosition
+    }
 
-const config = {
-  starAnimationDuration: 1500,
-  minimumTimeBetweenStars: 250,
-  minimumDistanceBetweenStars: 75,
-  glowDuration: 75,
-  maximumGlowPointSpacing: 10,
-  colors: ["249, 146, 253", "252, 254, 255"],
-  sizes: ["1.4rem", "1rem", "0.6rem"],
-  animations: ["fall-1", "fall-2", "fall-3"]
-}
+    const config = {
+      starAnimationDuration: 1500,
+      minimumTimeBetweenStars: 250,
+      minimumDistanceBetweenStars: 75,
+      glowDuration: 75,
+      maximumGlowPointSpacing: 10,
+      colors: ["249, 146, 253", "252, 254, 255"],
+      sizes: ["1.4rem", "1rem", "0.6rem"],
+      animations: ["fall-1", "fall-2", "fall-3"]
+    }
 
-let count = 0;
-  
-const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
+    let count = 0;
+
+    const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
       selectRandom = items => items[rand(0, items.length - 1)];
 
-const withUnit = (value, unit) => `${value}${unit}`,
+    const withUnit = (value, unit) => `${value}${unit}`,
       px = value => withUnit(value, "px"),
       ms = value => withUnit(value, "ms");
 
-const calcDistance = (a, b) => {
-  const diffX = b.x - a.x,
+    const calcDistance = (a, b) => {
+      const diffX = b.x - a.x,
         diffY = b.y - a.y;
-  
-  return Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
-}
 
-const calcElapsedTime = (start, end) => end - start;
+      return Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
+    }
 
-const appendElement = element => document.body.appendChild(element),
+    const calcElapsedTime = (start, end) => end - start;
+
+    const appendElement = element => document.body.appendChild(element),
       removeElement = (element, delay) => setTimeout(() => document.body.removeChild(element), delay);
 
-const createStar = position => {
-  const star = document.createElement("span"),
+    const createStar = position => {
+      const star = document.createElement("span"),
         color = selectRandom(config.colors);
-  
-  star.className = "star fa fa-star"; // Updated class name
-  
-  star.style.left = px(position.x);
-  star.style.top = px(position.y);
-  star.style.fontSize = selectRandom(config.sizes);
-  star.style.color = `rgb(${color})`;
-  star.style.textShadow = `0px 0px 1.5rem rgb(${color} / 0.5)`;
-  star.style.animationName = config.animations[count++ % 3];
-  star.style.animationDuration = ms(config.starAnimationDuration); // Corrected typo
-  
-  appendElement(star);
 
-  removeElement(star, config.starAnimationDuration);
-}
+      star.className = "star fa fa-star"; // Updated class name
 
-const createGlowPoint = position => {
-  const glow = document.createElement("div");
-  
-  glow.className = "glow-point";
-  
-  glow.style.left = px(position.x);
-  glow.style.top = px(position.y);
-  
-  appendElement(glow)
-  
-  removeElement(glow, config.glowDuration);
-}
+      star.style.left = px(position.x);
+      star.style.top = px(position.y);
+      star.style.fontSize = selectRandom(config.sizes);
+      star.style.color = `rgb(${color})`;
+      star.style.textShadow = `0px 0px 1.5rem rgb(${color} / 0.5)`;
+      star.style.animationName = config.animations[count++ % 3];
+      star.style.animationDuration = ms(config.starAnimationDuration); // Corrected typo
 
-const determinePointQuantity = distance => Math.max(
-  Math.floor(distance / config.maximumGlowPointSpacing),
-  1
-);
+      appendElement(star);
 
-const createGlow = (last, current) => {
-  const distance = calcDistance(last, current),
+      removeElement(star, config.starAnimationDuration);
+    }
+
+    const createGlowPoint = position => {
+      const glow = document.createElement("div");
+
+      glow.className = "glow-point";
+
+      glow.style.left = px(position.x);
+      glow.style.top = px(position.y);
+
+      appendElement(glow)
+
+      removeElement(glow, config.glowDuration);
+    }
+
+    const determinePointQuantity = distance => Math.max(
+      Math.floor(distance / config.maximumGlowPointSpacing),
+      1
+    );
+
+    const createGlow = (last, current) => {
+      const distance = calcDistance(last, current),
         quantity = determinePointQuantity(distance);
-  
-  const dx = (current.x - last.x) / quantity,
+
+      const dx = (current.x - last.x) / quantity,
         dy = (current.y - last.y) / quantity;
-  
-  Array.from(Array(quantity)).forEach((_, index) => { 
-    const x = last.x + dx * index, 
+
+      Array.from(Array(quantity)).forEach((_, index) => {
+        const x = last.x + dx * index,
           y = last.y + dy * index;
-    
-    createGlowPoint({ x, y });
-  });
-}
 
-const updateLastStar = position => {
-  last.starTimestamp = new Date().getTime();
+        createGlowPoint({ x, y });
+      });
+    }
 
-  last.starPosition = position;
-}
+    const updateLastStar = position => {
+      last.starTimestamp = new Date().getTime();
 
-const updateLastMousePosition = position => last.mousePosition = position;
+      last.starPosition = position;
+    }
 
-const adjustLastMousePosition = position => {
-  if(last.mousePosition.x === 0 && last.mousePosition.y === 0) {
-    last.mousePosition = position;
-  }
-};
+    const updateLastMousePosition = position => last.mousePosition = position;
 
-const handleOnMove = e => {
-  const mousePosition = { x: e.clientX, y: e.clientY }
-  
-  adjustLastMousePosition(mousePosition);
-  
-  const now = new Date().getTime(),
+    const adjustLastMousePosition = position => {
+      if (last.mousePosition.x === 0 && last.mousePosition.y === 0) {
+        last.mousePosition = position;
+      }
+    };
+
+    const handleOnMove = e => {
+      const mousePosition = { x: e.clientX, y: e.clientY }
+
+      adjustLastMousePosition(mousePosition);
+
+      const now = new Date().getTime(),
         hasMovedFarEnough = calcDistance(last.starPosition, mousePosition) >= config.minimumDistanceBetweenStars,
         hasBeenLongEnough = calcElapsedTime(last.starTimestamp, now) > config.minimumTimeBetweenStars;
-  
-  if(hasMovedFarEnough || hasBeenLongEnough) {
-    createStar(mousePosition);
-    
-    updateLastStar(mousePosition);
-  }
-  
-  createGlow(last.mousePosition, mousePosition);
-  
-  updateLastMousePosition(mousePosition);
-}
 
-window.onmousemove = e => handleOnMove(e);
+      if (hasMovedFarEnough || hasBeenLongEnough) {
+        createStar(mousePosition);
 
-window.ontouchmove = e => handleOnMove(e.touches[0]);
+        updateLastStar(mousePosition);
+      }
 
-document.body.onmouseleave = () => updateLastMousePosition(originPosition);
-</script>
+      createGlow(last.mousePosition, mousePosition);
+
+      updateLastMousePosition(mousePosition);
+    }
+
+    window.onmousemove = e => handleOnMove(e);
+
+    window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+    document.body.onmouseleave = () => updateLastMousePosition(originPosition);
+  </script>
 </body>
+
 </html>
