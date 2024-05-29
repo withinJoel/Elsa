@@ -107,6 +107,7 @@
 * `random:profession` - To get a random profession.
 * `random:festival` - To get a random festivals.
 * `random:sexposition` - To get a random sex position.
+* `random:sexposition` - To get a random sex position.
 * `random:name` - To get a random name.
 * `random:malename` or `random:masculinename` - To get a random male name.
 * `random:femalename` or `random:femininename` - To get a random female name.
@@ -128,6 +129,7 @@
 * `random:pickupline` - To get a random pickup line.
 
 # Conversion Functions
+* `convert:numbertotext:` - To convert numbers to text. example: `convert:numbertotext:777`
 * `convert:numbertotext:` - To convert numbers to text. example: `convert:numbertotext:777`
 * `convert:secondstominutes:` - To convert seconds to minutes. example: `convert:secondstominutes:1024`
 * `convert:secondstohours:` - To convert seconds to hours. example: `convert:secondstohours:1024`
@@ -194,7 +196,15 @@
 * `rolldice` - To roll a dice.
 
 # Text
+# Games
+* `truthordare` - To play the truth or dare game.
+* `headsortails` - To return heads or tails.
+* `rolldice` - To roll a dice.
+
+# Text
 * `open:txt:` - To open a text file. example: `open:txt:hello.txt` (Note only txts that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
+
+# PDF
 
 # PDF
 * `open:pdf:` - To open a pdf. example: `open:pdf:10.pdf` (Note only pdfs that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
@@ -321,6 +331,7 @@
 
 # Adult
 * `onlyfans:` - To open their onlyfans profile example: `onlyfans:rileyreid`
+* `noodlemagazine:` - To search the noodlemagazine website with the keyword. example: `noodlemagazine:wife`
 * `noodlemagazine:` - To search the noodlemagazine website with the keyword. example: `noodlemagazine:wife`
 * `xnxx:` - To search the xnxx website with the keyword. example: `xnxx:wife`
 * `porn:` - To search the porn website with the keyword. example: `porn:wife`
