@@ -252,38 +252,32 @@ function getSys() {
     echo('Color Depth: ' + colorDepth);
     echo('Screen Resolution: ' + screenresolution);
 }
+
 //CPU Info
-function getCPUInfo() {
-    const userAgent = navigator.userAgent.toLowerCase();
-    let generation = 'Unknown';
-    let manufacturer = 'Unknown';
-    let modelName = 'Unknown';
+async function getCPUInfo() {
+    const cpuInfo = await window.electronAPI.getCPUInfo();
+    if (cpuInfo && cpuInfo.length > 0) {
+        const { model, speed, times } = cpuInfo[0]; // Get the first CPU info as an example
 
-    // Check if the userAgent contains information about CPU
-    if (userAgent.includes('intel')) {
-        const match = userAgent.match(/intel\s+core\s+[0-9]+/);
-        if (match) {
-            generation = match[0];
-            manufacturer = 'Intel';
-        }
-    } else if (userAgent.includes('amd')) {
-        const match = userAgent.match(/amd\s+[a-z]+\s+[0-9]+/);
-        if (match) {
-            generation = match[0];
-            manufacturer = 'AMD';
-        }
+        // You can extract more details if needed
+        const cpuname = model;
+        const cpuSpeed = speed;
+        const cpuUserTime = times.user;
+        const cpuNiceTime = times.nice;
+        const cpuSysTime = times.sys;
+        const cpuIdleTime = times.idle;
+        const cpuIrqTime = times.irq;
+
+        echo('CPU name: ' + cpuname);
+        echo('CPU speed: ' + cpuSpeed);
+        echo('CPU user time: ' + cpuUserTime);
+        echo('CPU nice time: ' + cpuNiceTime);
+        echo('CPU system time: ' + cpuSysTime);
+        echo('CPU idle time: ' + cpuIdleTime);
+        echo('CPU time spent servicing interrupts: ' + cpuIrqTime)
+    } else {
+        echo('Failed to retrieve CPU information');
     }
-
-    // Check if navigator.cpuClass is available for model name
-    if (navigator.cpuClass) {
-        modelName = navigator.cpuClass;
-    }
-
-    // Output CPU information
-    echo('Processor: ' + generation);
-    echo('Cores: ' + navigator.hardwareConcurrency);
-    echo('Manufacturer: ' + manufacturer);
-    echo('Model name: ' + modelName);
 }
 
 //GPU Info
@@ -308,6 +302,54 @@ function getGPUInfo() {
     echo('Maximum CubeMap Texture Size: ' + maxCubeMapSize);
     echo('Maximum RenderBuffer Size: ' + maxRenderBufferSize);
     echo('Maximum Viewport Dimensions: ' + maxViewportDims[0] + 'x' + maxViewportDims[1]);
+}
+
+//Shutdown System
+async function shutdownSystem() {
+    try {
+        const response = await window.electronAPI.shutdown();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error shutting down system:', error.message);
+        // Handle the error appropriately
+    }
+}
+
+//Restart System
+async function restartSystem() {
+    try {
+        const response = await window.electronAPI.restart();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error restarting system:', error.message);
+        // Handle the error appropriately
+    }
+}
+
+//Sleep System
+async function sleepSystem() {
+    try {
+        const response = await window.electronAPI.sleep();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error sleeping system:', error.message);
+        // Handle the error appropriately
+    }
+}
+
+//Signout System
+async function signoutSystem() {
+    try {
+        const response = await window.electronAPI.signout();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error restarting system:', error.message);
+        // Handle the error appropriately
+    }
 }
 
 //Echo Repeat Function
@@ -454,13 +496,13 @@ function getScreenResolution() {
 }
 
 //Display Info
-function getDisplayInfo () {
+function getDisplayInfo() {
     const screenWidth = screen.width; // Screen width in pixels
     const screenHeight = screen.height; // Screen height in pixels
     const screenresolution = ("Screen width: " + screenWidth + " and screen height: " + screenHeight);
     const colorDepth = screen.colorDepth; // Color depth
     echo(screenresolution);
-    echo('color depth: '+ colorDepth);
+    echo('color depth: ' + colorDepth);
 }
 
 //user Agent

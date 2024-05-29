@@ -41,6 +41,13 @@
 * `webrtc` - To get the WebRTC info.
 * `mouseposition` - To get the mouse position.
 
+# Operating System
+* `os` - To get the operating system details.
+* `shutdown` - To shutdown your system.
+* `restart` - To restart your system.
+* `signout` - To sign out from your system.
+* `sleep` - To sleep your system.
+
 # AI
 * `chat:gemini:` - To chat with the gemini model. example: `chat:gemini:hello, i am Joel` (Note: To use gemini you should obtain the api key from the gemini developer page and paste it in the C:/Program Files (x86)/Elsa/API/Apikeys.js)
     * `chat:gemini:` with `-read` at the end to read out the response. example: `chat:gemini:i am Joel -read`
@@ -195,7 +202,6 @@
 * `headsortails` - To return heads or tails.
 * `rolldice` - To roll a dice.
 
-# Text
 # Games
 * `truthordare` - To play the truth or dare game.
 * `headsortails` - To return heads or tails.
@@ -203,8 +209,6 @@
 
 # Text
 * `open:txt:` - To open a text file. example: `open:txt:hello.txt` (Note only txts that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
-
-# PDF
 
 # PDF
 * `open:pdf:` - To open a pdf. example: `open:pdf:10.pdf` (Note only pdfs that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
@@ -289,9 +293,6 @@
 * `raminfo` - To get ram information.
 * `batteryinfo` - To get the battery info.
 * `devicetype` - To get the devicie type.
-
-# Operating System
-* `os` - To get the operating system details.
 
 # Web
 * `codepen:` - To search codepen. example: `codepen:nav bar`

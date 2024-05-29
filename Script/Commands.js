@@ -45,6 +45,14 @@ function runCmd(command, inMemory, fromInput) {
                 getCPUInfo();
             } else if (commandName === "gpuinfo") {
                 getGPUInfo();
+            } else if (commandName === "shutdown") {
+                shutdownSystem();
+            } else if (commandName === "restart") {
+                restartSystem();
+            } else if (commandName === "signout") {
+                signoutSystem();
+            } else if (commandName === "sleep") {
+                sleepSystem();
             } else if (commandName === "timezone") {
                 getTimeZone();
             } else if (commandName.includes("chat:gemini:") && commandName.includes("read")) {

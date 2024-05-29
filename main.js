@@ -1,5 +1,7 @@
-const { app, BrowserWindow, screen, Menu } = require('electron');
+const { app, BrowserWindow, screen, Menu, ipcMain, powerMonitor } = require('electron');
 const path = require('path');
+const os = require('os');
+const { exec } = require('child_process');
 
 function createWindow() {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;
@@ -32,7 +34,8 @@ function createWindow() {
       allowRunningInsecureContent: false,
       worldSafeExecuteJavaScript: true,
       additionalArguments: ['--allow-file-access-from-files'],
-      safeDialogs: true, // Use safe dialogs for better security
+      safeDialogs: true,
+      preload: path.join(__dirname, 'preload.js'), // Add this line to load the preload script
     },
   });
 
@@ -73,5 +76,126 @@ function createWindow() {
     `);
   });
 }
+
+///////////////////////////////Shutdown
+ipcMain.handle('shutdown-system', () => {
+  return new Promise((resolve, reject) => {
+    let shutdownCommand;
+    switch (process.platform) {
+      case 'win32':
+        shutdownCommand = 'shutdown /s /t 0';
+        break;
+      case 'darwin':
+      case 'linux':
+      case 'openbsd':
+      case 'freebsd':
+        shutdownCommand = 'sudo shutdown -h now';
+        break;
+      default:
+        reject(new Error('System shutdown is not supported on this platform.'));
+        return;
+    }
+
+    exec(shutdownCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing shutdown command: ${error.message}`));
+        return;
+      }
+      resolve('System is shutting down...');
+    });
+  });
+});
+
+///////////////////////////////Restart
+ipcMain.handle('restart-system', () => {
+  return new Promise((resolve, reject) => {
+    let restartCommand;
+    switch (process.platform) {
+      case 'win32':
+        restartCommand = 'shutdown /r /t 0';
+        break;
+      case 'darwin':
+      case 'linux':
+      case 'openbsd':
+      case 'freebsd':
+        restartCommand = 'sudo shutdown -r now';
+        break;
+      default:
+        reject(new Error('System restart is not supported on this platform.'));
+        return;
+    }
+
+    exec(restartCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing restart command: ${error.message}`));
+        return;
+      }
+      resolve('System is restarting...');
+    });
+  });
+});
+
+// Sign out
+ipcMain.handle('sign-out-system', () => {
+  return new Promise((resolve, reject) => {
+    let signOutCommand;
+    switch (process.platform) {
+      case 'win32':
+        signOutCommand = 'shutdown /l';
+        break;
+      case 'darwin':
+      case 'linux':
+      case 'openbsd':
+      case 'freebsd':
+        signOutCommand = 'sudo pkill -KILL -u $USER';
+        break;
+      default:
+        reject(new Error('Sign out is not supported on this platform.'));
+        return;
+    }
+
+    exec(signOutCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing sign out command: ${error.message}`));
+        return;
+      }
+      resolve('User is signing out...');
+    });
+  });
+});
+
+// Sleep
+ipcMain.handle('sleep-system', () => {
+  return new Promise((resolve, reject) => {
+    let sleepCommand;
+    switch (process.platform) {
+      case 'win32':
+        sleepCommand = 'rundll32.exe powrprof.dll,SetSuspendState 0,1,0';
+        break;
+      case 'darwin':
+      case 'linux':
+      case 'openbsd':
+      case 'freebsd':
+        sleepCommand = 'sudo pm-suspend';
+        break;
+      default:
+        reject(new Error('System sleep is not supported on this platform.'));
+        return;
+    }
+
+    exec(sleepCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing sleep command: ${error.message}`));
+        return;
+      }
+      resolve('System is going to sleep...');
+    });
+  });
+});
+
+///////////////////////////////CPU Info
+ipcMain.handle('get-cpu-info', () => {
+  return os.cpus();
+});
 
 app.whenReady().then(createWindow);
