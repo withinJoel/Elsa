@@ -1,11 +1,34 @@
-Elsa
-This software is developed by Joel Jessie Jolly.
+Software License Agreement for Elsa
 
-Terms & Conditions
+This Software License Agreement ("Agreement") is entered into by and between Joel Jessie Jolly ("Developer") and the user ("User") of the software Elsa ("Software").
 
-* You can use this software for free of use.
-* You may charge a fee for the physical act of transferring a copy, and you may at your option offer warranty protection in exchange for a fee.
-* You cannot use this software to hurt or harm anyone in anyway possible.
-* You are not allowed to do illegal activities using this software and if you are caught with such activities I/We shall not take any responsibility.
-* Modifying the code is not allowed.
-* I/We do not take any responsibility if you download this product from some unknown external sources or use this product that was shared to you by some unknown sources.
+1. Grant of License
+Developer hereby grants User a non-exclusive, non-transferable license to use the Software free of charge, subject to the terms and conditions of this Agreement.
+
+2. Distribution
+User may distribute copies of the Software for a fee, provided that such distribution complies with applicable laws and regulations. User may also offer warranty protection in exchange for a fee at User's discretion.
+
+3. Prohibited Uses
+User shall not modify, reverse engineer, decompile, or create derivative works based on the Software. User shall not use the Software for any illegal or harmful activities, including but not limited to activities that violate privacy, security, or intellectual property rights.
+
+4. Liability
+Developer shall not be liable for any damages, losses, or liabilities arising from User's use of the Software, including but not limited to direct, indirect, incidental, or consequential damages. User agrees to indemnify and hold Developer harmless from any claims or actions arising from User's use of the Software.
+
+5. Intellectual Property
+The Software and its original code are the intellectual property of Developer. User acknowledges and agrees that Developer retains all rights, title, and interest in and to the Software.
+
+6. Warranty Disclaimer
+The Software is provided "as is" without warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. Developer does not warrant that the Software will be error-free or uninterrupted.
+
+7. Termination
+This Agreement may be terminated by Developer if User breaches any of the terms and conditions herein. Upon termination, User must cease all use of the Software and destroy any copies in User's possession.
+
+8. Governing Law and Jurisdiction
+This Agreement shall be governed by and construed in accordance with the laws of [Your Country/State]. Any disputes arising from this Agreement shall be subject to the exclusive jurisdiction of the courts in [Your City/Region].
+
+9. Entire Agreement
+This Agreement constitutes the entire agreement between Developer and User regarding the Software, superseding any prior agreements or understandings, whether oral or written.
+
+User acknowledges that User has read, understood, and agrees to be bound by the terms and conditions of this Agreement. If User does not agree with any part of this Agreement, User must not use the Software.
+
+Made with 💖 by Joel Jessie Jolly
