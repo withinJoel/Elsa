@@ -29,6 +29,14 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName === "easteregg") {
                 const url = 'Additional/Easter Egg.html';
                 window.open(url, '_blank');
+            } else if (commandName === "truthordare") {
+                truthOrDare();
+            } else if (commandName === "rolldice") {
+                rollDice();
+            } else if (commandName === "headsortails") {
+                headsOrTails();
+            } else if (commandName === "happybirthday") {
+                getHappybirthday();
             } else if (commandName === "config") {
                 getConfig();
             } else if (commandName === "update") {
@@ -39,6 +47,18 @@ function runCmd(command, inMemory, fromInput) {
                 getGPUInfo();
             } else if (commandName === "timezone") {
                 getTimeZone();
+            } else if (commandName.includes("chat:gemini:") && commandName.includes("read")) {
+                const rawdata = commandName.trim().replace(/^chat:gemini:\b\s*/i, '');
+                const data = rawdata.trim().replace(/^-read\b\s*/i, '');
+                let flag = 'True';
+                getGeminiResponse(data, flag);
+            } else if (commandName.includes("chat:gemini:")) {
+                const data = commandName.trim().replace(/^chat:gemini:\b\s*/i, '');
+                let flag = 'False';
+                getGeminiResponse(data, flag);
+            } else if (commandName.includes("download:video:")) {
+                const data = commandName.trim().replace(/^download:video:\b\s*/i, '');
+                downloadVideo(data);
             } else if (commandName.includes("detect:age:")) {
                 const data = commandName.trim().replace(/^detect:age:\b\s*/i, '');
                 detectAge(data);
@@ -60,8 +80,18 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("bible:")) {
                 const data = commandName.trim().replace(/^bible:\b\s*/i, '');
                 Bible(data);
-            } else if (commandName.includes("caption:video:")) {
-                openvid(commandName);
+            } else if (commandName.includes("detect:imagetype:")) {
+                const data = commandName.trim().replace(/^detect:imagetype:\b\s*/i, '');
+                detectImageType(data);
+            } else if (commandName.includes("detect:videotype:")) {
+                const data = commandName.trim().replace(/^detect:videotype:\b\s*/i, '');
+                detectVideoType(data);
+            } else if (commandName.includes("detect:audiotype:")) {
+                const data = commandName.trim().replace(/^detect:audiotype:\b\s*/i, '');
+                detectAudioType(data);
+            } else if (commandName.includes("detect:scripttype:")) {
+                const data = commandName.trim().replace(/^detect:scripttype:\b\s*/i, '');
+                detectScriptType(data);
             } else if (commandName.includes("open:video:")) {
                 openVideo(commandName);
             } else if (commandName === "close:video") {
@@ -70,6 +100,27 @@ function runCmd(command, inMemory, fromInput) {
                 openPDF(commandName);
             } else if (commandName.includes("open:txt:")) {
                 openTXT(commandName);
+            } else if (commandName.includes("crop:face:")) {
+                const data = commandName.trim().replace(/^crop:face:\b\s*/i, '');
+                removeBackgroundAndExtractFace(data);
+            } else if (commandName.includes("upscale:image:")) {
+                const data = commandName.trim().replace(/^upscale:image:\b\s*/i, '');
+                upscaleAndDownloadImage(data);
+            } else if (commandName.includes("remove:background:")) {
+                const data = commandName.trim().replace(/^remove:background:\b\s*/i, '');
+                removeBackground(data);
+            } else if (commandName.includes("convert:jpegtowebp:")) {
+                const data = commandName.trim().replace(/^convert:jpegtowebp:\b\s*/i, '');
+                convertJpegtoWebP(data);
+            } else if (commandName.includes("convert:webptojpeg:")) {
+                const data = commandName.trim().replace(/^convert:webptojpeg:\b\s*/i, '');
+                convertWebPtoJpeg(data);
+            } else if (commandName.includes("convert:jpgtopng:")) {
+                const data = commandName.trim().replace(/^convert:jpgtopng:\b\s*/i, '');
+                convertJpegtoPng(data);
+            } else if (commandName.includes("convert:jpegtopng:")) {
+                const data = commandName.trim().replace(/^convert:jpegtopng:\b\s*/i, '');
+                convertJpegtoPng(data);
             } else if (commandName.includes("open:image:")) {
                 openImage(commandName);
             } else if (commandName === "close:image") {
@@ -351,6 +402,8 @@ function runCmd(command, inMemory, fromInput) {
                 getScreenResolution();
             } else if (commandName === "useragent") {
                 getUserAgent();
+            } else if (commandName === "displayinfo") {
+                getDisplayInfo();
             } else if (commandName === "batteryinfo") {
                 getBatteryInfo();
             } else if (commandName === "mouseposition") {
@@ -361,6 +414,24 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomBibleBook();
             } else if (commandName === "random:religion") {
                 getRandomReligion();
+            } else if ((commandName.includes("random:number:>="))) {
+                let num = commandName.replace(/^random:number:>=\s*/, '');
+                getRandomDigitMinAndEqual(num);
+            } else if ((commandName.includes("random:number:=>"))) {
+                let num = commandName.replace(/^random:number:=>\s*/, '');
+                getRandomDigitMinAndEqual(num);
+            } else if ((commandName.includes("random:number:<="))) {
+                let num = commandName.replace(/^random:number:<=\s*/, '');
+                getRandomDigitMaxAndEqual(num);
+            } else if ((commandName.includes("random:number:=<"))) {
+                let num = commandName.replace(/^random:number:=<\s*/, '');
+                getRandomDigitMaxAndEqual(num);
+            } else if ((commandName.includes("random:number:>"))) {
+                let num = commandName.replace(/^random:number:>\s*/, '');
+                getRandomDigitMin(num);
+            } else if ((commandName.includes("random:number:<"))) {
+                let num = commandName.replace(/^random:number:<\s*/, '');
+                getRandomDigitMax(num);
             } else if (commandName === "random:number") {
                 getRandomNumber();
             } else if ((commandName === "random:musicgenre") || (commandName === "random:songgenre")) {
@@ -443,6 +514,8 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomAsianCountry();
             } else if (commandName === "random:zodiacsign") {
                 getRandomZodiacSign();
+            } else if (commandName === "random:sexposition") {
+                getRandomSexPosition();
             } else if (commandName === "fortunecookie") {
                 getFortuneCookie();
             } else if ((commandName === "adultstory") || (commandName === "eroticstory")) {
@@ -475,6 +548,9 @@ function runCmd(command, inMemory, fromInput) {
                 hexadecimalToDecimal(commandName);
             } else if (commandName.includes("convert:hexadecimaltooctal:")) {
                 hexadecimalToOctal(commandName);
+            } else if (commandName.includes("convert:numbertotext:")) {
+                num = commandName.trim().replace(/^convert:numbertotext:\b\s*/i, '');
+                numberToWords(num);
             } else if (commandName.includes("spotify:")) {
                 searchSpotify(commandName);
             } else if (commandName.includes("yts:")) {
@@ -580,6 +656,8 @@ function runCmd(command, inMemory, fromInput) {
                 searchReddit(commandName);
             } else if (commandName.includes("goodporn:")) {
                 openGoodPorn(commandName);
+            } else if (commandName.includes("noodlemagazine:")) {
+                openNoodleMagazine(commandName);
             } else if (commandName.includes("xhamster:")) {
                 openXhamster(commandName);
             } else if (commandName.includes("redtube:")) {

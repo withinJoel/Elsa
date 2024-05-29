@@ -1,3 +1,16 @@
+# Tips & Shortcuts
+* Top arrow for the previous command.
+* Down arrow for the latest command.
+* If you feel that the UI is slow, try `refresh`.
+    * For windows you can press ctrl + r.
+
+# Default Directories
+* Images - C:/Program Files (x86)/Elsa/Bin/Images/
+* Videos - C:/Program Files (x86)/Elsa/Bin/Videos/
+* Audios - C:/Program Files (x86)/Elsa/Bin/Audios/
+* Documents - C:/Program Files (x86)/Elsa/Bin/Documents/
+* Scripts - C:/Program Files (x86)/Elsa/Bin/Scripts/
+
 # Basic Commands
 * `sys` - To get the system information.
 * `cls` or `clearscreen` - To clear screen
@@ -5,7 +18,7 @@
 * `refresh` - To refresh/reload.
 * `echo:` - To display something on the terminal. example: `echo:I am Joel.`
     * `echo:` - To display the output n number of times. example: `echo: I am Joel *11`
-* `ver` or `version` - To display the version of the Web shell
+* `ver` or `version` - To display the version of Elsa.
 * `config` - To get the configuration information.
 * `developer` or `dev` - To know about the developer.
 * `help` - To get a list of all the supported commands.
@@ -28,12 +41,9 @@
 * `webrtc` - To get the WebRTC info.
 * `mouseposition` - To get the mouse position.
 
-# Shortcuts
-* Top arrow for the previous command.
-* Down arrow for the latest command.
-
-# Tips
-* If you feel that the UI is slow, try `refresh`.
+# AI
+* `chat:gemini:` - To chat with the gemini model. example: `chat:gemini:hello, i am Joel` (Note: To use gemini you should obtain the api key from the gemini developer page and paste it in the C:/Program Files (x86)/Elsa/API/Apikeys.js)
+    * `chat:gemini:` with `-read` at the end to read out the response. example: `chat:gemini:i am Joel -read`
 
 # Customization
 * `inputcolor:` or `inputcolour:` - To change the input color. example: `inputcolor:pink`
@@ -49,10 +59,11 @@
 
 # Special Functions
 * `fortunecookie` - To know the future.
+* `easteregg` - Easter egg.
 * `shortstory` - To get a short story.
 
 # Religion
-* `bible:` - To get a bible verse based on the search. example: `bible:joel:2:1-3` (book name - chapter number - verses)
+* `bible:` - To get a bible verse based on the search. example: `bible:joel:2:1-3` (book name - chapter number - verses) (English Version)
 
 # Detection Functions
 * `detect:face:` - To detect faces in images. example: `detect:face:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
@@ -60,7 +71,10 @@
 * `detect:emotion:` - To detect emotion in images. example: `detect:emotion:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:age:` - To detect age in images. example: `detect:age:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:gender:` - To detect gender in images. example: `detect:gender:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
-* `detect:nudity:` - To detect nudity in images and videos. example: `detect:nudity:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/) (or) `detect:nudity:75.mp4` (Note: The default video path is C:/Program Files (x86)/Elsa/Bin/Videos/) (Note: For better prediction results, close the video that had been opened earlier.) (Note: When trying to predict for nudity only try once per image or video as trying more than once may pollute the system resources, leading to data corruption.)
+* `detect:nudity:` - To detect nudity in images and videos. example: `detect:nudity:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/) (or) `detect:nudity:75.mp4` (Note: The default video path is C:/Program Files (x86)/Elsa/Bin/Videos/) (Note: For better prediction results, close the video that had been opened earlier.) (Note: When trying to predict for nudity only try once per image or video as trying more than once may pollute the system resources, leading to data corruption.) (It is also advisable to refresh after every detection if you have a low end device.)
+
+# Download 
+* `download:video:` - To download a video. example: `download:video:https://www.youtube.com/watch?v=v-OZQJj0GAE`
 
 # Random Functions
 * `random:religion` - To get a random religion.
@@ -69,6 +83,10 @@
 * `random:os` or `random:operatingsystem` - To get a random operating system.
 * `random:alphabet` - To get a random alphabet.
 * `random:number` - To get a random number.
+    * `random:number:<` - To get a random number smaller than the given number. example: `random:number:<1011` 
+    * `random:number:>` - To get a random number bigger than the given number. example: `random:number:>111` 
+    * `random:number:<=` - To get a random number smaller than the given number or equal to the given number. example: `random:number:<=11` 
+    * `random:number:=>` - To get a random number bigger than the given number or equal to the given number. example: `random:number:=>123` 
 * `random:flower` - To get a random flower.
 * `random:bird` - To get a random bird.
 * `random:animal` - To get a random animal.
@@ -88,6 +106,7 @@
 * `random:fooditem` - To get a random food item.
 * `random:profession` - To get a random profession.
 * `random:festival` - To get a random festivals.
+* `random:sexposition` - To get a random sex position.
 * `random:name` - To get a random name.
 * `random:malename` or `random:masculinename` - To get a random male name.
 * `random:femalename` or `random:femininename` - To get a random female name.
@@ -109,6 +128,7 @@
 * `random:pickupline` - To get a random pickup line.
 
 # Conversion Functions
+* `convert:numbertotext:` - To convert numbers to text. example: `convert:numbertotext:777`
 * `convert:secondstominutes:` - To convert seconds to minutes. example: `convert:secondstominutes:1024`
 * `convert:secondstohours:` - To convert seconds to hours. example: `convert:secondstohours:1024`
 * `convert:secondstodays:` - To convert seconds to days. example: `convert:secondstodays:1024`
@@ -168,14 +188,41 @@
 * `sort:ascending:` - To sort in ascending order. example: `sort:ascending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
 * `sort:descending:` - To sort in descending order. example: `sort:descending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
 
-# Media
+# Games
+* `truthordare` - To play the truth or dare game.
+* `headsortails` - To return heads or tails.
+* `rolldice` - To roll a dice.
+
+# Text
 * `open:txt:` - To open a text file. example: `open:txt:hello.txt` (Note only txts that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
+
+# PDF
 * `open:pdf:` - To open a pdf. example: `open:pdf:10.pdf` (Note only pdfs that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
-* `open:image:` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
-* `close:image` - To close an image.
+
+# Video
+* `detect:videotype:` - To get the video type. example: `detect:videotype:hello.mp4`
 * `open:video:` - To open a video. example: `open:video:10.mp4` (Note only videos that are present in the C:/Program files(x86)/Elsa/Bin/Videos/)
 * `close:video` - To close a video.
 * You find the above hard, Then just drag and drop to open it (Note: Only images, videos, pdf and txt will open via this method)
+
+# Audio
+* `detect:audiotype:` - To get the audio type. example: `detect:audiotype:music.mp3`
+* `happybirthday` - To play the happy birthday song.
+
+# Image
+* `detect:imagetype:` - To get the image type. example: `detect:imagetype:sunset.png`
+* `convert:webptojpeg:` - To convert a webp to jpeg. example: `convert:webptojpeg:sun.webp`
+* `convert:jpegtowebp:` - To convert jpeg to webp. example: `convert:jpegtowebp:vacation.jpeg`
+* `convert:jpgtopng:` - To convert jpg to png. example: `convert:jpgtopng:car.jpg`
+* `convert:jpegtopng:` - To convert jpeg to png. example: `convert:jpegtopng:sky.jpeg`
+* `crop:face:` - To crop only the face an to save it. example: `crop:face:summervacation.png`
+* `open:image:` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
+* `close:image` - To close an image.
+* `remove:background:` - To remove the background of an image. example: `remove:background:10.png`(Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
+* `upscale:image:` - To upscale an image. example: `upscale:image:actress.png`
+
+# Script
+* `detect:scripttype:` - To get the script type. `detect:scripttype:hello world.py`
 
 # Text
 * `reverse:` - To reverse a string. example `reverse:hola`
@@ -226,6 +273,7 @@
 * `colordepth` or `colourdepth` - To get the color depth of the screen.
 
 # Hardware
+* `displayinfo` - To get the display infomation.
 * `cpuinfo` - To get the CPU information.
 * `gpuinfo` - To get the GPU information.
 * `raminfo` - To get ram information.
@@ -273,6 +321,7 @@
 
 # Adult
 * `onlyfans:` - To open their onlyfans profile example: `onlyfans:rileyreid`
+* `noodlemagazine:` - To search the noodlemagazine website with the keyword. example: `noodlemagazine:wife`
 * `xnxx:` - To search the xnxx website with the keyword. example: `xnxx:wife`
 * `porn:` - To search the porn website with the keyword. example: `porn:wife`
 * `xvideos:` - To search the xvideos website with the keyword. example: `xvideos:wife`
