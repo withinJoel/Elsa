@@ -46,14 +46,14 @@
 * `installedapps` or `installedapplications` - To get a list of all the installed applications.
 * `check:systemupdates` or `check:osupdates` - To check for OS updates.
 * `open:cmd` or `open:terminal` or `open:commandprompt` - To open the terminal.
-* `mute` - To mute the system audio.
-* `unmute` - To unmute the system audio.
+* `system:mute` - To mute the system audio.
+* `system:unmute` - To unmute the system audio.
 * `open:envvariables` or `open:environmentalvariables` - To open the environmental variables.
 * `open:setting` or `open:settings` - To open the system settings.
-* `shutdown` - To shutdown your system.
-* `restart` - To restart your system.
-* `signout` - To sign out from your system.
-* `sleep` - To sleep your system.
+* `system:shutdown` - To shutdown your system.
+* `system:restart` - To restart your system.
+* `system:signout` - To sign out from your system.
+* `system:sleep` - To sleep your system.
 
 # AI
 * `chat:gemini:` - To chat with the gemini model. example: `chat:gemini:hello, i am Joel` (Note: To use gemini you should obtain the api key from the gemini developer page and paste it in the C:/Program Files (x86)/Elsa/API/Apikeys.js)

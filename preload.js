@@ -14,4 +14,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
   screenkeyboard: () => ipcRenderer.invoke('open-screen-keyboard'),
   systemmute: () => ipcRenderer.invoke('mute-audio'),
   systemunmute: () => ipcRenderer.invoke('unmute-audio'),
+  systemlighttheme: () => ipcRenderer.invoke('switch-to-light-theme'),
+  systemdarktheme: () => ipcRenderer.invoke('switch-to-dark-theme')
 });

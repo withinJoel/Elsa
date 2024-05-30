@@ -259,6 +259,74 @@ ipcMain.handle('mute-audio', () => {
     });
   });
 });
+///////////////////////////////Switch to light theme
+ipcMain.handle('switch-to-light-theme', () => {
+  return new Promise((resolve, reject) => {
+    let switchThemeCommand;
+
+    switch (process.platform) {
+      case 'win32':
+        switchThemeCommand = 'powershell -Command "Set-ItemProperty -Path HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize -Name AppsUseLightTheme -Value 1"';
+        break;
+      case 'darwin':
+        switchThemeCommand = 'osascript -e \'tell application "System Events" to tell appearance preferences to set dark mode to false\'';
+        break;
+      case 'linux':
+        // This example assumes GNOME. Commands will vary based on the desktop environment.
+        switchThemeCommand = 'gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"';
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Switching to light theme is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Switching to light theme is not supported on this platform.'));
+        return;
+    }
+
+    exec(switchThemeCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error switching to light theme: ${error.message}`));
+        return;
+      }
+      resolve('Switched to light theme successfully.');
+    });
+  });
+});
+///////////////////////////////Switch to dark theme
+ipcMain.handle('switch-to-dark-theme', () => {
+  return new Promise((resolve, reject) => {
+    let switchThemeCommand;
+
+    switch (process.platform) {
+      case 'win32':
+        switchThemeCommand = 'powershell -Command "Set-ItemProperty -Path HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize -Name AppsUseLightTheme -Value 0"';
+        break;
+      case 'darwin':
+        switchThemeCommand = 'osascript -e \'tell application "System Events" to tell appearance preferences to set dark mode to true\'';
+        break;
+      case 'linux':
+        // This example assumes GNOME. Commands will vary based on the desktop environment.
+        switchThemeCommand = 'gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"';
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Switching to dark theme is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Switching to dark theme is not supported on this platform.'));
+        return;
+    }
+
+    exec(switchThemeCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error switching to dark theme: ${error.message}`));
+        return;
+      }
+      resolve('Switched to dark theme successfully.');
+    });
+  });
+});
 ///////////////////////////////System Unmute
 ipcMain.handle('unmute-audio', () => {
   return new Promise((resolve, reject) => {

@@ -33,6 +33,30 @@ async function systemUnmute() {
     }
 }
 
+//System light theme
+async function systemLightTheme() {
+    try {
+        const response = await window.electronAPI.systemlighttheme();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error switching to light theme:', error.message);
+        // Handle the error appropriately
+    }
+}
+
+//System dark theme
+async function systemDarkTheme() {
+    try {
+        const response = await window.electronAPI.systemdarktheme();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error switching to dark theme:', error.message);
+        // Handle the error appropriately
+    }
+}
+
 //Screen Keyboard
 async function screenkeyboard () {
     try {

@@ -45,18 +45,22 @@ function runCmd(command, inMemory, fromInput) {
                 getCPUInfo();
             } else if (commandName === "gpuinfo") {
                 getGPUInfo();
-            } else if (commandName === "shutdown") {
+            } else if (commandName === "system:shutdown") {
                 shutdownSystem();
-            } else if (commandName === "restart") {
+            } else if (commandName === "system:restart") {
                 restartSystem();
-            } else if (commandName === "signout") {
+            } else if (commandName === "system:signout") {
                 signoutSystem();
-            } else if (commandName === "sleep") {
+            } else if (commandName === "system:sleep") {
                 sleepSystem();
-            } else if (commandName === "mute") {
+            } else if (commandName === "system:mute") {
                 systemMute();
-            } else if (commandName === "unmute") {
+            } else if (commandName === "system:unmute") {
                 systemUnmute();
+            } else if (commandName === "system:lighttheme") {
+                systemLightTheme();
+            } else if (commandName === "system:darktheme") {
+                systemDarkTheme();
             } else if (commandName === "screenkeyboard") {
                 screenkeyboard();
             } else if ((commandName === "installedapps")|| (commandName === "installedapplications")) {
