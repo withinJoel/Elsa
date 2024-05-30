@@ -54,6 +54,8 @@
 * `system:restart` - To restart your system.
 * `system:signout` - To sign out from your system.
 * `system:sleep` - To sleep your system.
+* `system:darktheme` - To switch to dark theme.
+* `system:lighttheme` - To switch to light theme.
 
 # AI
 * `chat:gemini:` - To chat with the gemini model. example: `chat:gemini:hello, i am Joel` (Note: To use gemini you should obtain the api key from the gemini developer page and paste it in the C:/Program Files (x86)/Elsa/API/Apikeys.js)
