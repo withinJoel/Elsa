@@ -45,6 +45,7 @@
 * `os` - To get the operating system details.
 * `open:cmd` or `open:terminal` or `open:commandprompt` - To open the terminal.
 * `open:envvariables` or `open:environmentalvariables` - To open the environmental variables.
+* `open:setting` or `open:settings` - To open the system settings.
 * `shutdown` - To shutdown your system.
 * `restart` - To restart your system.
 * `signout` - To sign out from your system.

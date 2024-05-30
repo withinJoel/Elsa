@@ -55,6 +55,8 @@ function runCmd(command, inMemory, fromInput) {
                 sleepSystem();
             } else if (commandName === "timezone") {
                 getTimeZone();
+            } else if ((commandName === "open:settings")||(commandName === "open:setting")) {
+                openSettings();
             } else if ((commandName === "open:cmd")||(commandName === "open:terminal")|| (commandName === "open:commandprompt")) {
                 openTerminal();
             } else if ((commandName === "open:envvariables")||(commandName === "open:environmentalvariables")) {

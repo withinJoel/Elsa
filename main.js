@@ -193,6 +193,40 @@ ipcMain.handle('sleep-system', () => {
   });
 });
 
+///////////////////////////////Open Settings
+ipcMain.handle('open-settings', () => {
+  return new Promise((resolve, reject) => {
+    let openSettingsCommand;
+    switch (process.platform) {
+      case 'win32':
+        openSettingsCommand = 'start ms-settings:';
+        break;
+      case 'darwin':
+        openSettingsCommand = 'open /System/Library/PreferencePanes';
+        break;
+      case 'linux':
+        // This is a generic command and might vary depending on the Linux distribution and desktop environment.
+        openSettingsCommand = 'gnome-control-center'; // Change this to the appropriate command for your Linux environment.
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Opening settings is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Opening settings is not supported on this platform.'));
+        return;
+    }
+
+    exec(openSettingsCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing command: ${error.message}`));
+        return;
+      }
+      resolve('Settings opened.');
+    });
+  });
+});
+
 ///////////////////////////////Open Terminal
 ipcMain.handle('open-cmd', () => {
   return new Promise((resolve, reject) => {

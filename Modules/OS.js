@@ -9,6 +9,17 @@ const openEnvironmentalVariables = (packageName) => {
         });
 };
 
+//Open Settings
+async function openSettings () {
+    try {
+        const response = await window.electronAPI.opensetting();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error opening settings:', error.message);
+        // Handle the error appropriately
+    }
+}
 //Open CMD
 async function openTerminal () {
     try {
