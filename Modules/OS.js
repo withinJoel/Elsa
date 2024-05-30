@@ -9,6 +9,18 @@ const openEnvironmentalVariables = (packageName) => {
         });
 };
 
+//Check System Update
+async function checkSystemUpdate() {
+    try {
+        const response = await window.electronAPI.checksystemupdate();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error checking system updates:', error.message);
+        // Handle the error appropriately
+    }
+}
+
 //Open Settings
 async function openSettings () {
     try {
@@ -20,6 +32,7 @@ async function openSettings () {
         // Handle the error appropriately
     }
 }
+
 //Open CMD
 async function openTerminal () {
     try {

@@ -9,4 +9,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
   envvariables: () => ipcRenderer.invoke('open-env-variables'),
   openterminal: () => ipcRenderer.invoke('open-cmd'),
   opensetting: () => ipcRenderer.invoke('open-settings'),
+  checksystemupdate: () => ipcRenderer.invoke('check-system-update'),
 });

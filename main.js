@@ -193,6 +193,40 @@ ipcMain.handle('sleep-system', () => {
   });
 });
 
+///////////////////////////////Check System Update
+ipcMain.handle('check-system-update', () => {
+  return new Promise((resolve, reject) => {
+    let checkUpdateCommand;
+    switch (process.platform) {
+      case 'win32':
+        checkUpdateCommand = 'powershell -Command "Start-Process -FilePath \'control.exe\' -ArgumentList \'/name Microsoft.WindowsUpdate\' -Verb RunAs"';
+        break;
+      case 'darwin':
+        checkUpdateCommand = 'softwareupdate -l';
+        break;
+      case 'linux':
+        // This is a generic command and might vary depending on the Linux distribution.
+        checkUpdateCommand = 'sudo apt update && sudo apt list --upgradable'; // For Debian-based systems.
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Checking for updates is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Checking for updates is not supported on this platform.'));
+        return;
+    }
+
+    exec(checkUpdateCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing command: ${error.message}`));
+        return;
+      }
+      resolve(`System update check completed. Output: ${stdout}`);
+    });
+  });
+});
+
 ///////////////////////////////Open Settings
 ipcMain.handle('open-settings', () => {
   return new Promise((resolve, reject) => {

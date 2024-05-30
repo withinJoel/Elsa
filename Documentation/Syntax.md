@@ -43,6 +43,7 @@
 
 # Operating System
 * `os` - To get the operating system details.
+* `check:systemupdates` or `check:osupdates` - To check for OS updates.
 * `open:cmd` or `open:terminal` or `open:commandprompt` - To open the terminal.
 * `open:envvariables` or `open:environmentalvariables` - To open the environmental variables.
 * `open:setting` or `open:settings` - To open the system settings.
