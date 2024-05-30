@@ -382,6 +382,10 @@
 
 # ⚠️ Warning
 * Please note that the content below is intended for adults only. If you are under the age of 18, we kindly ask you to skip this content as it may not be appropriate for your age group.
+* Before proceeding, I would like to emphasize that the content presented in this repository does not endorse or promote pornography in any form. 
+* Pornographic content often portrays unrealistic scenarios and can have negative effects on mental health and relationships. I encourage you to prioritize healthy interactions and meaningful connections with others.
+* If you have stumbled upon this content accidentally or are seeking support regarding these matters, we recommend reaching out to trusted resources or professionals for guidance and assistance.
+* Please consider your well-being and the impact of the content you consume. Your mental and emotional health are important. Take care.
 
 # Adult
 * `onlyfans:` - To open their onlyfans profile example: `onlyfans:rileyreid` (Note: This feature requires internet)
