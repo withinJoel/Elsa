@@ -22,6 +22,7 @@
 * `config` - To get the configuration information.
 * `developer` or `dev` - To know about the developer.
 * `help` - To get a list of all the supported commands.
+* `reportbug` - To report a bug in the application.
 
 # Features
 * `flames:` - To play the famous game for relationship. example: `flames:Joel,Anna`
@@ -45,17 +46,21 @@
 * `os` - To get the operating system details.
 * `installedapps` or `installedapplications` - To get a list of all the installed applications.
 * `check:systemupdates` or `check:osupdates` - To check for OS updates.
+* `open:taskmanager` - To open task manager.
 * `open:cmd` or `open:terminal` or `open:commandprompt` - To open the terminal.
+* `open:setting` or `open:settings` - To open the system settings.
+* `open:notepad` - To open notepad/text editor.
+* `open:browser` - To open browser.
 * `system:mute` - To mute the system audio.
 * `system:unmute` - To unmute the system audio.
 * `open:envvariables` or `open:environmentalvariables` - To open the environmental variables.
-* `open:setting` or `open:settings` - To open the system settings.
 * `system:shutdown` - To shutdown your system.
 * `system:restart` - To restart your system.
 * `system:signout` - To sign out from your system.
 * `system:sleep` - To sleep your system.
 * `system:darktheme` - To switch to dark theme.
 * `system:lighttheme` - To switch to light theme.
+* `system:screenshot` - To take a screenshot.
 
 # AI
 * `chat:gemini:` - To chat with the gemini model. example: `chat:gemini:hello, i am Joel` (Note: To use gemini you should obtain the api key from the gemini developer page and paste it in the C:/Program Files (x86)/Elsa/API/Apikeys.js)

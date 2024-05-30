@@ -55,7 +55,10 @@ async function upscaleAndDownloadImage(data) {
         // Automatically download the upscaled image
         const a = document.createElement('a');
         a.href = upscaledImage.src;
-        a.download = 'upscaled_image.png';
+        const min = 0;
+        const max = 999999999999999;
+        const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        a.download = 'upscaled_image' +randomnumber+'.png';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

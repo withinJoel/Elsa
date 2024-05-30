@@ -55,6 +55,16 @@ function runCmd(command, inMemory, fromInput) {
                 sleepSystem();
             } else if (commandName === "system:mute") {
                 systemMute();
+            } else if (commandName === "system:screenshot") {
+                systemScreenshot();
+            } else if (commandName === "open:notepad") {
+                openNotepad();
+            } else if (commandName === "open:browser") {
+                openBrowser();
+            } else if (commandName === "open:taskmanager") {
+                openTaskManager();
+            } else if (commandName === "reportbug") {
+                reportBug();
             } else if (commandName === "system:unmute") {
                 systemUnmute();
             } else if (commandName === "system:lighttheme") {

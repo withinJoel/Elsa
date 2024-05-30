@@ -259,6 +259,106 @@ ipcMain.handle('mute-audio', () => {
     });
   });
 });
+//////////////////////////////Task Manager
+ipcMain.handle('open-taskmanager', () => {
+  return new Promise((resolve, reject) => {
+    let openTaskManagerCommand;
+
+    switch (process.platform) {
+      case 'win32':
+        openTaskManagerCommand = 'taskmgr';
+        break;
+      case 'darwin':
+        openTaskManagerCommand = 'open /Applications/Utilities/Activity\ Monitor.app';
+        break;
+      case 'linux':
+        openTaskManagerCommand = 'gnome-system-monitor';
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Opening Task Manager is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Opening Task Manager is not supported on this platform.'));
+        return;
+    }
+
+    exec(openTaskManagerCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error opening Task Manager: ${error.message}`));
+        return;
+      }
+      resolve('Task Manager opened successfully.');
+    });
+  });
+});
+//////////////////////////////Open Browser
+ipcMain.handle('open-browser', () => {
+  return new Promise((resolve, reject) => {
+    let openBrowserCommand;
+    const url = 'https://duckduckgo.com'; // Change this URL to the desired website
+
+    switch (process.platform) {
+      case 'win32':
+        openBrowserCommand = `start ${url}`;
+        break;
+      case 'darwin':
+        openBrowserCommand = `open ${url}`;
+        break;
+      case 'linux':
+        openBrowserCommand = `xdg-open ${url}`;
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Opening browser is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Opening browser is not supported on this platform.'));
+        return;
+    }
+
+    exec(openBrowserCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error opening browser: ${error.message}`));
+        return;
+      }
+      resolve('Browser opened successfully.');
+    });
+  });
+});
+//////////////////////////////Open Notepad
+ipcMain.handle('open-notepad', () => {
+  return new Promise((resolve, reject) => {
+    let openNotepadCommand;
+
+    switch (process.platform) {
+      case 'win32':
+        openNotepadCommand = 'start notepad';
+        break;
+      case 'darwin':
+        openNotepadCommand = 'open -a "TextEdit"';
+        break;
+      case 'linux':
+        openNotepadCommand = 'xdg-open /path/to/notepad';
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Opening Notepad is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Opening Notepad is not supported on this platform.'));
+        return;
+    }
+
+    exec(openNotepadCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error opening Notepad: ${error.message}`));
+        return;
+      }
+      resolve('Notepad opened successfully.');
+    });
+  });
+});
 ///////////////////////////////Switch to light theme
 ipcMain.handle('switch-to-light-theme', () => {
   return new Promise((resolve, reject) => {
@@ -325,6 +425,84 @@ ipcMain.handle('switch-to-dark-theme', () => {
       }
       resolve('Switched to dark theme successfully.');
     });
+  });
+});
+///////////////////////////////Report Bug
+ipcMain.handle('report-bug', () => {
+  return new Promise((resolve, reject) => {
+    let openBugReportCommand;
+
+    switch (process.platform) {
+      case 'win32':
+        openBugReportCommand = 'start https://github.com/withinJoel/Elsa/issues';
+        break;
+      case 'darwin':
+        openBugReportCommand = 'open https://github.com/withinJoel/Elsa/issues';
+        break;
+      case 'linux':
+        openBugReportCommand = 'xdg-open https://github.com/withinJoel/Elsa/issues';
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Opening bug report site is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Opening bug report site is not supported on this platform.'));
+        return;
+    }
+
+    exec(openBugReportCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error opening bug report site: ${error.message}`));
+        return;
+      }
+      resolve('Bug report site opened successfully.');
+    });
+  });
+});
+///////////////////////////////System Screenshot
+ipcMain.handle('take-screenshot', () => {
+  return new Promise((resolve, reject) => {
+    // Start a countdown from 1 seconds
+    let count = 1;
+    const countdownInterval = setInterval(() => {
+      if (count > 0) {
+        console.log(count);
+        count--;
+      } else {
+        clearInterval(countdownInterval);
+
+        // Take screenshot after countdown
+        let screenshotCommand;
+
+        switch (process.platform) {
+          case 'win32':
+            screenshotCommand = 'start /wait ms-screenclip:';
+            break;
+          case 'darwin':
+            screenshotCommand = 'screencapture -T 5 -C screenshot.png'; // Delayed capture after 5 seconds
+            break;
+          case 'linux':
+            screenshotCommand = 'gnome-screenshot -d 5'; // Delayed capture after 5 seconds
+            break;
+          case 'openbsd':
+          case 'freebsd':
+            reject(new Error('Taking screenshots is not supported on this platform.'));
+            return;
+          default:
+            reject(new Error('Taking screenshots is not supported on this platform.'));
+            return;
+        }
+
+        exec(screenshotCommand, (error, stdout, stderr) => {
+          if (error) {
+            reject(new Error(`Error taking screenshot: ${error.message}`));
+            return;
+          }
+          resolve('Screenshot captured successfully.');
+        });
+      }
+    }, 1000); // Countdown interval in milliseconds
   });
 });
 ///////////////////////////////System Unmute

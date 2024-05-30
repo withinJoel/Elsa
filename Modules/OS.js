@@ -68,6 +68,67 @@ async function screenkeyboard () {
         // Handle the error appropriately
     }
 }
+
+//System Screenshot
+async function systemScreenshot () {
+    try {
+        const response = await window.electronAPI.systemscreenshot();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error getting the screenshot:', error.message);
+        // Handle the error appropriately
+    }
+}
+
+//Open Notepad
+async function openNotepad() {
+    try {
+        const response = await window.electronAPI.opennotepad();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error opening notepad', error.message);
+        // Handle the error appropriately
+    }
+}
+
+//Open Task Manager
+async function openTaskManager() {
+    try {
+        const response = await window.electronAPI.opentaskmanager();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error opening task manager', error.message);
+        // Handle the error appropriately
+    }
+}
+
+//Open Browser
+async function openBrowser() {
+    try {
+        const response = await window.electronAPI.openbrowser();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error opening browser', error.message);
+        // Handle the error appropriately
+    }
+}
+
+//Report Bug
+async function reportBug() {
+    try {
+        const response = await window.electronAPI.reportbug();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error reporting bug', error.message);
+        // Handle the error appropriately
+    }
+}
+
 //Installed APPS
 async function installedApplications () {
     try {

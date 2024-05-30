@@ -15,5 +15,10 @@ contextBridge.exposeInMainWorld('electronAPI', {
   systemmute: () => ipcRenderer.invoke('mute-audio'),
   systemunmute: () => ipcRenderer.invoke('unmute-audio'),
   systemlighttheme: () => ipcRenderer.invoke('switch-to-light-theme'),
-  systemdarktheme: () => ipcRenderer.invoke('switch-to-dark-theme')
+  systemdarktheme: () => ipcRenderer.invoke('switch-to-dark-theme'),
+  reportbug: () => ipcRenderer.invoke('report-bug'),
+  systemscreenshot: () => ipcRenderer.invoke('take-screenshot'),
+  opennotepad: () => ipcRenderer.invoke('open-notepad'),
+  openbrowser: () => ipcRenderer.invoke('open-browser'),
+  opentaskmanager: () => ipcRenderer.invoke('open-taskmanager'),
 });
