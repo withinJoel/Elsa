@@ -349,6 +349,9 @@
 # Torrent 
 `yts:` - To search for movies in the yts.mx website. example: `yts:fast` (Note: This feature requires internet)
 
+# Warning
+* Please note that the content below is intended for adults only. If you are under the age of 18, we kindly ask you to skip this content as it may not be appropriate for your age group.
+
 # Adult
 * `onlyfans:` - To open their onlyfans profile example: `onlyfans:rileyreid` (Note: This feature requires internet)
 * `noodlemagazine:` - To search the noodlemagazine website with the keyword. example: `noodlemagazine:wife` (Note: This feature requires internet)
