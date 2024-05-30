@@ -96,7 +96,7 @@
 * `detect:nudity:` - To detect nudity in images and videos. example: `detect:nudity:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/) (or) `detect:nudity:75.mp4` (Note: The default video path is C:/Program Files (x86)/Elsa/Bin/Videos/) (Note: For better prediction results, close the video that had been opened earlier.) (Note: When trying to predict for nudity only try once per image or video as trying more than once may pollute the system resources, leading to data corruption.) (It is also advisable to refresh after every detection if you have a low end device.)
 
 # Download 
-* `download:video:` - To download a video. example: `download:video:https://www.youtube.com/watch?v=v-OZQJj0GAE`
+* `download:video:` - To download a video. example: `download:video:https://www.youtube.com/watch?v=v-OZQJj0GAE` (Note: This feature requires internet)
 
 # Random Functions
 * `random:religion` - To get a random religion.
