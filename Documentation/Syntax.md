@@ -287,13 +287,13 @@
 * `gcd:` - To get the gcd of two numbers. example `gcd:10,2`
 
 # Network
-* `internet` - To get the internet based information.
+* `internet` - To get the internet based information. (Note: This feature requires internet)
 * `networkstatus` - To get the status of the network. (online or offline).
 * `useragent` - To get the browser information.
 * `connectiontype` - To get the connection type example: 4g, 3g.. etc.
 * `connectionspeed` - To get the connection speed.
-* `ipaddress` - To get the ip address.
-* `latency:` - To get the latency for a particular website. example: `latency:https://github.com/`
+* `ipaddress` - To get the ip address. (Note: This feature requires internet)
+* `latency:` - To get the latency for a particular website. example: `latency:https://github.com/` (Note: This feature requires internet)
 
 # Display
 * `screenwidth` - To get the screen width.
@@ -310,71 +310,71 @@
 * `devicetype` - To get the devicie type.
 
 # Web
-* `codepen:` - To search codepen. example: `codepen:nav bar`
-* `spotify:` - to search for songs/artists/albums. example: `spotify:aviciiwaitingforlove` (Note: It requires you to login to spotify.)
-* `godaddy:` - To get the domain info. example `godaddy:fb`
-* `pinterest:image:` - To search images in pinterest. example `pinterest:cat`
-* `pexels:image:` - To search images in pexels. example `pexels:image:cat`
-* `pexels:video:` - To search videos in pexels. example `pexels:video:cat`
-* `pixabay:image:` - To search images in pixabay. example `pixabay:image:cat`
-* `pixabay:video:` - To search videos in pixabay. example `pixabay:video:cat`
-* `pixabay:audio:` - To search audios in pixabay. example `pixabay:audio:cat`
-* `pixabay:gif:` - To search gifs in pixabay. example `pixabay:gif:cat`
-* `youtube:` - To search in Youtube. example `youtube:avicii`
-* `tenor:` - To search in Tenor. example `tenor:bird`
+* `codepen:` - To search codepen. example: `codepen:nav bar` (Note: This feature requires internet)
+* `spotify:` - to search for songs/artists/albums. example: `spotify:aviciiwaitingforlove` (Note: It requires you to login to spotify.)(Note: This feature requires internet)
+* `godaddy:` - To get the domain info. example `godaddy:fb` (Note: This feature requires internet)
+* `pinterest:image:` - To search images in pinterest. example `pinterest:cat` (Note: This feature requires internet)
+* `pexels:image:` - To search images in pexels. example `pexels:image:cat` (Note: This feature requires internet)
+* `pexels:video:` - To search videos in pexels. example `pexels:video:cat` (Note: This feature requires internet)
+* `pixabay:image:` - To search images in pixabay. example `pixabay:image:cat` (Note: This feature requires internet)
+* `pixabay:video:` - To search videos in pixabay. example `pixabay:video:cat` (Note: This feature requires internet)
+* `pixabay:audio:` - To search audios in pixabay. example `pixabay:audio:cat` (Note: This feature requires internet)
+* `pixabay:gif:` - To search gifs in pixabay. example `pixabay:gif:cat` (Note: This feature requires internet)
+* `youtube:` - To search in Youtube. example `youtube:avicii` (Note: This feature requires internet)
+* `tenor:` - To search in Tenor. example `tenor:bird` (Note: This feature requires internet)
 
 # Reddit
-* `reddit:image` - To get a reddit image based on the search term. example: `reddit:image:cats`
+* `reddit:image` - To get a reddit image based on the search term. example: `reddit:image:cats` (Note: This feature requires internet)
 
 # Shopping
-* `amazon:` - To shop in amazon. example: `amazon:toy car`
-* `flipkart:` - To shop in flipkart. example: `flipkart:toy car`
+* `amazon:` - To shop in amazon. example: `amazon:toy car` (Note: This feature requires internet)
+* `flipkart:` - To shop in flipkart. example: `flipkart:toy car` (Note: This feature requires internet)
 
 # Search Engine
-* `google:` - To search using Google search engine. example `google:youtubestudio`
-* `duckduckgo:` - To search using DuckDuckGo search engine. example `duckduckgo:github`
-* `wikipedia:` - To search the wikipedia. example `wikipedia:twitter`
+* `google:` - To search using Google search engine. example `google:youtubestudio` (Note: This feature requires internet)
+* `duckduckgo:` - To search using DuckDuckGo search engine. example `duckduckgo:github` (Note: This feature requires internet)
+* `wikipedia:` - To search the wikipedia. example `wikipedia:twitter` (Note: This feature requires internet)
 
 # Social Network
-* `instagram:` - To open their instagram profile example: `instagram:withinjoel`
-* `threads:` - To open their threads profile example: `threads:withinjoel`
-* `twitter:` or `x:` - To open their x profile example: `twitter:withinjoel` or `x:withinjoel`
-* `linkedin:` - To open their linkedin profile example: `linkedin:withinjoel`
-* `snapchat:` - To open their snapchat profile example: `snapchat:withinjoel`
-* `github:` - To open their github profile example: `github:withinjoel`
-* `clubhouse:` - To open their clubhouse profile example: `clubhouse:withinjoel`
-* `reddit:` - To search in reddit. example `reddit:car`
+* `instagram:` - To open their instagram profile example: `instagram:withinjoel` (Note: This feature requires internet)
+* `threads:` - To open their threads profile example: `threads:withinjoel` (Note: This feature requires internet)
+* `twitter:` or `x:` - To open their x profile example: `twitter:withinjoel` or `x:withinjoel` (Note: This feature requires internet)
+* `linkedin:` - To open their linkedin profile example: `linkedin:withinjoel` (Note: This feature requires internet)
+* `snapchat:` - To open their snapchat profile example: `snapchat:withinjoel` (Note: This feature requires internet)
+* `github:` - To open their github profile example: `github:withinjoel` (Note: This feature requires internet)
+* `clubhouse:` - To open their clubhouse profile example: `clubhouse:withinjoel` (Note: This feature requires internet)
+* `reddit:` - To search in reddit. example `reddit:car` (Note: This feature requires internet)
 
 # Torrent 
-`yts:` - To search for movies in the yts.mx website. example: `yts:fast`
+`yts:` - To search for movies in the yts.mx website. example: `yts:fast` (Note: This feature requires internet)
 
 # Adult
-* `onlyfans:` - To open their onlyfans profile example: `onlyfans:rileyreid`
-* `noodlemagazine:` - To search the noodlemagazine website with the keyword. example: `noodlemagazine:wife`
-* `noodlemagazine:` - To search the noodlemagazine website with the keyword. example: `noodlemagazine:wife`
-* `xnxx:` - To search the xnxx website with the keyword. example: `xnxx:wife`
-* `porn:` - To search the porn website with the keyword. example: `porn:wife`
-* `xvideos:` - To search the xvideos website with the keyword. example: `xvideos:wife`
-* `czechvr:` - To search the czechvr website with the keyword. example: `czechvr:wife`
-* `youporn:` - To search the youporn website with the keyword. example: `youporn:wife`
-* `hdtube:` - To search the hdtube website with the keyword. example: `hdtube:wife`
-* `pussyspace:` - To search the pussyspace website with the keyword. example: `pussyspace:wife`
-* `pornpics:` - To search the pornpics website with the keyword. example: `pornpics:wife`
-* `babespedia:` - To search the babespedia website with the keyword. example: `babespedia:riley_reid`
-* `tube8:` - To search the tube8 website with the keyword. example: `tube8:wife`
-* `milfporn:` - To search the milfporn website with the keyword. example: `milfporn:wife`
-* `indianporn365:` - To search the indianporn365 website with the keyword. example: `indianporn365:wife`
-* `xhamster:` - To search the xhamster website with the keyword. example: `xhamster:wife`
-* `redtube:` - To search the redtube website with the keyword. example: `redtube:wife`
-* `goodporn:` - To search the goodporn website with the keyword. example: `goodporn:wife`
-* `porngifs:` - To search the porngifs website with the keyword. example: `porngifs:wife`
-* `itsex:` - To search the it.sex website with the keyword. example: `itsex:wife`
-* `clips4sale:` - To search the clips4sale website with the keyword. example: `clips4sale:wife`
-* `bellesa:` - To search the bellesa website with the keyword. example: `bellesa:wife`
+* `onlyfans:` - To open their onlyfans profile example: `onlyfans:rileyreid` (Note: This feature requires internet)
+* `noodlemagazine:` - To search the noodlemagazine website with the keyword. example: `noodlemagazine:wife` (Note: This feature requires internet)
+* `noodlemagazine:` - To search the noodlemagazine website with the keyword. example: `noodlemagazine:wife` (Note: This feature requires internet)
+* `xnxx:` - To search the xnxx website with the keyword. example: `xnxx:wife` (Note: This feature requires internet)
+* `porn:` - To search the porn website with the keyword. example: `porn:wife` (Note: This feature requires internet)
+* `xvideos:` - To search the xvideos website with the keyword. example: `xvideos:wife` (Note: This feature requires internet)
+* `czechvr:` - To search the czechvr website with the keyword. example: `czechvr:wife` (Note: This feature requires internet)
+* `youporn:` - To search the youporn website with the keyword. example: `youporn:wife` (Note: This feature requires internet)
+* `hdtube:` - To search the hdtube website with the keyword. example: `hdtube:wife` (Note: This feature requires internet)
+* `pussyspace:` - To search the pussyspace website with the keyword. example: `pussyspace:wife` (Note: This feature requires internet)
+* `pornpics:` - To search the pornpics website with the keyword. example: `pornpics:wife` (Note: This feature requires internet)
+* `babespedia:` - To search the babespedia website with the keyword. example: `babespedia:riley_reid` (Note: This feature requires internet)
+* `tube8:` - To search the tube8 website with the keyword. example: `tube8:wife` (Note: This feature requires internet)
+* `milfporn:` - To search the milfporn website with the keyword. example: `milfporn:wife` (Note: This feature requires internet)
+* `indianporn365:` - To search the indianporn365 website with the keyword. example: `indianporn365:wife` (Note: This feature requires internet)
+* `xhamster:` - To search the xhamster website with the keyword. example: `xhamster:wife` (Note: This feature requires internet)
+* `redtube:` - To search the redtube website with the keyword. example: `redtube:wife` (Note: This feature requires internet)
+* `goodporn:` - To search the goodporn website with the keyword. example: `goodporn:wife` (Note: This feature requires internet)
+* `porngifs:` - To search the porngifs website with the keyword. example: `porngifs:wife` (Note: This feature requires internet)
+* `itsex:` - To search the it.sex website with the keyword. example: `itsex:wife` (Note: This feature requires internet)
+* `clips4sale:` - To search the clips4sale website with the keyword. example: `clips4sale:wife` (Note: This feature requires internet)
+* `bellesa:` - To search the bellesa website with the keyword. example: `bellesa:wife` (Note: This feature requires internet)
 
 # Adult Stories
 * `adultstory` or `eroticstory` - To get an adult story.
 
 # Adult Shopping
-* `siliconwives:` - To shop in siliconwives. example: `siliconwives:toy`
-* `yourdoll:` - To shop in yourdoll. example: `yourdoll:toy`
+* `siliconwives:` - To shop in siliconwives. example: `siliconwives:toy` (Note: This feature requires internet)
+* `yourdoll:` - To shop in yourdoll. example: `yourdoll:toy`  (Note: This feature requires internet)
