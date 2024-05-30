@@ -193,6 +193,72 @@ ipcMain.handle('sleep-system', () => {
   });
 });
 
+///////////////////////////////Installed APPS
+ipcMain.handle('get-installed-programs', () => {
+  return new Promise((resolve, reject) => {
+    let listProgramsCommand;
+    switch (process.platform) {
+      case 'win32':
+        listProgramsCommand = 'powershell -Command "Get-ItemProperty HKLM:\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Select-Object DisplayName, DisplayVersion"';
+        break;
+      case 'darwin':
+        listProgramsCommand = 'system_profiler SPApplicationsDataType';
+        break;
+      case 'linux':
+        // This is a generic command and might vary depending on the Linux distribution.
+        listProgramsCommand = 'dpkg-query -W -f=\'${binary:Package} ${Version}\n\''; // For Debian-based systems.
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Listing installed programs is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Listing installed programs is not supported on this platform.'));
+        return;
+    }
+
+    exec(listProgramsCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing command: ${error.message}`));
+        return;
+      }
+      resolve(stdout);
+    });
+  });
+});
+///////////////////////////////Screen keyboard
+ipcMain.handle('open-screen-keyboard', () => {
+  return new Promise((resolve, reject) => {
+    let openKeyboardCommand;
+
+    switch (process.platform) {
+      case 'win32':
+        openKeyboardCommand = 'powershell -Command "Start-Process -FilePath \'osk.exe\' -Verb RunAs"';
+        break;
+      case 'darwin':
+        openKeyboardCommand = 'open -a KeyboardViewer';
+        break;
+      case 'linux':
+        openKeyboardCommand = 'onboard'; // Assuming 'onboard' is installed.
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Bringing up the on-screen keyboard is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Bringing up the on-screen keyboard is not supported on this platform.'));
+        return;
+    }
+
+    exec(openKeyboardCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error opening on-screen keyboard: ${error.message}`));
+        return;
+      }
+      resolve(`On-screen keyboard opened successfully. Output: ${stdout}`);
+    });
+  });
+});
 ///////////////////////////////Check System Update
 ipcMain.handle('check-system-update', () => {
   return new Promise((resolve, reject) => {

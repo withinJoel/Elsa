@@ -53,6 +53,10 @@ function runCmd(command, inMemory, fromInput) {
                 signoutSystem();
             } else if (commandName === "sleep") {
                 sleepSystem();
+            } else if (commandName === "screenkeyboard") {
+                screenkeyboard();
+            } else if ((commandName === "installedapps")|| (commandName === "installedapplications")) {
+                installedApplications();
             } else if (commandName === "timezone") {
                 getTimeZone();
             } else if ((commandName === "check:systemupdates")|| (commandName === "check:osupdates")) {

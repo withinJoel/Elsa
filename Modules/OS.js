@@ -9,6 +9,29 @@ const openEnvironmentalVariables = (packageName) => {
         });
 };
 
+//Screen Keyboard
+async function screenkeyboard () {
+    try {
+        const response = await window.electronAPI.screenkeyboard();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error getting the screen keyboard:', error.message);
+        // Handle the error appropriately
+    }
+}
+//Installed APPS
+async function installedApplications () {
+    try {
+        const response = await window.electronAPI.installedapplications();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error getting installed apps:', error.message);
+        // Handle the error appropriately
+    }
+}
+
 //Check System Update
 async function checkSystemUpdate() {
     try {
