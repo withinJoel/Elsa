@@ -53,6 +53,10 @@ function runCmd(command, inMemory, fromInput) {
                 signoutSystem();
             } else if (commandName === "sleep") {
                 sleepSystem();
+            } else if (commandName === "mute") {
+                systemMute();
+            } else if (commandName === "unmute") {
+                systemUnmute();
             } else if (commandName === "screenkeyboard") {
                 screenkeyboard();
             } else if ((commandName === "installedapps")|| (commandName === "installedapplications")) {

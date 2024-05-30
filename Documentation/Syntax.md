@@ -46,6 +46,8 @@
 * `installedapps` or `installedapplications` - To get a list of all the installed applications.
 * `check:systemupdates` or `check:osupdates` - To check for OS updates.
 * `open:cmd` or `open:terminal` or `open:commandprompt` - To open the terminal.
+* `mute` - To mute the system audio.
+* `unmute` - To unmute the system audio.
 * `open:envvariables` or `open:environmentalvariables` - To open the environmental variables.
 * `open:setting` or `open:settings` - To open the system settings.
 * `shutdown` - To shutdown your system.

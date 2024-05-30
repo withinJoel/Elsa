@@ -12,4 +12,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
   checksystemupdate: () => ipcRenderer.invoke('check-system-update'),
   installedapplications: () => ipcRenderer.invoke('get-installed-programs'),
   screenkeyboard: () => ipcRenderer.invoke('open-screen-keyboard'),
+  systemmute: () => ipcRenderer.invoke('mute-audio'),
+  systemunmute: () => ipcRenderer.invoke('unmute-audio'),
 });

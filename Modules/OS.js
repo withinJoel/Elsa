@@ -9,6 +9,30 @@ const openEnvironmentalVariables = (packageName) => {
         });
 };
 
+//System Mute
+async function systemMute() {
+    try {
+        const response = await window.electronAPI.systemmute();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error mutting the audio:', error.message);
+        // Handle the error appropriately
+    }
+}
+
+//System Unmute
+async function systemUnmute() {
+    try {
+        const response = await window.electronAPI.systemunmute();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error unmutting the audio:', error.message);
+        // Handle the error appropriately
+    }
+}
+
 //Screen Keyboard
 async function screenkeyboard () {
     try {

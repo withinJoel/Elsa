@@ -226,6 +226,72 @@ ipcMain.handle('get-installed-programs', () => {
     });
   });
 });
+///////////////////////////////System Mute
+ipcMain.handle('mute-audio', () => {
+  return new Promise((resolve, reject) => {
+    let muteAudioCommand;
+
+    switch (process.platform) {
+      case 'win32':
+        muteAudioCommand = 'powershell -Command "(New-Object -ComObject WScript.Shell).SendKeys([char]173)"'; // This sends the mute key to the system.
+        break;
+      case 'darwin':
+        muteAudioCommand = 'osascript -e "set volume output muted true"';
+        break;
+      case 'linux':
+        muteAudioCommand = 'amixer set Master mute'; // This command assumes 'amixer' is installed.
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Muting audio is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Muting audio is not supported on this platform.'));
+        return;
+    }
+
+    exec(muteAudioCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error muting audio: ${error.message}`));
+        return;
+      }
+      resolve('Audio muted successfully.');
+    });
+  });
+});
+///////////////////////////////System Unmute
+ipcMain.handle('unmute-audio', () => {
+  return new Promise((resolve, reject) => {
+    let unmuteAudioCommand;
+
+    switch (process.platform) {
+      case 'win32':
+        unmuteAudioCommand = 'powershell -Command "(New-Object -ComObject WScript.Shell).SendKeys([char]173)"'; // This sends the mute key to the system.
+        break;
+      case 'darwin':
+        unmuteAudioCommand = 'osascript -e "set volume output muted false"';
+        break;
+      case 'linux':
+        unmuteAudioCommand = 'amixer set Master unmute'; // This command assumes 'amixer' is installed.
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Unmuting audio is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Unmuting audio is not supported on this platform.'));
+        return;
+    }
+
+    exec(unmuteAudioCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error unmuting audio: ${error.message}`));
+        return;
+      }
+      resolve('Audio unmuted successfully.');
+    });
+  });
+});
 ///////////////////////////////Screen keyboard
 ipcMain.handle('open-screen-keyboard', () => {
   return new Promise((resolve, reject) => {
