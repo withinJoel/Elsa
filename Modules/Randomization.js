@@ -5,40 +5,40 @@ function getRandomColor() {
 }
 
 //Random number based on condition (max)
-function getRandomDigitMax (num) {
+function getRandomDigitMax(num) {
     const min = 0;
     const max = num - 1;
     output = (Math.floor(Math.random() * (max - min + 1)) + min);
-    echo ('Your random '+ num + ' digit number is '+output);
+    echo('Your random ' + num + ' digit number is ' + output);
 }
 
 //Random number based on condition (max) and equal
-function getRandomDigitMaxAndEqual (num) {
+function getRandomDigitMaxAndEqual(num) {
     const min = 0;
     const max = num;
     output = (Math.floor(Math.random() * (max - min + 1)) + min);
-    echo ('Your random '+ num + ' digit number is '+output);
+    echo('Your random ' + num + ' digit number is ' + output);
 }
 
 //Random number based on condition (min)
-function getRandomDigitMin (num) {
+function getRandomDigitMin(num) {
     const min = num + 1;
     const max = 999999999999999;
     output = (Math.floor(Math.random() * (max - min + 1)) + min);
-    echo ('Your random '+ num + ' digit number is '+output);
+    echo('Your random ' + num + ' digit number is ' + output);
 }
 
 //Random number based on condition (min) and equal
-function getRandomDigitMinAndEqual (num) {
+function getRandomDigitMinAndEqual(num) {
     const min = num;
     const max = 999999999999999;
     output = (Math.floor(Math.random() * (max - min + 1)) + min);
-    echo ('Your random '+ num + ' digit number is '+output);
+    echo('Your random ' + num + ' digit number is ' + output);
 }
 
 // Random Number
 function getRandomNumber() {
-    const numberarray = [10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000, 100000000000, 1000000000000, 10000000000000,  999999999999999];//15
+    const numberarray = [10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000, 100000000000, 1000000000000, 10000000000000, 999999999999999];//15
     const randomIndex = Math.floor(Math.random() * numberarray.length);
     const min = 0;
     const max = numberarray[randomIndex];

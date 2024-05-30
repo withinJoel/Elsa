@@ -193,6 +193,35 @@ ipcMain.handle('sleep-system', () => {
   });
 });
 
+///////////////////////////////Open Calculator
+ipcMain.handle('open-calculator', () => {
+  return new Promise((resolve, reject) => {
+    let command;
+
+    switch (process.platform) {
+      case 'win32':
+        command = 'calc'; // Windows command to open the calculator
+        break;
+      case 'darwin':
+        command = 'open -a Calculator'; // macOS command to open the calculator
+        break;
+      case 'linux':
+        command = 'gnome-calculator'; // Linux command to open the calculator (GNOME desktop)
+        break;
+      default:
+        reject(new Error('Opening the calculator is not supported on this platform.'));
+        return;
+    }
+
+    exec(command, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing command: ${error.message}`));
+        return;
+      }
+      resolve('Calculator opened successfully.');
+    });
+  });
+});
 ///////////////////////////////Installed APPS
 ipcMain.handle('get-installed-programs', () => {
   return new Promise((resolve, reject) => {

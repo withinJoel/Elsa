@@ -51,6 +51,7 @@
 * `open:setting` or `open:settings` - To open the system settings.
 * `open:notepad` - To open notepad/text editor.
 * `open:browser` - To open browser.
+* `open:calculator` - To open calculator.
 * `system:mute` - To mute the system audio.
 * `system:unmute` - To unmute the system audio.
 * `open:envvariables` or `open:environmentalvariables` - To open the environmental variables.
@@ -321,6 +322,9 @@
 * `pixabay:gif:` - To search gifs in pixabay. example `pixabay:gif:cat`
 * `youtube:` - To search in Youtube. example `youtube:avicii`
 * `tenor:` - To search in Tenor. example `tenor:bird`
+
+# Reddit
+* `reddit:image` - To get a reddit image based on the search term. example: `reddit:image:cats`
 
 # Shopping
 * `amazon:` - To shop in amazon. example: `amazon:toy car`

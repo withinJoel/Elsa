@@ -9,6 +9,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
   envvariables: () => ipcRenderer.invoke('open-env-variables'),
   openterminal: () => ipcRenderer.invoke('open-cmd'),
   opensetting: () => ipcRenderer.invoke('open-settings'),
+  opencalculator: () => ipcRenderer.invoke('open-calculator'),
   checksystemupdate: () => ipcRenderer.invoke('check-system-update'),
   installedapplications: () => ipcRenderer.invoke('get-installed-programs'),
   screenkeyboard: () => ipcRenderer.invoke('open-screen-keyboard'),

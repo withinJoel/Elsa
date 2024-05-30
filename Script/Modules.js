@@ -43,6 +43,7 @@ loadScript('Modules/String.js');
 loadScript('Modules/Web.js');
 
 ////Packages
+loadScript('Modules/Packages/Reddit.js');
 loadScript('Modules/Packages/Bible.js');
 loadScript('Modules/Packages/Crop Face.js');
 loadScript('Modules/Packages/Detect Age.js');

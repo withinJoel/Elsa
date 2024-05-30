@@ -39,6 +39,8 @@ function detectImageType(data) {
                 echo("The file is in JPEG format.");
             } else if (data.includes('.webp')) {
                 echo("The file is in WEBP format.");
+            } else if (data.includes('.gif')) {
+                echo("The file is in GIF format.");
             } else {
                 echo("The file format is unknown.");
             }

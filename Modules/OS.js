@@ -93,6 +93,18 @@ async function openNotepad() {
     }
 }
 
+//Open Calculator
+async function openCalculator() {
+    try {
+        const response = await window.electronAPI.opencalculator();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error opening calculator', error.message);
+        // Handle the error appropriately
+    }
+}
+
 //Open Task Manager
 async function openTaskManager() {
     try {
