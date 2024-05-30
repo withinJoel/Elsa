@@ -1,6 +1,8 @@
-const { app, BrowserWindow, screen, Menu, ipcMain, powerMonitor } = require('electron');
+const { app, BrowserWindow, screen, Menu, ipcMain, dialog  } = require('electron');
 const path = require('path');
 const os = require('os');
+const axios = require('axios');
+const fs = require('fs');
 const { exec } = require('child_process');
 
 function createWindow() {
@@ -74,6 +76,103 @@ function createWindow() {
         background: #555;
       }
     `);
+  });
+}
+
+///////////////////////////////Update
+function getCurrentVersion() {
+  const packageJsonPath = path.join(__dirname, 'package.json');
+  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+  return packageJson.version;
+}
+
+function incrementVersion(version, level) {
+  const parts = version.split('.').map(Number);
+
+  switch (level) {
+    case 'patch':
+      parts[2]++;
+      break;
+    case 'minor':
+      parts[1]++;
+      parts[2] = 0;
+      break;
+    case 'major':
+      parts[0]++;
+      parts[1] = 0;
+      parts[2] = 0;
+      break;
+  }
+
+  return parts.join('.');
+}
+
+function checkForUpdates() {
+  const version = getCurrentVersion();
+  const levels = ['patch', 'minor', 'major'];
+  
+  const checkNextVersion = (levelIndex) => {
+    if (levelIndex >= levels.length) {
+      console.log('No updates available.');
+      return;
+    }
+
+    const nextVersion = incrementVersion(version, levels[levelIndex]);
+    const url = `https://github.com/withinJoel/Elsa/releases/download/v${nextVersion}/Elsa.exe`;
+
+    axios
+      .head(url)
+      .then(() => {
+        dialog.showMessageBox({
+          type: 'info',
+          buttons: ['Yes', 'No'],
+          title: 'Update Available',
+          message: `A new update (v${nextVersion}) is available. Do you want to download it?`,
+        }).then(result => {
+          if (result.response === 0) { // 'Yes' button
+            downloadUpdate(url);
+          }
+        });
+      })
+      .catch(() => {
+        checkNextVersion(levelIndex + 1);
+      });
+  };
+
+  checkNextVersion(0);
+}
+
+function downloadUpdate(url) {
+  const filePath = path.join(app.getPath('downloads'), 'Elsa.exe');
+  const writer = fs.createWriteStream(filePath);
+
+  axios({
+    method: 'get',
+    url: url,
+    responseType: 'stream',
+  }).then(response => {
+    response.data.pipe(writer);
+    writer.on('finish', () => {
+      dialog.showMessageBox({
+        type: 'info',
+        buttons: ['OK'],
+        title: 'Download Complete',
+        message: 'The update has been downloaded. The application will now restart to apply the update.',
+      }).then(() => {
+        exec(filePath, (error) => {
+          if (error) {
+            console.error(`Error executing file: ${error}`);
+            return;
+          }
+          app.quit();
+        });
+      });
+    });
+    writer.on('error', err => {
+      console.error(`Error downloading update: ${err}`);
+    });
+  }).catch(error => {
+    console.error(`Error downloading update: ${error}`);
   });
 }
 
@@ -741,4 +840,19 @@ ipcMain.handle('get-cpu-info', () => {
   return os.cpus();
 });
 
-app.whenReady().then(createWindow);
+app.on('ready', () => {
+  createWindow();
+  checkForUpdates();
+});
+
+app.on('window-all-closed', function () {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
+
+app.on('activate', function () {
+  if (mainWindow === null) {
+    createWindow();
+  }
+});
