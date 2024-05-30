@@ -6,4 +6,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
   restart: () => ipcRenderer.invoke('restart-system'),
   signout: () => ipcRenderer.invoke('sign-out-system'),
   sleep: () => ipcRenderer.invoke('sleep-system'),
+  envvariables: () => ipcRenderer.invoke('open-env-variables'),
+  openterminal: () => ipcRenderer.invoke('open-cmd'),
 });

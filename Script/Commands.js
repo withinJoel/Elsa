@@ -55,6 +55,10 @@ function runCmd(command, inMemory, fromInput) {
                 sleepSystem();
             } else if (commandName === "timezone") {
                 getTimeZone();
+            } else if ((commandName === "open:cmd")||(commandName === "open:terminal")|| (commandName === "open:commandprompt")) {
+                openTerminal();
+            } else if ((commandName === "open:envvariables")||(commandName === "open:environmentalvariables")) {
+                openEnvironmentalVariables();
             } else if (commandName.includes("chat:gemini:") && commandName.includes("read")) {
                 const rawdata = commandName.trim().replace(/^chat:gemini:\b\s*/i, '');
                 const data = rawdata.trim().replace(/^-read\b\s*/i, '');

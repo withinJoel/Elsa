@@ -27,6 +27,7 @@ loadScript('Models/Gemini/Gemini.js');
 loadScript('Modules/System.js');
 //loadScript('Modules/Security.js');
 loadScript('Modules/Directory.js');
+loadScript('Modules/OS.js');
 loadScript('Modules/Detect File Type.js');
 loadScript('Modules/Check.js');
 loadScript('Modules/Convertion.js');

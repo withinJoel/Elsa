@@ -193,6 +193,74 @@ ipcMain.handle('sleep-system', () => {
   });
 });
 
+///////////////////////////////Open Terminal
+ipcMain.handle('open-cmd', () => {
+  return new Promise((resolve, reject) => {
+    let openCmdCommand;
+    switch (process.platform) {
+      case 'win32':
+        openCmdCommand = 'start cmd';
+        break;
+      case 'darwin':
+        openCmdCommand = 'open -a Terminal';
+        break;
+      case 'linux':
+        // This is a generic command and might vary depending on the Linux distribution and desktop environment.
+        openCmdCommand = 'x-terminal-emulator';
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Opening CMD is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Opening CMD is not supported on this platform.'));
+        return;
+    }
+
+    exec(openCmdCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing command: ${error.message}`));
+        return;
+      }
+      resolve('Command prompt opened.');
+    });
+  });
+});
+
+///////////////////////////////Open ENV Variables
+ipcMain.handle('open-env-variables', () => {
+  return new Promise((resolve, reject) => {
+    let openEnvCommand;
+    switch (process.platform) {
+      case 'win32':
+        openEnvCommand = 'rundll32.exe sysdm.cpl,EditEnvironmentVariables';
+        break;
+      case 'darwin':
+        openEnvCommand = 'open /System/Library/PreferencePanes/JavaPreferences.prefPane';
+        break;
+      case 'linux':
+        // This is a generic command and might vary depending on the Linux distribution and desktop environment.
+        openEnvCommand = 'env'; // Change this to the appropriate command for your Linux environment.
+        break;
+      case 'openbsd':
+      case 'freebsd':
+        reject(new Error('Opening environment variables is not supported on this platform.'));
+        return;
+      default:
+        reject(new Error('Opening environment variables is not supported on this platform.'));
+        return;
+    }
+
+    exec(openEnvCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing command: ${error.message}`));
+        return;
+      }
+      resolve('Environment variables settings opened.');
+    });
+  });
+});
+
 ///////////////////////////////CPU Info
 ipcMain.handle('get-cpu-info', () => {
   return os.cpus();
