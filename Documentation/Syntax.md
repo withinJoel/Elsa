@@ -324,6 +324,7 @@
 * `tenor:` - To search in Tenor. example `tenor:bird` (Note: This feature requires internet)
 
 # Reddit
+* `reddit:` - To search in reddit. example `reddit:car` (Note: This feature requires internet)
 * `reddit:image` - To get a reddit image based on the search term. example: `reddit:image:cats` (Note: This feature requires internet)
 
 # Shopping
@@ -343,7 +344,6 @@
 * `snapchat:` - To open their snapchat profile example: `snapchat:withinjoel` (Note: This feature requires internet)
 * `github:` - To open their github profile example: `github:withinjoel` (Note: This feature requires internet)
 * `clubhouse:` - To open their clubhouse profile example: `clubhouse:withinjoel` (Note: This feature requires internet)
-* `reddit:` - To search in reddit. example `reddit:car` (Note: This feature requires internet)
 
 # Torrent 
 `yts:` - To search for movies in the yts.mx website. example: `yts:fast` (Note: This feature requires internet)
