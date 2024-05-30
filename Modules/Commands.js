@@ -403,6 +403,12 @@ function runCmd(command, inMemory, fromInput) {
                 convertSingleToDoubleQuotes(commandName);
             } else if (commandName.includes("convert:doublequotestosinglequotes:")) {
                 convertDoubleToSingleQuotes(commandName);
+            } else if (commandName.includes("remove:badwords:")) {
+                let data = commandName.trim().replace(/^remove:badwords:\s*/i, '');
+                removeBadWords(data);
+            } else if (commandName.includes("censor:badwords:")) {
+                let data = commandName.trim().replace(/^censor:badwords:\s*/i, '');
+                removeBadWords(data);
             } else if (commandName.includes("remove:space:")) {
                 removeSpaces(commandName);
             } else if (commandName.includes("remove:specialcharacters:")) {

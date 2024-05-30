@@ -14,6 +14,18 @@ function stringExplode(sentence, delimiter) {
     echo('[' + sentence.split(delimiter) + ']');
 }
 
+//Remove bad words
+function removeBadWords(input) {
+  
+    // Regular expression to match bad words
+    const regex = new RegExp('\\b(' + inappropriatewords.join('|') + ')\\b', 'gi');
+  
+    // Replace bad words with asterisks
+    const cleanInput = input.replace(regex, '***');
+  
+    echo (cleanInput);
+  }
+
 // String remove space
 function removeSpaces(data) {
     const input = data.trim().replace(/^remove:space:\s*/i, '');

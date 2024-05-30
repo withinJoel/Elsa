@@ -263,6 +263,7 @@
 * `remove:punctuation:` - To remove punctuation from the input. example: `remove:punctuation:hello! welcome to Elsa!`
 * `remove:singlequotes:` - To remove single quotes. example `remove:singlequotes:'hello'`
 * `remove:doublequotes:` - To remove double quotes. example `remove:doublequotes:"hello"`
+* `remove:badwords:` or `censor:badwords:` - To replace bad words with *** example: `censor:badwords:well i cannot give example for this.`
 
 # Math
 * `predict:` - To predict the next number. `predict:1,2,3` or `predict:11,22,33`
