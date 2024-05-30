@@ -5,34 +5,34 @@
 2. [Features](#Features)
 2. [Operating System](#Operating-System)
 2. [AI](#AI)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
-2. [](#)
+2. [Customization](#Customization)
+2. [Special Functions](#Special-Functions)
+2. [Religion](#Religion)
+2. [Detection Functions](#Detection-Functions)
+2. [Download](#Download)
+2. [Random Functions](#Random-Functions)
+2. [Conversion Functions](#Conversion-Functions)
+2. [Create Functions](#Create-Functions)
+2. [Check Functions](#Check-Functions)
+2. [Sort Functions](#Sort-Functions)
+2. [Games](#Games)
+2. [Text](#Text)
+2. [PDF](#PDF)
+2. [Video](#Video)
+2. [Audio](#Audio)
+2. [Image](#Image)
+2. [Script](#Script)
+2. [Text](#Text)
+2. [Math](#Math)
+2. [Network](#Network)
+2. [Display](#Display)
+2. [Hardware](#Hardware)
+2. [Web](#Web)
+2. [Reddit](#Reddit)
+2. [Shopping](#Shopping)
+2. [Search Engine](#Search-Engine)
+2. [Social Network](#Social-Network)
+2. [Torrent ](#Torrent )
 
 # Tips & Shortcuts
 * Top arrow for the previous command.
@@ -247,11 +247,6 @@
 # Sort Functions
 * `sort:ascending:` - To sort in ascending order. example: `sort:ascending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
 * `sort:descending:` - To sort in descending order. example: `sort:descending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
-
-# Games
-* `truthordare` - To play the truth or dare game.
-* `headsortails` - To return heads or tails.
-* `rolldice` - To roll a dice.
 
 # Games
 * `truthordare` - To play the truth or dare game.
