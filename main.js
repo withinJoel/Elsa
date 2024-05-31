@@ -292,6 +292,38 @@ ipcMain.handle('sleep-system', () => {
   });
 });
 
+///////////////////////////////Open File Explorer
+ipcMain.handle('open-file-explorer', () => {
+  return new Promise((resolve, reject) => {
+    let openCommand;
+    const homeDir = require('os').homedir();
+
+    switch (process.platform) {
+      case 'win32':
+        openCommand = `explorer.exe ${homeDir}`;
+        break;
+      case 'darwin':
+        openCommand = `open ${homeDir}`;
+        break;
+      case 'linux':
+      case 'openbsd':
+      case 'freebsd':
+        openCommand = `xdg-open ${homeDir}`;
+        break;
+      default:
+        reject(new Error('Opening file explorer is not supported on this platform.'));
+        return;
+    }
+
+    exec(openCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing open command: ${error.message}`));
+        return;
+      }
+      resolve('File explorer opened.');
+    });
+  });
+});
 ///////////////////////////////Open Calculator
 ipcMain.handle('open-calculator', () => {
   return new Promise((resolve, reject) => {

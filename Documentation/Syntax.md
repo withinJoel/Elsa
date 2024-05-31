@@ -82,6 +82,7 @@
 * `os` - To get the operating system details.
 * `installedapps` or `installedapplications` - To get a list of all the installed applications.
 * `check:systemupdates` or `check:osupdates` - To check for OS updates.
+* `open:files` or `open:fileexplorer` - To open the file explorer.
 * `open:taskmanager` - To open task manager.
 * `open:cmd` or `open:terminal` or `open:commandprompt` - To open the terminal.
 * `open:setting` or `open:settings` - To open the system settings.
@@ -268,6 +269,7 @@
 # Audio
 * `detect:audiotype:` - To get the audio type. example: `detect:audiotype:music.mp3`
 * `happybirthday` - To play the happy birthday song.
+* `emergencyalarm` - To play the emergency alarm.
 
 # Image
 * `detect:imagetype:` - To get the image type. example: `detect:imagetype:sunset.png`

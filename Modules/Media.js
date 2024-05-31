@@ -237,6 +237,54 @@ function getHappybirthday() {
     playMelody();
 }
 
+//Emergency Alarm
+function getEmergencyAlarm() {
+    // Initialize Tone.js
+    Tone.start();
+
+    // Create a synthesizer for the alarm sound
+    const alarmSynth = new Tone.Synth({
+        oscillator: {
+            type: 'square' // Square wave for a more urgent sound
+        },
+        envelope: {
+            attack: 0.01,
+            decay: 0.1,
+            sustain: 0.5,
+            release: 0.1
+        }
+    }).toDestination(); // Connect to the audio output
+
+    // Define the notes and their durations for the emergency alarm
+    const notes = [
+        { note: 'C5', duration: '8n' },
+        { note: 'G4', duration: '8n' },
+        { note: 'C5', duration: '8n' },
+        { note: 'G4', duration: '8n' },
+        { note: 'C5', duration: '8n' },
+        { note: 'G4', duration: '8n' }
+    ];
+
+    // Function to play a note
+    function playNote(note, time, duration) {
+        alarmSynth.triggerAttackRelease(note, duration, time);
+    }
+
+    // Function to play the alarm
+    function playAlarm() {
+        let startTime = Tone.now();
+        for (let i = 0; i < 10; i++) { // Repeat the alarm 10 times
+            notes.forEach((noteInfo) => {
+                playNote(noteInfo.note, startTime, noteInfo.duration);
+                startTime += Tone.Time(noteInfo.duration).toSeconds();
+            });
+        }
+    }
+
+    // Call the playAlarm function to play the emergency alarm
+    playAlarm();
+}
+
 //convert webp to jpeg
 function convertWebPtoJpeg(data) {
     const imgOriginal = new Image();

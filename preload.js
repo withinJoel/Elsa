@@ -22,4 +22,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
   opennotepad: () => ipcRenderer.invoke('open-notepad'),
   openbrowser: () => ipcRenderer.invoke('open-browser'),
   opentaskmanager: () => ipcRenderer.invoke('open-taskmanager'),
+  openfileexplorer: () => ipcRenderer.invoke('open-file-explorer'),
 });

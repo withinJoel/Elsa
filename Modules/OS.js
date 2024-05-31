@@ -33,6 +33,18 @@ async function systemUnmute() {
     }
 }
 
+//Open file expolorer
+async function systemExplorer() {
+    try {
+        const response = await window.electronAPI.openfileexplorer();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error opening file explorer:', error.message);
+        // Handle the error appropriately
+    }
+}
+
 //System light theme
 async function systemLightTheme() {
     try {

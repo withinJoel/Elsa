@@ -37,8 +37,12 @@ function runCmd(command, inMemory, fromInput) {
                 headsOrTails();
             } else if (commandName === "happybirthday") {
                 getHappybirthday();
+            } else if (commandName === "emergencyalarm") {
+                getEmergencyAlarm();
             } else if ((commandName === "open:calculator") || (commandName === "open:calc")) {
                 openCalculator();
+            } else if ((commandName === "open:files") || (commandName === "open:fileexplorer")) {
+                systemExplorer();
             } else if (commandName === "config") {
                 getConfig();
             } else if (commandName.includes("reddit:image:")) {
