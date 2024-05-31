@@ -429,3 +429,43 @@ function getRandomFemalePornstar() {
     const capitalizedFemalePornstar = randomFemalePornstar.charAt(0).toUpperCase() + randomFemalePornstar.slice(1);
     echo(capitalizedFemalePornstar);
 }
+
+//random sexual orientation
+function getRandomSexualOrientation() {
+    const randomIndex = Math.floor(Math.random() * sexualIdentities.length);
+    const randomsexualIdentitie = sexualIdentities[randomIndex];
+    const capitalizedsexualIdentitie = randomsexualIdentitie.charAt(0).toUpperCase() + randomsexualIdentitie.slice(1);
+    echo(capitalizedsexualIdentitie);
+}
+
+//random sexual fetish
+function getRandomSexualFetish() {
+    const randomIndex = Math.floor(Math.random() * sexualFetish.length);
+    const randomsexualFetish = sexualFetish[randomIndex];
+    const capitalizedsexualFetish = randomsexualFetish.charAt(0).toUpperCase() + randomsexualFetish.slice(1);
+    echo(capitalizedsexualFetish);
+}
+
+//random sex theme
+function getRandomSexTheme() {
+    const randomIndex = Math.floor(Math.random() * sexThemes.length);
+    const randomsexTheme = sexThemes[randomIndex];
+    const capitalizedsexTheme = randomsexTheme.charAt(0).toUpperCase() + randomsexTheme.slice(1);
+    echo(capitalizedsexTheme);
+}
+
+//random sex toy
+function getRandomSexToy() {
+    const randomIndex = Math.floor(Math.random() * sexToys.length);
+    const randomsexToy = sexToys[randomIndex];
+    const capitalizedsexToy = randomsexToy.charAt(0).toUpperCase() + randomsexToy.slice(1);
+    echo(capitalizedsexToy);
+}
+
+//random cases
+function getRandomCases() {
+    const randomIndex = Math.floor(Math.random() * notableCases.length);
+    const randomnotableCase = notableCases[randomIndex];
+    const capitalizednotableCase = randomnotableCase.charAt(0).toUpperCase() + randomnotableCase.slice(1);
+    echo(capitalizednotableCase);
+}

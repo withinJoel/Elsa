@@ -188,6 +188,7 @@
 * `random:asiancountry` - To get a random Asian country.
 * `random:africancountry` - To get a random African country.
 * `random:pickupline` - To get a random pickup line.
+* `random:case` - To get a random case.
 
 # Conversion Functions
 * `convert:numbertotext:` - To convert numbers to text. example: `convert:numbertotext:777`
@@ -416,12 +417,16 @@
 * `bellesa:` - To search the bellesa website with the keyword. example: `bellesa:wife` (Note: This feature requires internet)
 
 # Adult Random Functions
+* `random:sexualorientation` - To get a random sexual orientation.
 * `random:sexposition` - To get a random sex position.
 * `random:breasttype` - To get a random female breast type.
 * `random:penistype` - To get a random male penis type.
 * `random:orgasm` - To get a random orgasm.
 * `random:malepornstar` - To get a random male pornstar.
 * `random:femalepornstar` - To get a random female pornstar.
+* `random:sextoy` - To get a random sex toy.
+* `random:sextheme` - To get a random sex theme.
+* `random:sexualfetish` - To get a random sexual fetish.
 
 # Adult Stories
 * `adultstory` or `eroticstory` - To get an adult story.

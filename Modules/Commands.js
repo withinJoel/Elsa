@@ -583,6 +583,16 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomMenPenis();
             } else if (commandName === "random:orgasm") {
                 getRandomOrgasm();
+            } else if ((commandName === "random:sexualidentity") || (commandName === "random:sexualorientation")) {
+                getRandomSexualOrientation();
+            } else if (commandName === "random:sexualfetish") {
+                getRandomSexualFetish();
+            } else if (commandName === "random:sextheme") {
+                getRandomSexTheme();
+            } else if (commandName === "random:sextoy") {
+                getRandomSexToy();
+            } else if (commandName === "random:case") {
+                getRandomCases();
             } else if (commandName === "random:femalepornstar") {
                 getRandomFemalePornstar();
             } else if (commandName === "random:malepornstar") {
