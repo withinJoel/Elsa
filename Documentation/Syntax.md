@@ -52,6 +52,7 @@
 * `cls` or `clearscreen` - To clear screen
 * `exit` - To exit the terminal
 * `refresh` - To refresh/reload.
+    * For windows you can press ctrl + r.
 * `echo:` - To display something on the terminal. example: `echo:I am Joel.`
     * `echo:` - To display the output n number of times. example: `echo: I am Joel *11`
 * `ver` or `version` - To display the version of Elsa.
@@ -83,6 +84,9 @@
 * `installedapps` or `installedapplications` - To get a list of all the installed applications.
 * `check:systemupdates` or `check:osupdates` - To check for OS updates.
 * `open:files` or `open:fileexplorer` - To open the file explorer.
+* `open:clock` - To open clock.
+* `open:maps` - To open maps.
+* `open:calendar` - To open calendar.
 * `open:taskmanager` - To open task manager.
 * `open:cmd` or `open:terminal` or `open:commandprompt` - To open the terminal.
 * `open:setting` or `open:settings` - To open the system settings.

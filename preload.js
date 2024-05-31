@@ -21,6 +21,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
   systemscreenshot: () => ipcRenderer.invoke('take-screenshot'),
   opennotepad: () => ipcRenderer.invoke('open-notepad'),
   openbrowser: () => ipcRenderer.invoke('open-browser'),
+  openclock: () => ipcRenderer.invoke('open-clock'),
+  openmap: () => ipcRenderer.invoke('open-maps'),
+  opencalendar: () => ipcRenderer.invoke('open-calendar'),
   opentaskmanager: () => ipcRenderer.invoke('open-taskmanager'),
   openfileexplorer: () => ipcRenderer.invoke('open-file-explorer'),
 });

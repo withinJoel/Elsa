@@ -176,6 +176,92 @@ function downloadUpdate(url) {
   });
 }
 
+///////////////////////////////Open Clock
+ipcMain.handle('open-clock', () => {
+  return new Promise((resolve, reject) => {
+    let clockCommand;
+    switch (process.platform) {
+      case 'win32':
+        clockCommand = 'start /max ms-clock:';
+        break;
+      case 'darwin':
+        clockCommand = 'open -a Clock';
+        break;
+      case 'linux':
+        clockCommand = 'gnome-clocks';
+        break;
+      default:
+        reject(new Error('Opening clock is not supported on this platform.'));
+        return;
+    }
+
+    exec(clockCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing clock command: ${error.message}`));
+        return;
+      }
+      resolve('Clock is opened.');
+    });
+  });
+});
+
+///////////////////////////////Open Map
+ipcMain.handle('open-maps', () => {
+  return new Promise((resolve, reject) => {
+    let mapsCommand;
+    switch (process.platform) {
+      case 'win32':
+        mapsCommand = 'start ms-drive-to:';
+        break;
+      case 'darwin':
+        mapsCommand = 'open -a Maps';
+        break;
+      case 'linux':
+        mapsCommand = 'xdg-open https://www.google.com/maps'; // Opens Google Maps in the default browser
+        break;
+      default:
+        reject(new Error('Opening maps is not supported on this platform.'));
+        return;
+    }
+
+    exec(mapsCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing maps command: ${error.message}`));
+        return;
+      }
+      resolve('Maps is opened.');
+    });
+  });
+});
+///////////////////////////////Open Calendar
+ipcMain.handle('open-calendar', () => {
+  return new Promise((resolve, reject) => {
+    let calendarCommand;
+    switch (process.platform) {
+      case 'win32':
+        calendarCommand = 'start /max outlookcal:';
+        break;
+      case 'darwin':
+        calendarCommand = 'open -a Calendar';
+        break;
+      case 'linux':
+        calendarCommand = 'gnome-calendar';
+        break;
+      default:
+        reject(new Error('Opening calendar is not supported on this platform.'));
+        return;
+    }
+
+    exec(calendarCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error executing calendar command: ${error.message}`));
+        return;
+      }
+      resolve('Calendar is opened.');
+    });
+  });
+});
+
 ///////////////////////////////Shutdown
 ipcMain.handle('shutdown-system', () => {
   return new Promise((resolve, reject) => {

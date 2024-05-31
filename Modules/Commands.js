@@ -43,6 +43,12 @@ function runCmd(command, inMemory, fromInput) {
                 openCalculator();
             } else if ((commandName === "open:files") || (commandName === "open:fileexplorer")) {
                 systemExplorer();
+            } else if ((commandName === "open:clock")) {
+                openClock();
+            } else if ((commandName === "open:calendar")) {
+                openCalendar();
+            } else if ((commandName === "open:maps")) {
+                openMap();
             } else if (commandName === "config") {
                 getConfig();
             } else if (commandName.includes("reddit:image:")) {

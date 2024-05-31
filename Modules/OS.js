@@ -9,6 +9,42 @@ const openEnvironmentalVariables = (packageName) => {
         });
 };
 
+//Open clock
+async function openClock() {
+    try {
+        const response = await window.electronAPI.openclock();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error opening clock:', error.message);
+        // Handle the error appropriately
+    }
+}
+
+//Open Map
+async function openMap() {
+    try {
+        const response = await window.electronAPI.openmap();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error opening map:', error.message);
+        // Handle the error appropriately
+    }
+}
+
+//Open calendar
+async function openCalendar() {
+    try {
+        const response = await window.electronAPI.opencalendar();
+        echo(response); // Log the response from the main process
+        // Perform any other actions after shutdown if needed
+    } catch (error) {
+        echo('Error opening calendar:', error.message);
+        // Handle the error appropriately
+    }
+}
+
 //System Mute
 async function systemMute() {
     try {

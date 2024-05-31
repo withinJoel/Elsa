@@ -67,6 +67,7 @@ input.onkeydown = function (key) {
 
 function cmd() {
     runCmd("ver");
+    echo ('Type "help" for more information.');
     resetPrompt();
 }
 
