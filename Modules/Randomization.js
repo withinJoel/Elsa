@@ -389,3 +389,43 @@ function getShortStory() {
     const capitalizedStory = randomStory.charAt(0).toUpperCase() + randomStory.slice(1);
     echo(capitalizedStory);
 }
+
+// random women breast
+function getRandomWomenBreat() {
+    const randomIndex = Math.floor(Math.random() * womenBreastTypes.length);
+    const randomBreast = womenBreastTypes[randomIndex];
+    const capitalizedBreast = randomBreast.charAt(0).toUpperCase() + randomBreast.slice(1);
+    echo(capitalizedBreast);
+}
+
+// random Men Penis
+function getRandomMenPenis() {
+    const randomIndex = Math.floor(Math.random() * malePenisTypes.length);
+    const randomPenis = malePenisTypes[randomIndex];
+    const capitalizedPenis = randomPenis.charAt(0).toUpperCase() + randomPenis.slice(1);
+    echo(capitalizedPenis);
+}
+
+//random Orgasm
+function getRandomOrgasm() {
+    const randomIndex = Math.floor(Math.random() * orgasmTypes.length);
+    const randomOrgasm = orgasmTypes[randomIndex];
+    const capitalizedOrgasm = randomOrgasm.charAt(0).toUpperCase() + randomOrgasm.slice(1);
+    echo(capitalizedOrgasm);
+}
+
+//random male pornstars
+function getRandomMalePornstar() {
+    const randomIndex = Math.floor(Math.random() * malePornstars.length);
+    const randomMalePornstar = malePornstars[randomIndex];
+    const capitalizedMalePornstar = randomMalePornstar.charAt(0).toUpperCase() + randomMalePornstar.slice(1);
+    echo(capitalizedMalePornstar);
+}
+
+//random female pornstars
+function getRandomFemalePornstar() {
+    const randomIndex = Math.floor(Math.random() * femalePornstars.length);
+    const randomFemalePornstar = femalePornstars[randomIndex];
+    const capitalizedFemalePornstar = randomFemalePornstar.charAt(0).toUpperCase() + randomFemalePornstar.slice(1);
+    echo(capitalizedFemalePornstar);
+}

@@ -1,4 +1,4 @@
-const { app, BrowserWindow, screen, Menu, ipcMain, dialog  } = require('electron');
+const { app, BrowserWindow, screen, Menu, ipcMain, dialog } = require('electron');
 const path = require('path');
 const os = require('os');
 const axios = require('axios');
@@ -110,7 +110,7 @@ function incrementVersion(version, level) {
 function checkForUpdates() {
   const version = getCurrentVersion();
   const levels = ['patch', 'minor', 'major'];
-  
+
   const checkNextVersion = (levelIndex) => {
     if (levelIndex >= levels.length) {
       console.log('No updates available.');

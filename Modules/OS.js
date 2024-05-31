@@ -2,10 +2,10 @@
 const openEnvironmentalVariables = (packageName) => {
     window.electronAPI.envvariables()
         .then(response => {
-            echo (response);
+            echo(response);
         })
         .catch(error => {
-            echo (error);
+            echo(error);
         });
 };
 
@@ -106,7 +106,7 @@ async function systemDarkTheme() {
 }
 
 //Screen Keyboard
-async function screenkeyboard () {
+async function screenkeyboard() {
     try {
         const response = await window.electronAPI.screenkeyboard();
         echo(response); // Log the response from the main process
@@ -118,7 +118,7 @@ async function screenkeyboard () {
 }
 
 //System Screenshot
-async function systemScreenshot () {
+async function systemScreenshot() {
     try {
         const response = await window.electronAPI.systemscreenshot();
         echo(response); // Log the response from the main process
@@ -190,7 +190,7 @@ async function reportBug() {
 }
 
 //Installed APPS
-async function installedApplications () {
+async function installedApplications() {
     try {
         const response = await window.electronAPI.installedapplications();
         echo(response); // Log the response from the main process
@@ -214,7 +214,7 @@ async function checkSystemUpdate() {
 }
 
 //Open Settings
-async function openSettings () {
+async function openSettings() {
     try {
         const response = await window.electronAPI.opensetting();
         echo(response); // Log the response from the main process
@@ -226,7 +226,7 @@ async function openSettings () {
 }
 
 //Open CMD
-async function openTerminal () {
+async function openTerminal() {
     try {
         const response = await window.electronAPI.openterminal();
         echo(response); // Log the response from the main process

@@ -37,6 +37,8 @@ function runCmd(command, inMemory, fromInput) {
                 headsOrTails();
             } else if (commandName === "happybirthday") {
                 getHappybirthday();
+            } else if ((commandName === "kissme")) {
+                kissMe();
             } else if (commandName === "emergencyalarm") {
                 getEmergencyAlarm();
             } else if ((commandName === "open:calculator") || (commandName === "open:calc")) {
@@ -88,17 +90,17 @@ function runCmd(command, inMemory, fromInput) {
                 systemDarkTheme();
             } else if (commandName === "screenkeyboard") {
                 screenkeyboard();
-            } else if ((commandName === "installedapps")|| (commandName === "installedapplications")) {
+            } else if ((commandName === "installedapps") || (commandName === "installedapplications")) {
                 installedApplications();
             } else if (commandName === "timezone") {
                 getTimeZone();
-            } else if ((commandName === "check:systemupdates")|| (commandName === "check:osupdates")) {
+            } else if ((commandName === "check:systemupdates") || (commandName === "check:osupdates")) {
                 checkSystemUpdate();
-            } else if ((commandName === "open:settings")||(commandName === "open:setting")) {
+            } else if ((commandName === "open:settings") || (commandName === "open:setting")) {
                 openSettings();
-            } else if ((commandName === "open:cmd")||(commandName === "open:terminal")|| (commandName === "open:commandprompt")) {
+            } else if ((commandName === "open:cmd") || (commandName === "open:terminal") || (commandName === "open:commandprompt")) {
                 openTerminal();
-            } else if ((commandName === "open:envvariables")||(commandName === "open:environmentalvariables")) {
+            } else if ((commandName === "open:envvariables") || (commandName === "open:environmentalvariables")) {
                 openEnvironmentalVariables();
             } else if (commandName.includes("chat:gemini:") && commandName.includes("read")) {
                 const rawdata = commandName.trim().replace(/^chat:gemini:\b\s*/i, '');
@@ -575,6 +577,16 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomZodiacSign();
             } else if (commandName === "random:sexposition") {
                 getRandomSexPosition();
+            } else if (commandName === "random:breasttype") {
+                getRandomWomenBreat();
+            } else if (commandName === "random:penistype") {
+                getRandomMenPenis();
+            } else if (commandName === "random:orgasm") {
+                getRandomOrgasm();
+            } else if (commandName === "random:femalepornstar") {
+                getRandomFemalePornstar();
+            } else if (commandName === "random:malepornstar") {
+                getRandomMalePornstar();
             } else if (commandName === "fortunecookie") {
                 getFortuneCookie();
             } else if ((commandName === "adultstory") || (commandName === "eroticstory")) {

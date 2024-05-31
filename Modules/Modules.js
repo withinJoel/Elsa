@@ -49,6 +49,7 @@ loadScript('Modules/Packages/Crop Face.js');
 loadScript('Modules/Packages/Detect Age.js');
 loadScript('Modules/Packages/Detect Face.js');
 loadScript('Modules/Packages/Detect Gender.js');
+loadScript('Modules/Packages/KissMe/KissMe.js');
 loadScript('Modules/Packages/Detect Human.js');
 loadScript('Modules/Packages/Detect Nudity.js');
 loadScript('Modules/Packages/Encoding Decoding.js');

@@ -169,8 +169,6 @@
 * `random:fooditem` - To get a random food item.
 * `random:profession` - To get a random profession.
 * `random:festival` - To get a random festivals.
-* `random:sexposition` - To get a random sex position.
-* `random:sexposition` - To get a random sex position.
 * `random:name` - To get a random name.
 * `random:malename` or `random:masculinename` - To get a random male name.
 * `random:femalename` or `random:femininename` - To get a random female name.
@@ -416,6 +414,14 @@
 * `itsex:` - To search the it.sex website with the keyword. example: `itsex:wife` (Note: This feature requires internet)
 * `clips4sale:` - To search the clips4sale website with the keyword. example: `clips4sale:wife` (Note: This feature requires internet)
 * `bellesa:` - To search the bellesa website with the keyword. example: `bellesa:wife` (Note: This feature requires internet)
+
+# Adult Random Functions
+* `random:sexposition` - To get a random sex position.
+* `random:breasttype` - To get a random female breast type.
+* `random:penistype` - To get a random male penis type.
+* `random:orgasm` - To get a random orgasm.
+* `random:malepornstar` - To get a random male pornstar.
+* `random:femalepornstar` - To get a random female pornstar.
 
 # Adult Stories
 * `adultstory` or `eroticstory` - To get an adult story.
