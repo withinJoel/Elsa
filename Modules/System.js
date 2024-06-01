@@ -352,8 +352,9 @@ function getTimeZone() {
 
 //Help
 function Help() {
-    var url = 'Documentation/Syntax.md';
-    window.open(url, '_blank');
+    var url = 'Documentation/Help.pdf';
+    var newWindow = window.open("", "_blank");
+    newWindow.document.write('<iframe src="' + url + '" frameborder="0" style="border:none; width:100%; height:100vh;"></iframe>');
 }
 
 //To get the Operating system
