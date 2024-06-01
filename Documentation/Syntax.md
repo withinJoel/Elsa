@@ -58,6 +58,7 @@
 * `ver` or `version` - To display the version of Elsa.
 * `config` - To get the configuration information.
 * `developer` or `dev` - To know about the developer.
+* `credits` - To see the credits.
 * `help` - To get a list of all the supported commands.
 * `reportbug` - To report a bug in the application.
 
@@ -83,6 +84,7 @@
 * `os` - To get the operating system details.
 * `installedapps` or `installedapplications` - To get a list of all the installed applications.
 * `check:systemupdates` or `check:osupdates` - To check for OS updates.
+* `open:envvariables` or `open:environmentalvariables` - To open the environmental variables.
 * `open:files` or `open:fileexplorer` - To open the file explorer.
 * `open:clock` - To open clock.
 * `open:maps` - To open maps.
@@ -95,7 +97,6 @@
 * `open:calculator` - To open calculator.
 * `system:mute` - To mute the system audio.
 * `system:unmute` - To unmute the system audio.
-* `open:envvariables` or `open:environmentalvariables` - To open the environmental variables.
 * `system:shutdown` - To shutdown your system.
 * `system:restart` - To restart your system.
 * `system:signout` - To sign out from your system.
@@ -119,6 +120,9 @@
 * `theme:energy` - To have an energetic theme.
 * `theme:loversparadise` - To have paradise like theme.
 * `theme:soft` - To have soft touch like theme.
+* `theme:bluescreen` - To have the windows blue screen error theme.
+* `theme:dark` - To have pitch black background.
+* `theme:random` - To get a random background color.
 
 # Special Functions
 * `fortunecookie` - To know the future.
@@ -138,6 +142,9 @@
 
 # Download 
 * `download:video:` - To download a video. example: `download:video:https://www.youtube.com/watch?v=v-OZQJj0GAE` (Note: This feature requires internet)
+
+# Fun
+* `kissme` - To get a virtual kiss.
 
 # Random Functions
 * `random:religion` - To get a random religion.
@@ -242,7 +249,7 @@
 * `convert:doublequotestosinglequotes:` - To convert double quotes to single quotes from the user's input. example `convert:doublequotestosinglequotes:Tom said "hello"`
 
 # Create Functions
-* `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!`
+* `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!` (Note: This feature requires internet)
 * `create:password` - To create a password.
 
 # Check Functions
@@ -344,20 +351,34 @@
 * `gpuinfo` - To get the GPU information.
 * `raminfo` - To get ram information.
 * `batteryinfo` - To get the battery info.
-* `devicetype` - To get the devicie type.
+* `devicetype` - To get the device type.
 
-# Web
+# Codepen
 * `codepen:` - To search codepen. example: `codepen:nav bar` (Note: This feature requires internet)
+
+# Spotify
 * `spotify:` - to search for songs/artists/albums. example: `spotify:aviciiwaitingforlove` (Note: It requires you to login to spotify.)(Note: This feature requires internet)
+
+# Godaddy
 * `godaddy:` - To get the domain info. example `godaddy:fb` (Note: This feature requires internet)
+
+# Pinterest
 * `pinterest:image:` - To search images in pinterest. example `pinterest:cat` (Note: This feature requires internet)
+
+# Pexels
 * `pexels:image:` - To search images in pexels. example `pexels:image:cat` (Note: This feature requires internet)
 * `pexels:video:` - To search videos in pexels. example `pexels:video:cat` (Note: This feature requires internet)
+
+# Pixabay
 * `pixabay:image:` - To search images in pixabay. example `pixabay:image:cat` (Note: This feature requires internet)
 * `pixabay:video:` - To search videos in pixabay. example `pixabay:video:cat` (Note: This feature requires internet)
 * `pixabay:audio:` - To search audios in pixabay. example `pixabay:audio:cat` (Note: This feature requires internet)
 * `pixabay:gif:` - To search gifs in pixabay. example `pixabay:gif:cat` (Note: This feature requires internet)
+
+# Youtube
 * `youtube:` - To search in Youtube. example `youtube:avicii` (Note: This feature requires internet)
+
+# Tenor
 * `tenor:` - To search in Tenor. example `tenor:bird` (Note: This feature requires internet)
 
 # Reddit
@@ -392,7 +413,7 @@
 * If you have stumbled upon this content accidentally or are seeking support regarding these matters, I recommend reaching out to trusted resources or professionals for guidance and assistance.
 * Please consider your well-being and the impact of the content you consume. Your mental and emotional health are important. Take care.
 
-# Adult
+# Adult Websites
 * `onlyfans:` - To open their onlyfans profile example: `onlyfans:rileyreid` (Note: This feature requires internet)
 * `noodlemagazine:` - To search the noodlemagazine website with the keyword. example: `noodlemagazine:wife` (Note: This feature requires internet)
 * `noodlemagazine:` - To search the noodlemagazine website with the keyword. example: `noodlemagazine:wife` (Note: This feature requires internet)

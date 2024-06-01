@@ -10,10 +10,10 @@ async function detectFaces(data) {
     }
 
     // Load the models
-    await faceapi.nets.ssdMobilenetv1.loadFromUri("Models/Faceapi/");
-    await faceapi.nets.faceLandmark68Net.loadFromUri("Models/Faceapi/");
-    await faceapi.nets.faceRecognitionNet.loadFromUri("Models/Faceapi/");
-    await faceapi.nets.faceExpressionNet.loadFromUri("Models/Faceapi/");
+    await faceapi.nets.ssdMobilenetv1.loadFromUri("Modules/Models/Faceapi/");
+    await faceapi.nets.faceLandmark68Net.loadFromUri("Modules/Models/Faceapi/");
+    await faceapi.nets.faceRecognitionNet.loadFromUri("Modules/Models/Faceapi/");
+    await faceapi.nets.faceExpressionNet.loadFromUri("Modules/Models/Faceapi/");
 
     const img = document.createElement('img');
     img.style.position = 'fixed';

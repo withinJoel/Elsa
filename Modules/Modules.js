@@ -16,12 +16,12 @@ loadScript('https://cdn.jsdelivr.net/gh/withinJoel/Elsa/Version/Version-1.0.0.js
 loadScript('../../API/Apikeys.js');
 
 ////Datasets
-loadScript('Datasets/Data.js');
-loadScript('Datasets/wordBank.js');
-loadScript('Datasets/Bible.js');
+loadScript('Modules/Datasets/Data.js');
+loadScript('Modules/Datasets/wordBank.js');
+loadScript('Modules/Datasets/Bible.js');
 
 ///Models
-loadScript('Models/Gemini/Gemini.js');
+loadScript('Modules/Models/Gemini/Gemini.js');
 
 ////Modules
 loadScript('Modules/System.js');

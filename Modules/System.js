@@ -1,7 +1,6 @@
 //Version
 function Version() {
     echo("Elsa [Version " + currentVersion + ']');
-    echo('Made with love by Joel Jessie Jolly.');
 }
 
 //Update 
@@ -326,6 +325,11 @@ function echoFunction(input) {
     } else {
         echo(data);
     }
+}
+
+//Credits
+function credits () {
+    echo ('Elsa is created by Joel Jessie Jolly.');
 }
 
 //Reload or Refresh the page

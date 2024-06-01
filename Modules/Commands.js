@@ -27,7 +27,7 @@ function runCmd(command, inMemory, fromInput) {
             } else if ((commandName === "ver") || (commandName === "version")) {
                 Version();
             } else if (commandName === "easteregg") {
-                const url = 'Additional/Easter Egg.html';
+                const url = 'Modules/Packages/Easter Egg/Easter Egg.html';
                 window.open(url, '_blank');
             } else if (commandName === "truthordare") {
                 truthOrDare();
@@ -39,6 +39,8 @@ function runCmd(command, inMemory, fromInput) {
                 getHappybirthday();
             } else if ((commandName === "kissme")) {
                 kissMe();
+            } else if ((commandName === "credits")) {
+                credits();
             } else if (commandName === "emergencyalarm") {
                 getEmergencyAlarm();
             } else if ((commandName === "open:calculator") || (commandName === "open:calc")) {
@@ -196,6 +198,12 @@ function runCmd(command, inMemory, fromInput) {
                 themeLoversParadise();
             } else if (commandName === "theme:soft") {
                 themeSoft();
+            } else if (commandName === "theme:dark") {
+                themeDark();
+            } else if (commandName === "theme:bluescreen") {
+                themeBlueScreen();
+            } else if (commandName === "theme:random") {
+                randomTheme();
             } else if (commandName.includes("sort:ascending:")) {
                 customSort(commandName);
             } else if (commandName.includes("sort:descending:")) {

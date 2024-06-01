@@ -1,9 +1,9 @@
 const { app, BrowserWindow, screen, Menu, ipcMain, dialog } = require('electron');
 const path = require('path');
-const os = require('os');
-const axios = require('axios');
+const os = require('os'); //For OS details
+const axios = require('axios'); //For http request
 const fs = require('fs');
-const { exec } = require('child_process');
+const { exec } = require('child_process'); //To execute stuffs
 
 function createWindow() {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;

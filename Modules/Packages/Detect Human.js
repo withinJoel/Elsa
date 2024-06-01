@@ -41,7 +41,7 @@ async function detectHumans(data) {
     console.log('Image Shape:', originalImg.shape);
 
     // Load the DeepLab model
-    const model = await tf.loadGraphModel('Models/Tensorflow/Model/deeplab/pascal/model.json');
+    const model = await tf.loadGraphModel('Modules/Models/Tensorflow/Model/deeplab/pascal/model.json');
     console.log('Model Loaded:', model);
 
     // Preprocess the image for the model

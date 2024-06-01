@@ -23,7 +23,7 @@ async function removeBackgroundAndExtractFace(img) {
     });
 
     // Load face-api.js models
-    await faceapi.nets.ssdMobilenetv1.loadFromUri('Models/Faceapi/');
+    await faceapi.nets.ssdMobilenetv1.loadFromUri('Modules/Models/Faceapi/');
 
     // Detect faces in the image
     const detections = await faceapi.detectAllFaces(imgOriginal);

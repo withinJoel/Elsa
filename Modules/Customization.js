@@ -19,6 +19,14 @@ function themeHacker() {
     document.body.style.backgroundColor = userBgColor;
 }
 
+//Theme True Dark
+function themeDark() {
+    userBgColor = 'black';
+    userColor = 'white';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
 //Theme Valentine
 function themeValentine() {
     userBgColor = '#fe5757';
@@ -27,9 +35,28 @@ function themeValentine() {
     document.body.style.backgroundColor = userBgColor;
 }
 
+//custom background
+function randomTheme () {
+    const randomThemeColors = ['red','green','black','blue','yellow','brown','grey','pink','violet','purple','#fe5757','orange','#101820','#F96167','#F98866'];
+    const randomIndex = Math.floor(Math.random() * randomThemeColors.length);
+    const capitalizedcolors = randomThemeColors[randomIndex].charAt(0).toUpperCase() + randomThemeColors[randomIndex].slice(1);
+    userBgColor = capitalizedcolors;
+    userColor = 'white';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
+//Theme Bluescreen
+function themeBlueScreen() {
+    userBgColor = 'blue';
+    userColor = 'white';
+    document.body.style.color = userColor;
+    document.body.style.backgroundColor = userBgColor;
+}
+
 //Theme Sunrise
 function themeSunrise() {
-    userBgColor = '#ff9a00';
+    userBgColor = 'orange';
     userColor = 'black';
     document.body.style.color = userColor;
     document.body.style.backgroundColor = userBgColor;

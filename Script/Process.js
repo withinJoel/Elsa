@@ -67,6 +67,7 @@ input.onkeydown = function (key) {
 
 function cmd() {
     runCmd("ver");
+    echo('Made with love by Joel Jessie Jolly.');
     echo ('Type "help" for more information.');
     resetPrompt();
 }
