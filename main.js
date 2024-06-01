@@ -86,60 +86,59 @@ function getCurrentVersion() {
   return packageJson.version;
 }
 
-function incrementVersion(version, level) {
-  const parts = version.split('.').map(Number);
-
-  switch (level) {
-    case 'patch':
-      parts[2]++;
-      break;
-    case 'minor':
-      parts[1]++;
-      parts[2] = 0;
-      break;
-    case 'major':
-      parts[0]++;
-      parts[1] = 0;
-      parts[2] = 0;
-      break;
-  }
-
-  return parts.join('.');
+function checkRateLimit() {
+  return axios.get('https://api.github.com/rate_limit')
+    .then(response => {
+      const remaining = response.data.rate.remaining;
+      const resetTime = new Date(response.data.rate.reset * 1000);
+      if (remaining <= 0) {
+        console.warn(`Rate limit exceeded. Try again after ${resetTime}`);
+        dialog.showMessageBox({
+          type: 'warning',
+          buttons: ['OK'],
+          title: 'Rate Limit Exceeded',
+          message: `Rate limit exceeded. Please try again after ${resetTime.toLocaleTimeString()}.`,
+        });
+        return false;
+      }
+      return true;
+    })
+    .catch(error => {
+      console.error(`Error checking rate limit: ${error}`);
+      return false;
+    });
 }
 
-function checkForUpdates() {
-  const version = getCurrentVersion();
-  const levels = ['patch', 'minor', 'major'];
+async function checkForUpdates() {
+  const rateLimitOk = await checkRateLimit();
+  if (!rateLimitOk) return;
 
-  const checkNextVersion = (levelIndex) => {
-    if (levelIndex >= levels.length) {
-      console.log('No updates available.');
-      return;
-    }
+  const currentVersion = getCurrentVersion();
 
-    const nextVersion = incrementVersion(version, levels[levelIndex]);
-    const url = `https://github.com/withinJoel/Elsa/releases/download/v${nextVersion}/Elsa.exe`;
+  axios.get('https://api.github.com/repos/withinJoel/Elsa/releases/latest')
+    .then(response => {
+      const latestVersion = response.data.tag_name.replace('v', ''); // assuming version is prefixed with 'v'
 
-    axios
-      .head(url)
-      .then(() => {
-        dialog.showMessageBox({
-          type: 'info',
-          buttons: ['Yes', 'No'],
-          title: 'Update Available',
-          message: `A new update (v${nextVersion}) is available. Do you want to download it?`,
-        }).then(result => {
-          if (result.response === 0) { // 'Yes' button
-            downloadUpdate(url);
-          }
-        });
-      })
-      .catch(() => {
-        checkNextVersion(levelIndex + 1);
+      if (currentVersion === latestVersion) {
+        console.log('No updates available.');
+        return;
+      }
+
+      const url = `https://github.com/withinJoel/Elsa/releases/download/v${latestVersion}/Elsa.exe`;
+      dialog.showMessageBox({
+        type: 'info',
+        buttons: ['Yes', 'No'],
+        title: 'Update Available',
+        message: `A new update (v${latestVersion}) is available. Do you want to download it?`,
+      }).then(result => {
+        if (result.response === 0) { // 'Yes' button
+          downloadUpdate(url);
+        }
       });
-  };
-
-  checkNextVersion(0);
+    })
+    .catch(error => {
+      console.error(`Error checking for updates: ${error}`);
+    });
 }
 
 function downloadUpdate(url) {
@@ -176,6 +175,8 @@ function downloadUpdate(url) {
     console.error(`Error downloading update: ${error}`);
   });
 }
+
+checkForUpdates();
 
 ///////////////////////////////Open Clock
 ipcMain.handle('open-clock', () => {
