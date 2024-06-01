@@ -63,7 +63,6 @@
 * `reportbug` - To report a bug in the application.
 
 # Features
-* `flames:` - To play the famous game for relationship. example: `flames:Joel,Anna`
 * `zodiacsign:` - To get the zodiac sign based on the date of birth. example: `zodiacsign:2002-05-11` pattern: YYY-MM-DD
 * `numerology:` - To get the numerology details for 2 people. example: `numerology:Joel:2002-05-11:Sophia:2003-05-27` pattern: YYYY-MM-DD
 * `lovecalculator:` - To get a love score based on two names. example: `lovecalculator:Joel,Anna`
@@ -260,6 +259,8 @@
 * `sort:descending:` - To sort in descending order. example: `sort:descending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
 
 # Games
+* `flames:` - To play the famous game for relationship. example: `flames:Joel,Anna`
+* `mash:` - To play the famous mash game. example: `mash:Joel,Anna`
 * `truthordare` - To play the truth or dare game.
 * `headsortails` - To return heads or tails.
 * `rolldice` - To roll a dice.

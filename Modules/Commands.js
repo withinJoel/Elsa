@@ -243,6 +243,9 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("zodiacsign:")) {
                 let data = commandName.trim().replace(/^zodiacsign:\s*/i, '');
                 getZodiacSign(data);
+            } else if (commandName.includes("mash:")) {
+                let data = commandName.trim().replace(/^mash:\s*/i, '');
+                mash(data);
             } else if (commandName.includes("flames:")) {
                 let data = commandName.trim().replace(/^flames:\s*/i, '');
                 flames(data);
