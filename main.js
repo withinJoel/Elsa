@@ -164,7 +164,8 @@ function downloadUpdate(url) {
             console.error(`Error executing file: ${error}`);
             return;
           }
-          app.quit();
+          app.quit();  // Quit the application
+          exec(filePath);  // Start the new version
         });
       });
     });
