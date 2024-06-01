@@ -246,6 +246,12 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("mash:")) {
                 let data = commandName.trim().replace(/^mash:\s*/i, '');
                 mash(data);
+            } else if (commandName.includes("bfftest:")) {
+                let data = commandName.trim().replace(/^bfftest:\s*/i, '');
+                bffTest(data);
+            } else if (commandName.includes("compatibilitytest:")) {
+                let data = commandName.trim().replace(/^compatibilitytest:\s*/i, '');
+                compatibilityTest(data);
             } else if (commandName.includes("flames:")) {
                 let data = commandName.trim().replace(/^flames:\s*/i, '');
                 flames(data);

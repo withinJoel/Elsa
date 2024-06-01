@@ -264,6 +264,8 @@
 * `truthordare` - To play the truth or dare game.
 * `headsortails` - To return heads or tails.
 * `rolldice` - To roll a dice.
+* `compatibilitytest:` - To take a compatiablity test with you partner. example: `compatibilitytest:joel,sana`
+* `bfftest:` - To play the truth or dare game. example: `bfftest:joel,james`
 
 # Text
 * `open:txt:` - To open a text file. example: `open:txt:hello.txt` (Note only txts that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)

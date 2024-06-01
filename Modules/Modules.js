@@ -55,6 +55,8 @@ loadScript('Modules/Packages/Detect Nudity.js');
 loadScript('Modules/Packages/Encoding Decoding.js');
 loadScript('Modules/Packages/Flames.js');
 loadScript('Modules/Packages/Mash.js');
+loadScript('Modules/Packages/compatibility Test.js');
+loadScript('Modules/Packages/BFF Test.js');
 loadScript('Modules/Packages/Games.js');
 loadScript('Modules/Packages/Guess.js');
 loadScript('Modules/Packages/Love Calculator.js');
