@@ -1,4 +1,5 @@
 * to give the date of birth and to get the age
 example `age:11-05-2000` to tell the age.
-* random saints
-* random yoga poses
+* r saints
+* r book
+* r yoga poses
