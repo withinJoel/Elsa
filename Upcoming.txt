@@ -8,3 +8,4 @@ example `age:11-05-2000` to tell the age.
 * crash sys open many new tabs.
 * gpu refresh
 * plot:(1,2)(2,5)(4,6)(x=1,y=1)
+* plot:data.txt
