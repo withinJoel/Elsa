@@ -4,6 +4,8 @@ example `age:11-05-2000` to tell the age.
 * r book
 * r yoga poses
 * r apostles
+* r vir
+* r teists atts
 * chess, xo
 * crash sys open many new tabs.
 * gpu refresh
