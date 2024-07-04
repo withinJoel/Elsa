@@ -21,7 +21,7 @@ Made with 💖 by Joel Jolly.
 * This project can work in your browser or you can download our official app for your operating system.
 
 # To get started
-* Download the latest release from the github page (See to your right, There you could see 'Releases' under that you can see the latest release. In that download the .exe file)
+* Download the latest version from <a href="https://elsafoundation.pages.dev/">Elsa foundation</a>.
 * Install it. (Some antivirus may flag it as a virus, But trust me its not)
 * You can run the Elsa terminal from you desktop or by going to C/Program Files (x86)/Elsa/Elsa.exe.
 * That's it! 🎉
