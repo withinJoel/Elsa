@@ -524,6 +524,8 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomSong();
             } else if (commandName === "random:videogame") {
                 getRandomVideoGame();
+            } else if (commandName === "random:yogapose") {
+                getRandomYogaPoses();
             } else if (commandName === "random:alphabet") {
                 getRandomAlphabet();
             } else if ((commandName === "random:os") || (commandName === "random:operatingsystem")) {

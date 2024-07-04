@@ -164,6 +164,7 @@
 * `random:vegetable` - To get a random vegetable.
 * `random:fruit` - To get a random fruit.
 * `random:videogame` - To get a random video game.
+* `random:yogapose` - To get a random yoga pose.
 * `random:movie` or `random:film` - To get a random movie.
 * `random:moviegenre` or `random:filmgenre` - To get a random movie genre.
 * `random:song` or `random:music` - To get a random song.

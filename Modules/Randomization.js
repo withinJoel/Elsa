@@ -178,6 +178,13 @@ function getRandomZodiacSign() {
     echo(capitalizedSign);
 }
 
+// Random yoga poses
+function getRandomYogaPoses() {
+    const randomIndex = Math.floor(Math.random() * yogaPoses.length);
+    const capitalizedyogaPoses = yogaPoses[randomIndex].charAt(0).toUpperCase() + yogaPoses[randomIndex].slice(1);
+    echo(capitalizedyogaPoses);
+}
+
 // Random Quotes
 function getRandomPlanet() {
     const randomIndex = Math.floor(Math.random() * planet.length);
