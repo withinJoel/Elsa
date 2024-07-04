@@ -492,6 +492,8 @@ function runCmd(command, inMemory, fromInput) {
                 getRandomBibleBook();
             } else if (commandName === "random:religion") {
                 getRandomReligion();
+            } else if (commandName === "random:christiansaint") {
+                getRandomChristianSaint();
             } else if ((commandName.includes("random:number:>="))) {
                 let num = commandName.replace(/^random:number:>=\s*/, '');
                 getRandomDigitMinAndEqual(num);

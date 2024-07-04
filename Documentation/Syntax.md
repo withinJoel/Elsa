@@ -147,6 +147,7 @@
 
 # Random Functions
 * `random:religion` - To get a random religion.
+* `random:christiansaint` - To get a random Christian saint.
 * `random:biblebook` - To get a random bible book.
 * `random:programminglanguage` - To get a random programming language.
 * `random:os` or `random:operatingsystem` - To get a random operating system.

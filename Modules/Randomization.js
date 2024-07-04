@@ -274,6 +274,13 @@ function getRandomReligion() {
     echo(capitalizedReligion);
 }
 
+// Random Christian saint
+function getRandomChristianSaint() {
+    const randomIndex = Math.floor(Math.random() * christianSaints.length);
+    const capitalizedchristianSaints = christianSaints[randomIndex].charAt(0).toUpperCase() + christianSaints[randomIndex].slice(1);
+    echo(capitalizedchristianSaints);
+}
+
 //Random Name
 function getRandomName() {
     randomarray = ['masculinenames', 'femininenames'];
