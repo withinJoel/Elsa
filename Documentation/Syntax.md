@@ -276,25 +276,29 @@
 * `open:pdf:` - To open a pdf. example: `open:pdf:10.pdf` (Note only pdfs that are present in the C:/Program files(x86)/Elsa/Bin/Documents/)
 
 # Video
+* `open:video:` - To open a video file. example: `open:video:10.mp4` (Note only videos that are present in the C:/Program files(x86)/Elsa/Bin/Videos/)
+* You find the above hard, Then just drag and drop to open it (Note: Only images, videos, audios, pdf and txt will open via this method)
+* `close:video` - To close a video file.
 * `detect:videotype:` - To get the video type. example: `detect:videotype:hello.mp4`
-* `open:video:` - To open a video. example: `open:video:10.mp4` (Note only videos that are present in the C:/Program files(x86)/Elsa/Bin/Videos/)
-* `close:video` - To close a video.
-* You find the above hard, Then just drag and drop to open it (Note: Only images, videos, pdf and txt will open via this method)
 
 # Audio
+* `open:audio` - To open a audio file. example: `open:audio:loveme.mp3`
+* You find the above hard, Then just drag and drop to open it (Note: Only images, videos, audios, pdf and txt will open via this method)
+* `close:audio` - To close an audio file.
 * `detect:audiotype:` - To get the audio type. example: `detect:audiotype:music.mp3`
 * `happybirthday` - To play the happy birthday song.
 * `emergencyalarm` - To play the emergency alarm.
 
 # Image
+* `open:image:` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
+* You find the above hard, Then just drag and drop to open it (Note: Only images, videos, audios, pdf and txt will open via this method)
+* `close:image` - To close an image file.
 * `detect:imagetype:` - To get the image type. example: `detect:imagetype:sunset.png`
 * `convert:webptojpeg:` - To convert a webp to jpeg. example: `convert:webptojpeg:sun.webp`
 * `convert:jpegtowebp:` - To convert jpeg to webp. example: `convert:jpegtowebp:vacation.jpeg`
 * `convert:jpgtopng:` - To convert jpg to png. example: `convert:jpgtopng:car.jpg`
 * `convert:jpegtopng:` - To convert jpeg to png. example: `convert:jpegtopng:sky.jpeg`
 * `crop:face:` - To crop only the face an to save it. example: `crop:face:summervacation.png`
-* `open:image:` - To open an image. example: `open:image:10.png` (Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
-* `close:image` - To close an image.
 * `remove:background:` - To remove the background of an image. example: `remove:background:10.png`(Note only images that are present in the C:/Program files(x86)/Elsa/Bin/Images/)
 * `upscale:image:` - To upscale an image. example: `upscale:image:actress.png`
 

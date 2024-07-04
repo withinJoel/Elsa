@@ -698,6 +698,10 @@ function runCmd(command, inMemory, fromInput) {
                 refreshPage();
             } else if ((commandName === "random:color") || (commandName === "random:colour")) {
                 getRandomColor();
+            } else if (commandName.includes("open:audio:")) {
+                openAudio(commandName);
+            } else if (commandName.includes("close:audio")) {
+                openAudio(commandName);
             } else if (commandName === "developer" || commandName === "dev") {
                 openLink(commandName);
             } else if (commandName === "") {

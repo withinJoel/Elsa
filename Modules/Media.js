@@ -80,6 +80,7 @@ async function openVideo(data) {
                 vidElement.style.right = '15px';
                 vidElement.style.maxWidth = '500px';
                 vidElement.style.maxHeight = '500px';
+                vidElement.autoplay = true; // Autoplay the video
                 vidElement.setAttribute('data-role', 'dynamic-video');
                 vidElement.controls = true; // Add video controls for play/pause, etc.
                 vidElement.src = videoSrc;
@@ -91,6 +92,60 @@ async function openVideo(data) {
         }
     } else if (existingVidElement) {
         document.body.removeChild(existingVidElement);
+    }
+}
+
+//Open Audio 
+async function openAudio(data) {
+    const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    const existingAudioElement = document.querySelector('audio[data-role="dynamic-audio"]') || document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
+    const existingErrorElement = document.querySelector('div[data-role="error-message"]');
+    
+    if (existingElement) {
+        existingElement.remove();
+    }
+    
+    // Remove existing error message if any
+    if (existingErrorElement) {
+        document.body.removeChild(existingErrorElement);
+    }
+    
+    if (data && data.trim().startsWith("open:audio:")) {
+        const audioFileName = data.trim().replace(/^open:audio:\s*/i, '');
+        const audioSrc = audiodir + audioFileName; // Assuming audiopath is defined elsewhere
+    
+        let audioElement = existingAudioElement;
+    
+        try {
+            // Create a temporary audio element to check if the audio loads
+            const tempAudio = document.createElement('audio');
+            await new Promise((resolve, reject) => {
+                tempAudio.onloadeddata = resolve; // Use onloadeddata for audio
+                tempAudio.onerror = reject;
+                tempAudio.src = audioSrc;
+            });
+    
+            if (audioElement) {
+                audioElement.src = audioSrc;
+            } else {
+                audioElement = document.createElement('audio');
+                audioElement.style.position = 'fixed';
+                audioElement.style.top = '15px';
+                audioElement.style.right = '15px';
+                audioElement.style.maxWidth = '500px';
+                audioElement.style.maxHeight = '500px';
+                audioElement.autoplay = true; // Autoplay the audio
+                audioElement.setAttribute('data-role', 'dynamic-dragged');
+                audioElement.controls = true; // Add audio controls for play/pause, etc.
+                audioElement.src = audioSrc;
+                document.body.appendChild(audioElement);
+            }
+        } catch (error) {
+            console.error("Audio failed to load. Please check the path or filename.");
+            // You can show an error message to the user here if needed
+        }
+    } else if (existingAudioElement) {
+        document.body.removeChild(existingAudioElement);
     }
 }
 
@@ -152,7 +207,7 @@ function readOutLine(text) {
         window.speechSynthesis.speak(utterance);
     } else {
 
-        echo ('Speech synthesis not supported.');
+        echo('Speech synthesis not supported.');
     }
 }
 
