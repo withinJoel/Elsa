@@ -21,7 +21,7 @@ Are you a terminal enthusiast who also loves browsing the web? Do you often find
 
 ## To get started
 1. **Download the latest version** from the [Elsa foundation](https://elsafoundation.pages.dev/).
-2. **Install it.** (Some antivirus may flag it as a virus, but trust us, it’s just Elsa being misunderstood.)
+2. **Install it.** (Some antivirus may flag it as a virus, but trust me, it’s just Elsa being misunderstood.)
 3. **Run the Elsa terminal** from your desktop or navigate to `C/Program Files (x86)/Elsa/Elsa.exe`.
 4. **That’s it!** 🎉 You're now ready to browse the web in the coolest way possible.
 
