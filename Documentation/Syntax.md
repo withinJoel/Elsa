@@ -48,6 +48,9 @@
 * Scripts - C:/Program Files (x86)/Elsa/Bin/Scripts/
 
 # Basic Commands
+* `elsa` - Basic info.
+* `ver` or `version` - To display the version of Elsa.
+* `developer` or `dev` - To know about the developer.
 * `sys` - To get the system information.
 * `cls` or `clearscreen` - To clear screen
 * `exit` - To exit the terminal
@@ -55,9 +58,7 @@
     * For windows you can press ctrl + r.
 * `echo:` - To display something on the terminal. example: `echo:I am Joel.`
     * `echo:` - To display the output n number of times. example: `echo: I am Joel *11`
-* `ver` or `version` - To display the version of Elsa.
 * `config` - To get the configuration information.
-* `developer` or `dev` - To know about the developer.
 * `credits` - To see the credits.
 * `help` - To get a list of all the supported commands.
 * `reportbug` - To report a bug in the application.

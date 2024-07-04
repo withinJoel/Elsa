@@ -26,6 +26,11 @@ function runCmd(command, inMemory, fromInput) {
                 echoFunction(data.trim()); // Trims any leading or trailing spaces after removing the echo command
             } else if ((commandName === "ver") || (commandName === "version")) {
                 Version();
+            } else if (commandName === "elsa") {
+                Version();
+                echo("Developed by Joel Jessie Jolly.");
+                echo("Development period: May 12th, 2024 - Present");
+                echo("For further information, please visit https://elsafoundation.pages.dev/");
             } else if (commandName === "easteregg") {
                 const url = 'Modules/Packages/Easter Egg/Easter Egg.html';
                 window.open(url, '_blank');

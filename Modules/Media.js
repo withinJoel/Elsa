@@ -100,22 +100,22 @@ async function openAudio(data) {
     const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
     const existingAudioElement = document.querySelector('audio[data-role="dynamic-audio"]') || document.querySelector('[data-role="dynamic-image"]') || document.querySelector('[data-role="dynamic-dragged"]');
     const existingErrorElement = document.querySelector('div[data-role="error-message"]');
-    
+
     if (existingElement) {
         existingElement.remove();
     }
-    
+
     // Remove existing error message if any
     if (existingErrorElement) {
         document.body.removeChild(existingErrorElement);
     }
-    
+
     if (data && data.trim().startsWith("open:audio:")) {
         const audioFileName = data.trim().replace(/^open:audio:\s*/i, '');
         const audioSrc = audiodir + audioFileName; // Assuming audiopath is defined elsewhere
-    
+
         let audioElement = existingAudioElement;
-    
+
         try {
             // Create a temporary audio element to check if the audio loads
             const tempAudio = document.createElement('audio');
@@ -124,7 +124,7 @@ async function openAudio(data) {
                 tempAudio.onerror = reject;
                 tempAudio.src = audioSrc;
             });
-    
+
             if (audioElement) {
                 audioElement.src = audioSrc;
             } else {
