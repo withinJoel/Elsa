@@ -2,7 +2,6 @@
 1. [Tips & Shortcuts](#tips--shortcuts)
 2. [Default Directories](#default-directories)
 2. [Basic Commands](#Basic-Commands)
-2. [Features](#Features)
 2. [Operating System](#Operating-System)
 2. [AI](#AI)
 2. [Customization](#Customization)
@@ -64,31 +63,25 @@
 * `help` - To get a list of all the supported commands.
 * `reportbug` - To report a bug in the application.
 
-# Features
-* `zodiacsign:` - To get the zodiac sign based on the date of birth. example: `zodiacsign:2002-05-11` pattern: YYY-MM-DD
-* `numerology:` - To get the numerology details for 2 people. example: `numerology:Joel:2002-05-11:Sophia:2003-05-27` pattern: YYYY-MM-DD
-* `lovecalculator:` - To get a love score based on two names. example: `lovecalculator:Joel,Anna`
-* `guess:` - To guess the word. example: `guess:tac`.
+# Operating System
+* `os` - To get the operating system details.
 * `read:` - To read out the input. example: `read:hello world` 
 * `encode:` - To encode data. example: `encode:hola`
 * `decode:` - To decode data. example: `decode:aG9sYQ==`
-* `open:camera` - To get the live video feed from the camera.
 * `time` - To display the current time.
-* `open:` or `url:` - to open a site example `open:https://fb.com` or `open:fb` or `url:fb` or `url:https://www.facebook.com/`
 * `day` - To get the day info.
 * `date` - To get the date info.
 * `timezone` - To get the time zone.
 * `webrtc` - To get the WebRTC info.
 * `mouseposition` - To get the mouse position.
-
-# Operating System
-* `os` - To get the operating system details.
 * `installedapps` or `installedapplications` - To get a list of all the installed applications.
 * `check:systemupdates` or `check:osupdates` - To check for OS updates.
 * `open:envvariables` or `open:environmentalvariables` - To open the environmental variables.
 * `open:files` or `open:fileexplorer` - To open the file explorer.
 * `open:clock` - To open clock.
+* `open:` or `url:` - to open a site example `open:https://fb.com` or `open:fb` or `url:fb` or `url:https://www.facebook.com/`
 * `open:maps` - To open maps.
+* `open:camera` - To get the live video feed from the camera.
 * `open:calendar` - To open calendar.
 * `open:taskmanager` - To open task manager.
 * `open:cmd` or `open:terminal` or `open:commandprompt` - To open the terminal.
@@ -126,6 +119,10 @@
 * `theme:random` - To get a random background color.
 
 # Special Functions
+* `zodiacsign:` - To get the zodiac sign based on the date of birth. example: `zodiacsign:2002-05-11` pattern: YYY-MM-DD
+* `numerology:` - To get the numerology details for 2 people. example: `numerology:Joel:2002-05-11:Sophia:2003-05-27` pattern: YYYY-MM-DD
+* `lovecalculator:` - To get a love score based on two names. example: `lovecalculator:Joel,Anna`
+* `guess:` - To guess the word. example: `guess:tac`.
 * `fortunecookie` - To know the future.
 * `easteregg` - Easter egg.
 * `shortstory` - To get a short story.
