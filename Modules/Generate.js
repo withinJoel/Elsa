@@ -39,3 +39,54 @@ function generateCombinations(length) {
 
     generate('', length);
 }
+
+//Generate All Numerical Combinations
+function generateNumberCombinations(length) {
+    let characters = '0123456789';
+
+    function generate(current, length) {
+        if (length === 0) {
+            echo(current);
+            return;
+        }
+        for (let i = 0; i < characters.length; i++) {
+            generate(current + characters[i], length - 1);
+        }
+    }
+
+    generate('', length);
+}
+
+//Generate All Alphabet Combinations
+function generateAlphabetCombinations(length) {
+    let characters = 'abcdefghijklmnopqrstuvwxyz';
+
+    function generate(current, length) {
+        if (length === 0) {
+            echo(current);
+            return;
+        }
+        for (let i = 0; i < characters.length; i++) {
+            generate(current + characters[i], length - 1);
+        }
+    }
+
+    generate('', length);
+}
+
+//Generate All Special Characters Combinations
+function generateSpecialCharacterCombinations(length) {
+    let characters = '~!@#$%^&*()_-+=[]{}:<>,.';
+
+    function generate(current, length) {
+        if (length === 0) {
+            echo(current);
+            return;
+        }
+        for (let i = 0; i < characters.length; i++) {
+            generate(current + characters[i], length - 1);
+        }
+    }
+
+    generate('', length);
+}

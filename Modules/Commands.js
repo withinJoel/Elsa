@@ -219,6 +219,15 @@ function runCmd(command, inMemory, fromInput) {
                 const data = commandName.trim().replace(/^lovecalculator:\b\s*/i, '');
                 let [name1, name2] = data.split(',');
                 loveCalculator(name1, name2);
+            } else if (commandName.includes("generate:combination:number:")) {
+                const data = commandName.trim().replace(/^generate:combination:number:\b\s*/i, '');
+                generateNumberCombinations(data);
+            } else if (commandName.includes("generate:combination:alphabet:")) {
+                const data = commandName.trim().replace(/^generate:combination:alphabet:\b\s*/i, '');
+                generateAlphabetCombinations(data);
+            } else if (commandName.includes("generate:combination:specialcharacter:")) {
+                const data = commandName.trim().replace(/^generate:combination:specialcharacter:\b\s*/i, '');
+                generateSpecialCharacterCombinations(data);
             } else if (commandName.includes("generate:combination:")) {
                 const data = commandName.trim().replace(/^generate:combination:\b\s*/i, '');
                 generateCombinations(data);
