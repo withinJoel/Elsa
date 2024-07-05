@@ -1,3 +1,4 @@
+//Detect Human
 async function detectHumans(data) {
     const existingImageElement = document.querySelector('[data-role="dynamic-image"]');
     const existingVideoElement = document.querySelector('video[data-role="dynamic-video"]');
@@ -67,7 +68,7 @@ async function detectHumans(data) {
 
         // Get the segmentation data
         const segmentationData = segmentation.dataSync();
-        
+
         // Create a mask for the clothes (assuming class 15 is the person)
         const mask = new Uint8ClampedArray(513 * 513 * 4); // RGBA
         for (let i = 0; i < segmentationData.length; i++) {
