@@ -23,10 +23,13 @@ loadScript('Modules/Datasets/Bible.js');
 ///Models
 loadScript('Modules/Models/Gemini/Gemini.js');
 
-////Modules
+//Core
+loadScript('Modules/Dependencies.js');
 loadScript('Modules/System.js');
-loadScript('Modules/Security.js');
+//loadScript('Modules/Security.js');
 loadScript('Modules/Directory.js');
+
+////Modules
 loadScript('Modules/OS.js');
 loadScript('Modules/Detect File Type.js');
 loadScript('Modules/Check.js');

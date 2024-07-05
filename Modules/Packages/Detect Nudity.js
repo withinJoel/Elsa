@@ -56,12 +56,26 @@ async function detectNudity(data) {
     const imageExtensions = ['png', 'jpg', 'jpeg', 'webp'];
 
     if (imageExtensions.includes(fileExtension)) {
-        const imagePath = `${imagedir}/${data}`; // Assuming imageDir is the folder for images
+        const imagePath = `${imagedir}/${data}`; // Assuming imagedir is the folder for images
+    
+        // Check if the image file exists
+        if (!await fileExists(imagePath)) {
+            echo("Image file is not found");
+            return;
+        }
+    
         await predictNudityForImage(imagePath);
     } else {
-        const videoPath = `${videodir}/${data}`; // Assuming videoDir is the folder for videos
+        const videoPath = `${videodir}/${data}`; // Assuming videodir is the folder for videos
+    
+        // Check if the video file exists
+        if (!await fileExists(videoPath)) {
+            echo("Video file is not found");
+            return;
+        }
+    
         await predictNudityForVideo(videoPath);
-    }
+    }    
 }
 
 //Detect nudity for images
