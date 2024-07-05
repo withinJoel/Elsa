@@ -80,6 +80,8 @@ function createWindow() {
 }
 
 ///////////////////////////////Update
+let isCheckingForUpdates = false;
+
 function getCurrentVersion() {
   const packageJsonPath = path.join(__dirname, 'package.json');
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
@@ -110,8 +112,14 @@ function checkRateLimit() {
 }
 
 async function checkForUpdates() {
+  if (isCheckingForUpdates) return; // Prevent multiple checks at the same time
+  isCheckingForUpdates = true;
+
   const rateLimitOk = await checkRateLimit();
-  if (!rateLimitOk) return;
+  if (!rateLimitOk) {
+    isCheckingForUpdates = false;
+    return;
+  }
 
   const currentVersion = getCurrentVersion();
 
@@ -121,6 +129,7 @@ async function checkForUpdates() {
 
       if (currentVersion === latestVersion) {
         console.log('No updates available.');
+        isCheckingForUpdates = false;
         return;
       }
 
@@ -134,10 +143,12 @@ async function checkForUpdates() {
         if (result.response === 0) { // 'Yes' button
           downloadUpdate(url);
         }
+        isCheckingForUpdates = false; // Ensure to reset the flag after handling the dialog
       });
     })
     .catch(error => {
       console.error(`Error checking for updates: ${error}`);
+      isCheckingForUpdates = false;
     });
 }
 
