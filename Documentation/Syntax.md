@@ -126,6 +126,7 @@
 * `fortunecookie` - To know the future.
 * `easteregg` - Easter egg.
 * `shortstory` - To get a short story.
+* `kissme` - To get a virtual kiss.
 
 # Religion
 * `bible:` - To get a bible verse based on the search. example: `bible:joel:2:1-3` (book name - chapter number - verses) (English Version)
@@ -140,9 +141,6 @@
 
 # Download 
 * `download:video:` - To download a video. example: `download:video:https://www.youtube.com/watch?v=v-OZQJj0GAE` (Note: This feature requires internet)
-
-# Fun
-* `kissme` - To get a virtual kiss.
 
 # Random Functions
 * `random:religion` - To get a random religion.
