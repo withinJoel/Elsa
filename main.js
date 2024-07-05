@@ -412,6 +412,7 @@ ipcMain.handle('open-file-explorer', () => {
     });
   });
 });
+
 ///////////////////////////////Open Calculator
 ipcMain.handle('open-calculator', () => {
   return new Promise((resolve, reject) => {

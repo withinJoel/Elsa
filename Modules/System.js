@@ -328,8 +328,8 @@ function echoFunction(input) {
 }
 
 //Credits
-function credits () {
-    echo ('Elsa is created by Joel Jessie Jolly.');
+function credits() {
+    echo('Elsa is created by Joel Jessie Jolly.');
 }
 
 //Reload or Refresh the page
