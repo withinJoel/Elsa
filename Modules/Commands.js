@@ -222,6 +222,9 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("generate:combination:number:")) {
                 const data = commandName.trim().replace(/^generate:combination:number:\b\s*/i, '');
                 generateNumberCombinations(data);
+            } else if (commandName.includes("generate:combination:alphanumeric:")) {
+                const data = commandName.trim().replace(/^generate:combination:alphanumeric:\b\s*/i, '');
+                generateAlphanumericCombinations(data);
             } else if (commandName.includes("generate:combination:alphabet:")) {
                 const data = commandName.trim().replace(/^generate:combination:alphabet:\b\s*/i, '');
                 generateAlphabetCombinations(data);

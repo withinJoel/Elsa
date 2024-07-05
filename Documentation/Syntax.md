@@ -258,6 +258,7 @@
 * `generate:combination:` - To generate combinations of all possible outcomes based on a certain length. example: `generate:combination:2` (Note:It consists of numbers, aphabets and special characters)
     * `generate:combination:number:` - To generate combinations of all possible outcomes based on a certain length. example: `generate:combination:number:2` (Note:It consists of only numbers)
     * `generate:combination:alphabet:` - To generate combinations of all possible outcomes based on a certain length. example: `generate:combination:alphabet:2` (Note:It consists of only alphabets)
+    * `generate:combination:alphanumeric:` - To generate combinations of all possible outcomes based on a certain length. example: `generate:combination:alphanumeric:2` (Note:It consists of only alphabets and numbers)
     * `generate:combination:specialcharacter:` - To generate combinations of all possible outcomes based on a certain length. example: `generate:combination:number:2` (Note:It consists of only special characters)
 
 # Check Functions

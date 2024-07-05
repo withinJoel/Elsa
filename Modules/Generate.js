@@ -74,6 +74,23 @@ function generateAlphabetCombinations(length) {
     generate('', length);
 }
 
+//Generate All Alphabet And Number Combinations
+function generateAlphanumericCombinations(length) {
+    let characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+
+    function generate(current, length) {
+        if (length === 0) {
+            echo(current);
+            return;
+        }
+        for (let i = 0; i < characters.length; i++) {
+            generate(current + characters[i], length - 1);
+        }
+    }
+
+    generate('', length);
+}
+
 //Generate All Special Characters Combinations
 function generateSpecialCharacterCombinations(length) {
     let characters = '~!@#$%^&*()_-+=[]{}:<>,.';
