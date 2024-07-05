@@ -254,6 +254,9 @@
 * `createqr:` - To create a qr code using the link or text . example `createqr:https://www.fb.com` or `createqr:iamjoel!` (Note: This feature requires internet)
 * `create:password` - To create a password.
 
+# Generate Functions
+* `generate:combination:` - To generate combinations of all possible outcomes based on a certain length. example: `generate:combination:2` (Note:It consists of numbers, aphabets and special characters)
+
 # Check Functions
 * `check:palindrome:` - To check wether it is palindrome or not. example: `check:palindrome:hola`.
 
