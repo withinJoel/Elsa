@@ -13,6 +13,7 @@
 2. [Random Functions](#Random-Functions)
 2. [Conversion Functions](#Conversion-Functions)
 2. [Create Functions](#Create-Functions)
+2. [Generate Functions](#Generate-Functions)
 2. [Check Functions](#Check-Functions)
 2. [Sort Functions](#Sort-Functions)
 2. [Games](#Games)
