@@ -22,3 +22,20 @@ function createPassword(length = 16) {
     }
     echo(`Password: ${password}`);
 }
+
+//Generate All Possible Combinations
+function generateCombinations(length) {
+    let characters = '~!@#$%^&*()_-+=[]{}:<>,.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    function generate(current, length) {
+        if (length === 0) {
+            echo(current);
+            return;
+        }
+        for (let i = 0; i < characters.length; i++) {
+            generate(current + characters[i], length - 1);
+        }
+    }
+
+    generate('', length);
+}

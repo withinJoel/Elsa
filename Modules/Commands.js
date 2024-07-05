@@ -219,6 +219,9 @@ function runCmd(command, inMemory, fromInput) {
                 const data = commandName.trim().replace(/^lovecalculator:\b\s*/i, '');
                 let [name1, name2] = data.split(',');
                 loveCalculator(name1, name2);
+            } else if (commandName.includes("generate:combination:")) {
+                const data = commandName.trim().replace(/^generate:combination:\b\s*/i, '');
+                generateCombinations(data);
             } else if (commandName.includes("predict:")) {
                 const data = commandName.trim().replace(/^predict:\b\s*/i, '');
                 predictNextNumber(data);
