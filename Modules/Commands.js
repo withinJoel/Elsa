@@ -139,11 +139,14 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("detect:human:")) {
                 const data = commandName.trim().replace(/^detect:human:\b\s*/i, '');
                 detectHumans(data);
-            } else if (commandName.includes("bible:")) {
-                const data = commandName.trim().replace(/^bible:\b\s*/i, '');
-                BibleEnglish(data);
             } else if (commandName.includes("bible:english:")) {
                 const data = commandName.trim().replace(/^bible:english:\b\s*/i, '');
+                BibleEnglish(data);
+            } else if (commandName.includes("bible:arabic:")) {
+                const data = commandName.trim().replace(/^bible:arabic:\b\s*/i, '');
+                BibleArabic(data);
+            } else if (commandName.includes("bible:")) {
+                const data = commandName.trim().replace(/^bible:\b\s*/i, '');
                 BibleEnglish(data);
             } else if (commandName.includes("detect:imagetype:")) {
                 const data = commandName.trim().replace(/^detect:imagetype:\b\s*/i, '');
