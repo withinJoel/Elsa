@@ -1,5 +1,5 @@
 //Bible
-function Bible(input) {
+function BibleEnglish(input) {
     // Split input to get the book name, chapter, and verse range
     let [bookName, chapter, verseRange] = input.split(':');
 

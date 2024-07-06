@@ -141,7 +141,10 @@ function runCmd(command, inMemory, fromInput) {
                 detectHumans(data);
             } else if (commandName.includes("bible:")) {
                 const data = commandName.trim().replace(/^bible:\b\s*/i, '');
-                Bible(data);
+                BibleEnglish(data);
+            } else if (commandName.includes("bible:english:")) {
+                const data = commandName.trim().replace(/^bible:english:\b\s*/i, '');
+                BibleEnglish(data);
             } else if (commandName.includes("detect:imagetype:")) {
                 const data = commandName.trim().replace(/^detect:imagetype:\b\s*/i, '');
                 detectImageType(data);

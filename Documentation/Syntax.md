@@ -130,7 +130,7 @@
 
 # Religion
 * `bible:` - To get a bible verse based on the search. example: `bible:joel:2:1-3` (book name - chapter number - verses) (English Version)
-
+    * `bible:english:` - To get a bible verse based on the search. example: `bible:english:joel:2:1-3` (book name - chapter number - verses) (English Version)
 # Detection Functions
 * `detect:face:` - To detect faces in images. example: `detect:face:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
 * `detect:human:` - To detect humans in images. example: `detect:human:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
