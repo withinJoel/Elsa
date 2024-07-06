@@ -18,7 +18,8 @@ loadScript('../../API/Apikeys.js');
 ////Datasets
 loadScript('Modules/Datasets/Data.js');
 loadScript('Modules/Datasets/wordBank.js');
-loadScript('Modules/Datasets/Bible_eng.js');
+loadScript('Modules/Datasets/Bible_English.js');
+loadScript('Modules/Datasets/Bible_Aramaic.js');
 
 ///Models
 loadScript('Modules/Models/Gemini/Gemini.js');
