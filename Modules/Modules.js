@@ -19,6 +19,7 @@ loadScript('../../API/Apikeys.js');
 loadScript('Modules/Datasets/Data.js');
 loadScript('Modules/Datasets/wordBank.js');
 loadScript('Modules/Datasets/Bible_English.js');
+loadScript('Modules/Datasets/Bible_Danish.js');
 loadScript('Modules/Datasets/Bible_Arabic.js');
 
 ///Models
