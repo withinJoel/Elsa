@@ -13,7 +13,7 @@ function Bible(input) {
     if (bookIndex !== -1) {
         const bookNumber = bookIndex + 1;
         const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(bible, 'text/xml');
+        const xmlDoc = parser.parseFromString(bible_eng, 'text/xml');
         const verses = [];
 
         const [startVerse, endVerse] = verseRange.includes('-') ? verseRange.split('-').map(Number) : [parseInt(verseRange), parseInt(verseRange)];
