@@ -132,6 +132,7 @@
 * `bible:` - To get a bible verse based on the search. example: `bible:joel:2:1-3` (book name - chapter number - verses) (English Version)
     * `bible:english:` - To get a bible verse based on the search. example: `bible:english:joel:2:1-3` (book name - chapter number - verses) (English Version)
     * `bible:arabic:` - To get a bible verse based on the search. example: `bible:arabic:joel:2:1-3` (book name - chapter number - verses) (Arabic Version)
+    * `bible:czech:` - To get a bible verse based on the search. example: `bible:czech:joel:2:1-3` (book name - chapter number - verses) (Czech Version)
     * `bible:danish:` - To get a bible verse based on the search. example: `bible:danish:joel:2:1-3` (book name - chapter number - verses) (Danish Version)
 
 # Detection Functions
