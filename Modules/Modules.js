@@ -22,6 +22,7 @@ loadScript('Modules/Datasets/Bible_English.js');
 loadScript('Modules/Datasets/Bible_Danish.js');
 loadScript('Modules/Datasets/Bible_Arabic.js');
 loadScript('Modules/Datasets/Bible_Czech.js');
+loadScript('Modules/Datasets/Bible_Bulgarian.js');
 
 ///Models
 loadScript('Modules/Models/Gemini/Gemini.js');

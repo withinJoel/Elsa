@@ -134,6 +134,7 @@
     * `bible:arabic:` - To get a bible verse based on the search. example: `bible:arabic:joel:2:1-3` (book name - chapter number - verses) (Arabic Version)
     * `bible:czech:` - To get a bible verse based on the search. example: `bible:czech:joel:2:1-3` (book name - chapter number - verses) (Czech Version)
     * `bible:danish:` - To get a bible verse based on the search. example: `bible:danish:joel:2:1-3` (book name - chapter number - verses) (Danish Version)
+    * `bible:bulgarian:` - To get a bible verse based on the search. example: `bible:bulgarian:joel:2:1-3` (book name - chapter number - verses) (Bulgarian Version)
 
 # Detection Functions
 * `detect:face:` - To detect faces in images. example: `detect:face:21.png` (Note: The default image path is C:/Program Files (x86)/Elsa/Bin/Images/)
