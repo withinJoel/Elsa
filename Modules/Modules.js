@@ -20,9 +20,11 @@ loadScript('Modules/Datasets/Data.js');
 loadScript('Modules/Datasets/wordBank.js');
 loadScript('Modules/Datasets/Bible_English.js');
 loadScript('Modules/Datasets/Bible_Danish.js');
+loadScript('Modules/Datasets/Bible_Dutch.js');
 loadScript('Modules/Datasets/Bible_Arabic.js');
 loadScript('Modules/Datasets/Bible_Czech.js');
 loadScript('Modules/Datasets/Bible_Bulgarian.js');
+loadScript('Modules/Datasets/Bible_Croatian.js');
 
 ///Models
 loadScript('Modules/Models/Gemini/Gemini.js');
