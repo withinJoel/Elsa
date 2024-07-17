@@ -264,7 +264,7 @@ function BibleDutch(input) {
     }
 }
 
-//Bible Dutch
+//Bible Finnish
 function BibleFinnish(input) {
     // Split input to get the book name, chapter, and verse range
     let [bookName, chapter, verseRange] = input.split(':');
@@ -302,7 +302,7 @@ function BibleFinnish(input) {
     }
 } 
 
-//Bible Dutch
+//Bible French
 function BibleFrench(input) {
     // Split input to get the book name, chapter, and verse range
     let [bookName, chapter, verseRange] = input.split(':');
