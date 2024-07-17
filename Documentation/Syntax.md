@@ -133,6 +133,7 @@
     * `bible:english:` - To get a bible verse based on the search. example: `bible:english:joel:2:1-3` (book name - chapter number - verses) (English Version)
     * `bible:french:` - To get a bible verse based on the search. example: `bible:french:joel:1:1-11` (book name - chapter number - verses) (French Version)
     * `bible:arabic:` - To get a bible verse based on the search. example: `bible:arabic:joel:2:1-3` (book name - chapter number - verses) (Arabic Version)
+    * `bible:german:` - To get a bible verse based on the search. example: `bible:german:joel:1:1-11` (book name - chapter number - verses) (German Version)
     * `bible:czech:` - To get a bible verse based on the search. example: `bible:czech:joel:2:1-3` (book name - chapter number - verses) (Czech Version)
     * `bible:danish:` - To get a bible verse based on the search. example: `bible:danish:joel:2:1-3` (book name - chapter number - verses) (Danish Version)
     * `bible:bulgarian:` - To get a bible verse based on the search. example: `bible:bulgarian:joel:2:1-3` (book name - chapter number - verses) (Bulgarian Version)
