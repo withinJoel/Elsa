@@ -154,6 +154,9 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("bible:finnish:")) {
                 const data = commandName.trim().replace(/^bible:finnish:\b\s*/i, '');
                 BibleFinnish(data);
+            } else if (commandName.includes("bible:german:")) {
+                const data = commandName.trim().replace(/^bible:german:\b\s*/i, '');
+                BibleGerman(data);
             } else if (commandName.includes("bible:czech:")) {
                 const data = commandName.trim().replace(/^bible:czech:\b\s*/i, '');
                 BibleCzech(data);
