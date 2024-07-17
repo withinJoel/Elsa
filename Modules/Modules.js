@@ -22,6 +22,7 @@ loadScript('Modules/Datasets/Bible_English.js');
 loadScript('Modules/Datasets/Bible_French.js');
 loadScript('Modules/Datasets/Bible_Finnish.js');
 loadScript('Modules/Datasets/Bible_German.js');
+loadScript('Modules/Datasets/Bible_Swedish.js');
 loadScript('Modules/Datasets/Bible_Danish.js');
 loadScript('Modules/Datasets/Bible_Dutch.js');
 loadScript('Modules/Datasets/Bible_Arabic.js');
