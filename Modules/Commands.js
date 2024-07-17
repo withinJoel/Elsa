@@ -145,9 +145,15 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("bible:danish:")) {
                 const data = commandName.trim().replace(/^bible:danish:\b\s*/i, '');
                 BibleDanish(data);
+            } else if (commandName.includes("bible:french:")) {
+                const data = commandName.trim().replace(/^bible:french:\b\s*/i, '');
+                BibleFrench(data);
             } else if (commandName.includes("bible:dutch:")) {
                 const data = commandName.trim().replace(/^bible:dutch:\b\s*/i, '');
                 BibleDutch(data);
+            } else if (commandName.includes("bible:finnish:")) {
+                const data = commandName.trim().replace(/^bible:finnish:\b\s*/i, '');
+                BibleFinnish(data);
             } else if (commandName.includes("bible:czech:")) {
                 const data = commandName.trim().replace(/^bible:czech:\b\s*/i, '');
                 BibleCzech(data);
