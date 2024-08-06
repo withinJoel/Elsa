@@ -53,7 +53,7 @@
 * `developer` or `dev` - To know about the developer.
 * `sys` - To get the system information.
 * `cls` or `clearscreen` - To clear screen
-* `exit` - To exit the terminal
+* `exit` or `quit`- To exit the terminal
 * `refresh` - To refresh/reload.
     * For windows you can press ctrl + r.
 * `echo:` - To display something on the terminal. example: `echo:I am Joel.`
