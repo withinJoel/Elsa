@@ -18,7 +18,7 @@ function runCmd(command, inMemory, fromInput) {
 
             if (commandName === "cls" || commandName === "clearscreen") {
                 refreshPage();
-            } else if (commandName === "exit") {
+            } else if ((commandName === "exit")|| (commandName === "quit")){
                 window.open(document.URL, "about:blank", "width=977 height=455");
                 window.close();
             } if (commandName.startsWith("echo:")) {
