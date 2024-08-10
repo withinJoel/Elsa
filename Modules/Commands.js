@@ -56,6 +56,10 @@ function runCmd(command, inMemory, fromInput) {
                 openClock();
             } else if ((commandName === "open:calendar")) {
                 openCalendar();
+            } else if (commandName.includes("httpstatuscode:")) {
+                const data = commandName.trim().replace(/^httpstatuscode:\b\s*/i, '');
+                console.log(data);
+                getHttpStatusCode(data);
             } else if ((commandName === "open:maps")) {
                 openMap();
             } else if (commandName === "config") {

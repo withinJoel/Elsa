@@ -1,5 +1,5 @@
 function getHttpStatusCode(statusCode) {
-    const errorMessages = {
+    const StatusMessages = {
         100: "Continue",
         101: "Switching Protocols",
         102: "Processing",
@@ -72,6 +72,6 @@ function getHttpStatusCode(statusCode) {
         525: "SSL Handshake Failed",
         526: "Invalid SSL Certificate"
     };
-
-    return errorMessages[statusCode] || "Unknown Error";
+    const errorMessage = StatusMessages[statusCode] || "Unknown Error";
+    echo ("Message: "+errorMessage);
 }

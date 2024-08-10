@@ -36,7 +36,7 @@ loadScript('Modules/Models/Gemini/Gemini.js');
 //Core
 loadScript('Modules/Dependencies.js');
 loadScript('Modules/System.js');
-loadScript('Modules/Security.js');
+//loadScript('Modules/Security.js');
 loadScript('Modules/Directory.js');
 
 ////Modules
@@ -54,6 +54,7 @@ loadScript('Modules/Randomization.js');
 loadScript('Modules/Sort.js');
 loadScript('Modules/String.js');
 loadScript('Modules/Web.js');
+loadScript('Modules/Networking.js');
 
 ////Packages
 loadScript('Modules/Packages/Reddit.js');
