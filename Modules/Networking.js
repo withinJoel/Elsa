@@ -27,7 +27,7 @@ function getHttpStatusCode(statusCode) {
         401: "Unauthorized",
         402: "Payment Required",
         403: "Forbidden",
-        404: "File not found",
+        404: "Not Found",
         405: "Method Not Allowed",
         406: "Not Acceptable",
         407: "Proxy Authentication Required",
@@ -64,14 +64,67 @@ function getHttpStatusCode(statusCode) {
         508: "Loop Detected",
         510: "Not Extended",
         511: "Network Authentication Required",
-        520: "Unknown Error",
-        521: "Web Server Is Down",
-        522: "Connection Timed Out",
-        523: "Origin Is Unreachable",
-        524: "A Timeout Occurred",
-        525: "SSL Handshake Failed",
-        526: "Invalid SSL Certificate"
-    };
+        520: "Unknown Error", // Cloudflare
+        521: "Web Server Is Down", // Cloudflare
+        522: "Connection Timed Out", // Cloudflare
+        523: "Origin Is Unreachable", // Cloudflare
+        524: "A Timeout Occurred", // Cloudflare
+        525: "SSL Handshake Failed", // Cloudflare
+        526: "Invalid SSL Certificate", // Cloudflare
+        527: "Railgun Error", // Cloudflare
+        530: "Site is Frozen", // Cloudflare
+        600: "Unparseable Response Headers", // Microsoft IIS
+        601: "Unknown Error", // Microsoft IIS
+        602: "Unspecified Error", // Microsoft IIS
+        603: "Server Busy", // Microsoft IIS
+        604: "HTTP Version Not Supported", // Microsoft IIS
+        605: "Service Temporarily Overloaded", // Microsoft IIS
+        606: "Network Unreachable", // Microsoft IIS
+        607: "Gateway Timeout", // Microsoft IIS
+        608: "Service Unavailable", // Microsoft IIS
+        609: "Service Not Available", // Microsoft IIS
+        610: "Gateway Not Found", // Microsoft IIS
+        611: "Host Not Found", // Microsoft IIS
+        612: "Invalid Request", // Microsoft IIS
+        613: "Timeout", // Microsoft IIS
+        614: "Connection Closed", // Microsoft IIS
+        615: "Bandwidth Limit Exceeded", // Microsoft IIS
+        616: "Insufficient Storage", // Microsoft IIS
+        617: "Precondition Failed", // Microsoft IIS
+        618: "Request Entity Too Large", // Microsoft IIS
+        619: "Request URI Too Long", // Microsoft IIS
+        620: "Unsupported Media Type", // Microsoft IIS
+        621: "Expectation Failed", // Microsoft IIS
+        622: "Internal Server Error", // Microsoft IIS
+        623: "Not Implemented", // Microsoft IIS
+        624: "Bad Gateway", // Microsoft IIS
+        625: "Service Unavailable", // Microsoft IIS
+        626: "Gateway Timeout", // Microsoft IIS
+        627: "HTTP Version Not Supported", // Microsoft IIS
+        628: "Variant Also Negotiates", // Microsoft IIS
+        629: "Insufficient Storage", // Microsoft IIS
+        630: "Loop Detected", // Microsoft IIS
+        631: "Not Extended", // Microsoft IIS
+        632: "Network Authentication Required", // Microsoft IIS
+        633: "Unknown Error", // Microsoft IIS
+        634: "Web Server Is Down", // Microsoft IIS
+        635: "Connection Timed Out", // Microsoft IIS
+        636: "Origin Is Unreachable", // Microsoft IIS
+        637: "A Timeout Occurred", // Microsoft IIS
+        638: "SSL Handshake Failed", // Microsoft IIS
+        639: "Invalid SSL Certificate", // Microsoft IIS
+        640: "Railgun Error", // Microsoft IIS
+        641: "Site is Frozen", // Microsoft IIS
+        642: "Unknown Error", // Microsoft IIS
+        643: "Web Server Is Down", // Microsoft IIS
+        644: "Connection Timed Out", // Microsoft IIS
+        645: "Origin Is Unreachable", // Microsoft IIS
+        646: "A Timeout Occurred", // Microsoft IIS
+        647: "SSL Handshake Failed", // Microsoft IIS
+        648: "Invalid SSL Certificate", // Microsoft IIS
+        649: "Railgun Error", // Microsoft IIS
+        650: "Site is Frozen" // Microsoft IIS
+    };    
     const errorMessage = StatusMessages[statusCode] || "Unknown HTTP Code";
     echo ("Message: "+errorMessage);
 }
