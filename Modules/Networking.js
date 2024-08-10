@@ -72,6 +72,6 @@ function getHttpStatusCode(statusCode) {
         525: "SSL Handshake Failed",
         526: "Invalid SSL Certificate"
     };
-    const errorMessage = StatusMessages[statusCode] || "Unknown Error";
+    const errorMessage = StatusMessages[statusCode] || "Unknown HTTP Code";
     echo ("Message: "+errorMessage);
 }
