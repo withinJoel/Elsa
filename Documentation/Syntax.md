@@ -362,6 +362,7 @@
 * `connectionspeed` - To get the connection speed.
 * `ipaddress` - To get the ip address. (Note: This feature requires internet)
 * `latency:` - To get the latency for a particular website. example: `latency:https://github.com/` (Note: This feature requires internet)
+* `httpstatuscode:` - To get the info about the HTTPS status code. example: `httpstatuscode:500`
 
 # Display
 * `screenwidth` - To get the screen width.
