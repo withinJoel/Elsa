@@ -146,3 +146,16 @@ function measureLatency(url) {
             return Promise.reject(error); // Reject the promise if there's an error
         });
 }
+
+//Connection Type
+function getConnectionType() {
+    const connectionType = navigator.connection.effectiveType; // Effective network connection type (e.g., "4g", "3g")
+    echo(connectionType);
+}
+
+//Connection Speed
+function getConnectionSpeed() {
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const downlinkSpeed = connection.downlink + " Mbps"; // Downlink speed in Mbps
+    echo(downlinkSpeed);
+}
