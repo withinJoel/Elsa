@@ -243,7 +243,7 @@ function getCountryNameByDialingCode(dialingCode) {
 
 function getDialingCodeByCountryName(countryName) {
     const dialingCode = Object.keys(CountryData).find(code => CountryData[code] === countryName);
-    console.log("Dialing Code: " + (dialingCode || "Unknown Code"));
+    echo("Dialing Code: " + (dialingCode || "Unknown Code"));
 }
 
 //Latency
