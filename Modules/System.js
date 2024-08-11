@@ -386,19 +386,6 @@ function getBatteryInfo() {
     }).catch(error => echo('Error getting battery status:', error));
 }
 
-//Connection Type
-function getConnectionType() {
-    const connectionType = navigator.connection.effectiveType; // Effective network connection type (e.g., "4g", "3g")
-    echo(connectionType);
-}
-
-//Connection Speed
-function getConnectionSpeed() {
-    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    const downlinkSpeed = connection.downlink + " Mbps"; // Downlink speed in Mbps
-    echo(downlinkSpeed);
-}
-
 //Ram Type
 function getRamInfo() {
     const memory = navigator.deviceMemory;
