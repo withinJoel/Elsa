@@ -58,12 +58,10 @@ function runCmd(command, inMemory, fromInput) {
                 openCalendar();
             } else if (commandName.includes("httpstatuscode:")) {
                 const data = commandName.trim().replace(/^httpstatuscode:\b\s*/i, '');
-                console.log(data);
                 getHttpStatusCode(data);
             } else if (commandName.includes("find:countrybycountrycode:")) {
                 const data = commandName.trim().replace(/^find:countrybycountrycode:\b\s*/i, '');
-                console.log(data);
-                getHttpStatusCode(data);
+                getCountryNameByDialingCode(data);
             } else if ((commandName === "open:maps")) {
                 openMap();
             } else if (commandName === "config") {
