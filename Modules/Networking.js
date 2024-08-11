@@ -238,7 +238,7 @@ const CountryData = {
 
 function getCountryNameByDialingCode(dialingCode) {
     const countryName = CountryData[dialingCode] || "Unknown Country";
-    console.log("Country: " + countryName);
+    echo("Country: " + countryName);
 }
 
 function getDialingCodeByCountryName(countryName) {
