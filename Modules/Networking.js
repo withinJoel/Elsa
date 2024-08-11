@@ -236,13 +236,25 @@ const CountryData = {
     '+262': 'Mayotte'
 };
 
-function getCountryNameByDialingCode(dialingCode) {
+function getCountryNameByDialingCode(data) {
+    // Trim whitespace and remove the 'find:countrybydialingcode:' prefix, case-insensitively
+    const dialingCode = data.trim().replace(/^find:\s*countrybydialingcode:\s*/i, '');
+    
+    // Check the cleaned dialing code in the CountryData map
     const countryName = CountryData[dialingCode] || "Unknown Country";
+    
+    // Output the results
+    echo("Dialing Code: " + dialingCode);
     echo("Country: " + countryName);
 }
 
 function getDialingCodeByCountryName(countryName) {
-    const dialingCode = Object.keys(CountryData).find(code => CountryData[code] === countryName);
+    // Convert the input country name to lowercase for case-insensitive comparison
+    const lowerCaseCountryName = countryName.toLowerCase();
+    
+    // Find the dialing code by comparing the lowercase version of the country names
+    const dialingCode = Object.keys(CountryData).find(code => CountryData[code].toLowerCase() === lowerCaseCountryName);
+    
     echo("Dialing Code: " + (dialingCode || "Unknown Code"));
 }
 
