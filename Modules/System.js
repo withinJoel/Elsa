@@ -25,17 +25,6 @@ function getUpdate() {
     }
 }
 
-//Fetch Internet Information
-function getInternetInfo() {
-    fetch('https://jsonip.com/').then(res => {
-        return res.json()
-    }).then(data => {
-        getInternetData(data.ip)
-    }).catch(err => {
-        echo(`There was an error ${err}`)
-    })
-}
-
 //Config
 function getConfig() {
     // Check if the browser's developer tools are open
