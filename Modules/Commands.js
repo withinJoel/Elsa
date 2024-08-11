@@ -62,6 +62,9 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("find:countrybydialingcode:")) {
                 const data = commandName.trim().replace(/^find:countrybydialingcode:\b\s*/i, '');
                 getCountryNameByDialingCode(data);
+            } else if (commandName.includes("find:dialingcodebycountry:")) {
+                const data = commandName.trim().replace(/^find:dialingcodebycountry:\b\s*/i, '');
+                getCountryNameByDialingCode(data);
             } else if ((commandName === "open:maps")) {
                 openMap();
             } else if (commandName === "config") {
