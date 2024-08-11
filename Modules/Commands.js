@@ -59,8 +59,8 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName.includes("httpstatuscode:")) {
                 const data = commandName.trim().replace(/^httpstatuscode:\b\s*/i, '');
                 getHttpStatusCode(data);
-            } else if (commandName.includes("find:countrybycountrycode:")) {
-                const data = commandName.trim().replace(/^find:countrybycountrycode:\b\s*/i, '');
+            } else if (commandName.includes("find:countrybydialingcode:")) {
+                const data = commandName.trim().replace(/^find:countrybydialingcode:\b\s*/i, '');
                 getCountryNameByDialingCode(data);
             } else if ((commandName === "open:maps")) {
                 openMap();
