@@ -362,19 +362,6 @@ function getOS() {
     const platform = navigator.platform;
     echo(platform);
 }
-//Network Speed
-function getNetworkStatus() {
-    const onlineStatus = navigator.onLine ? 'Online' : 'Offline'; // Online status
-    echo(onlineStatus);
-}
-
-//IP Address
-function getIPAddress() {
-    fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => echo(`Your IP address is: ${data.ip}`))
-        .catch(error => echo('Error fetching IP address:', error));
-}
 
 //Battery Info
 function getBatteryInfo() {
