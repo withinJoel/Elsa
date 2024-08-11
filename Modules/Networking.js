@@ -147,6 +147,38 @@ function measureLatency(url) {
         });
 }
 
+//Internet Information
+function getInternetData(ip) {
+    let ipAddress = ip;
+    let output = "";
+    const connectionType = navigator.connection.effectiveType;
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const downlinkSpeed = connection.downlink + " Mbps";
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => echo(`IP address: ${data.ip}`))
+        .catch(error => echo('Error fetching IP address:', error));
+    fetch(`http://ip-api.com/json/${ipAddress}`).then(res => {
+        return res.json()
+    }).then(data => {
+        echo('Country: ' + data.country);
+        echo('Country code: ' + data.countryCode);
+        echo('Region: ' + data.regionName);
+        echo('City: ' + data.city);
+        echo('Timezone: ' + data.timezone);
+        echo('Internet organization: ' + data.org);
+        echo('AS: ' + data.as);
+        echo('Zip code: ' + data.zip);
+        echo('ISP: ' + data.isp);
+        echo('Connection Type: ' + connectionType);
+        echo('Connection Speed: ' + downlinkSpeed);
+        echo('Round-trip time (RTT): ' + navigator.connection.rtt); // Estimated round-trip time in milliseconds
+        echo('Save data mode: ' + navigator.connection.saveData);
+    }).catch(err => {
+        echo(`There was an error: ${err}`);
+    })
+}
+
 //Network Speed
 function getNetworkStatus() {
     const onlineStatus = navigator.onLine ? 'Online' : 'Offline'; // Online status
