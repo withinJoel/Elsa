@@ -147,6 +147,20 @@ function measureLatency(url) {
         });
 }
 
+//Network Speed
+function getNetworkStatus() {
+    const onlineStatus = navigator.onLine ? 'Online' : 'Offline'; // Online status
+    echo(onlineStatus);
+}
+
+//IP Address
+function getIPAddress() {
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => echo(`Your IP address is: ${data.ip}`))
+        .catch(error => echo('Error fetching IP address:', error));
+}
+
 //Connection Type
 function getConnectionType() {
     const connectionType = navigator.connection.effectiveType; // Effective network connection type (e.g., "4g", "3g")
