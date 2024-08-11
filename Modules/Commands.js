@@ -64,7 +64,7 @@ function runCmd(command, inMemory, fromInput) {
                 getCountryNameByDialingCode(data);
             } else if (commandName.includes("find:dialingcodebycountry:")) {
                 const data = commandName.trim().replace(/^find:dialingcodebycountry:\b\s*/i, '');
-                getCountryNameByDialingCode(data);
+                getDialingCodeByCountryName(data);
             } else if ((commandName === "open:maps")) {
                 openMap();
             } else if (commandName === "config") {
