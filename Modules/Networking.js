@@ -147,6 +147,17 @@ function measureLatency(url) {
         });
 }
 
+//Fetch Internet Information
+function getInternetInfo() {
+    fetch('https://jsonip.com/').then(res => {
+        return res.json()
+    }).then(data => {
+        getInternetData(data.ip)
+    }).catch(err => {
+        echo(`There was an error ${err}`)
+    })
+}
+
 //Internet Information
 function getInternetData(ip) {
     let ipAddress = ip;
