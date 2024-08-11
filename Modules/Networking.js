@@ -128,3 +128,21 @@ function getHttpStatusCode(statusCode) {
     const errorMessage = StatusMessages[statusCode] || "Unknown HTTP Code";
     echo ("Message: "+errorMessage);
 }
+
+//Latency
+function measureLatency(url) {
+    const startTime = performance.now(); // Get the current time before sending the request
+
+    return fetch(url)
+        .then(response => {
+            const endTime = performance.now(); // Get the current time after receiving the response
+            const latency = endTime - startTime; // Calculate the latency by subtracting start time from end time
+            return Promise.resolve(latency); // Resolve the promise with the calculated latency
+        })
+        .catch(error => {
+            const audio = new Audio('Effects/Wrong Input.mp3');
+            audio.play();
+            console.error('Error measuring latency:', error);
+            return Promise.reject(error); // Reject the promise if there's an error
+        });
+}
