@@ -7,8 +7,8 @@ currently being supported with security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 2.x.x   | :Major Updates Until December 31st, 2024: |
-| 1.x.x   | :Only Major Security Updates Until September 20th, 2024:                |
+| 2.x.x   | Major Updates Until December 31st, 2024 |
+| 1.x.x   | Only Major Security Updates Until September 20th, 2024 |                |
 
 ## Reporting a Vulnerability
 
