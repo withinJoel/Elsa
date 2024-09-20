@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<meta http-equiv="Content-Security-Policy" content="
-  default-src 'self' * data:;
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
-  style-src 'self' 'unsafe-inline' *;
-  img-src 'self' blob: data: *;
-  media-src 'self' blob: *;
-  worker-src 'self' blob:;">
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' * data:;
+  	script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+  	style-src 'self' 'unsafe-inline' *;
+  	img-src 'self' blob: data: *;
+  	media-src 'self' blob: *;
+  	worker-src 'self' blob:;">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,6 +17,10 @@
 	<link rel="stylesheet" href="Styles/Styles.css">
 	<link rel="shortcut icon" href="Logo/Elsa.ico" />
 	<title>Elsa</title>
+	<meta property="og:title" content="Elsa" />
+        <meta property="og:description" content="The programming language for the next generation." />
+        <meta property="og:image" content="Logo/Elsa.png" />
+        <meta property="og:type" content="website" />
 </head>
 
 <body onclick="input.focus()">
