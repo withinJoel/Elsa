@@ -52,7 +52,7 @@
 * `ver` or `version` - To display the version of Elsa.
 * `developer` or `dev` - To know about the developer.
 * `sys` - To get the system information.
-* `cls` or `clearscreen` - To clear screen
+* `cls` or `clearscreen` or `clear` - To clear screen
 * `exit` or `quit` or `terminate`- To exit the terminal
 * `refresh` - To refresh/reload.
     * For windows you can press ctrl + r.
