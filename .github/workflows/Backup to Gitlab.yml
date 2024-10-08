@@ -1,0 +1,30 @@
+name: Backup to GitLab
+
+on:
+  push:
+    branches:
+      - main # Trigger on pushes to the main branch
+  workflow_dispatch: # Allows you to manually trigger the backup
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch full history to avoid shallow update issues
+
+      # Step 2: Set up Git with GitLab credentials
+      - name: Configure Git to use GitLab
+        run: |
+          git config --global user.name "GitHub Backup Bot"
+          git config --global user.email "bot@example.com"
+          git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/withinjoel/elsa.git
+
+      # Step 3: Force push to GitLab
+      - name: Force push to GitLab
+        run: |
+          git push -u gitlab main --force
