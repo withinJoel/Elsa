@@ -36,7 +36,7 @@ function runCmd(command, inMemory, fromInput) {
                 window.open(url, '_blank');
             } else if (commandName === "truthordare") {
                 truthOrDare();
-            } else if (commandName.includes("whatis:")) {
+            } else if (commandName.includes("whatis: ")) {
                 whatIsCommand(commandName);
             } else if (commandName === "rolldice") {
                 rollDice();
