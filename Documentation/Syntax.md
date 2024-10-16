@@ -62,6 +62,7 @@
 * `credits` - To see the credits.
 * `help` - To get a list of all the supported commands.
 * `reportbug` - To report a bug in the application.
+* `whatis` - To tell you what that command does. example: `whatis: echo`
 
 # Operating System
 * `os` - To get the operating system details.
