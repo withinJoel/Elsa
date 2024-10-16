@@ -18,6 +18,7 @@ const commandDictionary = {
     credits: "To see the credits.",
     help: "To get a list of all the supported commands.",
     reportbug: "To report a bug in the application.",
+    whatis: "To tell you what that command does. example: whatis: echo"
 };
 
 //Version
