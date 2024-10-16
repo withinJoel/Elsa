@@ -229,7 +229,7 @@ function whatIsCommand(input) {
         
         // Use echo to display the meaning or a message if the command is not found
         if (meaning) {
-            echo(meaning);
+            echo(command + ":" + meaning);
         } else {
             echo(`Command '${command}' not found.`);
         }
