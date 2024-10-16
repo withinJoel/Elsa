@@ -37,8 +37,7 @@ function runCmd(command, inMemory, fromInput) {
             } else if (commandName === "truthordare") {
                 truthOrDare();
             } else if (commandName.includes("whatis:")) {
-                const data = commandName.trim().replace(/^whatis:\b\s*/i, '');
-                whatIsCommand(data);
+                whatIsCommand(commandName);
             } else if (commandName === "rolldice") {
                 rollDice();
             } else if (commandName === "headsortails") {
