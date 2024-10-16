@@ -220,7 +220,7 @@ const commandDictionary = {
 // Function to handle user input
 function whatIsCommand(input) {
     // Check if the input starts with 'whatis'
-    if (input.startsWith('whatis ')) {
+    if (input.startsWith('whatis: ')) {
         // Extract the command from the input
         const command = input.split(' ')[1];
         
@@ -228,9 +228,9 @@ function whatIsCommand(input) {
         const meaning = commandDictionary[command];
         
         // Return the meaning or a message if the command is not found
-        return meaning ? meaning : `Command '${command}' not found.`;
+        return meaning ? meaning : echo(`Command '${command}' not found.`);
     } else {
-        return "Please use the format 'whatis <command>'.";
+        echo("Please use the format 'whatis <command>'.");
     }
 }
 
