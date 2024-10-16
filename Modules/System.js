@@ -1,3 +1,25 @@
+// Dictionary to store command information
+const commandDictionary = {
+    elsa: "Basic info.",
+    ver: "To display the version of Elsa.",
+    version: "To display the version of Elsa.",
+    developer: "To know about the developer.",
+    dev: "To know about the developer.",
+    sys: "To get the system information.",
+    cls: "To clear screen.",
+    clearscreen: "To clear screen.",
+    clear: "To clear screen.",
+    exit: "To exit the terminal.",
+    quit: "To exit the terminal.",
+    terminate: "To exit the terminal.",
+    refresh: "To refresh/reload.",
+    echo: "To display something on the terminal. example: `echo:I am Joel.`",
+    config: "To get the configuration information.",
+    credits: "To see the credits.",
+    help: "To get a list of all the supported commands.",
+    reportbug: "To report a bug in the application.",
+};
+
 //Version
 function Version() {
     echo("Elsa [Version " + currentVersion + ']');
