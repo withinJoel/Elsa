@@ -209,6 +209,24 @@ function getSys() {
     echo('Screen Resolution: ' + screenresolution);
 }
 
+//Whatis
+// Function to handle user input
+function whatIsCommand(input) {
+    // Check if the input starts with 'whatis'
+    if (input.startsWith('whatis ')) {
+        // Extract the command from the input
+        const command = input.split(' ')[1];
+        
+        // Look up the command in the dictionary
+        const meaning = commandDictionary[command];
+        
+        // Return the meaning or a message if the command is not found
+        return meaning ? meaning : `Command '${command}' not found.`;
+    } else {
+        return "Please use the format 'whatis <command>'.";
+    }
+}
+
 //CPU Info
 async function getCPUInfo() {
     const cpuInfo = await window.electronAPI.getCPUInfo();
