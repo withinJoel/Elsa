@@ -210,13 +210,6 @@ function getSys() {
 }
 
 //Whatis
-// Dictionary to store command information
-const commandDictionary = {
-    config: "To get the configuration information.",
-    credits: "To see the credits.",
-    help: "To get a list of all the supported commands.",
-    reportbug: "To report a bug in the application."
-};
 // Function to handle user input
 function whatIsCommand(input) {
     // Extract the command from the input
