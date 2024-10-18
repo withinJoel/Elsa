@@ -18,7 +18,21 @@ const commandDictionary = {
     credits: "To see the credits.",
     help: "To get a list of all the supported commands.",
     reportbug: "To report a bug in the application.",
-    whatis: "To tell you what that command does. example: `whatis: echo`"
+    whatis: "To tell you what that command does. example: `whatis: echo`",
+    os: "To get the operating system details.",
+    read: "To read out the input. example: read:hello world",
+    encode: "To encode data. example: encode:hola",
+    decode: "To decode data. example: decode:aG9sYQ==",
+    time: "To display the current time.",
+    day: "To get the day info.",
+    date: "To get the date info.",
+    timezone: "To get the time zone.",
+    webrtc: "To get the WebRTC info.",
+    mouseposition: "To get the mouse position.",
+    installedapps: "To get a list of all the installed applications.",
+    installedapplications: "To get a list of all the installed applications.",
+    open: "To open a site example open:https://fb.com or open:fb or url:fb or url:https://www.facebook.com/", 
+    url: "To open a site example open:https://fb.com or open:fb or url:fb or url:https://www.facebook.com/",
 };
 
 //Version
