@@ -33,6 +33,26 @@ const commandDictionary = {
     installedapplications: "To get a list of all the installed applications.",
     open: "To open a site example open:https://fb.com or open:fb or url:fb or url:https://www.facebook.com/", 
     url: "To open a site example open:https://fb.com or open:fb or url:fb or url:https://www.facebook.com/",
+
+
+    inputcolor: "To change the input color. example: `inputcolor:pink`",
+    inputcolour: "To change the input color. example: `inputcolour:pink`",
+    color: "To change the terminal text color. `example: color:blue`",
+    colour: "To change the terminal text color. `example: colour:white`",
+    bgcolor: To change the background color of the terminal. example `bgcolor:purple`"
+    bgcolour: To change the background color of the terminal. example `bgcolour:purple`"
+    backgroundcolor:  To change the background color of the terminal. example `backgroundcolor:purple`"
+    backgroundcolour:  To change the background color of the terminal. example `backgroundcolour:purple`",
+    theme:valentine - "To have a romantic theme.",
+    theme:pinky - "To have a pink based theme.",
+    theme:hacker - "To have a hacker like theme.",
+    theme:sunrise - "To have a sunrise based theme.",
+    theme:energy - "To have an energetic theme.",
+    theme:loversparadise - "To have paradise like theme.",
+    theme:soft - "To have soft touch like theme.",
+    theme:bluescreen - "To have the windows blue screen error theme.",
+    theme:dark - "To have pitch black background.",
+    theme:random - "To get a random background color."
 };
 
 //Version
