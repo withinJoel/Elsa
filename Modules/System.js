@@ -51,7 +51,7 @@ const commandDictionary = {
     guess: "To guess the word. `example: guess:tac`",
     fortunecookie:  "To know the future.",
     easteregg:  "Easter egg.",
-    shortstory:  "To get a short story."
+    shortstory:  "To get a short story.",
     bible: "To get a bible verse based on the search. `example: bible:joel:2:1-3` (book name - chapter number - verses) (English Version)"
 };
 
