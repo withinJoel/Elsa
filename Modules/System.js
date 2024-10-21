@@ -42,7 +42,16 @@ const commandDictionary = {
     bgcolor: "To change the background color of the terminal. example `bgcolor:purple`",
     bgcolour: "To change the background color of the terminal. example `bgcolour:purple`",
     backgroundcolor:  "To change the background color of the terminal. example `backgroundcolor:purple`",
-    backgroundcolour:  "To change the background color of the terminal. example `backgroundcolour:purple`"
+    backgroundcolour:  "To change the background color of the terminal. example `backgroundcolour:purple`",
+
+    zodiacsign:  "To get the zodiac sign based on the date of birth. `example: zodiacsign:2002-05-11 pattern: YYY-MM-DD`",
+    numerology: "To get the numerology details for 2 people. `example: numerology:Joel:2002-05-11:Sophia:2003-05-27 pattern: YYYY-MM-DD`",
+    kissme: "To get a virtual kiss.",
+    lovecalculator: "To get a love score based on two names. `example: lovecalculator:Joel,Anna`",
+    guess: "To guess the word. `example: guess:tac`",
+    fortunecookie:  "To know the future.",
+    easteregg:  "Easter egg.",
+    shortstory:  "To get a short story."
 };
 
 //Version
