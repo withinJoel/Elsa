@@ -53,7 +53,16 @@ const commandDictionary = {
     easteregg:  "Easter egg.",
     shortstory:  "To get a short story.",
     bible: "To get a bible verse based on the search. `example: bible:joel:2:1-3` (book name - chapter number - verses) (English Version)",
-    createqr:  "To create a qr code using the link or text . `example createqr:https://www.fb.com or createqr:iamjoel!` (Note: This feature requires internet)"
+    
+    createqr:  "To create a qr code using the link or text . `example createqr:https://www.fb.com or createqr:iamjoel!` (Note: This feature requires internet)",
+
+    flames: "To play the famous game for relationship. `example: flames:Joel,Anna`",
+    mash: "To play the famous mash game. `example: mash:Joel,Anna`",
+    truthordare: "To play the truth or dare game.",
+    headsortails: "To return heads or tails.",
+    rolldice: "To roll a dice.",
+    compatibilitytest: "To take a compatiablity test with you partner. `example: compatibilitytest:joel,anna`",
+    bfftest: "To play the truth or dare game. `example: bfftest:joel,james`",
 };
 
 //Version
