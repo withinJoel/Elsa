@@ -52,7 +52,8 @@ const commandDictionary = {
     fortunecookie:  "To know the future.",
     easteregg:  "Easter egg.",
     shortstory:  "To get a short story.",
-    bible: "To get a bible verse based on the search. `example: bible:joel:2:1-3` (book name - chapter number - verses) (English Version)"
+    bible: "To get a bible verse based on the search. `example: bible:joel:2:1-3` (book name - chapter number - verses) (English Version)",
+    createqr:  "To create a qr code using the link or text . `example createqr:https://www.fb.com or createqr:iamjoel!` (Note: This feature requires internet)"
 };
 
 //Version
