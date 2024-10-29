@@ -63,6 +63,9 @@ const commandDictionary = {
     rolldice: "To roll a dice.",
     compatibilitytest: "To take a compatiablity test with you partner. `example: compatibilitytest:joel,anna`",
     bfftest: "To play the truth or dare game. `example: bfftest:joel,james`",
+
+    happybirthday: "To play the happy birthday song.",
+    emergencyalarm: "To play the emergency alarm."
 };
 
 //Version
