@@ -65,7 +65,27 @@ const commandDictionary = {
     bfftest: "To play the truth or dare game. `example: bfftest:joel,james`",
 
     happybirthday: "To play the happy birthday song.",
-    emergencyalarm: "To play the emergency alarm."
+    emergencyalarm: "To play the emergency alarm.",
+
+    reverse: "To reverse a string. `example reverse:hola`",
+    explode: "To convert a sentence into seperate words in an array (The delimiter is ' ') `example: explode:Hi I am Joel Jolly.`",
+
+    predict: "To predict the next number. `example: predict:1,2,3 or predict:11,22,33`",
+    count: "To count in backwards. `example: count:10`",
+    fibonacci: "To get the fibonacci of a given number. `example: fibonacci:45`",
+    multiplicationtable: "To get the multiplication table for the given number. `example: multiplicationtable:40`",
+    squareroot: "To find the square root of a number. `example: squareroot:23`",
+    add: "To perform addition. `example add:45+5`",
+    subtract: "To perform subtraction. `example subtract:23-3`",
+    multiply: "To perform multiplication. `example multiply:5x5 or multiply:5*5`",
+    calculate: "To calculate. `example calculate:56-6+2*6%2`",
+    log: "To calculate the log of a given number. `example log:56`",
+    ceil: "To calculate the ceil of a given number. `example ceil:11.9`",
+    floatabsolute: "To get the float absolute of the given nummber. `example floatabsolute:-10`",
+    float: "To get the float of the given number. `example float:10`",
+    lcm: "To get the lcm of two numbers. `example lcm:10,2`",
+    gcd: "To get the gcd of two numbers. `example gcd:10,2`",
+
 };
 
 //Version
