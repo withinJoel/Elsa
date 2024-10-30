@@ -34,7 +34,6 @@ const commandDictionary = {
     open: "To open a site example open:https://fb.com or open:fb or url:fb or url:https://www.facebook.com/", 
     url: "To open a site example open:https://fb.com or open:fb or url:fb or url:https://www.facebook.com/",
 
-
     inputcolor: "To change the input color. example: `inputcolor:pink`",
     inputcolour: "To change the input color. example: `inputcolour:pink`",
     color: "To change the terminal text color. `example: color:blue`",
