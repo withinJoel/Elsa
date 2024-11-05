@@ -1,10 +1,18 @@
+// Import necessary modules
 const { app, BrowserWindow, screen, Menu, ipcMain, dialog } = require('electron');
 const path = require('path');
-const os = require('os'); //For OS details
-const axios = require('axios'); //For http request
+const os = require('os'); // For OS details
+const axios = require('axios'); // For HTTP requests
 const fs = require('fs');
-const { exec } = require('child_process'); //To execute stuffs
+const { exec } = require('child_process'); // To execute commands
 
+// Initialize electron-context-menu with default settings
+require('electron-context-menu')({
+  showInspectElement: false, // Disable the "Inspect Element" option
+  // Add more customization options as needed
+});
+
+// Function to create the main application window
 function createWindow() {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;
 
@@ -37,7 +45,7 @@ function createWindow() {
       worldSafeExecuteJavaScript: true,
       additionalArguments: ['--allow-file-access-from-files'],
       safeDialogs: true,
-      preload: path.join(__dirname, 'preload.js'), // Add this line to load the preload script
+      preload: path.join(__dirname, 'preload.js'), // Load the preload script
     },
   });
 
@@ -69,7 +77,7 @@ function createWindow() {
       }
       ::-webkit-scrollbar-thumb {
         background: white;
-        border-radius:30px;
+        border-radius: 30px;
         -webkit-app-region: no-drag; /* Make scrollbar thumb non-draggable */
       }
       ::-webkit-scrollbar-thumb:hover {
@@ -78,6 +86,23 @@ function createWindow() {
     `);
   });
 }
+
+// Electron app lifecycle events
+app.whenReady().then(() => {
+  createWindow();
+
+  app.on('activate', () => {
+    // On macOS, recreate a window when the dock icon is clicked and there are no other windows open.
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+});
+
+app.on('window-all-closed', () => {
+  // On macOS, it's common for applications to stay open until the user explicitly quits.
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
 
 ///////////////////////////////Update
 let isCheckingForUpdates = false;
