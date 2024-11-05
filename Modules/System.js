@@ -92,7 +92,13 @@ const commandDictionary = {
     connectionspeed: "To get the connection speed.",
     ipaddress: "To get the ip address. (Note: This feature requires internet)",
     latency: "To get the latency for a particular website. `example: latency:https://github.com/` (Note: This feature requires internet)",
-    httpstatuscode: "To get the info about the HTTPS status code. `example: httpstatuscode:500`"
+    httpstatuscode: "To get the info about the HTTPS status code. `example: httpstatuscode:500`",
+
+    screenwidth: "To get the screen width.",
+    screenheight: "To get the screen height.",
+    screenresolution: "To get the screen resolution.",
+    colordepth: "To get the color depth of the screen.",
+    colourdepth: "To get the color depth of the screen.",
 };
 
 //Version
