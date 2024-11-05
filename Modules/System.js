@@ -99,6 +99,13 @@ const commandDictionary = {
     screenresolution: "To get the screen resolution.",
     colordepth: "To get the color depth of the screen.",
     colourdepth: "To get the color depth of the screen.",
+
+    displayinfo: "To get the display infomation.",
+    cpuinfo: "To get the CPU information.",
+    gpuinfo: "To get the GPU information.",
+    raminfo: "To get ram information.",
+    batteryinfo: "To get the battery info.",
+    devicetype: "To get the device type.",
 };
 
 //Version
