@@ -85,6 +85,14 @@ const commandDictionary = {
     lcm: "To get the lcm of two numbers. `example lcm:10,2`",
     gcd: "To get the gcd of two numbers. `example gcd:10,2`",
 
+    internet: "To get the internet based information. (Note: This feature requires internet)",
+    networkstatus: "To get the status of the network. (online or offline).",
+    useragent: "To get the browser information.",
+    connectiontype: "To get the connection type.",
+    connectionspeed: "To get the connection speed.",
+    ipaddress: "To get the ip address. (Note: This feature requires internet)",
+    latency: "To get the latency for a particular website. `example: latency:https://github.com/` (Note: This feature requires internet)",
+    httpstatuscode: "To get the info about the HTTPS status code. `example: httpstatuscode:500`"
 };
 
 //Version
