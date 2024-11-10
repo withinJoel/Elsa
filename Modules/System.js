@@ -34,7 +34,6 @@ const commandDictionary = {
     open: "To open a site example open:https://fb.com or open:fb or url:fb or url:https://www.facebook.com/", 
     url: "To open a site example open:https://fb.com or open:fb or url:fb or url:https://www.facebook.com/",
 
-
     inputcolor: "To change the input color. example: `inputcolor:pink`",
     inputcolour: "To change the input color. example: `inputcolour:pink`",
     color: "To change the terminal text color. `example: color:blue`",
@@ -65,7 +64,48 @@ const commandDictionary = {
     bfftest: "To play the truth or dare game. `example: bfftest:joel,james`",
 
     happybirthday: "To play the happy birthday song.",
-    emergencyalarm: "To play the emergency alarm."
+    emergencyalarm: "To play the emergency alarm.",
+
+    reverse: "To reverse a string. `example reverse:hola`",
+    explode: "To convert a sentence into seperate words in an array (The delimiter is ' ') `example: explode:Hi I am Joel Jolly.`",
+
+    predict: "To predict the next number. `example: predict:1,2,3 or predict:11,22,33`",
+    count: "To count in backwards. `example: count:10`",
+    fibonacci: "To get the fibonacci of a given number. `example: fibonacci:45`",
+    multiplicationtable: "To get the multiplication table for the given number. `example: multiplicationtable:40`",
+    squareroot: "To find the square root of a number. `example: squareroot:23`",
+    add: "To perform addition. `example add:45+5`",
+    subtract: "To perform subtraction. `example subtract:23-3`",
+    multiply: "To perform multiplication. `example multiply:5x5 or multiply:5*5`",
+    calculate: "To calculate. `example calculate:56-6+2*6%2`",
+    log: "To calculate the log of a given number. `example log:56`",
+    ceil: "To calculate the ceil of a given number. `example ceil:11.9`",
+    floatabsolute: "To get the float absolute of the given nummber. `example floatabsolute:-10`",
+    float: "To get the float of the given number. `example float:10`",
+    lcm: "To get the lcm of two numbers. `example lcm:10,2`",
+    gcd: "To get the gcd of two numbers. `example gcd:10,2`",
+
+    internet: "To get the internet based information. (Note: This feature requires internet)",
+    networkstatus: "To get the status of the network. (online or offline).",
+    useragent: "To get the browser information.",
+    connectiontype: "To get the connection type.",
+    connectionspeed: "To get the connection speed.",
+    ipaddress: "To get the ip address. (Note: This feature requires internet)",
+    latency: "To get the latency for a particular website. `example: latency:https://github.com/` (Note: This feature requires internet)",
+    httpstatuscode: "To get the info about the HTTPS status code. `example: httpstatuscode:500`",
+
+    screenwidth: "To get the screen width.",
+    screenheight: "To get the screen height.",
+    screenresolution: "To get the screen resolution.",
+    colordepth: "To get the color depth of the screen.",
+    colourdepth: "To get the color depth of the screen.",
+
+    displayinfo: "To get the display infomation.",
+    cpuinfo: "To get the CPU information.",
+    gpuinfo: "To get the GPU information.",
+    raminfo: "To get ram information.",
+    batteryinfo: "To get the battery info.",
+    devicetype: "To get the device type.",
 };
 
 //Version

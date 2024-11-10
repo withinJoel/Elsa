@@ -1,3 +1,6 @@
+# Elsa
+* Made with 💖 by Joel Jolly.
+
 # Table of contents
 1. [Tips & Shortcuts](#tips--shortcuts)
 2. [Default Directories](#default-directories)
