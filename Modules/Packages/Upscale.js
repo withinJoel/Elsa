@@ -1,7 +1,9 @@
+import DOMPurify from 'dompurify';
 //Upscale
 async function upscaleAndDownloadImage(data) {
     try {
-        const imageUrl = imagedir + data;
+        const sanitizedData = DOMPurify.sanitize(data);
+        const imageUrl = imagedir + sanitizedData;
         const imgOriginal = document.createElement('img');
         imgOriginal.src = imageUrl;
         imgOriginal.style.position = 'fixed';
