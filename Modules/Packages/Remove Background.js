@@ -1,6 +1,12 @@
 //Remove Background
+function sanitizeInput(input) {
+    const element = document.createElement('div');
+    element.innerText = input;
+    return element.innerHTML;
+}
 async function removeBackground(img) {
-    const imageElement = imagedir + img;
+    const sanitizedImg = sanitizeInput(img);
+    const imageElement = imagedir + sanitizedImg;
     const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
     if (existingElement) {
         existingElement.remove();
