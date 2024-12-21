@@ -1,4 +1,10 @@
 //Detect Gender
+function sanitizeInput(input) {
+    const element = document.createElement('div');
+    element.innerText = input;
+    return element.innerHTML;
+}
+
 async function detectGender(data) {
     const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
     if (existingElement) {
@@ -23,7 +29,8 @@ async function detectGender(data) {
     img.style.maxHeight = '500px';
     img.setAttribute('data-role', 'dynamic-image');
 
-    const imgSrc = imagedir + data;
+    const sanitizedData = sanitizeInput(data);
+    const imgSrc = imagedir + sanitizedData;
     img.src = imgSrc;
 
     // Check if the image source is valid
