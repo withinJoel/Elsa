@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 //Detect Faces
 async function detectFaces(data) {
     const existingElement = document.querySelector('[data-role="dynamic-image"]') || document.querySelector('video[data-role="dynamic-video"]') || document.querySelector('[data-role="dynamic-dragged"]');
@@ -23,7 +25,8 @@ async function detectFaces(data) {
     img.style.maxHeight = '500px';
     img.setAttribute('data-role', 'dynamic-image');
 
-    const imgSrc = imagedir + data;
+    const sanitizedData = DOMPurify.sanitize(data);
+    const imgSrc = imagedir + sanitizedData;
     img.src = imgSrc;
 
     // Check if the image source is valid
@@ -75,7 +78,8 @@ async function detectEmotion(data) {
     img.style.maxHeight = '500px';
     img.setAttribute('data-role', 'dynamic-image');
 
-    const imgSrc = imagedir + data;
+    const sanitizedData = DOMPurify.sanitize(data);
+    const imgSrc = imagedir + sanitizedData;
     img.src = imgSrc;
 
     // Check if the image source is valid
