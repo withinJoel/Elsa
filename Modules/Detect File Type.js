@@ -10,6 +10,13 @@ function checkFileExistence(url, callback) {
     img.src = url;
 }
 
+// Function to sanitize data by encoding special characters
+function sanitizeData(data) {
+    return data.replace(/[&<>"'`=\/]/g, function (s) {
+        return "&#" + s.charCodeAt(0) + ";";
+    });
+}
+
 // Detect image type function
 function detectImageType(data) {
     const existingElement = document.querySelector('[data-role="dynamic-image"]');
@@ -17,7 +24,8 @@ function detectImageType(data) {
         existingElement.remove();
     }
 
-    const imageurl = imagedir + data;
+    const sanitizedData = sanitizeData(data);
+    const imageurl = imagedir + sanitizedData;
 
     checkFileExistence(imageurl, function (exists) {
         if (exists) {
@@ -31,15 +39,15 @@ function detectImageType(data) {
             img.setAttribute('data-role', 'dynamic-image');
             document.body.appendChild(img);
 
-            if (data.includes('.png')) {
+            if (sanitizedData.includes('.png')) {
                 echo("The file is in PNG format.");
-            } else if (data.includes('.jpg')) {
+            } else if (sanitizedData.includes('.jpg')) {
                 echo("The file is in JPG format.");
-            } else if (data.includes('.jpeg')) {
+            } else if (sanitizedData.includes('.jpeg')) {
                 echo("The file is in JPEG format.");
-            } else if (data.includes('.webp')) {
+            } else if (sanitizedData.includes('.webp')) {
                 echo("The file is in WEBP format.");
-            } else if (data.includes('.gif')) {
+            } else if (sanitizedData.includes('.gif')) {
                 echo("The file is in GIF format.");
             } else {
                 echo("The file format is unknown.");
