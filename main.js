@@ -1,22 +1,28 @@
 // Import necessary modules
-const { app, BrowserWindow, screen, Menu, ipcMain, dialog } = require('electron');
-const path = require('path');
-const os = require('os'); // For OS details
-const axios = require('axios'); // For HTTP requests
-const fs = require('fs');
-const { exec } = require('child_process'); // To execute commands
+import { app, BrowserWindow, screen, Menu } from 'electron';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import contextMenu from 'electron-context-menu';
+import os from 'os'; // For OS details
+import axios from 'axios'; // For HTTP requests
+import fs from 'fs';
+import { dialog } from 'electron';
+import { ipcMain } from 'electron';
+import { exec } from 'child_process'; // To execute commands
+
+// Handle __dirname and __filename in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Initialize electron-context-menu with default settings
-require('electron-context-menu')({
-  showInspectElement: false, // Disable the "Inspect Element" option
+contextMenu({
+  showInspectElement: true, // Disable the "Inspect Element" option
   // Add more customization options as needed
 });
 
 // Function to create the main application window
 function createWindow() {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;
-
-  const emptyMenu = Menu.buildFromTemplate([]);
 
   const win = new BrowserWindow({
     title: "Elsa",

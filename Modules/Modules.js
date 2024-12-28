@@ -1,5 +1,5 @@
 ////Version
-const currentVersion = '2.0.4';
+const currentVersion = '2.0.5';
 
 ////Load Script
 function loadScript(url) {
