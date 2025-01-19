@@ -1,5 +1,5 @@
 ////Version
-const currentVersion = '2.0.5';
+const currentVersion = '2.0.6';
 
 ////Load Script
 function loadScript(url) {
@@ -36,7 +36,7 @@ loadScript('Modules/Models/Gemini/Gemini.js');
 //Core
 loadScript('Modules/Dependencies.js');
 loadScript('Modules/System.js');
-//loadScript('Modules/Security.js');
+loadScript('Modules/Security.js');
 loadScript('Modules/Directory.js');
 
 ////Modules
