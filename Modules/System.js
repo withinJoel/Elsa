@@ -405,7 +405,7 @@ function echoFunction(input) {
     if (match) {
         const text = match[1].trim();
         const count = parseInt(match[2], 10);
-        outputRepeat(text, count)
+        outputRepeat(text, count);
     } else {
         echo(data);
     }
@@ -548,8 +548,6 @@ function getMousePosition() {
     };
     document.addEventListener('mousemove', handleMouseMove);
 }
-
-
 
 //error
 function errorhandling() {
