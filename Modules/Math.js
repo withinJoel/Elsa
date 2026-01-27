@@ -266,3 +266,67 @@ function predictNextNumber(sequence) {
 
     echo(nextY);
 }
+
+//Calculate Age from birthdate
+function calculateAge(birthdate) {
+    // Parse the birthdate (expected format: YYYY-MM-DD)
+    const birthParts = birthdate.split('-');
+    if (birthParts.length !== 3) {
+        echo('Invalid date format. Use: age:YYYY-MM-DD (e.g., age:2002-05-11)');
+        return;
+    }
+
+    const birthYear = parseInt(birthParts[0]);
+    const birthMonth = parseInt(birthParts[1]) - 1; // Months are 0-indexed
+    const birthDay = parseInt(birthParts[2]);
+
+    if (isNaN(birthYear) || isNaN(birthMonth) || isNaN(birthDay)) {
+        echo('Invalid date. Use: age:YYYY-MM-DD');
+        return;
+    }
+
+    const birthDate = new Date(birthYear, birthMonth, birthDay);
+    const today = new Date();
+
+    // Check if date is valid
+    if (birthDate > today) {
+        echo('Birthdate cannot be in the future!');
+        return;
+    }
+
+    // Calculate age
+    let years = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+
+    // Adjust for negative days
+    if (days < 0) {
+        months--;
+        const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+        days += prevMonth.getDate();
+    }
+
+    // Adjust for negative months
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    // Calculate next birthday
+    let nextBirthday = new Date(today.getFullYear(), birthMonth, birthDay);
+    if (nextBirthday <= today) {
+        nextBirthday = new Date(today.getFullYear() + 1, birthMonth, birthDay);
+    }
+    const daysUntilBirthday = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
+
+    // Calculate total days lived
+    const totalDays = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24));
+
+    // Output
+    echo('=== Age Calculator ===');
+    echo(`Birthdate: ${birthdate}`);
+    echo(`Age: ${years} years, ${months} months, ${days} days`);
+    echo(`Total days lived: ${totalDays.toLocaleString()} days`);
+    echo(`Next birthday in: ${daysUntilBirthday} days`);
+    echo('======================');
+}

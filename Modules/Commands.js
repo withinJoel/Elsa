@@ -285,6 +285,18 @@ function runCmd(command, inMemory, fromInput) {
                 countCharacters(commandName);
             } else if (commandName.includes("count:words:")) {
                 countWords(commandName);
+            } else if (commandName.includes("percentage:")) {
+                const data = commandName.trim().replace(/^percentage:\s*/i, '');
+                calculatePercentage(data);
+            } else if (commandName.includes("wordfreq:")) {
+                const data = commandName.trim().replace(/^wordfreq:\s*/i, '');
+                wordFrequency(data);
+            } else if (commandName.includes("textstats:")) {
+                const data = commandName.trim().replace(/^textstats:\s*/i, '');
+                textStats(data);
+            } else if (commandName.includes("anagram:")) {
+                const data = commandName.trim().replace(/^anagram:\s*/i, '');
+                checkAnagram(data);
             } else if (commandName.includes("count:")) {
                 const count = commandName.trim().replace(/^count:\b\s*/i, '');
                 countBackward(count);
@@ -346,6 +358,9 @@ function runCmd(command, inMemory, fromInput) {
                 changeColor(userColor);
             } else if (commandName.includes("fibonacci:")) {
                 fibonacci(commandName);
+            } else if (commandName.includes("age:")) {
+                const data = commandName.trim().replace(/^age:\s*/i, '');
+                calculateAge(data);
             } else if (commandName.includes("squareroot:")) {
                 squareRoot(commandName);
             } else if (commandName.includes("check:prime:")) {

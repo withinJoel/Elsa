@@ -328,6 +328,10 @@
 
 # Text
 * `reverse:` - To reverse a string. example `reverse:hola`
+* `percentage:` - To calculate what percentage X is of Y. example: `percentage:25,100`
+* `wordfreq:` - To count word frequency in text. example: `wordfreq:hello world hello`
+* `textstats:` - To get text statistics (word count, reading time, etc). example: `textstats:your text here`
+* `anagram:` - To check if two words are anagrams. example: `anagram:listen,silent`
 * `count:characters:` - To count the number of characters. example: `count:characters:hola`
 * `count:words:` - To count the number of words. example: `count:words:hola`
 * `explode:` - To convert a sentence into seperate words in an array (The delimiter is ' ') example: `explode:Hi I am Joel Jolly.`
@@ -343,6 +347,7 @@
 * `count:` - To count in backwards. example: `count:10`
 * `remove:numbers:` - To remove numbers from the input. example `remove:numbers:hello, 007`
 * `check:prime:` - To check wether the given number is prime. example: `check:prime:45`
+* `age:` - To calculate age from birthdate. example: `age:2002-05-11` (format: YYYY-MM-DD)
 * `check:composite:` - To check wether the given number is composite. example: `check:composite:11`
 * `check:odd:` - To check wether the given number is odd. example: `check:odd:45`
 * `check:even:` - To check wether the given number is even. example: `check:even:45`

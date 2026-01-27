@@ -109,6 +109,11 @@ const commandDictionary = {
     resources: "To get system resources information including RAM, CPU cores, battery, storage, and more.",
     hash: "To generate a hash. Available: hash:md5:, hash:sha1:, hash:sha256:, hash:sha384:, hash:sha512:",
     passwordstrength: "To check password strength. example: check:passwordstrength:MyP@ssw0rd",
+    age: "To calculate age from birthdate. example: age:2002-05-11 (format: YYYY-MM-DD)",
+    percentage: "To calculate what percentage X is of Y. example: percentage:25,100",
+    wordfreq: "To count word frequency in text. example: wordfreq:hello world hello",
+    textstats: "To get text statistics (word count, reading time, etc). example: textstats:your text here",
+    anagram: "To check if two words are anagrams. example: anagram:listen,silent",
 };
 
 //Version
