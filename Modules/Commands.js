@@ -18,10 +18,10 @@ function runCmd(command, inMemory, fromInput) {
 
             if (commandName === "cls" || commandName === "clearscreen" || commandName === "clear") {
                 refreshPage();
-            } else if ((commandName === "exit")|| (commandName === "quit")|| (commandName === "terminate") || (commandName === "bye"){
+            } else if ((commandName === "exit")|| (commandName === "quit")|| (commandName === "terminate") || (commandName === "bye")){
                 window.open(document.URL, "about:blank", "width=977 height=455");
                 window.close();
-            } if (commandName.startsWith("echo:")) {
+            } else if (commandName.startsWith("echo:")) {
                 const data = commandName.replace(/^echo:\s*/, ''); // Removes only the space after "echo:"
                 echoFunction(data.trim()); // Trims any leading or trailing spaces after removing the echo command
             } else if ((commandName === "ver") || (commandName === "version")) {
