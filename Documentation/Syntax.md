@@ -369,6 +369,11 @@
 * `httpstatuscode:` - To get the info about the HTTPS status code. example: `httpstatuscode:500`
 * `find:countrybydialingcode:` - To find the country based on the country's dialing code. example: `find:countrybydialingcode:+43`
 * `find:dialingcodebycountry:` - To find the dialing code of the country by giving the country's name. example: `find:dialingcodebycountry:japan`
+* `history` - To display all previously executed commands.
+* `uuid` - To generate a UUID v4.
+* `ping:` - To ping a URL and get the response time. example: `ping:google.com` (Note: This feature requires internet)
+* `headers:` - To fetch and display HTTP response headers. example: `headers:https://google.com` (Note: This feature requires internet)
+* `whois:` - To get domain WHOIS/DNS information. example: `whois:github.com` (Note: This feature requires internet)
 
 # Display
 * `screenwidth` - To get the screen width.

@@ -18,6 +18,7 @@
     "axios": "^1.13.3",
     "dompurify": "^3.3.1",
     "electron-context-menu": "^4.1.1",
+    "electron-dl": "^4.0.0",
     "package": "^1.0.1"
   }
 }

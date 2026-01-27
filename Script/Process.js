@@ -37,7 +37,7 @@ function removeIndent(string) {
     var text = string;
     if (text) {
         while (text[0] == " " || text[0] == "	") text = text.slice(1, text.length);
-        while (text[text.length - 1] == " " || text[text.length - 1] == "	") text.pop();
+        while (text[text.length - 1] == " " || text[text.length - 1] == "\t") text = text.slice(0, -1);
     }
     return text;
 }
@@ -68,7 +68,7 @@ input.onkeydown = function (key) {
 function cmd() {
     runCmd("ver");
     echo('Made with 💖 by Joel Jessie Jolly.');
-    echo ('Type "help" for more information.');
+    echo('Type "help" for more information.');
     resetPrompt();
 }
 

@@ -124,9 +124,9 @@ function getHttpStatusCode(statusCode) {
         648: "Invalid SSL Certificate", // Microsoft IIS
         649: "Railgun Error", // Microsoft IIS
         650: "Site is Frozen" // Microsoft IIS
-    };    
+    };
     const errorMessage = StatusMessages[statusCode] || "Unknown HTTP Code";
-    echo ("Message: "+errorMessage);
+    echo("Message: " + errorMessage);
 }
 
 const CountryData = {
@@ -390,10 +390,10 @@ const CountryData = {
 function getCountryNameByDialingCode(data) {
     // Trim whitespace and remove the 'find:countrybydialingcode:' prefix, case-insensitively
     const dialingCode = data.trim().replace(/^find:\s*countrybydialingcode:\s*/i, '');
-    
+
     // Check the cleaned dialing code in the CountryData map
     const countryName = CountryData[dialingCode] || "Unknown Country";
-    
+
     // Output the results
     echo("Dialing Code: " + dialingCode);
     echo("Country: " + countryName);
@@ -402,10 +402,10 @@ function getCountryNameByDialingCode(data) {
 function getDialingCodeByCountryName(countryName) {
     // Convert the input country name to lowercase for case-insensitive comparison
     const lowerCaseCountryName = countryName.toLowerCase();
-    
+
     // Find the dialing code by comparing the lowercase version of the country names
     const dialingCode = Object.keys(CountryData).find(code => CountryData[code].toLowerCase() === lowerCaseCountryName);
-    
+
     echo("Dialing Code: " + (dialingCode || "Unknown Code"));
 }
 
@@ -495,4 +495,182 @@ function getConnectionSpeed() {
     const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
     const downlinkSpeed = connection.downlink + " Mbps"; // Downlink speed in Mbps
     echo(downlinkSpeed);
+}
+
+// Command History - Shows all previously executed commands
+function getCommandHistory() {
+    if (memory.length === 0) {
+        echo("No command history available.");
+        return;
+    }
+    echo("Command History:");
+    echo("----------------");
+    memory.forEach((cmd, index) => {
+        echo(`${index + 1}. ${cmd}`);
+    });
+    echo("----------------");
+    echo(`Total commands: ${memory.length}`);
+}
+
+// Generate UUID v4
+function generateUUID() {
+    let uuid;
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+        uuid = crypto.randomUUID();
+    } else {
+        // Fallback for older browsers
+        uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            const r = Math.random() * 16 | 0;
+            const v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+    echo("Generated UUID: " + uuid);
+}
+
+// Ping URL - Measures response time
+function pingUrl(url) {
+    if (!url) {
+        echo("Error: Please provide a URL to ping.");
+        echo("Usage: ping:https://example.com");
+        return;
+    }
+
+    // Add protocol if missing
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
+    }
+
+    echo(`Pinging ${url}...`);
+
+    const startTime = performance.now();
+
+    fetch(url, { mode: 'no-cors' })
+        .then(() => {
+            const endTime = performance.now();
+            const responseTime = (endTime - startTime).toFixed(2);
+            echo(`Reply from ${url}`);
+            echo(`Response time: ${responseTime} ms`);
+            echo("Status: Host reachable");
+        })
+        .catch(error => {
+            const endTime = performance.now();
+            const responseTime = (endTime - startTime).toFixed(2);
+            echo(`Request to ${url} failed after ${responseTime} ms`);
+            echo("Status: Host unreachable or CORS blocked");
+        });
+}
+
+// Get HTTP Headers
+function getHttpHeaders(url) {
+    if (!url) {
+        echo("Error: Please provide a URL to get headers from.");
+        echo("Usage: headers:https://example.com");
+        return;
+    }
+
+    // Add protocol if missing
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
+    }
+
+    echo(`Fetching headers from ${url}...`);
+
+    fetch(url)
+        .then(response => {
+            echo("HTTP Response Headers:");
+            echo("----------------------");
+            echo(`Status: ${response.status} ${response.statusText}`);
+            echo(`URL: ${response.url}`);
+            echo(`Type: ${response.type}`);
+            echo("Headers:");
+            response.headers.forEach((value, name) => {
+                echo(`  ${name}: ${value}`);
+            });
+            echo("----------------------");
+        })
+        .catch(error => {
+            echo(`Error fetching headers: ${error.message}`);
+            echo("Note: CORS policies may prevent accessing headers from some URLs.");
+        });
+}
+
+// WHOIS Domain Lookup
+function whoisDomain(domain) {
+    if (!domain) {
+        echo("Error: Please provide a domain name.");
+        echo("Usage: whois:example.com");
+        return;
+    }
+
+    // Remove protocol if present
+    domain = domain.replace(/^https?:\/\//, '').split('/')[0];
+
+    echo(`Looking up WHOIS information for ${domain}...`);
+
+    // Using a free WHOIS API
+    fetch(`https://api.api-ninjas.com/v1/whois?domain=${domain}`, {
+        headers: { 'X-Api-Key': 'free' }
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error || Object.keys(data).length === 0) {
+                // Fallback: show basic info using DNS lookup
+                echo("WHOIS Information:");
+                echo("------------------");
+                echo(`Domain: ${domain}`);
+                echo("Note: Full WHOIS data requires API key.");
+                echo("Attempting basic lookup...");
+
+                // Try to at least resolve the domain
+                fetch(`https://dns.google/resolve?name=${domain}&type=A`)
+                    .then(res => res.json())
+                    .then(dnsData => {
+                        if (dnsData.Answer) {
+                            echo("DNS Records:");
+                            dnsData.Answer.forEach(record => {
+                                echo(`  IP: ${record.data}`);
+                            });
+                        }
+                        echo("------------------");
+                    })
+                    .catch(() => {
+                        echo("DNS lookup failed.");
+                        echo("------------------");
+                    });
+            } else {
+                echo("WHOIS Information:");
+                echo("------------------");
+                if (data.domain_name) echo(`Domain: ${data.domain_name}`);
+                if (data.registrar) echo(`Registrar: ${data.registrar}`);
+                if (data.creation_date) echo(`Created: ${data.creation_date}`);
+                if (data.expiration_date) echo(`Expires: ${data.expiration_date}`);
+                if (data.name_servers) echo(`Name Servers: ${Array.isArray(data.name_servers) ? data.name_servers.join(', ') : data.name_servers}`);
+                if (data.dnssec) echo(`DNSSEC: ${data.dnssec}`);
+                echo("------------------");
+            }
+        })
+        .catch(error => {
+            echo(`Error performing WHOIS lookup: ${error.message}`);
+            echo("Trying DNS lookup instead...");
+
+            fetch(`https://dns.google/resolve?name=${domain}&type=A`)
+                .then(res => res.json())
+                .then(dnsData => {
+                    echo("DNS Information:");
+                    echo("----------------");
+                    echo(`Domain: ${domain}`);
+                    if (dnsData.Answer) {
+                        dnsData.Answer.forEach(record => {
+                            echo(`  IP Address: ${record.data}`);
+                        });
+                    } else {
+                        echo("  No A records found");
+                    }
+                    echo("----------------");
+                })
+                .catch(() => {
+                    echo("All lookup methods failed.");
+                });
+        });
 }

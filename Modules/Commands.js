@@ -18,7 +18,7 @@ function runCmd(command, inMemory, fromInput) {
 
             if (commandName === "cls" || commandName === "clearscreen" || commandName === "clear") {
                 refreshPage();
-            } else if ((commandName === "exit")|| (commandName === "quit")|| (commandName === "terminate") || (commandName === "bye")){
+            } else if ((commandName === "exit") || (commandName === "quit") || (commandName === "terminate") || (commandName === "bye")) {
                 window.open(document.URL, "about:blank", "width=977 height=455");
                 window.close();
             } else if (commandName.startsWith("echo:")) {
@@ -749,6 +749,19 @@ function runCmd(command, inMemory, fromInput) {
                 getIPAddress();
             } else if (commandName === "dns") {
                 getDNSInfo();
+            } else if (commandName === "history") {
+                getCommandHistory();
+            } else if (commandName === "uuid") {
+                generateUUID();
+            } else if (commandName.includes("ping:")) {
+                const url = commandName.trim().replace(/^ping:\s*/i, '');
+                pingUrl(url);
+            } else if (commandName.includes("headers:")) {
+                const url = commandName.trim().replace(/^headers:\s*/i, '');
+                getHttpHeaders(url);
+            } else if (commandName.includes("whois:")) {
+                const domain = commandName.trim().replace(/^whois:\s*/i, '');
+                whoisDomain(domain);
             } else if (commandName.includes("latency:")) {
                 const data = commandName.trim().replace(/^latency:\s*/i, '');
                 measureLatency(data)

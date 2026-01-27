@@ -18,6 +18,7 @@ Are you a terminal enthusiast who also loves browsing the web? Do you often find
 - **Customization galore – make Elsa look and feel exactly how you want it.** 🎨
 - **Shortcuts to all your favorite websites because typing URLs is so 2023.** ⌨️
 - **Works in your browser or as a standalone app.** (Because options are always good)
+- **Developer & Networking Tools**
 
 # Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=withinjoel/elsa&type=Timeline)](https://star-history.com/#withinjoel/elsa&Timeline)
