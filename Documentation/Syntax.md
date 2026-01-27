@@ -275,6 +275,7 @@
 
 # Check Functions
 * `check:palindrome:` - To check wether it is palindrome or not. example: `check:palindrome:hola`.
+* `check:passwordstrength:` - To check password strength and get a detailed analysis. example: `check:passwordstrength:MyP@ssw0rd123`
 
 # Sort Functions
 * `sort:ascending:` - To sort in ascending order. example: `sort:ascending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`

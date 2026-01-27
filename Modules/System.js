@@ -108,6 +108,7 @@ const commandDictionary = {
     devicetype: "To get the device type.",
     resources: "To get system resources information including RAM, CPU cores, battery, storage, and more.",
     hash: "To generate a hash. Available: hash:md5:, hash:sha1:, hash:sha256:, hash:sha384:, hash:sha512:",
+    passwordstrength: "To check password strength. example: check:passwordstrength:MyP@ssw0rd",
 };
 
 //Version

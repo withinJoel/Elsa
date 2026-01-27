@@ -356,6 +356,9 @@ function runCmd(command, inMemory, fromInput) {
                 isCompositeNumber(commandName);
             } else if (commandName.includes("check:odd:")) {
                 isOddNumber(commandName);
+            } else if (commandName.includes("check:passwordstrength:")) {
+                const data = commandName.trim().replace(/^check:passwordstrength:\s*/i, '');
+                checkPasswordStrength(data);
             } else if (commandName.includes("calculate:")) {
                 calculate(commandName);
             } else if (commandName.includes("log:")) {
