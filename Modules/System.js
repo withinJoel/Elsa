@@ -31,7 +31,7 @@ const commandDictionary = {
     mouseposition: "To get the mouse position.",
     installedapps: "To get a list of all the installed applications.",
     installedapplications: "To get a list of all the installed applications.",
-    open: "To open a site example open:https://fb.com or open:fb or url:fb or url:https://www.facebook.com/", 
+    open: "To open a site example open:https://fb.com or open:fb or url:fb or url:https://www.facebook.com/",
     url: "To open a site example open:https://fb.com or open:fb or url:fb or url:https://www.facebook.com/",
 
     inputcolor: "To change the input color. example: `inputcolor:pink`",
@@ -40,20 +40,20 @@ const commandDictionary = {
     colour: "To change the terminal text color. `example: colour:white`",
     bgcolor: "To change the background color of the terminal. example `bgcolor:purple`",
     bgcolour: "To change the background color of the terminal. example `bgcolour:purple`",
-    backgroundcolor:  "To change the background color of the terminal. example `backgroundcolor:purple`",
-    backgroundcolour:  "To change the background color of the terminal. example `backgroundcolour:purple`",
+    backgroundcolor: "To change the background color of the terminal. example `backgroundcolor:purple`",
+    backgroundcolour: "To change the background color of the terminal. example `backgroundcolour:purple`",
 
-    zodiacsign:  "To get the zodiac sign based on the date of birth. `example: zodiacsign:2002-05-11 pattern: YYY-MM-DD`",
+    zodiacsign: "To get the zodiac sign based on the date of birth. `example: zodiacsign:2002-05-11 pattern: YYY-MM-DD`",
     numerology: "To get the numerology details for 2 people. `example: numerology:Joel:2002-05-11:Sophia:2003-05-27 pattern: YYYY-MM-DD`",
     kissme: "To get a virtual kiss.",
     lovecalculator: "To get a love score based on two names. `example: lovecalculator:Joel,Anna`",
     guess: "To guess the word. `example: guess:tac`",
-    fortunecookie:  "To know the future.",
-    easteregg:  "Easter egg.",
-    shortstory:  "To get a short story.",
+    fortunecookie: "To know the future.",
+    easteregg: "Easter egg.",
+    shortstory: "To get a short story.",
     bible: "To get a bible verse based on the search. `example: bible:joel:2:1-3` (book name - chapter number - verses) (English Version)",
-    
-    createqr:  "To create a qr code using the link or text . `example createqr:https://www.fb.com or createqr:iamjoel!` (Note: This feature requires internet)",
+
+    createqr: "To create a qr code using the link or text . `example createqr:https://www.fb.com or createqr:iamjoel!` (Note: This feature requires internet)",
 
     flames: "To play the famous game for relationship. `example: flames:Joel,Anna`",
     mash: "To play the famous mash game. `example: mash:Joel,Anna`",
@@ -106,6 +106,8 @@ const commandDictionary = {
     raminfo: "To get ram information.",
     batteryinfo: "To get the battery info.",
     devicetype: "To get the device type.",
+    resources: "To get system resources information including RAM, CPU cores, battery, storage, and more.",
+    hash: "To generate a hash. Available: hash:md5:, hash:sha1:, hash:sha256:, hash:sha384:, hash:sha512:",
 };
 
 //Version
@@ -324,10 +326,10 @@ function getSys() {
 function whatIsCommand(input) {
     // Extract the command from the input
     const command = input.split(' ')[1];
-    
+
     // Look up the command in the dictionary
     const meaning = commandDictionary[command];
-    
+
     // Use echo to display the meaning or a message if the command is not found
     if (meaning) {
         echo(command + ": " + meaning);

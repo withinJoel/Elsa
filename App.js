@@ -1003,6 +1003,35 @@ ipcMain.handle('get-cpu-info', () => {
   return os.cpus();
 });
 
+///////////////////////////////Disk Info
+ipcMain.handle('get-disk-info', () => {
+  return new Promise((resolve, reject) => {
+    let diskCommand;
+    switch (process.platform) {
+      case 'win32':
+        diskCommand = 'wmic logicaldisk get size,freespace,caption';
+        break;
+      case 'darwin':
+      case 'linux':
+      case 'openbsd':
+      case 'freebsd':
+        diskCommand = 'df -h /';
+        break;
+      default:
+        reject(new Error('Getting disk info is not supported on this platform.'));
+        return;
+    }
+
+    exec(diskCommand, (error, stdout, stderr) => {
+      if (error) {
+        reject(new Error(`Error getting disk info: ${error.message}`));
+        return;
+      }
+      resolve(stdout);
+    });
+  });
+});
+
 app.on('ready', () => {
   createWindow();
   checkForUpdates();

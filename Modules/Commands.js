@@ -861,6 +861,23 @@ function runCmd(command, inMemory, fromInput) {
                 searchThreads(commandName);
             } else if (commandName.includes("github:")) {
                 openGithub(commandName);
+            } else if (commandName.includes("hash:md5:")) {
+                const data = commandName.trim().replace(/^hash:md5:\s*/i, '');
+                generateMD5(data);
+            } else if (commandName.includes("hash:sha1:")) {
+                const data = commandName.trim().replace(/^hash:sha1:\s*/i, '');
+                generateSHA1(data);
+            } else if (commandName.includes("hash:sha256:")) {
+                const data = commandName.trim().replace(/^hash:sha256:\s*/i, '');
+                generateSHA256(data);
+            } else if (commandName.includes("hash:sha384:")) {
+                const data = commandName.trim().replace(/^hash:sha384:\s*/i, '');
+                generateSHA384(data);
+            } else if (commandName.includes("hash:sha512:")) {
+                const data = commandName.trim().replace(/^hash:sha512:\s*/i, '');
+                generateSHA512(data);
+            } else if (commandName === "resources") {
+                getResources();
             } else {
                 errorhandling();
             }

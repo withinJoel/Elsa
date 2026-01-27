@@ -55,6 +55,7 @@ loadScript('Modules/Sort.js');
 loadScript('Modules/String.js');
 loadScript('Modules/Web.js');
 loadScript('Modules/Networking.js');
+loadScript('Modules/Hash.js');
 
 ////Packages
 loadScript('Modules/Packages/Reddit.js');

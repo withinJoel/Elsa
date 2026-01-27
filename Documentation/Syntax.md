@@ -30,6 +30,7 @@
 2. [Network](#Network)
 2. [Display](#Display)
 2. [Hardware](#Hardware)
+2. [Hash Functions](#Hash-Functions)
 2. [Web](#Web)
 2. [Reddit](#Reddit)
 2. [Shopping](#Shopping)
@@ -388,6 +389,14 @@
 * `raminfo` - To get ram information.
 * `batteryinfo` - To get the battery info.
 * `devicetype` - To get the device type.
+* `resources` - To get system resources information including RAM, CPU cores, battery, storage, network status, and more.
+
+# Hash Functions
+* `hash:md5:` - To generate an MD5 hash. example: `hash:md5:hello`
+* `hash:sha1:` - To generate a SHA-1 hash. example: `hash:sha1:hello`
+* `hash:sha256:` - To generate a SHA-256 hash. example: `hash:sha256:hello`
+* `hash:sha384:` - To generate a SHA-384 hash. example: `hash:sha384:hello`
+* `hash:sha512:` - To generate a SHA-512 hash. example: `hash:sha512:hello`
 
 # Codepen
 * `codepen:` - To search codepen. example: `codepen:nav bar` (Note: This feature requires internet)

@@ -26,4 +26,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
   opencalendar: () => ipcRenderer.invoke('open-calendar'),
   opentaskmanager: () => ipcRenderer.invoke('open-taskmanager'),
   openfileexplorer: () => ipcRenderer.invoke('open-file-explorer'),
+  getDiskInfo: () => ipcRenderer.invoke('get-disk-info'),
 });
