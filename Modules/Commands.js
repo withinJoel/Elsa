@@ -18,7 +18,7 @@ function runCmd(command, inMemory, fromInput) {
 
             if (commandName === "cls" || commandName === "clearscreen" || commandName === "clear") {
                 refreshPage();
-            } else if ((commandName === "exit")|| (commandName === "quit")|| (commandName === "terminate") || (commandName === "bye")){
+            } else if ((commandName === "exit") || (commandName === "quit") || (commandName === "terminate") || (commandName === "bye")) {
                 window.open(document.URL, "about:blank", "width=977 height=455");
                 window.close();
             } else if (commandName.startsWith("echo:")) {
@@ -285,6 +285,18 @@ function runCmd(command, inMemory, fromInput) {
                 countCharacters(commandName);
             } else if (commandName.includes("count:words:")) {
                 countWords(commandName);
+            } else if (commandName.includes("percentage:")) {
+                const data = commandName.trim().replace(/^percentage:\s*/i, '');
+                calculatePercentage(data);
+            } else if (commandName.includes("wordfreq:")) {
+                const data = commandName.trim().replace(/^wordfreq:\s*/i, '');
+                wordFrequency(data);
+            } else if (commandName.includes("textstats:")) {
+                const data = commandName.trim().replace(/^textstats:\s*/i, '');
+                textStats(data);
+            } else if (commandName.includes("anagram:")) {
+                const data = commandName.trim().replace(/^anagram:\s*/i, '');
+                checkAnagram(data);
             } else if (commandName.includes("count:")) {
                 const count = commandName.trim().replace(/^count:\b\s*/i, '');
                 countBackward(count);
@@ -346,6 +358,9 @@ function runCmd(command, inMemory, fromInput) {
                 changeColor(userColor);
             } else if (commandName.includes("fibonacci:")) {
                 fibonacci(commandName);
+            } else if (commandName.includes("age:")) {
+                const data = commandName.trim().replace(/^age:\s*/i, '');
+                calculateAge(data);
             } else if (commandName.includes("squareroot:")) {
                 squareRoot(commandName);
             } else if (commandName.includes("check:prime:")) {
@@ -356,6 +371,9 @@ function runCmd(command, inMemory, fromInput) {
                 isCompositeNumber(commandName);
             } else if (commandName.includes("check:odd:")) {
                 isOddNumber(commandName);
+            } else if (commandName.includes("check:passwordstrength:")) {
+                const data = commandName.trim().replace(/^check:passwordstrength:\s*/i, '');
+                checkPasswordStrength(data);
             } else if (commandName.includes("calculate:")) {
                 calculate(commandName);
             } else if (commandName.includes("log:")) {
@@ -749,6 +767,19 @@ function runCmd(command, inMemory, fromInput) {
                 getIPAddress();
             } else if (commandName === "dns") {
                 getDNSInfo();
+            } else if (commandName === "history") {
+                getCommandHistory();
+            } else if (commandName === "uuid") {
+                generateUUID();
+            } else if (commandName.includes("ping:")) {
+                const url = commandName.trim().replace(/^ping:\s*/i, '');
+                pingUrl(url);
+            } else if (commandName.includes("headers:")) {
+                const url = commandName.trim().replace(/^headers:\s*/i, '');
+                getHttpHeaders(url);
+            } else if (commandName.includes("whois:")) {
+                const domain = commandName.trim().replace(/^whois:\s*/i, '');
+                whoisDomain(domain);
             } else if (commandName.includes("latency:")) {
                 const data = commandName.trim().replace(/^latency:\s*/i, '');
                 measureLatency(data)
@@ -848,6 +879,23 @@ function runCmd(command, inMemory, fromInput) {
                 searchThreads(commandName);
             } else if (commandName.includes("github:")) {
                 openGithub(commandName);
+            } else if (commandName.includes("hash:md5:")) {
+                const data = commandName.trim().replace(/^hash:md5:\s*/i, '');
+                generateMD5(data);
+            } else if (commandName.includes("hash:sha1:")) {
+                const data = commandName.trim().replace(/^hash:sha1:\s*/i, '');
+                generateSHA1(data);
+            } else if (commandName.includes("hash:sha256:")) {
+                const data = commandName.trim().replace(/^hash:sha256:\s*/i, '');
+                generateSHA256(data);
+            } else if (commandName.includes("hash:sha384:")) {
+                const data = commandName.trim().replace(/^hash:sha384:\s*/i, '');
+                generateSHA384(data);
+            } else if (commandName.includes("hash:sha512:")) {
+                const data = commandName.trim().replace(/^hash:sha512:\s*/i, '');
+                generateSHA512(data);
+            } else if (commandName === "resources") {
+                getResources();
             } else {
                 errorhandling();
             }

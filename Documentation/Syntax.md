@@ -4,38 +4,38 @@
 # Table of contents
 1. [Tips & Shortcuts](#tips--shortcuts)
 2. [Default Directories](#default-directories)
-2. [Basic Commands](#Basic-Commands)
-2. [Operating System](#Operating-System)
-2. [AI](#AI)
-2. [Customization](#Customization)
-2. [Special Functions](#Special-Functions)
-2. [Religion](#Religion)
-2. [Detection Functions](#Detection-Functions)
-2. [Download](#Download)
-2. [Random Functions](#Random-Functions)
-2. [Conversion Functions](#Conversion-Functions)
-2. [Create Functions](#Create-Functions)
-2. [Generate Functions](#Generate-Functions)
-2. [Check Functions](#Check-Functions)
-2. [Sort Functions](#Sort-Functions)
-2. [Games](#Games)
-2. [Text](#Text)
-2. [PDF](#PDF)
-2. [Video](#Video)
-2. [Audio](#Audio)
-2. [Image](#Image)
-2. [Script](#Script)
-2. [Text](#Text)
-2. [Math](#Math)
-2. [Network](#Network)
-2. [Display](#Display)
-2. [Hardware](#Hardware)
-2. [Web](#Web)
-2. [Reddit](#Reddit)
-2. [Shopping](#Shopping)
-2. [Search Engine](#Search-Engine)
-2. [Social Network](#Social-Network)
-2. [Torrent ](#Torrent )
+3. [Basic Commands](#Basic-Commands)
+4. [Operating System](#Operating-System)
+5. [AI](#AI)
+6. [Customization](#Customization)
+7. [Special Functions](#Special-Functions)
+8. [Religion](#Religion)
+9. [Detection Functions](#Detection-Functions)
+10. [Download](#Download)
+11. [Random Functions](#Random-Functions)
+12. [Conversion Functions](#Conversion-Functions)
+13. [Create Functions](#Create-Functions)
+14. [Generate Functions](#Generate-Functions)
+15. [Check Functions](#Check-Functions)
+16. [Sort Functions](#Sort-Functions)
+17. [Games](#Games)
+18. [Text](#Text)
+19. [PDF](#PDF)
+20. [Video](#Video)
+21. [Audio](#Audio)
+22. [Image](#Image)
+23. [Script](#Script)
+24. [Math](#Math)
+25. [Network](#Network)
+26. [Display](#Display)
+27. [Hardware](#Hardware)
+28. [Hash Functions](#Hash-Functions)
+29. [Web](#Web)
+30. [Reddit](#Reddit)
+31. [Shopping](#Shopping)
+32. [Search Engine](#Search-Engine)
+33. [Social Network](#Social-Network)
+34. [Torrent](#Torrent)
 
 # Tips & Shortcuts
 * Top arrow for the previous command.
@@ -274,6 +274,7 @@
 
 # Check Functions
 * `check:palindrome:` - To check wether it is palindrome or not. example: `check:palindrome:hola`.
+* `check:passwordstrength:` - To check password strength and get a detailed analysis. example: `check:passwordstrength:MyP@ssw0rd123`
 
 # Sort Functions
 * `sort:ascending:` - To sort in ascending order. example: `sort:ascending:56,34,1,32,23` or `sort:ascending:apple,cat,bay`
@@ -326,6 +327,10 @@
 
 # Text
 * `reverse:` - To reverse a string. example `reverse:hola`
+* `percentage:` - To calculate what percentage X is of Y. example: `percentage:25,100`
+* `wordfreq:` - To count word frequency in text. example: `wordfreq:hello world hello`
+* `textstats:` - To get text statistics (word count, reading time, etc). example: `textstats:your text here`
+* `anagram:` - To check if two words are anagrams. example: `anagram:listen,silent`
 * `count:characters:` - To count the number of characters. example: `count:characters:hola`
 * `count:words:` - To count the number of words. example: `count:words:hola`
 * `explode:` - To convert a sentence into seperate words in an array (The delimiter is ' ') example: `explode:Hi I am Joel Jolly.`
@@ -341,6 +346,7 @@
 * `count:` - To count in backwards. example: `count:10`
 * `remove:numbers:` - To remove numbers from the input. example `remove:numbers:hello, 007`
 * `check:prime:` - To check wether the given number is prime. example: `check:prime:45`
+* `age:` - To calculate age from birthdate. example: `age:2002-05-11` (format: YYYY-MM-DD)
 * `check:composite:` - To check wether the given number is composite. example: `check:composite:11`
 * `check:odd:` - To check wether the given number is odd. example: `check:odd:45`
 * `check:even:` - To check wether the given number is even. example: `check:even:45`
@@ -369,6 +375,11 @@
 * `httpstatuscode:` - To get the info about the HTTPS status code. example: `httpstatuscode:500`
 * `find:countrybydialingcode:` - To find the country based on the country's dialing code. example: `find:countrybydialingcode:+43`
 * `find:dialingcodebycountry:` - To find the dialing code of the country by giving the country's name. example: `find:dialingcodebycountry:japan`
+* `history` - To display all previously executed commands.
+* `uuid` - To generate a UUID v4.
+* `ping:` - To ping a URL and get the response time. example: `ping:google.com` (Note: This feature requires internet)
+* `headers:` - To fetch and display HTTP response headers. example: `headers:https://google.com` (Note: This feature requires internet)
+* `whois:` - To get domain WHOIS/DNS information. example: `whois:github.com` (Note: This feature requires internet)
 
 # Display
 * `screenwidth` - To get the screen width.
@@ -383,6 +394,14 @@
 * `raminfo` - To get ram information.
 * `batteryinfo` - To get the battery info.
 * `devicetype` - To get the device type.
+* `resources` - To get system resources information including RAM, CPU cores, battery, storage, network status, and more.
+
+# Hash Functions
+* `hash:md5:` - To generate an MD5 hash. example: `hash:md5:hello`
+* `hash:sha1:` - To generate a SHA-1 hash. example: `hash:sha1:hello`
+* `hash:sha256:` - To generate a SHA-256 hash. example: `hash:sha256:hello`
+* `hash:sha384:` - To generate a SHA-384 hash. example: `hash:sha384:hello`
+* `hash:sha512:` - To generate a SHA-512 hash. example: `hash:sha512:hello`
 
 # Codepen
 * `codepen:` - To search codepen. example: `codepen:nav bar` (Note: This feature requires internet)
