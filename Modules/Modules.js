@@ -1,5 +1,5 @@
 ////Version
-const currentVersion = '2.0.7';
+const currentVersion = '3.0.0';
 
 ////Load Script
 function loadScript(url) {
@@ -8,9 +8,6 @@ function loadScript(url) {
     script.type = 'text/javascript';
     document.body.appendChild(script);
 }
-
-////External
-loadScript('https://cdn.jsdelivr.net/gh/withinJoel/Elsa/Version/Version-1.0.0.js');
 
 ////API
 loadScript('../../API/Apikeys.js');

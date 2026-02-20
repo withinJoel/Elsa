@@ -1,6 +1,6 @@
 [Setup]
 AppName=Elsa
-AppVersion=2.0.7
+AppVersion=3.0.0
 AppPublisher=Joel Jolly
 AppPublisherURL=https://github.com/withinjoel/elsa
 AppSupportURL=https://github.com/withinjoel/elsa/issues
