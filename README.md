@@ -20,9 +20,6 @@ Are you a terminal enthusiast who also loves browsing the web? Do you often find
 - **Works in your browser or as a standalone app.** (Because options are always good)
 - **Developer & Networking Tools**
 
-# Star History
-[![Star History Chart](https://api.star-history.com/svg?repos=withinjoel/elsa&type=Timeline)](https://star-history.com/#withinjoel/elsa&Timeline)
-
 # To get started
 1. **Download the latest version** from the [Elsa foundation](https://elsafoundation.pages.dev/).
 2. **Install it.** (Some antivirus may flag it as a virus, but trust me, it’s just Elsa being misunderstood.)
