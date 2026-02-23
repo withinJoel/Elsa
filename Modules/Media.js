@@ -15,28 +15,38 @@ async function openImage(data) {
         const img = data.trim().replace(/^open:image:\s*/i, '');
         const imageElement = imagedir + img;
 
-        if (existingImgElement) {
-            existingImgElement.src = imageElement;
-        } else {
-            const imgElement = document.createElement('img');
-            imgElement.style.position = 'fixed';
-            imgElement.style.top = '15px';
-            imgElement.style.right = '15px';
-            imgElement.style.maxWidth = '500px';
-            imgElement.style.maxHeight = '500px';
-            imgElement.setAttribute('data-role', 'dynamic-image');
+        let targetImgElement = existingImgElement;
 
-            document.body.appendChild(imgElement);
+        if (!targetImgElement) {
+            targetImgElement = document.createElement('img');
+            targetImgElement.style.position = 'fixed';
+            targetImgElement.style.top = '15px';
+            targetImgElement.style.right = '15px';
+            targetImgElement.style.maxWidth = '500px';
+            targetImgElement.style.maxHeight = '500px';
+            targetImgElement.setAttribute('data-role', 'dynamic-image');
+
+            document.body.appendChild(targetImgElement);
         }
 
-        try {
-            await new Promise((resolve, reject) => {
-                existingImgElement.onload = resolve;
-                existingImgElement.onerror = reject;
-                existingImgElement.src = imageElement;
+        const loadImage = () => {
+            return new Promise((resolve, reject) => {
+                targetImgElement.onload = resolve;
+                targetImgElement.onerror = reject;
+                targetImgElement.src = imageElement;
             });
+        };
+
+        try {
+            await loadImage();
         } catch (error) {
-            echo("Image failed to load. Please check the path or filename.");
+            try {
+                targetImgElement.src = '';
+                await loadImage();
+            } catch (retryError) {
+                echo("Image failed to load. Please check the path or filename.");
+                throw new Error("Image not found");
+            }
         }
     } else if (existingImgElement) {
         document.body.removeChild(existingImgElement);
