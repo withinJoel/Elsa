@@ -33,7 +33,7 @@ loadScript('Modules/Models/Gemini/Gemini.js');
 //Core
 loadScript('Modules/Dependencies.js');
 loadScript('Modules/System.js');
-loadScript('Modules/Security.js');
+//loadScript('Modules/Security.js');
 loadScript('Modules/Directory.js');
 
 ////Modules
