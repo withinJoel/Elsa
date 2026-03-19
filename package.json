@@ -17,7 +17,7 @@
   "dependencies": {
     "axios": "^1.13.6",
     "dompurify": "^3.3.3",
-    "electron-context-menu": "^4.1.1",
+    "electron-context-menu": "^4.1.2",
     "electron-dl": "^4.0.0",
     "package": "^1.0.1"
   }
