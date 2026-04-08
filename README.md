@@ -1,5 +1,15 @@
 <p align="center">
-  <img src="https://github.com/withinJoel/Elsa/assets/128782382/1fa0cca9-7c72-4327-a7e7-3c15a2cc3406" alt="Elsa" width="200" height="200">
+  <img src="https://github.com/withinJoel/Elsa/assets/128782382/1fa0cca9-7c72-4327-a7e7-3c15a2cc3406" alt="Elsa" width="300" height="300">
+</p>
+
+<p align="center">
+  <strong>Programming language for the new generation.</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/withinjoel/elsa/releases"><img src="https://img.shields.io/github/v/release/withinjoel/elsa?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
+  <a href="https://joeljolly.vercel.app/"><img src="https://img.shields.io/badge/Built%20by-Joel%20Jolly-blueviolet?style=for-the-badge" alt="Built by Joel Jolly"></a>
 </p>
 
 # Elsa
