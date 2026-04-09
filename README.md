@@ -8,6 +8,8 @@
 
 <p align="center">
   <a href="https://github.com/withinjoel/elsa/releases"><img src="https://img.shields.io/github/v/release/withinjoel/elsa?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
+    <a href="https://github.com/withinjoel/elsa/stargazers"><img src="https://img.shields.io/github/stars/withinjoel/elsa?style=for-the-badge&color=yellow" alt="GitHub Stars"></a>
+  <a href="https://github.com/withinjoel/elsa/issues"><img src="https://img.shields.io/github/issues/withinjoel/elsa?style=for-the-badge&color=red" alt="Open Issues"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
   <a href="https://joeljolly.vercel.app/"><img src="https://img.shields.io/badge/Built%20by-Joel%20Jolly-blueviolet?style=for-the-badge" alt="Built by Joel Jolly"></a>
 </p>
