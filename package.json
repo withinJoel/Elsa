@@ -4,6 +4,9 @@
   "description": "Elsa",
   "main": "App.js",
   "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "start": "electron .",
     "package": "electron-packager . Elsa --platform=win32 --arch=x64 --out=dist --overwrite --icon=Logo/Elsa.png",
