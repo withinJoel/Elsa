@@ -15,7 +15,7 @@
   "author": "Joel Jolly",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^41.4.0"
+    "electron": "^41.5.0"
   },
   "dependencies": {
     "axios": "^1.15.2",
