@@ -15,11 +15,11 @@
   "author": "Joel Jolly",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^42.3.0"
+    "electron": "^43.2.0"
   },
   "dependencies": {
     "axios": "^1.16.1",
-    "dompurify": "^3.4.11",
+    "dompurify": "^3.4.12",
     "electron-context-menu": "^4.1.2",
     "electron-dl": "^4.0.0",
     "package": "^1.0.1"
