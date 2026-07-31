@@ -1004,6 +1004,14 @@ ipcMain.handle('get-cpu-info', () => {
 });
 
 ///////////////////////////////Disk Info
+ipcMain.handle('gemini-query', async (event, userInput) => {
+  const geminiApiKey = process.env.GEMINI_API_KEY || '';
+  if (!geminiApiKey) throw new Error('Gemini API key not configured.');
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${geminiApiKey}`;
+  const response = await axios.post(apiUrl, { contents: [{ parts: [{ text: userInput }] }] });
+  return response.data;
+});
+
 ipcMain.handle('get-disk-info', () => {
   return new Promise((resolve, reject) => {
     let diskCommand;

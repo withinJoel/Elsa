@@ -27,4 +27,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
   opentaskmanager: () => ipcRenderer.invoke('open-taskmanager'),
   openfileexplorer: () => ipcRenderer.invoke('open-file-explorer'),
   getDiskInfo: () => ipcRenderer.invoke('get-disk-info'),
+  geminiQuery: (userInput) => ipcRenderer.invoke('gemini-query', userInput),
 });
