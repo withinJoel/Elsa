@@ -315,7 +315,11 @@ function runCmd(command, inMemory, fromInput) {
                 getDate();
             } else if (commandName.includes("numerology:")) {
                 let data = commandName.trim().replace(/^numerology:\s*/i, '');
-                processNumerologyInput(data);
+                if (/^[a-zA-Z\s]{1,50}:\d{4}-\d{2}-\d{2}:[a-zA-Z\s]{1,50}:\d{4}-\d{2}-\d{2}$/.test(data)) {
+                    processNumerologyInput(data);
+                } else {
+                    echo('Invalid input. Please provide names and dates of birth in the format "name1:dob1:name2:dob2".');
+                }
             } else if (commandName.includes("zodiacsign:")) {
                 let data = commandName.trim().replace(/^zodiacsign:\s*/i, '');
                 getZodiacSign(data);
