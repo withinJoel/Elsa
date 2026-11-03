@@ -1,6 +1,6 @@
 async function getGeminiResponse(rawdata, flag) {
     if (geminiapi !== '') {
-        const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + geminiapi; // Replace YOUR_API_KEY with your actual API key
+        const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent'; // API key is sent via header instead of the URL to avoid it leaking through logs/browser history
         const userInput = rawdata.trim().replace(/^-read\b\s*/i, '');
         // Data to be sent to the API
         const requestData = {
