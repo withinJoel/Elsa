@@ -16,7 +16,7 @@ async function getGeminiResponse(rawdata, flag) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                // Add any other headers required by the API
+                'x-goog-api-key': geminiapi
             },
             body: JSON.stringify(requestData)
         })
